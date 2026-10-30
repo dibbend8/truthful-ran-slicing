@@ -1,0 +1,539 @@
+{
+ "macros": {
+  "EsixTime": {
+   "value": 38.751438522338866,
+   "fmt": "{:.1f}",
+   "unit": "ms",
+   "source": "e6: p95 full-price time per interval at n = 9, Protected, one core",
+   "text": "38.8"
+  },
+  "EsixTimeMedian": {
+   "value": 18.304855346679688,
+   "fmt": "{:.1f}",
+   "unit": "ms",
+   "source": "e6: median pricing time at n = 9",
+   "text": "18.3"
+  },
+  "EsixTimeSix": {
+   "value": 33.843235397338866,
+   "fmt": "{:.1f}",
+   "unit": "ms",
+   "source": "e6: p95 full-price time per interval at n = 6, Protected, one core",
+   "text": "33.8"
+  },
+  "EsixTimeMedianSix": {
+   "value": 15.558540344238281,
+   "fmt": "{:.1f}",
+   "unit": "ms",
+   "source": "e6: median full-price time per interval at n = 6, Protected, one core",
+   "text": "15.6"
+  },
+  "EsixTimeNine": {
+   "value": 38.751438522338866,
+   "fmt": "{:.1f}",
+   "unit": "ms",
+   "source": "e6: p95 full-price time per interval at n = 9, Protected, one core",
+   "text": "38.8"
+  },
+  "EsixTimeMedianNine": {
+   "value": 18.304855346679688,
+   "fmt": "{:.1f}",
+   "unit": "ms",
+   "source": "e6: median full-price time per interval at n = 9, Protected, one core",
+   "text": "18.3"
+  },
+  "EsixMaxGain": {
+   "value": 0.0,
+   "fmt": "{:.2g}",
+   "unit": "credits per interval",
+   "source": "e6: largest full-price gain at n = 6 and 9",
+   "text": "0"
+  },
+  "EsixViol": {
+   "value": 0,
+   "fmt": "{:d}",
+   "unit": "tenant-intervals",
+   "source": "e6: H6a violations",
+   "text": "0"
+  },
+  "EsixGap": {
+   "value": 0.12859240032226993,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e6: W(Unconstrained net) - W(Protected) at n = 9",
+   "text": "0.13"
+  },
+  "EsixGapLo": {
+   "value": 0.09911823118645505,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e6: W(Unconstrained net) - W(Protected) at n = 9 (95% CI lower)",
+   "text": "0.10"
+  },
+  "EsixGapHi": {
+   "value": 0.17356451545483387,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e6: W(Unconstrained net) - W(Protected) at n = 9 (95% CI upper)",
+   "text": "0.17"
+  },
+  "EsixGapCI": {
+   "value": "[0.10, 0.17]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e6: W(Unconstrained net) - W(Protected) at n = 9 (95% CI)",
+   "text": "[0.10, 0.17]"
+  },
+  "EsixGapPct": {
+   "value": 0.2332852807473243,
+   "fmt": "{:.2f}",
+   "unit": "percent of Protected welfare on the same windows",
+   "source": "e6: W(Unconstrained net) - W(Protected) at n = 9",
+   "text": "0.23"
+  },
+  "EsixGapPctCI": {
+   "value": "[0.18, 0.31]",
+   "fmt": "{:.2f}",
+   "unit": "percent",
+   "source": "e6: W(Unconstrained net) - W(Protected) at n = 9 (95% CI of the percentage)",
+   "text": "[0.18, 0.31]"
+  }
+ },
+ "tables": {
+  "pricing_time": [
+   {
+    "n": 3,
+    "arm": "protected",
+    "label": "Protected (ours)",
+    "intervals": 320,
+    "median_ms": 7.663508004043251,
+    "p95_ms": 8.093283855123445,
+    "max_ms": 8.783114986727014,
+    "fixed_p95_ms": 7.156217462033965
+   },
+   {
+    "n": 6,
+    "arm": "direct",
+    "label": "Direct optimizer",
+    "intervals": 20480,
+    "median_ms": 23.805622100830078,
+    "p95_ms": 47.35422286987304,
+    "max_ms": 54.48278045654297,
+    "fixed_p95_ms": null
+   },
+   {
+    "n": 6,
+    "arm": "equal",
+    "label": "Equal weights",
+    "intervals": 20480,
+    "median_ms": 13.907550811767578,
+    "p95_ms": 30.38218994140625,
+    "max_ms": 38.04576110839844,
+    "fixed_p95_ms": 29.37340021133423
+   },
+   {
+    "n": 6,
+    "arm": "protected",
+    "label": "Protected (ours)",
+    "intervals": 61440,
+    "median_ms": 15.558540344238281,
+    "p95_ms": 33.843235397338866,
+    "max_ms": 53.88750076293945,
+    "fixed_p95_ms": 29.680517959594727
+   },
+   {
+    "n": 9,
+    "arm": "direct",
+    "label": "Direct optimizer",
+    "intervals": 20480,
+    "median_ms": 35.06244659423828,
+    "p95_ms": 67.23978118896484,
+    "max_ms": 85.82664489746094,
+    "fixed_p95_ms": null
+   },
+   {
+    "n": 9,
+    "arm": "equal",
+    "label": "Equal weights",
+    "intervals": 20480,
+    "median_ms": 16.63575553894043,
+    "p95_ms": 34.71030197143555,
+    "max_ms": 53.199581146240234,
+    "fixed_p95_ms": 33.69506416320801
+   },
+   {
+    "n": 9,
+    "arm": "protected",
+    "label": "Protected (ours)",
+    "intervals": 61440,
+    "median_ms": 18.304855346679688,
+    "p95_ms": 38.751438522338866,
+    "max_ms": 57.12457275390625,
+    "fixed_p95_ms": 34.0965253829956
+   }
+  ],
+  "max_gain_by_n": [
+   {
+    "n": 6,
+    "max_gain": 0.0,
+    "max_cert": 1.5612503290185487e-08,
+    "max_err": 7.806251645092743e-09,
+    "min_eps": 1.0429990337777841e-08,
+    "violations": 0,
+    "tenant_intervals": 614400
+   },
+   {
+    "n": 9,
+    "max_gain": 0.0,
+    "max_cert": 8.694575244624524e-09,
+    "max_err": 4.347287622312262e-09,
+    "min_eps": 6.923039973333338e-09,
+    "violations": 0,
+    "tenant_intervals": 921600
+   }
+  ],
+  "cost_by_n": [
+   {
+    "n": 3,
+    "source": "e1",
+    "estimate": 0.034202305126409316,
+    "lo": 0.02533174828201203,
+    "hi": 0.04309656266652086,
+    "pct": 0.06114220377399192,
+    "pct_lo": 0.04555791103601746,
+    "pct_hi": 0.07697318445062315,
+    "n_dates": 16,
+    "n_windows": 128,
+    "mean_protected": 55.938947266009315
+   },
+   {
+    "n": 6,
+    "source": "e6",
+    "estimate": 0.1415903884388981,
+    "lo": 0.11460572062435648,
+    "hi": 0.18209358740483966,
+    "pct": 0.2556931616712856,
+    "pct_lo": 0.20767110868316,
+    "pct_hi": 0.32858688935793806,
+    "n_dates": 16,
+    "n_windows": 128,
+    "mean_protected": 55.37511739204199
+   },
+   {
+    "n": 9,
+    "source": "e6",
+    "estimate": 0.12859240032226993,
+    "lo": 0.09911823118645505,
+    "hi": 0.17356451545483387,
+    "pct": 0.2332852807473243,
+    "pct_lo": 0.1808300475565693,
+    "pct_hi": 0.3146401990149837,
+    "n_dates": 16,
+    "n_windows": 128,
+    "mean_protected": 55.122380593549224
+   }
+  ],
+  "rounding_loss": [
+   {
+    "n": 6,
+    "arm": "direct",
+    "idle_prb": 2.9989746093750003
+   },
+   {
+    "n": 6,
+    "arm": "equal",
+    "idle_prb": 3.0078125000000004
+   },
+   {
+    "n": 6,
+    "arm": "protected",
+    "idle_prb": 3.0178548177083333
+   },
+   {
+    "n": 6,
+    "arm": "unprotected",
+    "idle_prb": 3.0168294270833336
+   },
+   {
+    "n": 9,
+    "arm": "direct",
+    "idle_prb": 4.614892578125
+   },
+   {
+    "n": 9,
+    "arm": "equal",
+    "idle_prb": 4.50556640625
+   },
+   {
+    "n": 9,
+    "arm": "protected",
+    "idle_prb": 4.608740234375
+   },
+   {
+    "n": 9,
+    "arm": "unprotected",
+    "idle_prb": 4.606038411458333
+   }
+  ]
+ },
+ "hypotheses": {
+  "H6a_time": {
+   "p95_ms": 38.751438522338866,
+   "limit_ms": 100.0,
+   "holds": true
+  },
+  "H6a_gain": {
+   "tenant_intervals": 1536000,
+   "max_gain": 0.0,
+   "max_cert": 1.5612503290185487e-08,
+   "max_err": 7.806251645092743e-09,
+   "min_eps": 6.923039973333338e-09,
+   "violations": 0,
+   "violations_strict": 0,
+   "violations_max_rule": 0,
+   "max_certified_gain_over_eps": 0.08458300695786113,
+   "all_exact": true,
+   "holds": true,
+   "checkpoint_seeds": [
+    0,
+    1,
+    2
+   ],
+   "seed_note": "certified for the listed checkpoint seeds of the learned maps only (pre-registration item, STATUS.md \u00a78.3 item 2)",
+   "rule": "no scored tenant-interval whose certified gain (computed gain + certificate) exceeds 1e-8 pi_i mu_i Delta (PREREG \u00a76; exact cell enumeration): violations = violations_strict = #(gain + cert > eps_i); violations_max_rule = #(gain > max(cert, eps_i)) is a reported check"
+  },
+  "H6b": {
+   "estimate": 0.12859240032226993,
+   "lo": 0.09911823118645505,
+   "hi": 0.17356451545483387,
+   "level": 0.95,
+   "n_dates": 16,
+   "n_windows": 128,
+   "n_boot": 10000,
+   "p": 9.999000099990002e-05,
+   "alternative": "greater",
+   "null": 0.0,
+   "lower_one_sided": 0.10204339349415471,
+   "upper_one_sided": 0.1656163503908319,
+   "mean_a": 55.25097299387151,
+   "mean_b": 55.122380593549224,
+   "denominator": "Protected welfare on the same windows",
+   "inference": true,
+   "dates_positive": 16,
+   "dates_negative": 0,
+   "dates_zero": 0,
+   "per_date": [
+    {
+     "date": "2024-09-01",
+     "mean": 0.1045735429960919,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-02",
+     "mean": 0.06975716352553363,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-08",
+     "mean": 0.09797336276909263,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-09",
+     "mean": 0.13072038930908292,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-15",
+     "mean": 0.11567908125642923,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-16",
+     "mean": 0.08302871732608974,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-22",
+     "mean": 0.1295081718190616,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-23",
+     "mean": 0.11342049655174691,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-29",
+     "mean": 0.11908465263951307,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-30",
+     "mean": 0.14031475313363906,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-06",
+     "mean": 0.4063376706121238,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-07",
+     "mean": 0.07776663100754799,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-13",
+     "mean": 0.10885374253130031,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-14",
+     "mean": 0.09828547515027974,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-20",
+     "mean": 0.14295987645435027,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-21",
+     "mean": 0.11921467807443609,
+     "n_windows": 8,
+     "sign": 1
+    }
+   ],
+   "pct": 0.2332852807473243,
+   "pct_lo": 0.1808300475565693,
+   "pct_hi": 0.3146401990149837,
+   "pct_lower_one_sided": 0.1859425235219475,
+   "pct_upper_one_sided": 0.3004768693642545,
+   "p_pct": 9.999000099990002e-05,
+   "arm_a": "unprotected",
+   "arm_b": "protected",
+   "unit": "credits per interval",
+   "unpaired": 0,
+   "seeds_a": 3,
+   "seeds_b": 3,
+   "margin_pct": 2.0,
+   "holds": true
+  }
+ },
+ "notes": [],
+ "seconds": 4.011419627000578,
+ "experiment": "e6",
+ "split": "test",
+ "smoke": false,
+ "settings": {
+  "n_boot": 10000,
+  "level": 0.95,
+  "seed": 20261019,
+  "main": {
+   "n": 3,
+   "d": 2.0,
+   "rho": 0.9,
+   "lead_s": 4.004
+  },
+  "load_bins": [
+   0.8,
+   1.0
+  ],
+  "holm_family": [
+   "H1a",
+   "H2c",
+   "H4a",
+   "H5b"
+  ],
+  "h5b": {
+   "arm": "protected",
+   "alpha": 0.5
+  },
+  "h2c_arm": "unprotected",
+  "split": "test",
+  "smoke": false,
+  "crossed": true,
+  "frozen_test_dates": 16
+ },
+ "generated": "2026-10-21T08:37:06",
+ "code_sha256": "6510e5156e05ad5c58ee6a8e7bca54b0eead89623449d87f4e60ba0652d110b6",
+ "inputs": {
+  "digest": "82ef60e165cfd7ccc767b3b0b67227d3f08ad4f4d050c248235ff31b825a02b2",
+  "sources": {
+   "e0": "results/raw/test/e0",
+   "e1": "results/raw/test/e1",
+   "e2": "results/raw/test/e2",
+   "e3": "results/raw/test/e3",
+   "e4": "results/raw/test/e4",
+   "e5": "results/raw/test/e5",
+   "e6": "results/raw/test/e6",
+   "e7": "results/raw/e7/cases_test"
+  },
+  "files": 11100,
+  "rows": {
+   "e0_windows": 128,
+   "e0_vcal": 3072,
+   "e0_worked_meta": 2,
+   "e0_worked": 516,
+   "e0_worked_stairs": 148,
+   "windows": 143488,
+   "e1_manifest": 11,
+   "br": 2150400,
+   "monotone": 122880,
+   "bandit": 38400,
+   "premium": 552960,
+   "ident": 138240,
+   "h3d": 3456,
+   "e4_h4b": 384,
+   "e4_learn": 1632,
+   "timing": 256320,
+   "e5_pairs": 9216,
+   "e5_nets": 1728,
+   "e5_windows": 768,
+   "e5_checks": 1,
+   "e6_runs": 2048,
+   "nr": 36
+  }
+ },
+ "inputs_check": {
+  "ok": true,
+  "primary": false,
+  "completeness": {
+   "e6": {
+    "windows": {
+     "expected": 256,
+     "present": 256,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    }
+   }
+  },
+  "provenance": {
+   "e6": {
+    "scope": "all",
+    "jobs": 256,
+    "without_fingerprint": 0,
+    "ckpt_conflicts": {},
+    "code_versions": 1,
+    "ok": true
+   }
+  }
+ }
+}

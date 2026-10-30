@@ -1,0 +1,214 @@
+# Defaults (plan section 8); calibration on training dates may adjust GBR fractions then load, in that order.
+network: {B: 106, interval_s: 1.0, slot_ms: 1, scs_khz: 15, bandwidth_mhz: 20, re_per_prb_slot: 132, bler: 0.1}
+mechanism: {gamma_fairness: 0.2, eta_headroom: 2.0, quotas: integer_floor}
+classes:
+  # D1 (orchestrator, 2026-10-19; TRAIN-only, the pre-declared first adjustment step "GBR fractions first"): every class's
+  # GBR fraction is scaled by 0.8 (was 0.5 / 0.8 / 0.2). TRAIN evidence (code/STATUS.md §5.2, experiments/diag_gbr_sweep.py,
+  # 180 TRAIN windows, n = 3): gbr_outage 0.077 -> 0.029 (limit 0.05), frac_weights_change_quota 0.791 -> 0.868,
+  # mean_weighted_share 0.313 -> 0.393; all five regime targets pass (scale 0.9 passed only marginally, outage 0.0495).
+  video: {gbr_x_mu: 0.40, mbr_x_mu: 3, ceiling_x_mu: 5, tariff_per_mbit: 1.0, delay_budget_ms: 2002}
+  urllc: {gbr_x_mu: 0.64, mbr_x_mu: 3, ceiling_x_mu: 5, tariff_per_mbit: 3.0, delay_budget_ms: 150}
+  mmtc:  {gbr_x_mu: 0.16, mbr_x_mu: 4, ceiling_x_mu: 8, tariff_per_mbit: 0.5, delay_budget_ms: 300}
+# D2 (orchestrator, 2026-10-19; pre-registered): per-date offered-load normalization. For every date of every split the
+# integer viewer/user/device count of each tenant is set so the date's mean offered traffic equals
+# share x rho x B x rbar_TRAIN (shares split equally among the tenants of a class; rbar_TRAIN = TRAIN mean per-PRB rate);
+# offered traffic only, identical for all arms, TEST only after the freeze (slicemech.data.calibrate.counts_for_date).
+load: {rho: 0.9, shares: {video: 0.6, urllc: 0.3, mmtc: 0.1}, rule: per_date}
+information: {measurement_delay_s: 2, measurement_delay_sweep_s: [1, 2, 5, 15], report_lead_ms: 50, video_lead_time_s: 4.004, video_lead_sweep_s: [0, 1.05, 4.004]}
+windows: {length_s: 200, warmup_s: 40}
+n_tenants: {main: 3, scaling: [6, 9]}
+training: {algorithm: PPO contextual bandit, iterations: 400, seeds_main: 5, seeds_sweeps: 3, counterfactual_samples: 4, clip: 0.2, lr: 3.0e-4}
+regime_targets: {frac_sumH_gt_B_min: 0.6, frac_all_caps_fit_max: 0.05, frac_weights_change_quota_min: 0.5, mean_weighted_share_min: 0.25, gbr_outage_max: 0.05}
+# Settings referred to by macro in Sections VI-VII (spec/outline.yaml P-VI.I.1); make_numbers.py writes the macros.
+experiment_settings:
+  # E0 to E7 (existing)
+  SweepDelays: "1, 2, 5 and 15 s"
+  SweepLoads: "0.5, 0.7, 0.9 and 1.1"   # analyze.py LOAD_SWEEP; registry.CONFIGS rho0.5, rho0.7, default, rho1.1 (round 1 wave 2 VI: was "0.5 to 1.1")
+  SweepLeads: "0, 1.05 and 4.004 s"
+  MarginWelfare: "1 percent"
+  FtIters: 50
+  FtWindows: 4
+  FiveSeeds: 3
+  NrWindows: 4
+  NrRuns: 12
+  RsqFlag: 0.5
+  # Data and windows (Section VI.A)
+  TestDateRange: "Sundays and Mondays from 1 September to 21 October 2024"
+  WindowLen: 200            # s
+  WarmupLen: 40             # s
+  VideoChannels: 7
+  LoadRho: 0.9              # offered load as a fraction of cell capacity
+  LoadFracs: "0.6, 0.3 and 0.1"
+  # RateMin, RateMax and RateMean are computed by experiments/analyze.py settings_summary (round-3 review: they were
+  # typed here and RateMean 0.43 contradicted the measured r_bar_TRAIN 0.4372): RateMin/RateMax from the CQI table
+  # (slicemech.phy.RATE_TABLE), RateMean from data/calibration/n3_default.json.
+  # Regime targets (prop:congestion diagnostics, training dates)
+  TargetNeedFrac: "60 percent"
+  TargetAllFit: "5 percent"
+  TargetWeightQuota: "50 percent"
+  TargetWeightedPRBs: "25 percent"
+  TargetOutage: "5 percent"
+  # Training (Section VI.D)
+  PpoIters: 400
+  PpoWindows: 32
+  PpoClip: 0.2
+  # PpoLr, PpoLrEnd, PpoSamples (and PpoSigma) are the DEV-selected cell of each learned arm (registry.TUNING_GRID):
+  # written by experiments/analyze.py settings_summary from results/models/selection.json (round-3 review).
+  SeedsMain: 5
+  SeedsSweep: 3
+  # Pricing (Section IV.C.5)
+  BisectIters: 40
+  # Main setting of E2 to E4 and E6 (Sections VI.I and VII)
+  MainN: 3
+  MainDelay: 2              # s
+  MainLoad: 0.9
+  ScalingN: "6 and 9"
+  SweepSeeds: 3
+  # E2 and E3: deviating tenants
+  BrGrid: 512               # report grid for non-monotone maps
+  BrEvery: 4                # best responses on every fourth scored interval
+  BanditMults: "0.5, 0.67, 0.8, 0.9, 1, 1.1, 1.25, 1.5 and 2"
+  BanditEpisodes: 400
+  BanditRuns: 4
+  # E5: fine-tuning protocol (FtIters, FtWindows above)
+  EfiveFactor: "0.5, 0.7, 1.5 and 2"
+  EfiveTargets: "the video tenant and the URLLC-like tenant"
+  EfiveEvalWindows: 4
+  # Settings fixed by the DEV-phase decisions D1-D7 and PREREG_DRAFT.md §9 (orchestrator, 2026-10-20)
+  DevSelDates: 11           # DEV selection half: every choice (checkpoints, tuning cell, static comparator)
+  DevEstDates: 10           # DEV estimation half: only the effect estimates of the power analysis
+  StaticCands: 72           # TRAIN-fitted static candidates compared on the DEV selection half
+  TuneCells: 8              # DEV tuning grid: lr {1e-4, 3e-4} x sigma0 {0.3, 0.6} x M {4, 8}
+  CkptEvery: 50             # checkpoint evaluation period (PPO iterations)
+  LookaheadH: 3             # D6: lookahead return over the current interval and the next three
+  NBoot: "10,000"           # two-stage bootstrap replicates
+  MinDates: 5               # no CI, p-value or decision from fewer dates
+  KappaScales: "0, 0.5, 1 and 2"   # D7: E4b report-sensitivity scales
+  GbrScale: 0.8             # D1: factor applied to the pre-declared guaranteed fractions
+  TrainOutageBefore: "7.7 percent" # D1: TRAIN guarantee outage before the adjustment (limit 5 percent)
+  TrainLoadBefore: 0.91     # D2: TRAIN offered load under TRAIN-fitted counts (fraction of capacity)
+  DevLoadBefore: 0.68       # D2: DEV offered load under TRAIN-fitted counts (fraction of capacity)
+  # Added by the Section VI writer (2026-10-20); every value is an input or a fixed rule, not a result.
+  ChunkLen: 2.002           # s; Puffer chunk duration; source: code/slicemech/data/puffer.py docstring
+  LeadMain: 4.004           # s; live latency of the video tenant (two chunks); source: spec/params.yaml information.video_lead_time_s
+  TrainDates: 15            # Puffer training dates; source: prereg/PREREG_DRAFT.md section 2
+  TrainRange: "1 January to 25 February 2024"    # source: prereg/PREREG_DRAFT.md section 2
+  DevRange: "28 February to 6 May 2024"          # source: prereg/PREREG_DRAFT.md section 2
+  TrainWindows: 180         # training windows (15 dates x 12); source: code/experiments/e1_value.py docstring ("all 180 TRAIN windows")
+  WindowsPerTestDate: 8     # source: prereg/PREREG_DRAFT.md section 2
+  GbrStart: "0.5, 0.8 and 0.2"    # pre-declared guaranteed fractions before the training-date adjustment (video, URLLC-like, mMTC-like); source: prereg/PREREG_DRAFT.md section 0 D1
+  ArOrder: 6                # order of the autoregressive forecasters; source: code/slicemech/forecast.py (default p = 6)
+  HiddenWidth: 64           # tanh units per layer of the priority network; source: code/slicemech/control/nets.py:42 (HIDDEN)
+  FeaturesPerSlice: 22      # source: code/slicemech/control/features.py (N_TENANT_FEATURES)
+  FeaturesPerCell: 3        # source: code/slicemech/control/features.py (N_GLOBAL_FEATURES)
+  ProtectedParams: 18306    # 22*64+64 + 64*64+64 + (3*64+3)*64+64 + 64*2+2; source: code/slicemech/control/nets.py
+  PoolBlock: 2              # s; block length of the interleaved halves of the E5 traffic pools; source: code/slicemech/data/tractor.py PART_BLOCK_S
+  HoneMin: "0.5 percent"    # H1a decision threshold (percent of the report-free welfare); source: prereg/PREREG_DRAFT.md section 6, analyze.py H1A_MIN_PCT
+  HthreeTolRel: "$10^{-8}$" # H3a tolerance as a multiple of pi_i mu_i Delta; source: prereg/PREREG_DRAFT.md section 6 (H3a)
+  LoadBins: "below 0.8, from 0.8 to 1.0 and at least 1.0 of the cell capacity"   # source: prereg/PREREG_DRAFT.md section 9 item 7, analyze.py LOAD_BINS
+  PowerTarget: "80 percent" # power of the test-date power analysis; source: prereg/PREREG_DRAFT.md section 9 item 4, analyze.py POWER
+  VcalGrid: "0.25 to 2 in steps of 0.25"        # E0 quota multiples; source: code/experiments/e0_setup.py VCAL_GRID
+  PriceTimeMs: 100          # ms; H6a bound on the 95th-percentile pricing time; source: prereg/PREREG_DRAFT.md section 6, analyze.py H6A_TIME_MS
+  GapNineMax: "2 percent"   # H6b bound on the cost of protection at the largest n; source: prereg/PREREG_DRAFT.md section 6, analyze.py H6B_MARGIN_PCT
+  NrAgreeN: 3               # H7a: windows (of NrWindows) in which sign and size agree; source: prereg/PREREG_DRAFT.md section 9 item 9, analyze.py H7A_SHARE
+  NrFactor: 2               # H7a: factor between the NR effect and the fluid prediction; source: prereg/PREREG_DRAFT.md section 6
+  NrCorr: 0.8               # H7c: correlation threshold; source: prereg/PREREG_DRAFT.md section 6, analyze.py H7C_CORR
+  NrMinPrb: 4               # PRB; smallest quota of the 5G-LENA scenario; source: code/slicemech/nr/schedule.py (min_prb)
+  RbgSizes: "8 or 16"       # PRBs per resource-block group of TS 38.214 Table 5.1.2.2.1-1 for a 106-PRB bandwidth part; source: review/decisions.md D2.5
+  NrOffset: "12 hours"      # start of the E7 window after the first window of the day; source: prereg/PREREG_DRAFT.md section 9 item 5 (offset 43,260 s)
+  EfivePrimary: 0.5         # factor of the primary H5b cell (the target UNDER-reports); source: code/experiments/analyze.py H5B_PRIMARY_ALPHA (settings_summary emits it from that constant and overrides this copy; a test checks they agree, pre-freeze audit E5-1); prereg/PREREG_DRAFT.md section 0 D8, section 9 item 3 (round 2 wave 2 VI: was 2)
+  FweLevel: 0.05            # family-wise error rate of the Holm correction; source: prereg/PREREG_DRAFT.md section 6, analyze.py ALPHA_FWER
+  CiLevel: "95 percent"     # confidence level of the bootstrap intervals; source: prereg/PREREG_DRAFT.md section 7, analyze.py LEVEL
+  # Added by the Section VI reviser (wave 2, round 1, 2026-10-20); every value is an input or a fixed rule, not a result.
+  BanditResolution: "1 percent"   # gains below this fraction of truthful utility cannot be separated by 400 episodes over 9 multipliers; source: code/slicemech/tenants/bandits.py docstring
+  BanditLastEpisodes: 50          # final episodes over which H3b reports the mean gain and the fraction of truthful reports; source: code/experiments/analyze.py bandit_summary (last=50)
+  HthreeCTol: "$10^{-9}$"         # H3c: tolerance of the gain identity (credits); source: prereg/PREREG_DRAFT.md section 6 (H3c)
+  TestDatesSmall: 16              # test dates before the power-triggered extension; source: prereg/PREREG_DRAFT.md section 9 item 4, code/slicemech/data/puffer.py test_dates
+  TestEndSmall: "21 October 2024" # last test date of the small set; source: puffer.py test_dates(extended=False)
+  TestDatesLarge: 24              # test dates after the extension; source: puffer.py test_dates(extended=True)
+  TestEndLarge: "18 November 2024" # last test date of the extended set; source: puffer.py test_dates(extended=True)
+  TractorTrainUrllc: 4            # URLLC-like captures per split; source: code/slicemech/data/tractor.py SPLITS
+  TractorTrainMmtc: 4             # source: tractor.py SPLITS
+  TractorDevUrllc: 2              # source: tractor.py SPLITS
+  TractorDevMmtc: 1               # source: tractor.py SPLITS
+  TractorTestUrllc: 3             # source: tractor.py SPLITS
+  TractorTestMmtc: 2              # source: tractor.py SPLITS
+  RacaTrainRange: "20 November to 6 December 2019"          # source: prereg/PREREG_DRAFT.md section 2
+  RacaDevRange: "14 December 2019 to 6 January 2020"        # source: prereg/PREREG_DRAFT.md section 2
+  RacaTestRange: "16 January to 27 February 2020"           # source: prereg/PREREG_DRAFT.md section 2
+  LeadExact: 1.05                 # s; smallest video lead time at which the report is exact (one interval plus the report lead); source: code/slicemech/data/puffer.py docstring
+  NrUePerSlice: 4                 # UEs per slice in the 5G-LENA scenario; source: code/experiments/e7_nr.py docstring (--uePerSlice=4)
+  NrCalTol: "20 percent"          # tolerance of the NR rate per PRB around the fluid training-mean rate in the radius calibration; source: e7_nr.py docstring (stage calibrate)
+  TestWindowStep: "3 hours"       # spacing of windows on a test date; source: code/slicemech/data/compose.py OFFSETS
+  TrainWindowsPerDate: 12         # source: compose.py OFFSETS
+  TrainWindowStep: "2 hours"      # source: compose.py OFFSETS
+  DevWindowsPerDate: 6            # source: compose.py OFFSETS
+  DevWindowStep: "4 hours"        # source: compose.py OFFSETS
+  ViewersTrain: "15 to 20"        # viewers per training date; source: data/calibration/n3_default.json date_counts.train
+  UsersTrain: "13 to 17"          # URLLC-like users per training date; source: n3_default.json date_counts.train
+  DevicesTrain: "224 to 253"      # mMTC-like devices per training date; source: n3_default.json date_counts.train
+  TuneLrs: "$10^{-4}$ and $3\\times10^{-4}$"   # DEV tuning grid, learning rates; source: code/experiments/registry.py TUNING_GRID
+  TuneSigmas: "0.3 and 0.6"       # DEV tuning grid, initial exploration scales; source: registry.py TUNING_GRID
+  TuneSamples: "4 and 8"          # DEV tuning grid, noisy score vectors per observation; source: registry.py TUNING_GRID
+  BurstLevels: 64                 # at most this many burst levels per class; source: code/slicemech/data/calibrate.py docstring item 7
+  ReplayPerDate: 2                # H2c replay windows per date; source: code/experiments/e2_manipulation.py (--replay-per-date)
+  BrStepPct: "1.6 percent"        # largest step of the 512-point grid: C_i/511 with C_i = 8 mu_i (mMTC-like); source: code/slicemech/pricing/response.py
+  CpuCores: 24                    # cores of the CPU-only machine; source: code/EXPERIMENTS.md section 0
+  # Added by the Section VI reviser (wave 2, round 2, 2026-10-20); every value is an input, a fixed rule or a training-date quantity, not a result.
+  CkptCount: 8                    # checkpoints a training run scores on the development selection half (iterations 50 to 400); source: code/slicemech/control/ppo.py:601, PpoIters/CkptEvery
+  NrSecPerSec: "7.7 to 14.7"      # s of 5G-LENA computation per simulated second; source: code/EXPERIMENTS.md section 2 D0 and E7 smoke row (7.7 s measured, 14.7 s on a loaded machine)
+  MuVideo: "24.9"                 # Mbit/s; training-mean demand of the video tenant; source: data/calibration/n3_default.json contract.mu[0]
+  MuUrllc: "12.5"                 # Mbit/s; source: n3_default.json contract.mu[1]
+  MuMmtc: "4.2"                   # Mbit/s; source: n3_default.json contract.mu[2]
+  CellCapacity: "46.3"            # Mbit/s; B times r_bar_TRAIN = 106 x 0.4372; source: n3_default.json r_bar
+  TrainRegimeNeed: "98 percent"   # training-date value of regime target 1 (frac_sumH_gt_B 0.9786); source: n3_default.json diagnostics
+  TrainRegimeAllFit: "0 percent"  # regime target 2 (frac_all_caps_fit 0.0); source: n3_default.json diagnostics
+  TrainRegimeWeight: "88 percent" # regime target 3 (frac_weights_change_quota 0.8831); source: n3_default.json diagnostics
+  TrainRegimeWeighted: "39 percent" # regime target 4 (mean_weighted_share 0.3935); source: n3_default.json diagnostics
+  TrainRegimeOutage: "3.0 percent" # regime target 5 (gbr_outage 0.0295); source: n3_default.json diagnostics
+  GbrScaleNarrow: 0.9             # a scale that met the outage bound only narrowly on the training dates (0.0495 against 0.05); source: code/STATUS.md section 5.2
+  PpoPasses: 4                    # PPO passes per iteration; source: code/slicemech/control/ppo.py PPOConfig.passes
+  PpoMinibatch: 2048              # samples per gradient step; source: ppo.py PPOConfig.minibatch
+  PpoGradClip: 1                  # gradient-norm clip; source: ppo.py PPOConfig.grad_clip
+  PpoEntropy: "$10^{-3}$"         # entropy weight; source: ppo.py PPOConfig.entropy_coef
+  SigmaMin: 0.05                  # lower end of the learned exploration scale; source: ppo.py PPOConfig.sigma_min
+  SigmaMax: 1                     # upper end of the learned exploration scale; source: ppo.py PPOConfig.sigma_max
+  AScale: 4                       # intercept bound a_i = 4 tanh(.); source: code/slicemech/control/nets.py A_SCALE
+  KappaScale: 2                   # sensitivity bound kappa_i = 2 sigmoid(.); source: nets.py KAPPA_SCALE
+  UncParams: 18818                # parameters of the Unconstrained net; source: nets.py (counted by instantiating UnconstrainedNet)
+  MeasParams: 18241               # parameters of No reports and Protected net, kappa = 0; source: nets.py (MeasOnlyNet, Kappa0Net)
+  RidgeTenant: "$10^{-3}$"        # ridge penalty of the tenant forecaster; source: code/slicemech/forecast.py:126
+  RidgeOperator: "$10^{-8}$"      # ridge penalty of the operator forecaster; source: code/slicemech/control/features.py:131
+  StaticGridPoints: 232           # Static-weights grid: simplex of step 1/20 with every weight at least 0.05, plus equal weights; source: code/slicemech/control/static.py simplex_grid
+  StaticWeightFloor: 0.05         # smallest weight on the Static-weights grid; source: static.py simplex_grid(floor=0.05)
+  CemPop: 64                      # cross-entropy search population (Static weights for n > 3, Oracle); source: static.py:96, code/experiments/e1_value.py:128
+  CemIters: 20                    # cross-entropy iterations of Static weights for n > 3; source: static.py:96
+  CemElite: 8                     # elites of the cross-entropy searches; source: static.py:96, e1_value.py:128
+  OracleIters: 8                  # cross-entropy iterations per interval of the Oracle; source: e1_value.py:128
+  BanditRewardScale: "5 percent"  # EXP3 reward scale (gains are squashed by tanh(gain / scale)); source: code/slicemech/tenants/bandits.py
+  BanditEpsFloor: 0.05            # floor of the epsilon-greedy exploration probability; source: bandits.py eps_schedule
+  BanditEpsDecay: 0.985           # per-episode decay of the epsilon-greedy exploration probability; source: bandits.py eps_schedule
+  NonmonoGrid: 513                # evenly spaced reports of the H2b check; source: code/experiments/analyze.py NONMONO_GRID; e2_manipulation.py item 3
+  BrRefine: 3                     # best grid candidates refined by golden-section search; source: code/slicemech/pricing/response.py
+  BrCellSkip: "$2\\cdot10^{-9}$"   # ranges narrower than this multiple of C_i are skipped under the fixed-priority price; source: response.py docstring
+  BrEndEps: "$10^{-9}$"           # offset below the upper end of a range under the fixed-priority price (times C_i); source: response.py docstring
+  TractorGap: 5                   # s; idle runs longer than this are trimmed from the first URLLC capture; source: code/slicemech/data/tractor.py GAP_S
+  RacaMaxHold: 2                  # s; longest gap of CQI feedback filled by holding the last sample; source: code/slicemech/data/raca.py MAX_HOLD_S
+  NrRlcBuf: "4 MiB for the video slice and 1 MiB for each of the others"   # RLC buffer sizes; source: code/slicemech/nr/run.py E7_FLAGS rlc_buf (4194304, 1048576, 1048576 bytes)
+  NrRadii: "30, 60, 120, 200, 250, 300 and 400 m"   # radius grid of the NR calibration; source: code/experiments/e7_nr.py RADII
+  NrRadius: "250 m"               # chosen disc radius (TRAIN calibration); source: prereg/PREREG_DRAFT.md section 9 item 5
+  # Added by the Section VI reviser (wave 2, final pass, 2026-10-20); every value is an input, a fixed rule or a code constant, not a result.
+  EfiveOtherFactors: "0.7, 1.5 and 2"   # secondary H5b factors: code_next/experiments/e5_training_channel.py alphas {0.5, 0.7, 1.5, 2} minus analyze.py H5B_PRIMARY_ALPHA = 0.5; PREREG section 0 D8, section 5, section 9.3
+  DevDates: 21                    # development dates; source: prereg section 2; code_next/slicemech/data/puffer.py DEV_DATES
+  TestStart: "1 September 2024"   # first test date; source: code_next/slicemech/data/puffer.py test_dates
+  PowerSims: 400                  # simulated test sets per hypothesis and date count in the power analysis; source: code_next/experiments/analyze.py POWER_SIMS
+  PowerSimBoot: "2,000"           # bootstrap replicates per simulated test set; source: analyze.py POWER_SIM_BOOT
+  TractorOtherGap: 8              # s; longest zero run in the untrimmed URLLC-like captures; source: code_next/slicemech/data/tractor.py docstring
+  NrFreq: "3.5 GHz"               # carrier frequency of the 5G-LENA scenario; source: ICC/code/ns3/vslice-nr-5g.cc main() defaults; code_next/slicemech/nr/run.py:4 (source identical)
+  NrTxPower: "35 dBm"             # gNB transmit power; source: vslice-nr-5g.cc main() defaults
+  NrUeSpeed: "3 m/s"              # walking speed of the video UEs; source: vslice-nr-5g.cc main() defaults
+  NrGnbArray: "2-by-4"            # gNB antenna array; source: vslice-nr-5g.cc main() defaults
+  NrUeArray: "1-by-2"             # UE antenna array; source: vslice-nr-5g.cc main() defaults
+  NrUeHeight: "1.5 m"             # UE height; source: vslice-nr-5g.cc main() defaults
+  NrWindowMinutes: "26 to 49"     # minutes of computation per 5G-LENA window; source: WindowLen x NrSecPerSec / 60
+  nTestDates: 16            # decided 2026-10-20 by the DEV power analysis (prereg/PREREG.md §9.4; freeze field test_dates)

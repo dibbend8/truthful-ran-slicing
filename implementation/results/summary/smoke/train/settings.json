@@ -1,0 +1,387 @@
+{
+ "macros": {
+  "SweepDelays": {
+   "value": "1, 2, 5 and 15 s",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "SweepLoads": {
+   "value": "0.5 to 1.1",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "SweepLeads": {
+   "value": "0, 1.05 and 4.004 s",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "MarginWelfare": {
+   "value": "1 percent",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "FtIters": {
+   "value": 50,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "FtWindows": {
+   "value": 4,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "FiveSeeds": {
+   "value": 3,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "NrWindows": {
+   "value": 4,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "NrRuns": {
+   "value": 12,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "RsqFlag": {
+   "value": 0.5,
+   "fmt": "{:g}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "TestDateRange": {
+   "value": "Sundays and Mondays from 1 September to 21 October 2024",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "WindowLen": {
+   "value": 200,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "WarmupLen": {
+   "value": 40,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "VideoChannels": {
+   "value": 7,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "LoadRho": {
+   "value": 0.9,
+   "fmt": "{:g}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "LoadFracs": {
+   "value": "0.6, 0.3 and 0.1",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "TargetNeedFrac": {
+   "value": "60 percent",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "TargetAllFit": {
+   "value": "5 percent",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "TargetWeightQuota": {
+   "value": "50 percent",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "TargetWeightedPRBs": {
+   "value": "25 percent",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "TargetOutage": {
+   "value": "5 percent",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "PpoIters": {
+   "value": 400,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "PpoWindows": {
+   "value": 32,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "PpoClip": {
+   "value": 0.2,
+   "fmt": "{:g}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "SeedsMain": {
+   "value": 5,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "SeedsSweep": {
+   "value": 3,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "BisectIters": {
+   "value": 40,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "MainN": {
+   "value": 3,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "MainDelay": {
+   "value": 2,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "MainLoad": {
+   "value": 0.9,
+   "fmt": "{:g}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "ScalingN": {
+   "value": "6 and 9",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "SweepSeeds": {
+   "value": 3,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "BrGrid": {
+   "value": 512,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "BrEvery": {
+   "value": 4,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "BanditMults": {
+   "value": "0.5, 0.67, 0.8, 0.9, 1, 1.1, 1.25, 1.5 and 2",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "BanditEpisodes": {
+   "value": 400,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "BanditRuns": {
+   "value": 4,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "EfiveFactor": {
+   "value": "0.5, 0.7, 1.5 and 2",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "EfiveTargets": {
+   "value": "the video tenant and the URLLC-like tenant",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "EfiveEvalWindows": {
+   "value": 4,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: spec/params.yaml experiment_settings"
+  },
+  "RateMean": {
+   "value": 0.43716281182616895,
+   "fmt": "{:.2f}",
+   "unit": "Mbit/s per PRB",
+   "source": "settings: data/calibration/n3_default.json r_bar (TRAIN mean per-PRB rate)"
+  },
+  "RateMin": {
+   "value": 0.018093239999999997,
+   "fmt": "{:.3f}",
+   "unit": "Mbit/s per PRB",
+   "source": "settings: slicemech.phy.RATE_TABLE (CQI 1, TS 38.214 Table 5.2.2.1-2)"
+  },
+  "RateMax": {
+   "value": 0.65989836,
+   "fmt": "{:.2f}",
+   "unit": "Mbit/s per PRB",
+   "source": "settings: slicemech.phy.RATE_TABLE (CQI 15)"
+  },
+  "PpoLrKappaZero": {
+   "value": "$3\\times10^{-4}$",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoLrEndKappaZero": {
+   "value": "$3\\times10^{-5}$",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoSamplesKappaZero": {
+   "value": 8,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoSigmaKappaZero": {
+   "value": 0.6,
+   "fmt": "{:g}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoLrMeasOnly": {
+   "value": "$3\\times10^{-4}$",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoLrEndMeasOnly": {
+   "value": "$3\\times10^{-5}$",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoSamplesMeasOnly": {
+   "value": 8,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoSigmaMeasOnly": {
+   "value": 0.6,
+   "fmt": "{:g}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoLrProtected": {
+   "value": "$3\\times10^{-4}$",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoLrEndProtected": {
+   "value": "$3\\times10^{-5}$",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoSamplesProtected": {
+   "value": 8,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoSigmaProtected": {
+   "value": 0.6,
+   "fmt": "{:g}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoLrUnconstrained": {
+   "value": "$3\\times10^{-4}$",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoLrEndUnconstrained": {
+   "value": "$3\\times10^{-5}$",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoSamplesUnconstrained": {
+   "value": 8,
+   "fmt": "{:d}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoSigmaUnconstrained": {
+   "value": 0.6,
+   "fmt": "{:g}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoLr": {
+   "value": "$3\\times10^{-4}$",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoLrEnd": {
+   "value": "$3\\times10^{-5}$",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoSamples": {
+   "value": "8",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  },
+  "PpoSigma": {
+   "value": "0.6",
+   "fmt": "{:.2f}",
+   "unit": "",
+   "source": "settings: results/raw/smoke_train/train/models/selection.json (DEV selection)"
+  }
+ },
+ "tables": {},
+ "hypotheses": {},
+ "notes": [],
+ "experiment": "settings",
+ "split": "none"
+}

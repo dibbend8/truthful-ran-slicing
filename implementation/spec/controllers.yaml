@@ -1,0 +1,140 @@
+# 2026-10-20 orchestrator: meas_only renamed 'Report-free controller' / 'No reports' to match the paper (Table IV)
+# and to avoid a clash with 'measurement-only retraining', a property of the protected controller.
+# Names, short labels and colors used in every table and figure (figure_style.md: proposed=blue, unprotected=orange, others gray)
+- key: protected
+  name: Strategy-proof learned controller
+  label: Protected (ours)
+  observes: reports + released measurements + CQI
+  learns: own-report score network (kappa>=0) on realized service, measurement-only retraining
+  charges: full-decision price
+  color: "#2a78d6"
+  marker: o
+- key: fixed_price
+  name: Learned controller with fixed-priority price
+  label: Protected net, fixed price
+  observes: as protected
+  learns: as protected
+  charges: fixed-priority price
+  color: "#6b6b6b"
+  marker: s
+- key: unprotected
+  name: Unconstrained learned controller
+  label: Unconstrained net
+  observes: reports + released measurements + CQI
+  learns: unconstrained score network MLP(c, z) on realized service
+  charges: fixed-priority price (or usage tariff where stated)
+  color: "#eb6834"
+  marker: "^"
+- key: meas_only
+  name: Report-free controller
+  label: No reports
+  observes: released measurements + CQI (no reports)
+  learns: intercept-only score network; contract bounds use the operator forecast
+  charges: usage tariff
+  color: "#9a9a9a"
+  marker: v
+- key: static
+  name: Static-priority controller
+  label: Static weights
+  observes: reports
+  learns: one weight vector fitted on training dates
+  charges: full-decision price (equal to the envelope price of the fixed map)
+  color: "#b5b5b5"
+  marker: D
+- key: equal
+  name: Equal-priority controller
+  label: Equal weights
+  observes: reports
+  learns: nothing
+  charges: envelope price
+  color: "#cfcfcf"
+  marker: x
+- key: direct
+  name: Model-based direct optimizer
+  label: Direct optimizer
+  observes: reports + CQI
+  learns: nothing (maximizes declared value inside the contract bounds)
+  charges: full-decision formula applied to the divisible direct decision (prop:direct(b))
+  color: "#4d4d4d"
+  marker: P
+- key: oracle
+  name: Hindsight oracle
+  label: Oracle
+  observes: true arrivals and CQI (reference only)
+  learns: per-interval hindsight weights
+  charges: none
+  color: "#000000"
+  marker: "*"
+# Labeled variants that figures plot (E1 diagnostics and E2); each uses the exact label string below.
+- key: unprotected_usage
+  name: Unconstrained learned controller with usage tariff
+  label: Unconstrained net, usage tariff
+  observes: as unprotected
+  learns: as unprotected
+  charges: usage tariff
+  color: "#f2a07a"
+  marker: "^"
+- key: unprotected_envelope
+  name: Unconstrained learned controller with envelope formula
+  label: Unconstrained net, envelope formula
+  observes: as unprotected
+  learns: as unprotected
+  charges: envelope formula applied to its non-monotone decision
+  color: "#b9501f"
+  marker: "^"
+- key: direct_truerates
+  name: Model-based direct optimizer with true current rates
+  label: Direct optimizer, true rates
+  observes: reports + true current CQI rates (diagnostic of rate staleness)
+  learns: nothing
+  charges: full-decision formula applied to the divisible direct decision (prop:direct(b))
+  color: "#7a7a7a"
+  marker: P
+- key: meas_only_strong
+  name: Report-free controller with a stronger forecaster (defined but not run; no paper table or figure uses it)
+  label: No reports, stronger forecaster
+  observes: released measurements + CQI (no reports)
+  learns: as meas_only; the forecaster is stronger (diagnostic of a weak-forecaster explanation)
+  charges: usage tariff
+  color: "#bdbdbd"
+  marker: v
+# kappa = 0 ablation (E1 arm 'kappa0', registry arm 'kappa0'; added by the experiment integrator 2026-10-19 so that
+# tables name it from this file like every other arm; not plotted in a paper figure).
+- key: kappa0
+  name: Protected learned controller without report sensitivity (kappa = 0 ablation)
+  label: "Protected net, κ = 0"
+  observes: reports (through the contract bounds only) + released measurements + CQI
+  learns: score network with kappa fixed at 0; reports enter only the contract bounds
+  charges: full-decision price
+  color: "#8c8c8c"
+  marker: h
+# Series that are not controllers of their own (round-3 review, figure_style.md rules 2 and 6: every plotted series
+# takes its label, colour and marker from this file; the orange identity belongs to the Unconstrained net only).
+# E5 (fig:training): the two retraining pipelines of the Protected arm.
+- key: retrain_measurement
+  name: Protected net retrained on released measurements (measurement-only retraining)
+  label: Retraining on measurements (ours)
+  observes: released measurements only (reports, quotas, prices and deliveries hidden)
+  learns: as protected; fine-tuned on the retraining windows
+  charges: full-decision price
+  color: "#2a78d6"
+  marker: o
+- key: retrain_stored
+  name: Protected net retrained on stored reports
+  label: Retraining on stored reports
+  observes: the logged reports of the retraining windows
+  learns: as protected; fine-tuned on the stored report logs (the channel the paper closes)
+  charges: full-decision price
+  color: "#5c5c5c"
+  marker: d
+# E7 (fig:nr): the Unconstrained net (fixed-priority price) with one best-responding tenant; same controller, so the
+# same colour, with its own open marker.
+- key: unprotected_br
+  name: Unconstrained learned controller with a best-responding tenant
+  label: Unconstrained net, best response
+  observes: as unprotected
+  learns: as unprotected
+  charges: fixed-priority price
+  color: "#eb6834"
+  marker: ">"
+  open: true

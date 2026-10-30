@@ -1,0 +1,19 @@
+--- a/contrib/nr/model/nr-amc.cc
++++ b/contrib/nr/model/nr-amc.cc
+@@ -1,3 +1,4 @@
++// Local NR DSO overlay: installed v4.1.1 TU plus v5.0 CalculateTbSize only.
+ // Copyright (c) 2019 Centre Tecnologic de Telecomunicacions de Catalunya (CTTC)
+ //
+ // SPDX-License-Identifier: GPL-2.0-only
+@@ -136,7 +137,10 @@
+                                        mcs); // max size of a code block (including m_crcLen)
+         if (tbSize > cbSize)                 // segmentation of the transport block occurs
+         {
+-            double C = ceil(tbSize / cbSize);
++            // TS 38.212 Section 5.2.2: the number of code blocks is
++            // C = ceil(B / (Kcb - L)); the division must be carried out in
++            // real arithmetic, as integer division truncates before ceil.
++            double C = std::ceil(static_cast<double>(tbSize) / cbSize);
+             tbSize = payloadSize - static_cast<uint32_t>(
+                                        C * m_crcLen); // subtract bits of m_crcLen used in code
+                                                       // blocks, in case of code block segmentation

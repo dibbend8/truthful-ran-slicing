@@ -1,0 +1,14 @@
+--- a/contrib/nr/model/nr-mac-scheduler-ofdma.cc
++++ b/contrib/nr/model/nr-mac-scheduler-ofdma.cc
+@@ -791,7 +791,10 @@
+ 
+     for (auto rbg : allocatedRbgs)
+     {
+-        NS_ASSERT_MSG(rbgNotchedBitmask.at(rbg), "Scheduled notched resource");
++        // ICC rewrite patch (2026-10-20): this helper also builds UPLINK DCIs, but it checks the
++        // DOWNLINK notch mask. The per-slice DL masks of the E7 scenario then aborted on a valid
++        // UL allocation. The downlink scheduler never allocates a notched RBG, so the check is
++        // dropped here instead of mixing the UL allocation with the DL mask.
+         rbgBitmask.at(rbg) = true;
+     }
+     return rbgBitmask;

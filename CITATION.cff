@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this implementation, please cite this software release and the accompanying manuscript."
+type: software
+title: "Truthful Reporting for Learning-Based RAN Slicing: Research Implementation"
+version: "v0.1.0"
+date-released: "2026-10-30"
+repository-code: "https://github.com/dibbend8/truthful-ran-slicing"
+url: "https://github.com/dibbend8/truthful-ran-slicing/releases/tag/v0.1.0"
+authors:
+  - family-names: Mishra
+    given-names: Prashant
+    affiliation: "Department of Electrical Engineering, IIT Indore"
+  - family-names: Kushwah
+    given-names: Rahul
+    affiliation: "G. S. Sanyal School of Telecommunications, IIT Kharagpur"
+  - family-names: Roy
+    given-names: Dibbendu
+    affiliation: "G. S. Sanyal School of Telecommunications, IIT Kharagpur"
+abstract: >-
+  Research code for truthful demand reporting in learning-based RAN slicing,
+  including PRB allocation, envelope payments, protected priority maps,
+  controller training, trace-driven evaluation, and recorded result summaries.
+keywords:
+  - RAN slicing
+  - mechanism design
+  - truthful reporting
+  - reinforcement learning

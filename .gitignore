@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+reproduced-figures*/
+implementation/data/
+implementation/results/models/
+implementation/results/raw/
+implementation/results/figures/
+implementation/paper/
+*.pt
+*.pth

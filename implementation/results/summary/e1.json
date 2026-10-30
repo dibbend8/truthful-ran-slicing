@@ -1,0 +1,2404 @@
+{
+ "macros": {
+  "EoneDelay": {
+   "value": 2.0,
+   "fmt": "{:.0f}",
+   "unit": "s",
+   "source": "e1: measurement delay of the main cell (E1 manifest of the default configuration)",
+   "text": "2"
+  },
+  "EoneGain": {
+   "value": 0.11170700990260365,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1a: W(Protected (ours)) - W(No reports), main cell",
+   "text": "0.11"
+  },
+  "EoneGainLo": {
+   "value": 0.0844509951446882,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1a: W(Protected (ours)) - W(No reports), main cell (95% CI lower)",
+   "text": "0.08"
+  },
+  "EoneGainHi": {
+   "value": 0.13335799339439358,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1a: W(Protected (ours)) - W(No reports), main cell (95% CI upper)",
+   "text": "0.13"
+  },
+  "EoneGainCI": {
+   "value": "[0.08, 0.13]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1a: W(Protected (ours)) - W(No reports), main cell (95% CI)",
+   "text": "[0.08, 0.13]"
+  },
+  "EoneGainPct": {
+   "value": 0.20009409275856962,
+   "fmt": "{:.2f}",
+   "unit": "percent of welfare of No reports on the same windows",
+   "source": "e1: H1a: W(Protected (ours)) - W(No reports), main cell",
+   "text": "0.20"
+  },
+  "EoneGainPctCI": {
+   "value": "[0.15, 0.24]",
+   "fmt": "{:.2f}",
+   "unit": "percent",
+   "source": "e1: H1a: W(Protected (ours)) - W(No reports), main cell (95% CI of the percentage)",
+   "text": "[0.15, 0.24]"
+  },
+  "EoneGainReports": {
+   "value": 0.11170700990260365,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: alias of EoneGain",
+   "text": "0.11"
+  },
+  "EonePct": {
+   "value": 0.20009409275856962,
+   "fmt": "{:.2f}",
+   "unit": "percent of welfare of No reports on the same windows",
+   "source": "e1: H1a as a percentage (alias of EoneGainPct)",
+   "text": "0.20"
+  },
+  "EoneDates": {
+   "value": 15,
+   "fmt": "{:d}",
+   "unit": "dates",
+   "source": "e1: dates with a positive date-mean H1a difference",
+   "text": "15"
+  },
+  "nTestDates": {
+   "value": 16,
+   "fmt": "{:d}",
+   "unit": "dates",
+   "source": "e1: dates in the analysis",
+   "text": "16"
+  },
+  "EoneWindows": {
+   "value": 128,
+   "fmt": "{:d}",
+   "unit": "windows",
+   "source": "e1: windows in the H1a analysis",
+   "text": "128"
+  },
+  "EoneMeasWelfare": {
+   "value": 55.82724025610671,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: welfare of No reports",
+   "text": "55.83"
+  },
+  "EoneProtWelfare": {
+   "value": 55.938947266009315,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: welfare of Protected (ours)",
+   "text": "55.94"
+  },
+  "EoneSlopeDelay": {
+   "value": 0.03428866440266883,
+   "fmt": "{:.3f}",
+   "unit": "credits per interval per unit of d",
+   "source": "e1: H1b slope over d",
+   "text": "0.034"
+  },
+  "EoneSlopeDelayLo": {
+   "value": 0.030126557800725928,
+   "fmt": "{:.3f}",
+   "unit": "credits per interval per unit of d",
+   "source": "e1: H1b slope over d (95% CI lower)",
+   "text": "0.030"
+  },
+  "EoneSlopeDelayHi": {
+   "value": 0.038707954976740386,
+   "fmt": "{:.3f}",
+   "unit": "credits per interval per unit of d",
+   "source": "e1: H1b slope over d (95% CI upper)",
+   "text": "0.039"
+  },
+  "EoneSlopeDelayCI": {
+   "value": "[0.030, 0.039]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval per unit of d",
+   "source": "e1: H1b slope over d (95% CI)",
+   "text": "[0.030, 0.039]"
+  },
+  "EoneSlopeLead": {
+   "value": 0.0003189797956163204,
+   "fmt": "{:.3f}",
+   "unit": "credits per interval per unit of lead_s",
+   "source": "e1: H1b slope over lead_s",
+   "text": "0.000"
+  },
+  "EoneSlopeLeadLo": {
+   "value": -0.006234637420202105,
+   "fmt": "{:.3f}",
+   "unit": "credits per interval per unit of lead_s",
+   "source": "e1: H1b slope over lead_s (95% CI lower)",
+   "text": "\\ensuremath{-}0.006"
+  },
+  "EoneSlopeLeadHi": {
+   "value": 0.00533751005183789,
+   "fmt": "{:.3f}",
+   "unit": "credits per interval per unit of lead_s",
+   "source": "e1: H1b slope over lead_s (95% CI upper)",
+   "text": "0.005"
+  },
+  "EoneSlopeLeadCI": {
+   "value": "[\\ensuremath{-}0.006, 0.005]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval per unit of lead_s",
+   "source": "e1: H1b slope over lead_s (95% CI)",
+   "text": "[\\ensuremath{-}0.006, 0.005]"
+  },
+  "EoneGainDelayOne": {
+   "value": 0.0156330357233172,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1a contrast at d = 1 s",
+   "text": "0.02"
+  },
+  "EoneGainDelayFive": {
+   "value": 0.28542388890677933,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1a contrast at d = 5 s",
+   "text": "0.29"
+  },
+  "EoneGainDelayFifteen": {
+   "value": 0.5314767220462924,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1a contrast at d = 15 s",
+   "text": "0.53"
+  },
+  "EoneStatic": {
+   "value": 1.3989429272644291,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1c: W(Protected (ours)) - W(Static weights)",
+   "text": "1.40"
+  },
+  "EoneStaticLo": {
+   "value": 1.2145789188346277,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1c: W(Protected (ours)) - W(Static weights) (95% CI lower)",
+   "text": "1.21"
+  },
+  "EoneStaticHi": {
+   "value": 1.60709393529688,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1c: W(Protected (ours)) - W(Static weights) (95% CI upper)",
+   "text": "1.61"
+  },
+  "EoneStaticCI": {
+   "value": "[1.21, 1.61]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1c: W(Protected (ours)) - W(Static weights) (95% CI)",
+   "text": "[1.21, 1.61]"
+  },
+  "EoneStaticPct": {
+   "value": 2.5649849944559486,
+   "fmt": "{:.2f}",
+   "unit": "percent of Static weights welfare on the same windows",
+   "source": "e1: H1c: W(Protected (ours)) - W(Static weights)",
+   "text": "2.56"
+  },
+  "EoneStaticPctCI": {
+   "value": "[2.23, 2.94]",
+   "fmt": "{:.2f}",
+   "unit": "percent",
+   "source": "e1: H1c: W(Protected (ours)) - W(Static weights) (95% CI of the percentage)",
+   "text": "[2.23, 2.94]"
+  },
+  "EoneDirect": {
+   "value": 0.4465934930881668,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1d: W(Protected (ours)) - W(Direct optimizer)",
+   "text": "0.45"
+  },
+  "EoneDirectLo": {
+   "value": 0.35987816688267876,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1d: W(Protected (ours)) - W(Direct optimizer) (95% CI lower)",
+   "text": "0.36"
+  },
+  "EoneDirectHi": {
+   "value": 0.5450861370854417,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1d: W(Protected (ours)) - W(Direct optimizer) (95% CI upper)",
+   "text": "0.55"
+  },
+  "EoneDirectCI": {
+   "value": "[0.36, 0.55]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: H1d: W(Protected (ours)) - W(Direct optimizer) (95% CI)",
+   "text": "[0.36, 0.55]"
+  },
+  "EoneDirectPct": {
+   "value": 0.804783835473371,
+   "fmt": "{:.2f}",
+   "unit": "percent of Direct optimizer welfare on the same windows",
+   "source": "e1: H1d: W(Protected (ours)) - W(Direct optimizer)",
+   "text": "0.80"
+  },
+  "EoneDirectPctCI": {
+   "value": "[0.65, 0.98]",
+   "fmt": "{:.2f}",
+   "unit": "percent",
+   "source": "e1: H1d: W(Protected (ours)) - W(Direct optimizer) (95% CI of the percentage)",
+   "text": "[0.65, 0.98]"
+  },
+  "EoneTrueRate": {
+   "value": 0.48489157240121794,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: W(Direct optimizer, true rates) - W(Direct optimizer)",
+   "text": "0.48"
+  },
+  "EoneTrueRateLo": {
+   "value": 0.40356260173785374,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: W(Direct optimizer, true rates) - W(Direct optimizer) (95% CI lower)",
+   "text": "0.40"
+  },
+  "EoneTrueRateHi": {
+   "value": 0.5661810594092207,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: W(Direct optimizer, true rates) - W(Direct optimizer) (95% CI upper)",
+   "text": "0.57"
+  },
+  "EoneTrueRateCI": {
+   "value": "[0.40, 0.57]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: W(Direct optimizer, true rates) - W(Direct optimizer) (95% CI)",
+   "text": "[0.40, 0.57]"
+  },
+  "EoneTrueRatePct": {
+   "value": 0.8737988919796595,
+   "fmt": "{:.2f}",
+   "unit": "percent of Direct optimizer welfare",
+   "source": "e1: W(Direct optimizer, true rates) - W(Direct optimizer)",
+   "text": "0.87"
+  },
+  "EoneTrueRatePctCI": {
+   "value": "[0.73, 1.02]",
+   "fmt": "{:.2f}",
+   "unit": "percent",
+   "source": "e1: W(Direct optimizer, true rates) - W(Direct optimizer) (95% CI of the percentage)",
+   "text": "[0.73, 1.02]"
+  },
+  "EoneGainVideo": {
+   "value": 0.005764854462826097,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports, Video tenant: on-time value under Protected (ours) minus under No reports (E1 default configuration, truthful runs, seeds averaged per window)",
+   "text": "0.01"
+  },
+  "EoneGainVideoLo": {
+   "value": -0.00744942118137475,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports, Video tenant: on-time value under Protected (ours) minus under No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI lower)",
+   "text": "\\ensuremath{-}0.01"
+  },
+  "EoneGainVideoHi": {
+   "value": 0.018626320164086604,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports, Video tenant: on-time value under Protected (ours) minus under No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI upper)",
+   "text": "0.02"
+  },
+  "EoneGainVideoCI": {
+   "value": "[\\ensuremath{-}0.01, 0.02]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports, Video tenant: on-time value under Protected (ours) minus under No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI)",
+   "text": "[\\ensuremath{-}0.01, 0.02]"
+  },
+  "EoneGainVideoShare": {
+   "value": 5.160691766660321,
+   "fmt": "{:.1f}",
+   "unit": "percent of the total value of reports (EoneGain, all tenants)",
+   "source": "e1: share of the value of reports that the Video tenant receives (E1 default configuration, truthful runs, seeds averaged per window; ratio of means)",
+   "text": "5.2"
+  },
+  "EoneGainVideoShareLo": {
+   "value": -7.273603301895257,
+   "fmt": "{:.1f}",
+   "unit": "percent of the total value of reports (EoneGain, all tenants)",
+   "source": "e1: share of the value of reports that the Video tenant receives (E1 default configuration, truthful runs, seeds averaged per window; ratio of means) (95% CI lower)",
+   "text": "\\ensuremath{-}7.3"
+  },
+  "EoneGainVideoShareHi": {
+   "value": 16.307906316564132,
+   "fmt": "{:.1f}",
+   "unit": "percent of the total value of reports (EoneGain, all tenants)",
+   "source": "e1: share of the value of reports that the Video tenant receives (E1 default configuration, truthful runs, seeds averaged per window; ratio of means) (95% CI upper)",
+   "text": "16.3"
+  },
+  "EoneGainVideoShareCI": {
+   "value": "[\\ensuremath{-}7.3, 16.3]",
+   "fmt": "{:.2f}",
+   "unit": "percent of the total value of reports (EoneGain, all tenants)",
+   "source": "e1: share of the value of reports that the Video tenant receives (E1 default configuration, truthful runs, seeds averaged per window; ratio of means) (95% CI)",
+   "text": "[\\ensuremath{-}7.3, 16.3]"
+  },
+  "EoneMissDiffVideo": {
+   "value": -0.026000113360769198,
+   "fmt": "{:.2f}",
+   "unit": "percentage points of the class's traffic that misses its PDB (negative = fewer misses)",
+   "source": "e1: deadline-miss share of the Video tenant, Protected (ours) minus No reports (E1 default configuration, truthful runs, seeds averaged per window)",
+   "text": "\\ensuremath{-}0.03"
+  },
+  "EoneMissDiffVideoLo": {
+   "value": -0.07478162007026168,
+   "fmt": "{:.2f}",
+   "unit": "percentage points of the class's traffic that misses its PDB (negative = fewer misses)",
+   "source": "e1: deadline-miss share of the Video tenant, Protected (ours) minus No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI lower)",
+   "text": "\\ensuremath{-}0.07"
+  },
+  "EoneMissDiffVideoHi": {
+   "value": 0.023568226952385658,
+   "fmt": "{:.2f}",
+   "unit": "percentage points of the class's traffic that misses its PDB (negative = fewer misses)",
+   "source": "e1: deadline-miss share of the Video tenant, Protected (ours) minus No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI upper)",
+   "text": "0.02"
+  },
+  "EoneMissDiffVideoCI": {
+   "value": "[\\ensuremath{-}0.07, 0.02]",
+   "fmt": "{:.2f}",
+   "unit": "percentage points of the class's traffic that misses its PDB (negative = fewer misses)",
+   "source": "e1: deadline-miss share of the Video tenant, Protected (ours) minus No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI)",
+   "text": "[\\ensuremath{-}0.07, 0.02]"
+  },
+  "EoneGainUrllc": {
+   "value": 0.09743156618895546,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports, URLLC-like tenant: on-time value under Protected (ours) minus under No reports (E1 default configuration, truthful runs, seeds averaged per window)",
+   "text": "0.10"
+  },
+  "EoneGainUrllcLo": {
+   "value": 0.0729748589671844,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports, URLLC-like tenant: on-time value under Protected (ours) minus under No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI lower)",
+   "text": "0.07"
+  },
+  "EoneGainUrllcHi": {
+   "value": 0.11704420034881552,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports, URLLC-like tenant: on-time value under Protected (ours) minus under No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI upper)",
+   "text": "0.12"
+  },
+  "EoneGainUrllcCI": {
+   "value": "[0.07, 0.12]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports, URLLC-like tenant: on-time value under Protected (ours) minus under No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI)",
+   "text": "[0.07, 0.12]"
+  },
+  "EoneMissDiffUrllc": {
+   "value": -0.2636915670094231,
+   "fmt": "{:.2f}",
+   "unit": "percentage points of the class's traffic that misses its PDB (negative = fewer misses)",
+   "source": "e1: deadline-miss share of the URLLC-like tenant, Protected (ours) minus No reports (E1 default configuration, truthful runs, seeds averaged per window)",
+   "text": "\\ensuremath{-}0.26"
+  },
+  "EoneMissDiffUrllcLo": {
+   "value": -0.31757757611995036,
+   "fmt": "{:.2f}",
+   "unit": "percentage points of the class's traffic that misses its PDB (negative = fewer misses)",
+   "source": "e1: deadline-miss share of the URLLC-like tenant, Protected (ours) minus No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI lower)",
+   "text": "\\ensuremath{-}0.32"
+  },
+  "EoneMissDiffUrllcHi": {
+   "value": -0.19816067546901084,
+   "fmt": "{:.2f}",
+   "unit": "percentage points of the class's traffic that misses its PDB (negative = fewer misses)",
+   "source": "e1: deadline-miss share of the URLLC-like tenant, Protected (ours) minus No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI upper)",
+   "text": "\\ensuremath{-}0.20"
+  },
+  "EoneMissDiffUrllcCI": {
+   "value": "[\\ensuremath{-}0.32, \\ensuremath{-}0.20]",
+   "fmt": "{:.2f}",
+   "unit": "percentage points of the class's traffic that misses its PDB (negative = fewer misses)",
+   "source": "e1: deadline-miss share of the URLLC-like tenant, Protected (ours) minus No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI)",
+   "text": "[\\ensuremath{-}0.32, \\ensuremath{-}0.20]"
+  },
+  "EoneGainMmtc": {
+   "value": 0.008510589250821854,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports, mMTC-like tenant: on-time value under Protected (ours) minus under No reports (E1 default configuration, truthful runs, seeds averaged per window)",
+   "text": "0.01"
+  },
+  "EoneGainMmtcLo": {
+   "value": 0.005905551733693698,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports, mMTC-like tenant: on-time value under Protected (ours) minus under No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI lower)",
+   "text": "0.01"
+  },
+  "EoneGainMmtcHi": {
+   "value": 0.011398363636335798,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports, mMTC-like tenant: on-time value under Protected (ours) minus under No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI upper)",
+   "text": "0.01"
+  },
+  "EoneGainMmtcCI": {
+   "value": "[0.01, 0.01]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports, mMTC-like tenant: on-time value under Protected (ours) minus under No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI)",
+   "text": "[0.01, 0.01]"
+  },
+  "EoneMissDiffMmtc": {
+   "value": -0.4062021844526513,
+   "fmt": "{:.2f}",
+   "unit": "percentage points of the class's traffic that misses its PDB (negative = fewer misses)",
+   "source": "e1: deadline-miss share of the mMTC-like tenant, Protected (ours) minus No reports (E1 default configuration, truthful runs, seeds averaged per window)",
+   "text": "\\ensuremath{-}0.41"
+  },
+  "EoneMissDiffMmtcLo": {
+   "value": -0.5443310040065522,
+   "fmt": "{:.2f}",
+   "unit": "percentage points of the class's traffic that misses its PDB (negative = fewer misses)",
+   "source": "e1: deadline-miss share of the mMTC-like tenant, Protected (ours) minus No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI lower)",
+   "text": "\\ensuremath{-}0.54"
+  },
+  "EoneMissDiffMmtcHi": {
+   "value": -0.2815881084382813,
+   "fmt": "{:.2f}",
+   "unit": "percentage points of the class's traffic that misses its PDB (negative = fewer misses)",
+   "source": "e1: deadline-miss share of the mMTC-like tenant, Protected (ours) minus No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI upper)",
+   "text": "\\ensuremath{-}0.28"
+  },
+  "EoneMissDiffMmtcCI": {
+   "value": "[\\ensuremath{-}0.54, \\ensuremath{-}0.28]",
+   "fmt": "{:.2f}",
+   "unit": "percentage points of the class's traffic that misses its PDB (negative = fewer misses)",
+   "source": "e1: deadline-miss share of the mMTC-like tenant, Protected (ours) minus No reports (E1 default configuration, truthful runs, seeds averaged per window) (95% CI)",
+   "text": "[\\ensuremath{-}0.54, \\ensuremath{-}0.28]"
+  },
+  "EoneKappaZero": {
+   "value": 0.10270599635503871,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: W(Protected (ours)) - W(Protected net, \u03ba = 0) (E1 default configuration, truthful runs, seeds averaged per window)",
+   "text": "0.10"
+  },
+  "EoneKappaZeroLo": {
+   "value": 0.08808960466188803,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: W(Protected (ours)) - W(Protected net, \u03ba = 0) (E1 default configuration, truthful runs, seeds averaged per window) (95% CI lower)",
+   "text": "0.09"
+  },
+  "EoneKappaZeroHi": {
+   "value": 0.11742492939884162,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: W(Protected (ours)) - W(Protected net, \u03ba = 0) (E1 default configuration, truthful runs, seeds averaged per window) (95% CI upper)",
+   "text": "0.12"
+  },
+  "EoneKappaZeroCI": {
+   "value": "[0.09, 0.12]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: W(Protected (ours)) - W(Protected net, \u03ba = 0) (E1 default configuration, truthful runs, seeds averaged per window) (95% CI)",
+   "text": "[0.09, 0.12]"
+  },
+  "EoneKappaZeroVsFree": {
+   "value": 0.00900101354756494,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: W(Protected net, \u03ba = 0) - W(No reports) (E1 default configuration, truthful runs, seeds averaged per window)",
+   "text": "0.01"
+  },
+  "EoneKappaZeroVsFreeLo": {
+   "value": -0.015205716582940832,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: W(Protected net, \u03ba = 0) - W(No reports) (E1 default configuration, truthful runs, seeds averaged per window) (95% CI lower)",
+   "text": "\\ensuremath{-}0.02"
+  },
+  "EoneKappaZeroVsFreeHi": {
+   "value": 0.02369852326714544,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: W(Protected net, \u03ba = 0) - W(No reports) (E1 default configuration, truthful runs, seeds averaged per window) (95% CI upper)",
+   "text": "0.02"
+  },
+  "EoneKappaZeroVsFreeCI": {
+   "value": "[\\ensuremath{-}0.02, 0.02]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: W(Protected net, \u03ba = 0) - W(No reports) (E1 default configuration, truthful runs, seeds averaged per window) (95% CI)",
+   "text": "[\\ensuremath{-}0.02, 0.02]"
+  },
+  "EoneLoadSlope": {
+   "value": -0.11057942992779725,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval per unit of offered load",
+   "source": "e1: D3: OLS slope of the per-window H1a difference W(Protected (ours)) - W(No reports) on the window's offered load (date-cluster bootstrap)",
+   "text": "\\ensuremath{-}0.11"
+  },
+  "EoneLoadSlopeLo": {
+   "value": -0.17349195613956983,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval per unit of offered load",
+   "source": "e1: D3: OLS slope of the per-window H1a difference W(Protected (ours)) - W(No reports) on the window's offered load (date-cluster bootstrap) (95% CI lower)",
+   "text": "\\ensuremath{-}0.17"
+  },
+  "EoneLoadSlopeHi": {
+   "value": -0.04269808837880654,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval per unit of offered load",
+   "source": "e1: D3: OLS slope of the per-window H1a difference W(Protected (ours)) - W(No reports) on the window's offered load (date-cluster bootstrap) (95% CI upper)",
+   "text": "\\ensuremath{-}0.04"
+  },
+  "EoneLoadSlopeCI": {
+   "value": "[\\ensuremath{-}0.17, \\ensuremath{-}0.04]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval per unit of offered load",
+   "source": "e1: D3: OLS slope of the per-window H1a difference W(Protected (ours)) - W(No reports) on the window's offered load (date-cluster bootstrap) (95% CI)",
+   "text": "[\\ensuremath{-}0.17, \\ensuremath{-}0.04]"
+  },
+  "EoneGainRhoHigh": {
+   "value": 0.08392242497329416,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports W(Protected (ours)) - W(No reports) at offered load rho = 1.1 (E1 configuration rho1.1)",
+   "text": "0.08"
+  },
+  "EoneGainRhoHighLo": {
+   "value": 0.05617900218141897,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports W(Protected (ours)) - W(No reports) at offered load rho = 1.1 (E1 configuration rho1.1) (95% CI lower)",
+   "text": "0.06"
+  },
+  "EoneGainRhoHighHi": {
+   "value": 0.11280229622057424,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports W(Protected (ours)) - W(No reports) at offered load rho = 1.1 (E1 configuration rho1.1) (95% CI upper)",
+   "text": "0.11"
+  },
+  "EoneGainRhoHighCI": {
+   "value": "[0.06, 0.11]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e1: value of reports W(Protected (ours)) - W(No reports) at offered load rho = 1.1 (E1 configuration rho1.1) (95% CI)",
+   "text": "[0.06, 0.11]"
+  }
+ },
+ "tables": {
+  "value_by_delay": [
+   {
+    "d": 1.0,
+    "estimate": 0.0156330357233172,
+    "lo": -0.00018090974060194778,
+    "hi": 0.027306312858847194,
+    "p": 0.026797320267973202,
+    "pct": 0.027927889755794175,
+    "pct_lo": -0.00032428183858811957,
+    "pct_hi": 0.04910405737812198,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 14,
+    "mean_a": 55.99206326376742,
+    "mean_b": 55.976430228044094
+   },
+   {
+    "d": 2.0,
+    "estimate": 0.11170700990260365,
+    "lo": 0.0844509951446882,
+    "hi": 0.13335799339439358,
+    "p": 9.999000099990002e-05,
+    "pct": 0.20009409275856962,
+    "pct_lo": 0.15135471491081925,
+    "pct_hi": 0.2391328991678593,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 15,
+    "mean_a": 55.938947266009315,
+    "mean_b": 55.82724025610671
+   },
+   {
+    "d": 5.0,
+    "estimate": 0.28542388890677933,
+    "lo": 0.2514617775629312,
+    "hi": 0.31567939155708086,
+    "p": 9.999000099990002e-05,
+    "pct": 0.5132131436756265,
+    "pct_lo": 0.45192238615794,
+    "pct_hi": 0.5673235752785821,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 16,
+    "mean_a": 55.90050164443283,
+    "mean_b": 55.61507775552606
+   },
+   {
+    "d": 15.0,
+    "estimate": 0.5314767220462924,
+    "lo": 0.47015341957479456,
+    "hi": 0.5934006764915181,
+    "p": 9.999000099990002e-05,
+    "pct": 0.9610430644373972,
+    "pct_lo": 0.8487193989171847,
+    "pct_hi": 1.075140600947071,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 16,
+    "mean_a": 55.83354816016887,
+    "mean_b": 55.302071438122574
+   }
+  ],
+  "value_by_load": [
+   {
+    "rho": 0.5,
+    "estimate": 0.05774816255227769,
+    "lo": 0.0462101991727916,
+    "hi": 0.07032541560428268,
+    "p": 9.999000099990002e-05,
+    "pct": 0.1652122836981061,
+    "pct_lo": 0.13244468339853924,
+    "pct_hi": 0.2010757044549164,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 16,
+    "mean_a": 35.011663972953755,
+    "mean_b": 34.95391581040148
+   },
+   {
+    "rho": 0.7,
+    "estimate": 0.08477279134533747,
+    "lo": 0.07006185886529541,
+    "hi": 0.0994440996745698,
+    "p": 9.999000099990002e-05,
+    "pct": 0.18091825717226137,
+    "pct_lo": 0.1490013111567977,
+    "pct_hi": 0.21286107420787273,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 16,
+    "mean_a": 46.94173055245234,
+    "mean_b": 46.85695776110701
+   },
+   {
+    "rho": 0.9,
+    "estimate": 0.11170700990260365,
+    "lo": 0.0844509951446882,
+    "hi": 0.13335799339439358,
+    "p": 9.999000099990002e-05,
+    "pct": 0.20009409275856962,
+    "pct_lo": 0.15135471491081925,
+    "pct_hi": 0.2391328991678593,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 15,
+    "mean_a": 55.938947266009315,
+    "mean_b": 55.82724025610671
+   },
+   {
+    "rho": 1.1,
+    "estimate": 0.08392242497329416,
+    "lo": 0.05617900218141897,
+    "hi": 0.11280229622057424,
+    "p": 9.999000099990002e-05,
+    "pct": 0.13477271424641518,
+    "pct_lo": 0.08969946549551874,
+    "pct_hi": 0.1832128121958173,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 15,
+    "mean_a": 62.353518642982564,
+    "mean_b": 62.26959621800927
+   }
+  ],
+  "value_by_lead": [
+   {
+    "lead_s": 0.0,
+    "estimate": 0.10664737291705101,
+    "lo": 0.09198855443287011,
+    "hi": 0.12147240866487695,
+    "p": 9.999000099990002e-05,
+    "pct": 0.19099479917103768,
+    "pct_lo": 0.16438983964563722,
+    "pct_hi": 0.21832287576275258,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 16,
+    "mean_a": 55.944488706778316,
+    "mean_b": 55.83784133386127
+   },
+   {
+    "lead_s": 1.05,
+    "estimate": 0.12080490182230649,
+    "lo": 0.10214040739883666,
+    "hi": 0.1376076038462565,
+    "p": 9.999000099990002e-05,
+    "pct": 0.2163946688806665,
+    "pct_lo": 0.1821446982995297,
+    "pct_hi": 0.2470580092415837,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 16,
+    "mean_a": 55.94699620643611,
+    "mean_b": 55.8261913046138
+   },
+   {
+    "lead_s": 4.004,
+    "estimate": 0.11170700990260365,
+    "lo": 0.0844509951446882,
+    "hi": 0.13335799339439358,
+    "p": 9.999000099990002e-05,
+    "pct": 0.20009409275856962,
+    "pct_lo": 0.15135471491081925,
+    "pct_hi": 0.2391328991678593,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 15,
+    "mean_a": 55.938947266009315,
+    "mean_b": 55.82724025610671
+   }
+  ],
+  "contrasts_main": [
+   {
+    "arm_a": "protected",
+    "arm_b": "equal",
+    "estimate": 4.939091902166999,
+    "lo": 4.5064255587003785,
+    "hi": 5.360962044756142,
+    "pct": 9.684521391150255,
+    "pct_lo": 8.875654316999096,
+    "pct_hi": 10.470044383089757,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 16,
+    "dates_negative": 0
+   },
+   {
+    "arm_a": "protected",
+    "arm_b": "static",
+    "estimate": 1.3989429272644291,
+    "lo": 1.2145789188346277,
+    "hi": 1.60709393529688,
+    "pct": 2.5649849944559486,
+    "pct_lo": 2.233125630232263,
+    "pct_hi": 2.9388007044136453,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 16,
+    "dates_negative": 0
+   },
+   {
+    "arm_a": "protected",
+    "arm_b": "direct",
+    "estimate": 0.4465934930881668,
+    "lo": 0.35987816688267876,
+    "hi": 0.5450861370854417,
+    "pct": 0.804783835473371,
+    "pct_lo": 0.6514017033796725,
+    "pct_hi": 0.9792969422399158,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 16,
+    "dates_negative": 0
+   },
+   {
+    "arm_a": "protected",
+    "arm_b": "kappa0",
+    "estimate": 0.10270599635503871,
+    "lo": 0.08808960466188803,
+    "hi": 0.11742492939884162,
+    "pct": 0.18394145812758553,
+    "pct_lo": 0.15866122304900354,
+    "pct_hi": 0.20975796745652156,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 16,
+    "dates_negative": 0
+   },
+   {
+    "arm_a": "protected",
+    "arm_b": "unprotected",
+    "estimate": -0.034202305126409316,
+    "lo": -0.04309656266652086,
+    "hi": -0.025331748282012033,
+    "pct": -0.061104842926414105,
+    "pct_lo": -0.07691398130990255,
+    "pct_hi": -0.04553716525478171,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 0,
+    "dates_negative": 16
+   },
+   {
+    "arm_a": "protected",
+    "arm_b": "oracle",
+    "estimate": -1.2876170669263802,
+    "lo": -1.3830700178117799,
+    "hi": -1.1881513232220116,
+    "pct": -2.2500338469302723,
+    "pct_lo": -2.397372141964414,
+    "pct_hi": -2.101945506060814,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 0,
+    "dates_negative": 16
+   },
+   {
+    "arm_a": "protected",
+    "arm_b": "direct_truerates",
+    "estimate": -0.03829807931305107,
+    "lo": -0.15932419026224254,
+    "hi": 0.08930430500574986,
+    "pct": -0.06841722753020639,
+    "pct_lo": -0.285038935190493,
+    "pct_hi": 0.1585353288607594,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 5,
+    "dates_negative": 11
+   },
+   {
+    "arm_a": "protected",
+    "arm_b": "meas_only",
+    "estimate": 0.11170700990260365,
+    "lo": 0.0844509951446882,
+    "hi": 0.13335799339439358,
+    "pct": 0.20009409275856962,
+    "pct_lo": 0.15135471491081925,
+    "pct_hi": 0.2391328991678593,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 15,
+    "dates_negative": 1
+   }
+  ],
+  "arms_main": [
+   {
+    "arm": "direct",
+    "label": "Direct optimizer",
+    "welfare": 55.49235377292115,
+    "welfare_lo": 53.96000218722028,
+    "welfare_hi": 56.73033353391736,
+    "n_windows": 128,
+    "n_dates": 16,
+    "seeds": 1,
+    "on_time_all": 33.38442337734506,
+    "miss_pct_all": 18.900487887540447,
+    "prb_all": 104.503515625,
+    "price_all": 9.398584164612528,
+    "on_time_mmtc": 2.720564689672784,
+    "miss_pct_mmtc": 34.651740016442155,
+    "prb_mmtc": 10.915136718749999,
+    "price_mmtc": 0.2902177419304571,
+    "on_time_urllc": 11.734106370206238,
+    "miss_pct_urllc": 6.147673394144279,
+    "prb_urllc": 40.629345703125,
+    "price_urllc": 3.525417083103034,
+    "on_time_video": 18.92975231746604,
+    "miss_pct_video": 22.732086440167667,
+    "prb_video": 52.959033203125,
+    "price_video": 5.582949339579036
+   },
+   {
+    "arm": "direct_truerates",
+    "label": "Direct optimizer, true rates",
+    "welfare": 55.97724534532237,
+    "welfare_lo": 54.42914973951922,
+    "welfare_hi": 57.219733743821145,
+    "n_windows": 128,
+    "n_dates": 16,
+    "seeds": 1,
+    "on_time_all": 33.403934265439744,
+    "miss_pct_all": 18.858220532732393,
+    "prb_all": 104.50166015625001,
+    "price_all": 9.405271195379143,
+    "on_time_mmtc": 2.707358360497142,
+    "miss_pct_mmtc": 34.975939530903524,
+    "prb_mmtc": 10.916406250000001,
+    "price_mmtc": 0.28982723264874755,
+    "on_time_urllc": 11.963495130065592,
+    "miss_pct_urllc": 4.307322761760164,
+    "prb_urllc": 40.634472656250004,
+    "price_urllc": 3.5378429106517775,
+    "on_time_video": 18.733080774877017,
+    "miss_pct_video": 23.543891938427905,
+    "prb_video": 52.950781250000006,
+    "price_video": 5.577601052078617
+   },
+   {
+    "arm": "equal",
+    "label": "Equal weights",
+    "welfare": 50.999855363842315,
+    "welfare_lo": 49.68402090012658,
+    "welfare_hi": 52.079614076710975,
+    "n_windows": 128,
+    "n_dates": 16,
+    "seeds": 1,
+    "on_time_all": 30.54916278385927,
+    "miss_pct_all": 25.791597117175385,
+    "prb_all": 104.530517578125,
+    "price_all": 1.4220676300075525,
+    "on_time_mmtc": 4.027523997412116,
+    "miss_pct_mmtc": 3.258467247247185,
+    "prb_mmtc": 21.70068359375,
+    "price_mmtc": 0.47744253067343495,
+    "on_time_urllc": 11.232227289344552,
+    "miss_pct_urllc": 10.151521905690673,
+    "prb_urllc": 40.16044921875,
+    "price_urllc": 0.8108920273311333,
+    "on_time_video": 15.289411497102606,
+    "miss_pct_video": 37.59993665862986,
+    "prb_video": 42.669384765625,
+    "price_video": 0.13373307200298434
+   },
+   {
+    "arm": "kappa0",
+    "label": "Protected net, \u03ba = 0",
+    "welfare": 55.83624126965428,
+    "welfare_lo": 54.281125661941765,
+    "welfare_hi": 57.085693386751956,
+    "n_windows": 128,
+    "n_dates": 16,
+    "seeds": 5,
+    "on_time_all": 33.630768182296514,
+    "miss_pct_all": 18.300970060879937,
+    "prb_all": 104.49765625,
+    "price_all": 0.9757349433966077,
+    "on_time_mmtc": 2.3649504706092923,
+    "miss_pct_mmtc": 43.192407390142336,
+    "prb_mmtc": 7.907910156250001,
+    "price_mmtc": 0.21782056787330745,
+    "on_time_urllc": 11.693974161331205,
+    "miss_pct_urllc": 6.4658926150573794,
+    "prb_urllc": 40.079375,
+    "price_urllc": 0.632533518935129,
+    "on_time_video": 19.571843550356018,
+    "miss_pct_video": 20.11090517639782,
+    "prb_video": 56.51037109375,
+    "price_video": 0.12538085658817122
+   },
+   {
+    "arm": "meas_only",
+    "label": "No reports",
+    "welfare": 55.82724025610671,
+    "welfare_lo": 54.26594865032961,
+    "welfare_hi": 57.079425356476094,
+    "n_windows": 128,
+    "n_dates": 16,
+    "seeds": 5,
+    "on_time_all": 33.638369124828955,
+    "miss_pct_all": 18.281211063016283,
+    "prb_all": 104.495947265625,
+    "price_all": 1.7704871351121159,
+    "on_time_mmtc": 2.3459257720750557,
+    "miss_pct_mmtc": 43.648791518003186,
+    "prb_mmtc": 7.750439453125001,
+    "price_mmtc": 0.2702871026898185,
+    "on_time_urllc": 11.680917008657646,
+    "miss_pct_urllc": 6.57003966993479,
+    "prb_urllc": 39.807158203125,
+    "price_urllc": 1.2345034931462022,
+    "on_time_video": 19.611526344096248,
+    "miss_pct_video": 19.947068478025784,
+    "prb_video": 56.938349609374995,
+    "price_video": 0.26569653927609516
+   },
+   {
+    "arm": "oracle",
+    "label": "Oracle",
+    "welfare": 57.226564332935695,
+    "welfare_lo": 55.61004331830686,
+    "welfare_hi": 58.52273113898946,
+    "n_windows": 128,
+    "n_dates": 16,
+    "seeds": 1,
+    "on_time_all": 34.482062843166716,
+    "miss_pct_all": 16.271400329800787,
+    "prb_all": 104.8126953125,
+    "price_all": 0.0,
+    "on_time_mmtc": 2.6661021598709373,
+    "miss_pct_mmtc": 35.945884515582065,
+    "prb_mmtc": 10.2931640625,
+    "price_mmtc": 0.0,
+    "on_time_urllc": 12.03877628485223,
+    "miss_pct_urllc": 3.7346323473955176,
+    "prb_urllc": 39.681201171875,
+    "price_urllc": 0.0,
+    "on_time_video": 19.777184398443545,
+    "miss_pct_video": 19.326347585903726,
+    "prb_video": 54.838330078125,
+    "price_video": 0.0
+   },
+   {
+    "arm": "protected",
+    "label": "Protected (ours)",
+    "welfare": 55.938947266009315,
+    "welfare_lo": 54.382858726645175,
+    "welfare_hi": 57.191938351558186,
+    "n_windows": 128,
+    "n_dates": 16,
+    "seeds": 5,
+    "on_time_all": 33.693632346523074,
+    "miss_pct_all": 18.146594632239164,
+    "prb_all": 104.497470703125,
+    "price_all": 1.8762009396217043,
+    "on_time_mmtc": 2.362946950576699,
+    "miss_pct_mmtc": 43.24036120681771,
+    "prb_mmtc": 7.913544921874999,
+    "price_mmtc": 0.26118412499094784,
+    "on_time_urllc": 11.713394197387299,
+    "miss_pct_urllc": 6.311837783408942,
+    "prb_urllc": 40.475830078125,
+    "price_urllc": 1.3312502740558454,
+    "on_time_video": 19.617291198559073,
+    "miss_pct_video": 19.922151331955206,
+    "prb_video": 56.108095703125,
+    "price_video": 0.28376654057491096
+   },
+   {
+    "arm": "static",
+    "label": "Static weights",
+    "welfare": 54.540004338744886,
+    "welfare_lo": 53.06684021250681,
+    "welfare_hi": 55.735264760080575,
+    "n_windows": 128,
+    "n_dates": 16,
+    "seeds": 1,
+    "on_time_all": 32.76113987772101,
+    "miss_pct_all": 20.421658599484353,
+    "prb_all": 104.69091796875,
+    "price_all": 1.0444388980226966,
+    "on_time_mmtc": 2.0692795304624534,
+    "miss_pct_mmtc": 50.29255300165733,
+    "prb_mmtc": 5.849169921874999,
+    "price_mmtc": 0.19524655206009486,
+    "on_time_urllc": 11.406752113127553,
+    "miss_pct_urllc": 8.754089280500727,
+    "prb_urllc": 41.47299804687499,
+    "price_urllc": 0.7278376058228796,
+    "on_time_video": 19.285108234131005,
+    "miss_pct_video": 21.299359977115834,
+    "prb_video": 57.36875,
+    "price_video": 0.12135474013972197
+   },
+   {
+    "arm": "unprotected",
+    "label": "Unconstrained net",
+    "welfare": 55.97314957113572,
+    "welfare_lo": 54.41216928147141,
+    "welfare_hi": 57.22495561007039,
+    "n_windows": 128,
+    "n_dates": 16,
+    "seeds": 5,
+    "on_time_all": 33.75372172857483,
+    "miss_pct_all": 18.003397143659768,
+    "prb_all": 104.5002734375,
+    "price_all": 0.9808124828469603,
+    "on_time_mmtc": 2.4029050226963538,
+    "miss_pct_mmtc": 42.28091348358226,
+    "prb_mmtc": 8.289658203125,
+    "price_mmtc": 0.2240108586906558,
+    "on_time_urllc": 11.710440176954533,
+    "miss_pct_urllc": 6.335985546518009,
+    "prb_urllc": 40.21134765625,
+    "price_urllc": 0.63095671231431,
+    "on_time_video": 19.640376528923948,
+    "miss_pct_video": 19.83216900424856,
+    "prb_video": 55.999267578125,
+    "price_video": 0.12584491184199437
+   }
+  ],
+  "seed_spread": [
+   {
+    "arm": "kappa0",
+    "seed": 0,
+    "welfare": 55.840416699250504,
+    "mean": 55.83624126965428,
+    "std": 0.010195071351348,
+    "min": 55.8229900494779,
+    "max": 55.845401833840896,
+    "n_seeds": 5
+   },
+   {
+    "arm": "kappa0",
+    "seed": 1,
+    "welfare": 55.84452982941974,
+    "mean": 55.83624126965428,
+    "std": 0.010195071351348,
+    "min": 55.8229900494779,
+    "max": 55.845401833840896,
+    "n_seeds": 5
+   },
+   {
+    "arm": "kappa0",
+    "seed": 2,
+    "welfare": 55.845401833840896,
+    "mean": 55.83624126965428,
+    "std": 0.010195071351348,
+    "min": 55.8229900494779,
+    "max": 55.845401833840896,
+    "n_seeds": 5
+   },
+   {
+    "arm": "kappa0",
+    "seed": 3,
+    "welfare": 55.8229900494779,
+    "mean": 55.83624126965428,
+    "std": 0.010195071351348,
+    "min": 55.8229900494779,
+    "max": 55.845401833840896,
+    "n_seeds": 5
+   },
+   {
+    "arm": "kappa0",
+    "seed": 4,
+    "welfare": 55.827867936282345,
+    "mean": 55.83624126965428,
+    "std": 0.010195071351348,
+    "min": 55.8229900494779,
+    "max": 55.845401833840896,
+    "n_seeds": 5
+   },
+   {
+    "arm": "meas_only",
+    "seed": 0,
+    "welfare": 55.82101013043468,
+    "mean": 55.82724025610671,
+    "std": 0.004926530445451903,
+    "min": 55.82101013043468,
+    "max": 55.833939916662345,
+    "n_seeds": 5
+   },
+   {
+    "arm": "meas_only",
+    "seed": 1,
+    "welfare": 55.82472271807417,
+    "mean": 55.82724025610671,
+    "std": 0.004926530445451903,
+    "min": 55.82101013043468,
+    "max": 55.833939916662345,
+    "n_seeds": 5
+   },
+   {
+    "arm": "meas_only",
+    "seed": 2,
+    "welfare": 55.82983711102393,
+    "mean": 55.82724025610671,
+    "std": 0.004926530445451903,
+    "min": 55.82101013043468,
+    "max": 55.833939916662345,
+    "n_seeds": 5
+   },
+   {
+    "arm": "meas_only",
+    "seed": 3,
+    "welfare": 55.82669140433844,
+    "mean": 55.82724025610671,
+    "std": 0.004926530445451903,
+    "min": 55.82101013043468,
+    "max": 55.833939916662345,
+    "n_seeds": 5
+   },
+   {
+    "arm": "meas_only",
+    "seed": 4,
+    "welfare": 55.833939916662345,
+    "mean": 55.82724025610671,
+    "std": 0.004926530445451903,
+    "min": 55.82101013043468,
+    "max": 55.833939916662345,
+    "n_seeds": 5
+   },
+   {
+    "arm": "protected",
+    "seed": 0,
+    "welfare": 55.9369148676189,
+    "mean": 55.938947266009315,
+    "std": 0.003605608881946681,
+    "min": 55.934289826086996,
+    "max": 55.94333097136318,
+    "n_seeds": 5
+   },
+   {
+    "arm": "protected",
+    "seed": 1,
+    "welfare": 55.9415671785184,
+    "mean": 55.938947266009315,
+    "std": 0.003605608881946681,
+    "min": 55.934289826086996,
+    "max": 55.94333097136318,
+    "n_seeds": 5
+   },
+   {
+    "arm": "protected",
+    "seed": 2,
+    "welfare": 55.94333097136318,
+    "mean": 55.938947266009315,
+    "std": 0.003605608881946681,
+    "min": 55.934289826086996,
+    "max": 55.94333097136318,
+    "n_seeds": 5
+   },
+   {
+    "arm": "protected",
+    "seed": 3,
+    "welfare": 55.934289826086996,
+    "mean": 55.938947266009315,
+    "std": 0.003605608881946681,
+    "min": 55.934289826086996,
+    "max": 55.94333097136318,
+    "n_seeds": 5
+   },
+   {
+    "arm": "protected",
+    "seed": 4,
+    "welfare": 55.93863348645911,
+    "mean": 55.938947266009315,
+    "std": 0.003605608881946681,
+    "min": 55.934289826086996,
+    "max": 55.94333097136318,
+    "n_seeds": 5
+   },
+   {
+    "arm": "unprotected",
+    "seed": 0,
+    "welfare": 55.97936491553139,
+    "mean": 55.97314957113573,
+    "std": 0.004405126957535902,
+    "min": 55.9680792181156,
+    "max": 55.97936491553139,
+    "n_seeds": 5
+   },
+   {
+    "arm": "unprotected",
+    "seed": 1,
+    "welfare": 55.975690199802074,
+    "mean": 55.97314957113573,
+    "std": 0.004405126957535902,
+    "min": 55.9680792181156,
+    "max": 55.97936491553139,
+    "n_seeds": 5
+   },
+   {
+    "arm": "unprotected",
+    "seed": 2,
+    "welfare": 55.971174668768704,
+    "mean": 55.97314957113573,
+    "std": 0.004405126957535902,
+    "min": 55.9680792181156,
+    "max": 55.97936491553139,
+    "n_seeds": 5
+   },
+   {
+    "arm": "unprotected",
+    "seed": 3,
+    "welfare": 55.9680792181156,
+    "mean": 55.97314957113573,
+    "std": 0.004405126957535902,
+    "min": 55.9680792181156,
+    "max": 55.97936491553139,
+    "n_seeds": 5
+   },
+   {
+    "arm": "unprotected",
+    "seed": 4,
+    "welfare": 55.97143885346087,
+    "mean": 55.97314957113573,
+    "std": 0.004405126957535902,
+    "min": 55.9680792181156,
+    "max": 55.97936491553139,
+    "n_seeds": 5
+   }
+  ],
+  "value_of_reports_by_class": [
+   {
+    "cls": "video",
+    "label": "Video",
+    "estimate": 0.005764854462826097,
+    "lo": -0.00744942118137475,
+    "hi": 0.018626320164086604,
+    "pct": 0.02939523605495152,
+    "pct_lo": -0.038214890682495686,
+    "pct_hi": 0.09398900096282665,
+    "mean_a": 19.617291198559073,
+    "mean_b": 19.611526344096248,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 10,
+    "dates_negative": 6,
+    "share_of_total_pct": 5.160691766660321,
+    "share_of_total_pct_lo": -7.273603301895257,
+    "share_of_total_pct_hi": 16.307906316564132
+   },
+   {
+    "cls": "urllc",
+    "label": "URLLC-like",
+    "estimate": 0.09743156618895546,
+    "lo": 0.0729748589671844,
+    "hi": 0.11704420034881552,
+    "pct": 0.278036293773686,
+    "pct_lo": 0.20842661939197454,
+    "pct_hi": 0.3350200713370342,
+    "mean_a": 35.14018259216189,
+    "mean_b": 35.04275102597293,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 15,
+    "dates_negative": 1,
+    "share_of_total_pct": 87.22063751765012,
+    "share_of_total_pct_lo": 76.02117860520968,
+    "share_of_total_pct_hi": 99.73643169586414
+   },
+   {
+    "cls": "mmtc",
+    "label": "mMTC-like",
+    "estimate": 0.008510589250821854,
+    "lo": 0.005905551733693698,
+    "hi": 0.011398363636335798,
+    "pct": 0.725563387565663,
+    "pct_lo": 0.517921824046519,
+    "pct_hi": 0.9440349915642877,
+    "mean_a": 1.1814734752883496,
+    "mean_b": 1.1729628860375279,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 16,
+    "dates_negative": 0,
+    "share_of_total_pct": 7.618670715689338,
+    "share_of_total_pct_lo": 5.579225496723157,
+    "share_of_total_pct_hi": 10.061601304576273
+   },
+   {
+    "cls": "all",
+    "label": "all tenants",
+    "estimate": 0.11170700990260365,
+    "class_sum": 0.1117070099026034,
+    "share_of_total_pct": 100.0,
+    "n_windows": 128,
+    "n_dates": 16
+   }
+  ],
+  "miss_diff_by_class": [
+   {
+    "cls": "video",
+    "label": "Video",
+    "miss_pct_protected": 15.934706748880119,
+    "miss_pct_meas_only": 15.96070686224089,
+    "estimate": -0.026000113360769198,
+    "lo": -0.07478162007026168,
+    "hi": 0.023568226952385658,
+    "mean_a": 15.934706748880119,
+    "mean_b": 15.96070686224089,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 5,
+    "dates_negative": 11
+   },
+   {
+    "cls": "urllc",
+    "label": "URLLC-like",
+    "miss_pct_protected": 6.249732659440565,
+    "miss_pct_meas_only": 6.513424226449988,
+    "estimate": -0.2636915670094231,
+    "lo": -0.31757757611995036,
+    "hi": -0.19816067546901084,
+    "mean_a": 6.249732659440565,
+    "mean_b": 6.513424226449988,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 1,
+    "dates_negative": 15
+   },
+   {
+    "cls": "mmtc",
+    "label": "mMTC-like",
+    "miss_pct_protected": 43.16231276942038,
+    "miss_pct_meas_only": 43.56851495387303,
+    "estimate": -0.4062021844526513,
+    "lo": -0.5443310040065522,
+    "hi": -0.2815881084382813,
+    "mean_a": 43.16231276942038,
+    "mean_b": 43.56851495387303,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 0,
+    "dates_negative": 16
+   }
+  ],
+  "kappa0_contrasts": [
+   {
+    "arm_a": "protected",
+    "arm_b": "kappa0",
+    "estimate": 0.10270599635503871,
+    "lo": 0.08808960466188803,
+    "hi": 0.11742492939884162,
+    "pct": 0.18394145812758553,
+    "pct_lo": 0.15866122304900354,
+    "pct_hi": 0.20975796745652156,
+    "mean_a": 55.938947266009315,
+    "mean_b": 55.83624126965428,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 16,
+    "dates_negative": 0
+   },
+   {
+    "arm_a": "kappa0",
+    "arm_b": "meas_only",
+    "estimate": 0.00900101354756494,
+    "lo": -0.015205716582940832,
+    "hi": 0.02369852326714544,
+    "pct": 0.0161229777905426,
+    "pct_lo": -0.026901080313109487,
+    "pct_hi": 0.04315352834994223,
+    "mean_a": 55.83624126965428,
+    "mean_b": 55.82724025610671,
+    "n_dates": 16,
+    "n_windows": 128,
+    "dates_positive": 15,
+    "dates_negative": 1
+   }
+  ]
+ },
+ "hypotheses": {
+  "H1a": {
+   "estimate": 0.11170700990260365,
+   "lo": 0.0844509951446882,
+   "hi": 0.13335799339439358,
+   "level": 0.95,
+   "n_dates": 16,
+   "n_windows": 128,
+   "n_boot": 10000,
+   "p": 9.999000099990002e-05,
+   "alternative": "greater",
+   "null": 0.0,
+   "lower_one_sided": 0.08987057196798681,
+   "upper_one_sided": 0.13028292397091132,
+   "mean_a": 55.938947266009315,
+   "mean_b": 55.82724025610671,
+   "denominator": "welfare of No reports on the same windows",
+   "inference": true,
+   "dates_positive": 15,
+   "dates_negative": 1,
+   "dates_zero": 0,
+   "per_date": [
+    {
+     "date": "2024-09-01",
+     "mean": 0.11866998668911766,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-02",
+     "mean": 0.13006644345763263,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-08",
+     "mean": 0.1129923291254169,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-09",
+     "mean": 0.17960411073558014,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-15",
+     "mean": 0.10770672398299475,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-16",
+     "mean": 0.09901618318847927,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-22",
+     "mean": 0.12473770719210542,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-23",
+     "mean": 0.12427410936272665,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-29",
+     "mean": 0.15742945573823963,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-30",
+     "mean": 0.12728934580717333,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-06",
+     "mean": -0.025968524140750127,
+     "n_windows": 8,
+     "sign": -1
+    },
+    {
+     "date": "2024-10-07",
+     "mean": 0.10120764393169202,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-13",
+     "mean": 0.10088085871109786,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-14",
+     "mean": 0.14262952781367932,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-20",
+     "mean": 0.09343351670857025,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-21",
+     "mean": 0.09334274013790278,
+     "n_windows": 8,
+     "sign": 1
+    }
+   ],
+   "pct": 0.20009409275856962,
+   "pct_lo": 0.15135471491081925,
+   "pct_hi": 0.2391328991678593,
+   "pct_lower_one_sided": 0.1600813143789664,
+   "pct_upper_one_sided": 0.23420826953278548,
+   "crossed": {
+    "lo": 0.08730435056242931,
+    "hi": 0.1320027650874002,
+    "p": 9.999000099990002e-05,
+    "factors": [
+     "date",
+     "raca_run",
+     "tractor_mmtc",
+     "tractor_urllc"
+    ],
+    "levels": {
+     "date": 16,
+     "raca_run": 15,
+     "tractor_mmtc": 2,
+     "tractor_urllc": 3
+    }
+   },
+   "arm_a": "protected",
+   "arm_b": "meas_only",
+   "unit": "credits per interval",
+   "unpaired": 0,
+   "seeds_a": 5,
+   "seeds_b": 5,
+   "decision": {
+    "ci_lower_positive": true,
+    "pct_at_least_min": false,
+    "rule_met": false,
+    "min_effect_pct": 0.5,
+    "mei_pct": 1.0,
+    "verdict": "holm.json (rule and Holm rejection)"
+   },
+   "rule_met": false,
+   "load_subgroups": {
+    "status": "ok",
+    "cut_points": [
+     0.8,
+     1.0
+    ],
+    "variable": "offered_load (all K intervals, D2 quantity)",
+    "min_dates": 5,
+    "bins": [
+     {
+      "load_lo": null,
+      "load_hi": 0.8,
+      "n_windows": 36,
+      "n_dates": 14,
+      "mean_load": 0.6928919670754033,
+      "estimate": 0.14826371282486572,
+      "lo": 0.12836025001354812,
+      "hi": 0.1703526887776061,
+      "p": 9.999000099990002e-05,
+      "pct": 0.2972603393346771,
+      "pct_lo": 0.25316646983790486,
+      "pct_hi": 0.3517893761309488,
+      "dates_positive": 14,
+      "dates_negative": 0
+     },
+     {
+      "load_lo": 0.8,
+      "load_hi": 1.0,
+      "n_windows": 60,
+      "n_dates": 15,
+      "mean_load": 0.8926489827878549,
+      "estimate": 0.09568204258773143,
+      "lo": 0.05182418471023508,
+      "hi": 0.13457229623855194,
+      "p": 0.00019998000199980003,
+      "pct": 0.16694671012089762,
+      "pct_lo": 0.09057380226273935,
+      "pct_hi": 0.23331094770954316,
+      "dates_positive": 14,
+      "dates_negative": 1
+     },
+     {
+      "load_lo": 1.0,
+      "load_hi": null,
+      "n_windows": 32,
+      "n_dates": 15,
+      "mean_load": 1.1380204083442984,
+      "estimate": 0.10062753283044423,
+      "lo": 0.07749231445633678,
+      "hi": 0.1288154539909252,
+      "p": 9.999000099990002e-05,
+      "pct": 0.16845399180610554,
+      "pct_lo": 0.1287860397708206,
+      "pct_hi": 0.21773229608009934,
+      "dates_positive": 15,
+      "dates_negative": 0
+     }
+    ],
+    "slope": {
+     "estimate": -0.11057942992779725,
+     "lo": -0.17349195613956983,
+     "hi": -0.04269808837880654,
+     "unit": "credits per interval per unit of offered load"
+    }
+   },
+   "role": "primary"
+  },
+  "H1b": {
+   "d": {
+    "estimate": 0.03428866440266883,
+    "lo": 0.030126557800725928,
+    "hi": 0.038707954976740386,
+    "level": 0.95,
+    "n_dates": 16,
+    "n_windows": 128,
+    "n_boot": 10000,
+    "levels": [
+     1.0,
+     2.0,
+     5.0,
+     15.0
+    ],
+    "var": "d",
+    "p": 9.999000099990002e-05,
+    "nondecreasing_supported": true,
+    "unit": "credits per interval per unit of d"
+   },
+   "lead_s": {
+    "estimate": 0.0003189797956163204,
+    "lo": -0.006234637420202105,
+    "hi": 0.00533751005183789,
+    "level": 0.95,
+    "n_dates": 16,
+    "n_windows": 128,
+    "n_boot": 10000,
+    "levels": [
+     0.0,
+     1.05,
+     4.004
+    ],
+    "var": "lead_s",
+    "p": 0.42805719428057193,
+    "nondecreasing_supported": false,
+    "unit": "credits per interval per unit of lead_s"
+   }
+  },
+  "H1c": {
+   "estimate": 1.3989429272644291,
+   "lo": 1.2145789188346277,
+   "hi": 1.60709393529688,
+   "level": 0.95,
+   "n_dates": 16,
+   "n_windows": 128,
+   "n_boot": 10000,
+   "p": 0.00019998000199980003,
+   "alternative": "two-sided",
+   "null": 0.0,
+   "lower_one_sided": 1.2401534229497817,
+   "upper_one_sided": 1.5664999970961202,
+   "mean_a": 55.938947266009315,
+   "mean_b": 54.540004338744886,
+   "denominator": "Static weights welfare on the same windows",
+   "inference": true,
+   "dates_positive": 16,
+   "dates_negative": 0,
+   "dates_zero": 0,
+   "per_date": [
+    {
+     "date": "2024-09-01",
+     "mean": 1.5865228688648036,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-02",
+     "mean": 1.3438509731569495,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-08",
+     "mean": 1.545633962850144,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-09",
+     "mean": 1.4541485318433907,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-15",
+     "mean": 1.2562872964696385,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-16",
+     "mean": 1.0273252258274725,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-22",
+     "mean": 1.3962168581104706,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-23",
+     "mean": 1.29645983476078,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-29",
+     "mean": 1.0682686244029336,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-30",
+     "mean": 1.1494111382654397,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-06",
+     "mean": 0.9705296388890083,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-07",
+     "mean": 1.1845574137326107,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-13",
+     "mean": 1.8708775263314221,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-14",
+     "mean": 1.64845124686937,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-20",
+     "mean": 1.9376504692964485,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-21",
+     "mean": 1.6468952265599812,
+     "n_windows": 8,
+     "sign": 1
+    }
+   ],
+   "pct": 2.5649849944559486,
+   "pct_lo": 2.233125630232263,
+   "pct_hi": 2.9388007044136453,
+   "pct_lower_one_sided": 2.2808309132384474,
+   "pct_upper_one_sided": 2.8692626651080744,
+   "arm_a": "protected",
+   "arm_b": "static",
+   "unit": "credits per interval",
+   "unpaired": 0,
+   "seeds_a": 5,
+   "seeds_b": 1,
+   "role": "secondary (D3)",
+   "rules_out": {
+    "advantage_above": 1.60709393529688,
+    "disadvantage_beyond": 1.2145789188346277,
+    "text": "the data rule out an advantage of Protected over Static weights above 1.607 and a disadvantage beyond -1.215 credits per interval"
+   },
+   "load_subgroups": {
+    "status": "ok",
+    "cut_points": [
+     0.8,
+     1.0
+    ],
+    "variable": "offered_load (all K intervals, D2 quantity)",
+    "min_dates": 5,
+    "bins": [
+     {
+      "load_lo": null,
+      "load_hi": 0.8,
+      "n_windows": 36,
+      "n_dates": 14,
+      "mean_load": 0.6928919670754033,
+      "estimate": 1.149094738729082,
+      "lo": 0.7921218315901776,
+      "hi": 1.5607513399033017,
+      "p": 0.00019998000199980003,
+      "pct": 2.351046124656701,
+      "pct_lo": 1.7092500823110173,
+      "pct_hi": 3.1066154428603148,
+      "dates_positive": 14,
+      "dates_negative": 0
+     },
+     {
+      "load_lo": 0.8,
+      "load_hi": 1.0,
+      "n_windows": 60,
+      "n_dates": 15,
+      "mean_load": 0.8926489827878549,
+      "estimate": 1.4010636404416905,
+      "lo": 1.123454023526477,
+      "hi": 1.7952499155633006,
+      "p": 0.00019998000199980003,
+      "pct": 2.5015623930983706,
+      "pct_lo": 2.01547348069918,
+      "pct_hi": 3.1905073985517767,
+      "dates_positive": 15,
+      "dates_negative": 0
+     },
+     {
+      "load_lo": 1.0,
+      "load_hi": null,
+      "n_windows": 32,
+      "n_dates": 15,
+      "mean_load": 1.1380204083442984,
+      "estimate": 1.6760458021593296,
+      "lo": 1.4313658717077677,
+      "hi": 1.899112213243165,
+      "p": 0.00019998000199980003,
+      "pct": 2.8817597947446694,
+      "pct_lo": 2.4602550142400914,
+      "pct_hi": 3.2732258791824766,
+      "dates_positive": 15,
+      "dates_negative": 0
+     }
+    ],
+    "slope": {
+     "estimate": 1.2925555931280341,
+     "lo": 0.35794750980657913,
+     "hi": 1.970300613007646,
+     "unit": "credits per interval per unit of offered load"
+    }
+   }
+  },
+  "H1d": {
+   "estimate": 0.4465934930881668,
+   "lo": 0.35987816688267876,
+   "hi": 0.5450861370854417,
+   "level": 0.95,
+   "n_dates": 16,
+   "n_windows": 128,
+   "n_boot": 10000,
+   "p": 0.00019998000199980003,
+   "alternative": "two-sided",
+   "null": 0.0,
+   "lower_one_sided": 0.3718301870565939,
+   "upper_one_sided": 0.528572807202611,
+   "mean_a": 55.938947266009315,
+   "mean_b": 55.49235377292115,
+   "denominator": "Direct optimizer welfare on the same windows",
+   "inference": true,
+   "dates_positive": 16,
+   "dates_negative": 0,
+   "dates_zero": 0,
+   "per_date": [
+    {
+     "date": "2024-09-01",
+     "mean": 0.2885132272312223,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-02",
+     "mean": 0.5045535459212234,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-08",
+     "mean": 0.5046800383591608,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-09",
+     "mean": 0.3408063181707357,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-15",
+     "mean": 0.43830308247986594,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-16",
+     "mean": 0.6717609164636533,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-22",
+     "mean": 0.5257932595823105,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-23",
+     "mean": 0.4639106355750675,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-29",
+     "mean": 0.28814287030393526,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-09-30",
+     "mean": 0.4581412550407089,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-06",
+     "mean": 0.859462210020224,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-07",
+     "mean": 0.2731171572270701,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-13",
+     "mean": 0.5575140379163939,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-14",
+     "mean": 0.3772479759997456,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-20",
+     "mean": 0.23723045513878027,
+     "n_windows": 8,
+     "sign": 1
+    },
+    {
+     "date": "2024-10-21",
+     "mean": 0.3563189039805721,
+     "n_windows": 8,
+     "sign": 1
+    }
+   ],
+   "pct": 0.804783835473371,
+   "pct_lo": 0.6514017033796725,
+   "pct_hi": 0.9792969422399158,
+   "pct_lower_one_sided": 0.673158554102775,
+   "pct_upper_one_sided": 0.9499686999017347,
+   "arm_a": "protected",
+   "arm_b": "direct",
+   "unit": "credits per interval",
+   "unpaired": 0,
+   "seeds_a": 5,
+   "seeds_b": 1,
+   "role": "secondary (D3)",
+   "rules_out": {
+    "advantage_above": 0.5450861370854417,
+    "disadvantage_beyond": 0.35987816688267876,
+    "text": "the data rule out an advantage of Protected over Direct optimizer above 0.545 and a disadvantage beyond -0.360 credits per interval"
+   },
+   "load_subgroups": {
+    "status": "ok",
+    "cut_points": [
+     0.8,
+     1.0
+    ],
+    "variable": "offered_load (all K intervals, D2 quantity)",
+    "min_dates": 5,
+    "bins": [
+     {
+      "load_lo": null,
+      "load_hi": 0.8,
+      "n_windows": 36,
+      "n_dates": 14,
+      "mean_load": 0.6928919670754033,
+      "estimate": 0.1806790931382867,
+      "lo": 0.0896188141107186,
+      "hi": 0.28241386858864576,
+      "p": 0.00019998000199980003,
+      "pct": 0.36248692315288655,
+      "pct_lo": 0.17683233794243886,
+      "pct_hi": 0.5736380683655476,
+      "dates_positive": 12,
+      "dates_negative": 2
+     },
+     {
+      "load_lo": 0.8,
+      "load_hi": 1.0,
+      "n_windows": 60,
+      "n_dates": 15,
+      "mean_load": 0.8926489827878549,
+      "estimate": 0.6186781929675503,
+      "lo": 0.5074328371286039,
+      "hi": 0.7250375881627616,
+      "p": 0.00019998000199980003,
+      "pct": 1.0894153358425882,
+      "pct_lo": 0.8898883168507702,
+      "pct_hi": 1.2788220928142362,
+      "dates_positive": 15,
+      "dates_negative": 0
+     },
+     {
+      "load_lo": 1.0,
+      "load_hi": null,
+      "n_windows": 32,
+      "n_dates": 15,
+      "mean_load": 1.1380204083442984,
+      "estimate": 0.423088380757938,
+      "lo": 0.30458290094470486,
+      "hi": 0.5454080248433921,
+      "p": 0.00019998000199980003,
+      "pct": 0.7121087117929387,
+      "pct_lo": 0.5075449480484358,
+      "pct_hi": 0.9244811491289576,
+      "dates_positive": 15,
+      "dates_negative": 0
+     }
+    ],
+    "slope": {
+     "estimate": 0.3359937715615875,
+     "lo": -0.1032990784961215,
+     "hi": 0.9804647453314668,
+     "unit": "credits per interval per unit of offered load"
+    }
+   },
+   "truerates_minus_direct": {
+    "estimate": 0.48489157240121794,
+    "lo": 0.40356260173785374,
+    "hi": 0.5661810594092207,
+    "level": 0.95,
+    "n_dates": 16,
+    "n_windows": 128,
+    "n_boot": 10000,
+    "p": 0.00019998000199980003,
+    "alternative": "two-sided",
+    "null": 0.0,
+    "lower_one_sided": 0.4166398231483422,
+    "upper_one_sided": 0.552815086504425,
+    "mean_a": 55.97724534532237,
+    "mean_b": 55.49235377292115,
+    "denominator": "Direct optimizer welfare",
+    "inference": true,
+    "dates_positive": 16,
+    "dates_negative": 0,
+    "dates_zero": 0,
+    "per_date": [
+     {
+      "date": "2024-09-01",
+      "mean": 0.6216066915662521,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-09-02",
+      "mean": 0.38589942667029487,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-09-08",
+      "mean": 0.4508358794521454,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-09-09",
+      "mean": 0.41793759251134155,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-09-15",
+      "mean": 0.5096210588378813,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-09-16",
+      "mean": 0.721637356039369,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-09-22",
+      "mean": 0.6623785791212287,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-09-23",
+      "mean": 0.26343161978784035,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-09-29",
+      "mean": 0.551026293024913,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-09-30",
+      "mean": 0.49918208209081616,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-10-06",
+      "mean": 0.457733590868207,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-10-07",
+      "mean": 0.45115286294605594,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-10-13",
+      "mean": 0.3038040725391147,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-10-14",
+      "mean": 0.437616019394067,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-10-20",
+      "mean": 0.6474280397545522,
+      "n_windows": 8,
+      "sign": 1
+     },
+     {
+      "date": "2024-10-21",
+      "mean": 0.3769739938154073,
+      "n_windows": 8,
+      "sign": 1
+     }
+    ],
+    "pct": 0.8737988919796595,
+    "pct_lo": 0.7280294316554503,
+    "pct_hi": 1.0187871206621792,
+    "pct_lower_one_sided": 0.7517985648232273,
+    "pct_upper_one_sided": 0.996377368476176,
+    "arm_a": "direct_truerates",
+    "arm_b": "direct",
+    "unit": "credits per interval",
+    "unpaired": 0,
+    "seeds_a": 1,
+    "seeds_b": 1
+   }
+  }
+ },
+ "notes": [],
+ "seconds": 6.175115566002205,
+ "experiment": "e1",
+ "split": "test",
+ "smoke": false,
+ "settings": {
+  "n_boot": 10000,
+  "level": 0.95,
+  "seed": 20261019,
+  "main": {
+   "n": 3,
+   "d": 2.0,
+   "rho": 0.9,
+   "lead_s": 4.004
+  },
+  "load_bins": [
+   0.8,
+   1.0
+  ],
+  "holm_family": [
+   "H1a",
+   "H2c",
+   "H4a",
+   "H5b"
+  ],
+  "h5b": {
+   "arm": "protected",
+   "alpha": 0.5
+  },
+  "h2c_arm": "unprotected",
+  "split": "test",
+  "smoke": false,
+  "crossed": true,
+  "frozen_test_dates": 16
+ },
+ "generated": "2026-10-21T08:37:06",
+ "code_sha256": "6510e5156e05ad5c58ee6a8e7bca54b0eead89623449d87f4e60ba0652d110b6",
+ "inputs": {
+  "digest": "82ef60e165cfd7ccc767b3b0b67227d3f08ad4f4d050c248235ff31b825a02b2",
+  "sources": {
+   "e0": "results/raw/test/e0",
+   "e1": "results/raw/test/e1",
+   "e2": "results/raw/test/e2",
+   "e3": "results/raw/test/e3",
+   "e4": "results/raw/test/e4",
+   "e5": "results/raw/test/e5",
+   "e6": "results/raw/test/e6",
+   "e7": "results/raw/e7/cases_test"
+  },
+  "files": 11100,
+  "rows": {
+   "e0_windows": 128,
+   "e0_vcal": 3072,
+   "e0_worked_meta": 2,
+   "e0_worked": 516,
+   "e0_worked_stairs": 148,
+   "windows": 143488,
+   "e1_manifest": 11,
+   "br": 2150400,
+   "monotone": 122880,
+   "bandit": 38400,
+   "premium": 552960,
+   "ident": 138240,
+   "h3d": 3456,
+   "e4_h4b": 384,
+   "e4_learn": 1632,
+   "timing": 256320,
+   "e5_pairs": 9216,
+   "e5_nets": 1728,
+   "e5_windows": 768,
+   "e5_checks": 1,
+   "e6_runs": 2048,
+   "nr": 36
+  }
+ },
+ "inputs_check": {
+  "primary": true,
+  "scope": {
+   "e1": [
+    "protected",
+    "meas_only"
+   ]
+  },
+  "completeness": {
+   "e1": {
+    "protected": {
+     "expected": 128,
+     "present": 128,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "meas_only": {
+     "expected": 128,
+     "present": 128,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    }
+   }
+  },
+  "provenance": {
+   "e1": {
+    "scope": "default:protected,meas_only",
+    "runs": 10,
+    "conflicts": 0,
+    "ok": true,
+    "code_versions": 1,
+    "rows_without_code_fp": 0
+   }
+  },
+  "test_dates": {
+   "frozen": 16,
+   "counts": {
+    "e1:protected": 16,
+    "e1:meas_only": 16
+   },
+   "ok": true
+  },
+  "ok": true,
+  "reason": null
+ }
+}

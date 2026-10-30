@@ -1,0 +1,54 @@
+--- a/contrib/nr/model/nr-rlc-um.cc
++++ b/contrib/nr/model/nr-rlc-um.cc
+@@ -929,17 +929,42 @@
+                 break;
+ 
+             case (NrRlcHeader::FIRST_BYTE | NrRlcHeader::LAST_BYTE):
++                // ICC rewrite patch (2026-10-20): a new SDU starts while the receiver still holds
++                // the first segment of an earlier SDU (seen with per-slice RBG masks and HARQ
++                // reordering in E7). The held partial SDU can no longer be completed: drop it and
++                // treat this PDU as in WAITING_S0_FULL, so the complete SDUs it carries are
++                // delivered. Replaces an NS_ASSERT that aborted the simulation.
++                NS_LOG_WARN("RLC-UM resync: dropping a held partial SDU (FI = 0 in WAITING_SI_SF)");
++                m_keepS0 = nullptr;
++                m_reassemblingState = WAITING_S0_FULL;
++                while (!m_sdusBuffer.empty())
++                {
++                    m_rlcSapUser->ReceivePdcpPdu(m_sdusBuffer.front());
++                    m_sdusBuffer.pop_front();
++                }
++                break;
++
+             case (NrRlcHeader::FIRST_BYTE | NrRlcHeader::NO_LAST_BYTE):
++                // ICC rewrite patch (2026-10-20): as above, but the PDU ends inside an SDU: deliver
++                // the complete SDUs and keep the last segment as the new first segment.
++                NS_LOG_WARN("RLC-UM resync: dropping a held partial SDU (FI = 1 in WAITING_SI_SF)");
++                m_keepS0 = nullptr;
++                m_reassemblingState = WAITING_SI_SF;
++                while (m_sdusBuffer.size() > 1)
++                {
++                    m_rlcSapUser->ReceivePdcpPdu(m_sdusBuffer.front());
++                    m_sdusBuffer.pop_front();
++                }
++                m_keepS0 = m_sdusBuffer.front();
++                m_sdusBuffer.pop_front();
++                break;
++
+             default:
+-                /**
+-                 * ERROR: Transition not possible
+-                 */
+-                NS_ASSERT_MSG(false,
+-                              "INTERNAL ERROR: We are in the WAITING_SI_SF state and no packet "
+-                              "loss has occurred, "
+-                              "so the received RLC PDU is expected to have FI = 10 (2) or FI = 11 "
+-                              "(3), not FI = "
+-                                  << (uint32_t)framingInfo);
++                NS_LOG_WARN("RLC-UM resync: unexpected framing info " << (uint32_t)framingInfo
++                                                                      << " in WAITING_SI_SF; dropping");
++                m_keepS0 = nullptr;
++                m_sdusBuffer.clear();
++                m_reassemblingState = WAITING_S0_FULL;
+                 break;
+             }
+             break;

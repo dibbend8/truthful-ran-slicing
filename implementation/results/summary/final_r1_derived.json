@@ -1,0 +1,134 @@
+{
+ "experiment": "final_r1_derived",
+ "split": "test",
+ "smoke": false,
+ "note": "Macros requested by the final_r1 tickets. Every value is copied from a table of a frozen TEST summary (results/summary/e0.json, e1.json, e4.json) without recomputation; no experiment, analysis or existing summary is changed. Copy to results/summary/final_r1_derived.json before make_numbers.py.",
+ "macros": {
+  "EoneSweepFive": {
+   "value": 5.0,
+   "fmt": "{:g}",
+   "unit": "s",
+   "source": "derived from frozen TEST summary: e1.json tables.value_by_delay d=5 (the sweep delay itself)",
+   "text": "5"
+  },
+  "EoneGainPctDelayFive": {
+   "value": 0.5132131436756265,
+   "fmt": "{:.2f}",
+   "unit": "percent of No-reports welfare",
+   "source": "derived from frozen TEST summary: e1.json tables.value_by_delay d=5 pct",
+   "text": "0.51"
+  },
+  "EoneGainPctDelayFiveCI": {
+   "value": null,
+   "fmt": "",
+   "unit": "percent",
+   "source": "derived from frozen TEST summary: e1.json tables.value_by_delay d=5 pct_lo, pct_hi",
+   "text": "[0.45, 0.57]"
+  },
+  "EoneSweepFifteen": {
+   "value": 15.0,
+   "fmt": "{:g}",
+   "unit": "s",
+   "source": "derived from frozen TEST summary: e1.json tables.value_by_delay d=15 (the sweep delay itself)",
+   "text": "15"
+  },
+  "EoneGainPctDelayFifteen": {
+   "value": 0.9610430644373972,
+   "fmt": "{:.2f}",
+   "unit": "percent of No-reports welfare",
+   "source": "derived from frozen TEST summary: e1.json tables.value_by_delay d=15 pct",
+   "text": "0.96"
+  },
+  "EoneGainPctDelayFifteenCI": {
+   "value": null,
+   "fmt": "",
+   "unit": "percent",
+   "source": "derived from frozen TEST summary: e1.json tables.value_by_delay d=15 pct_lo, pct_hi",
+   "text": "[0.85, 1.08]"
+  },
+  "EoneOracle": {
+   "value": 1.2876170669263802,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "derived from frozen TEST summary: e1.json tables.contrasts_main protected-oracle, sign flipped (Oracle minus Protected)",
+   "text": "1.29"
+  },
+  "EoneOracleCI": {
+   "value": null,
+   "fmt": "",
+   "unit": "credits per interval",
+   "source": "derived from frozen TEST summary: e1.json tables.contrasts_main protected-oracle, -hi, -lo",
+   "text": "[1.19, 1.38]"
+  },
+  "EfourPayPctVideo": {
+   "value": 1.6195209206861572,
+   "fmt": "{:.1f}",
+   "unit": "percent of service value",
+   "source": "derived from frozen TEST summary: e4.json tables.payments cls=video payment_pct_of_value",
+   "text": "1.6"
+  },
+  "EfourPayPctUrllc": {
+   "value": 3.651205456215738,
+   "fmt": "{:.1f}",
+   "unit": "percent of service value",
+   "source": "derived from frozen TEST summary: e4.json tables.payments cls=urllc payment_pct_of_value",
+   "text": "3.7"
+  },
+  "EfourPayPctMmtc": {
+   "value": 26.145019952406823,
+   "fmt": "{:.1f}",
+   "unit": "percent of service value",
+   "source": "derived from frozen TEST summary: e4.json tables.payments cls=mmtc payment_pct_of_value",
+   "text": "26.1"
+  },
+  "EfourPremPctMmtc": {
+   "value": 17.558074036741832,
+   "fmt": "{:.1f}",
+   "unit": "percent of the mMTC-like price",
+   "source": "derived from frozen TEST summary: e4.json tables.payments cls=mmtc premium_pct_of_payment",
+   "text": "17.6"
+  },
+  "EfourKappaScaleZeroWelfare": {
+   "value": 51.344251036533294,
+   "fmt": "{:.1f}",
+   "unit": "credits per interval",
+   "source": "derived from frozen TEST summary: e4.json tables.frontier protected kappa_scale=0 welfare",
+   "text": "51.3"
+  },
+  "EfourKappaScaleOneWelfare": {
+   "value": 55.93691486761891,
+   "fmt": "{:.1f}",
+   "unit": "credits per interval",
+   "source": "derived from frozen TEST summary: e4.json tables.frontier protected kappa_scale=1 welfare",
+   "text": "55.9"
+  },
+  "EfourPayDirect": {
+   "value": 9.398584164612528,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "derived from frozen TEST summary: e4.json tables.frontier direct payment (price paid by truthful tenants, all tenants)",
+   "text": "9.40"
+  },
+  "EzeroWorkedBestReportUnc": {
+   "value": 31.53295190541649,
+   "fmt": "{:.1f}",
+   "unit": "Mbit/s",
+   "source": "derived from frozen TEST summary: e0.json tables.worked_meta unconstrained fixed_price_grid_best_report",
+   "text": "31.5"
+  },
+  "EzeroWorkedBestQuotaUnc": {
+   "value": 74.0,
+   "fmt": "{:.0f}",
+   "unit": "PRB",
+   "source": "derived from frozen TEST summary: e0.json tables.worked_curves unconstrained quota at the best fixed-price report",
+   "text": "74"
+  },
+  "EzeroWorkedBestFixPriceUnc": {
+   "value": 4.303046807763167e-11,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "derived from frozen TEST summary: e0.json tables.worked_curves unconstrained p_fix at the best fixed-price report",
+   "text": "0.00"
+  }
+ }
+}

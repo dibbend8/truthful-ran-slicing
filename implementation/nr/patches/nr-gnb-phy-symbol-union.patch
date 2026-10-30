@@ -1,0 +1,50 @@
+--- a/contrib/nr/model/nr-gnb-phy.cc
++++ b/contrib/nr/model/nr-gnb-phy.cc
+@@ -963,6 +963,13 @@
+ 
+     int lastSymStart = -1;
+     uint32_t symUsed = 0;
++    // PATCH (ICC rewrite, 2026-10-20): with OFDMA, several DCIs may start at the same symbol with
++    // different lengths (e.g. per-slice RBG masks). Counting only the first DCI per start symbol
++    // undercounts the symbols in use and trips the assertion below. Count the union of the symbol
++    // ranges instead. Statistics only: scheduling and transmission are unaffected.
++    std::vector<bool> symAny(GetSymbolsPerSlot(), false);
++    std::vector<bool> symData(GetSymbolsPerSlot(), false);
++    std::vector<bool> symCtrl(GetSymbolsPerSlot(), false);
+ 
+     for (const auto& allocation : allocInfo.m_varTtiAllocInfo)
+     {
+@@ -989,23 +996,28 @@
+             ctrlReg += rbgUsed;
+         }
+ 
+-        if (lastSymStart != allocation.m_dci->m_symStart)
++        for (uint32_t sym = allocation.m_dci->m_symStart;
++             sym < static_cast<uint32_t>(allocation.m_dci->m_symStart + allocation.m_dci->m_numSym) &&
++             sym < symAny.size();
++             ++sym)
+         {
+-            symUsed += allocation.m_dci->m_numSym;
+-
++            symAny[sym] = true;
+             if (allocation.m_dci->m_type == DciInfoElementTdma::DATA ||
+                 allocation.m_dci->m_type == DciInfoElementTdma::MSG3)
+             {
+-                dataSym += allocation.m_dci->m_numSym;
++                symData[sym] = true;
+             }
+             else
+             {
+-                ctrlSym += allocation.m_dci->m_numSym;
++                symCtrl[sym] = true;
+             }
+         }
+ 
+         lastSymStart = allocation.m_dci->m_symStart;
+     }
++    symUsed = static_cast<uint32_t>(std::count(symAny.begin(), symAny.end(), true));
++    dataSym = static_cast<uint32_t>(std::count(symData.begin(), symData.end(), true));
++    ctrlSym = static_cast<uint32_t>(std::count(symCtrl.begin(), symCtrl.end(), true));
+ 
+     NS_ASSERT_MSG(symUsed == allocInfo.m_numSymAlloc,
+                   "Allocated " << +allocInfo.m_numSymAlloc << " but only " << symUsed

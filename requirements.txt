@@ -1,0 +1,10 @@
+# Direct dependencies evidenced by imports in the preserved implementation.
+# Exact versions from the validated release environment should be recorded separately.
+numpy
+numba
+pandas
+pyarrow
+PyYAML
+torch
+scipy
+matplotlib

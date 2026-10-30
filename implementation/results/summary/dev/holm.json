@@ -1,0 +1,1873 @@
+{
+ "macros": {
+  "EonePHolm": {
+   "value": 0.00039996000399960006,
+   "fmt": "{:.3g}",
+   "unit": "Holm-adjusted p",
+   "source": "holm: H1a in ('H1a', 'H2c', 'H4a', 'H5b')",
+   "text": "0.0004"
+  },
+  "EoneSupported": {
+   "value": "no",
+   "fmt": "{}",
+   "unit": "",
+   "source": "holm: H1a final verdict: pre-registered rule, Holm rejection at 0.05",
+   "text": "no"
+  },
+  "EtwoPHolm": {
+   "value": 0.00039996000399960006,
+   "fmt": "{:.3g}",
+   "unit": "Holm-adjusted p",
+   "source": "holm: H2c in ('H1a', 'H2c', 'H4a', 'H5b')",
+   "text": "0.0004"
+  },
+  "EtwoSupported": {
+   "value": "yes",
+   "fmt": "{}",
+   "unit": "",
+   "source": "holm: H2c final verdict: pre-registered rule, Holm rejection at 0.05",
+   "text": "yes"
+  },
+  "EfourPHolm": {
+   "value": 0.00039996000399960006,
+   "fmt": "{:.3g}",
+   "unit": "Holm-adjusted p",
+   "source": "holm: H4a in ('H1a', 'H2c', 'H4a', 'H5b')",
+   "text": "0.0004"
+  },
+  "EfourSupported": {
+   "value": "yes",
+   "fmt": "{}",
+   "unit": "",
+   "source": "holm: H4a final verdict: pre-registered rule, Holm rejection at 0.05",
+   "text": "yes"
+  },
+  "EfivePHolm": {
+   "value": 0.00039996000399960006,
+   "fmt": "{:.3g}",
+   "unit": "Holm-adjusted p",
+   "source": "holm: H5b in ('H1a', 'H2c', 'H4a', 'H5b')",
+   "text": "0.0004"
+  },
+  "EfiveSupported": {
+   "value": "yes",
+   "fmt": "{}",
+   "unit": "",
+   "source": "holm: H5b final verdict: pre-registered rule, Holm rejection at 0.05",
+   "text": "yes"
+  }
+ },
+ "tables": {
+  "holm": [
+   {
+    "name": "H1a",
+    "p": 9.999000099990002e-05,
+    "p_holm": 0.00039996000399960006,
+    "reject": true
+   },
+   {
+    "name": "H2c",
+    "p": 9.999000099990002e-05,
+    "p_holm": 0.00039996000399960006,
+    "reject": true
+   },
+   {
+    "name": "H4a",
+    "p": 9.999000099990002e-05,
+    "p_holm": 0.00039996000399960006,
+    "reject": true
+   },
+   {
+    "name": "H5b",
+    "p": 0.00019998000199980003,
+    "p_holm": 0.00039996000399960006,
+    "reject": true
+   }
+  ],
+  "verdicts": [
+   {
+    "name": "H1a",
+    "experiment": "e1",
+    "rule_met": false,
+    "p": 9.999000099990002e-05,
+    "p_holm": 0.00039996000399960006,
+    "holm_reject": true,
+    "inputs_ok": true,
+    "contrary": null,
+    "supported": false,
+    "reason": "pre-registered rule not met"
+   },
+   {
+    "name": "H2c",
+    "experiment": "e2",
+    "rule_met": true,
+    "p": 9.999000099990002e-05,
+    "p_holm": 0.00039996000399960006,
+    "holm_reject": true,
+    "inputs_ok": true,
+    "contrary": null,
+    "supported": true,
+    "reason": "rule and Holm"
+   },
+   {
+    "name": "H4a",
+    "experiment": "e4",
+    "rule_met": true,
+    "p": 9.999000099990002e-05,
+    "p_holm": 0.00039996000399960006,
+    "holm_reject": true,
+    "inputs_ok": true,
+    "contrary": null,
+    "supported": true,
+    "reason": "rule and Holm"
+   },
+   {
+    "name": "H5b",
+    "experiment": "e5",
+    "rule_met": true,
+    "p": 0.00019998000199980003,
+    "p_holm": 0.00039996000399960006,
+    "holm_reject": true,
+    "inputs_ok": true,
+    "contrary": false,
+    "supported": true,
+    "reason": "rule and Holm"
+   }
+  ],
+  "dev_power": [
+   {
+    "name": "H1a",
+    "status": "ok",
+    "half": "estimation",
+    "dates": 10,
+    "windows": 60,
+    "windows_per_date": 6.0,
+    "estimate": 0.13145152673138122,
+    "lo": 0.10670407887116144,
+    "hi": 0.15798510943663846,
+    "sd_date_means": 0.02611595600089321,
+    "se_boot": 0.013238288579007678,
+    "boot_inflation_r": 1.6029719237858415,
+    "alpha_one_sided": 0.0125,
+    "power": 0.8,
+    "effect_point": 0.13145152673138122,
+    "effect_conservative": 0.10670407887116144,
+    "dates_needed_point": 5,
+    "dates_needed_conservative": 5,
+    "method": "(a) analytic: G = ((r z_{1-a} + z_{0.8}) sd / delta)^2, r = SE of the two-stage bootstrap / (sd / sqrt(G_est)); (b) simulation: estimation-half dates resampled to G with the registered two-stage bootstrap, rule and Holm alpha/4",
+    "note": "TEST dates for 80 % power of the registered test (two-stage date bootstrap, rule, Holm alpha/4); DEV has 6 windows per date, TEST 8 (E1-E4) or the same 4 (E5)",
+    "pct": 0.21516259637985427,
+    "pct_lo": 0.1766582356769103,
+    "pct_hi": 0.25672477186474607,
+    "min_effect_pct": 0.5,
+    "mei_pct": 1.0,
+    "sd_date_pct": 0.04048555309932738,
+    "pct_rule_dates_needed": null,
+    "pct_rule_status": "unattainable: DEV estimation-half pct 0.215 % < 0.5 % (the point estimate must reach the threshold; more dates do not help)",
+    "dates_needed_rule": null,
+    "power_scope": "dates_needed_* and the simulation's 'ci_holm' share: power of the CI/Holm test only",
+    "simulation": {
+     "status": "ok",
+     "n_sim": 400,
+     "boot_reps": 2000,
+     "alpha": 0.0125,
+     "seed": 20261020,
+     "by_dates": {
+      "16": {
+       "point": {
+        "effect": 0.13145152673138122,
+        "ci_holm": 1.0,
+        "rule": 0.0
+       },
+       "conservative": {
+        "effect": 0.10670407887116144,
+        "ci_holm": 1.0,
+        "rule": 0.0
+       }
+      },
+      "24": {
+       "point": {
+        "effect": 0.13145152673138122,
+        "ci_holm": 1.0,
+        "rule": 0.0
+       },
+       "conservative": {
+        "effect": 0.10670407887116144,
+        "ci_holm": 1.0,
+        "rule": 0.0
+       }
+      }
+     },
+     "note": "rejection share of the rule and Holm's first step (alpha/4) among simulated experiments"
+    },
+    "dates_decision": 16,
+    "underpowered_at_max_dates": false,
+    "decision_basis": "simulated power at G = 16 and the CI bound nearest the null (PREREG \u00a79.4); 24 when below 80%; H1a: CI/Holm part only (see pct_rule_status)"
+   },
+   {
+    "name": "H2c",
+    "status": "ok",
+    "half": "estimation",
+    "dates": 10,
+    "windows": 20,
+    "windows_per_date": 2.0,
+    "estimate": -3.1830999060282172,
+    "lo": -4.40573463557358,
+    "hi": -2.0518071054870637,
+    "sd_date_means": 1.6559789868481816,
+    "se_boot": 0.5967219466800895,
+    "boot_inflation_r": 1.1395075036007278,
+    "alpha_one_sided": 0.0125,
+    "power": 0.8,
+    "effect_point": 3.1830999060282172,
+    "effect_conservative": 2.0518071054870637,
+    "dates_needed_point": 5,
+    "dates_needed_conservative": 8,
+    "method": "(a) analytic: G = ((r z_{1-a} + z_{0.8}) sd / delta)^2, r = SE of the two-stage bootstrap / (sd / sqrt(G_est)); (b) simulation: estimation-half dates resampled to G with the registered two-stage bootstrap, rule and Holm alpha/4",
+    "note": "TEST dates for 80 % power of the registered test (two-stage date bootstrap, rule, Holm alpha/4); DEV has 2 windows per date, TEST 8 (E1-E4) or the same 4 (E5)",
+    "simulation": {
+     "status": "ok",
+     "n_sim": 400,
+     "boot_reps": 2000,
+     "alpha": 0.0125,
+     "seed": 20261020,
+     "by_dates": {
+      "16": {
+       "point": {
+        "effect": 3.1830999060282172,
+        "ci_holm": 1.0,
+        "rule": 1.0
+       },
+       "conservative": {
+        "effect": 2.0518071054870637,
+        "ci_holm": 1.0,
+        "rule": 1.0
+       }
+      },
+      "24": {
+       "point": {
+        "effect": 3.1830999060282172,
+        "ci_holm": 1.0,
+        "rule": 1.0
+       },
+       "conservative": {
+        "effect": 2.0518071054870637,
+        "ci_holm": 1.0,
+        "rule": 1.0
+       }
+      }
+     },
+     "note": "rejection share of the rule and Holm's first step (alpha/4) among simulated experiments"
+    },
+    "dates_decision": 16,
+    "underpowered_at_max_dates": false,
+    "decision_basis": "simulated power at G = 16 and the CI bound nearest the null (PREREG \u00a79.4); 24 when below 80%"
+   },
+   {
+    "name": "H4a",
+    "status": "ok",
+    "half": "estimation",
+    "dates": 10,
+    "windows": 60,
+    "windows_per_date": 6.0,
+    "estimate": 0.045402594907080145,
+    "lo": 0.03222976190013633,
+    "hi": 0.05957548665428694,
+    "sd_date_means": 0.013178836407129248,
+    "se_boot": 0.006884003250237983,
+    "boot_inflation_r": 1.6518248666458761,
+    "alpha_one_sided": 0.0125,
+    "power": 0.8,
+    "effect_point": 0.566852339109006,
+    "effect_conservative": 0.5551512897091299,
+    "dates_needed_point": 5,
+    "dates_needed_conservative": 5,
+    "method": "(a) analytic: G = ((r z_{1-a} + z_{0.8}) sd / delta)^2, r = SE of the two-stage bootstrap / (sd / sqrt(G_est)); (b) simulation: estimation-half dates resampled to G with the registered two-stage bootstrap, rule and Holm alpha/4",
+    "note": "TEST dates for 80 % power of the registered test (two-stage date bootstrap, rule, Holm alpha/4); DEV has 6 windows per date, TEST 8 (E1-E4) or the same 4 (E5)",
+    "simulation": {
+     "status": "ok",
+     "n_sim": 400,
+     "boot_reps": 2000,
+     "alpha": 0.0125,
+     "seed": 20261020,
+     "by_dates": {
+      "16": {
+       "point": {
+        "effect": 0.566852339109006,
+        "ci_holm": 1.0,
+        "rule": 1.0
+       },
+       "conservative": {
+        "effect": 0.5551512897091299,
+        "ci_holm": 1.0,
+        "rule": 1.0
+       }
+      },
+      "24": {
+       "point": {
+        "effect": 0.566852339109006,
+        "ci_holm": 1.0,
+        "rule": 1.0
+       },
+       "conservative": {
+        "effect": 0.5551512897091299,
+        "ci_holm": 1.0,
+        "rule": 1.0
+       }
+      }
+     },
+     "note": "rejection share of the rule and Holm's first step (alpha/4) among simulated experiments"
+    },
+    "dates_decision": 16,
+    "underpowered_at_max_dates": false,
+    "decision_basis": "simulated power at G = 16 and the CI bound nearest the null (PREREG \u00a79.4); 24 when below 80%"
+   },
+   {
+    "name": "H5b",
+    "status": "ok",
+    "half": "estimation",
+    "dates": 10,
+    "windows": 40,
+    "windows_per_date": 4.0,
+    "estimate": 0.9340853690367119,
+    "lo": 0.6724383770651013,
+    "hi": 1.2251894410078912,
+    "sd_date_means": 0.347604244189546,
+    "se_boot": 0.1415393512302436,
+    "boot_inflation_r": 1.2876330939908187,
+    "alpha_one_sided": 0.00625,
+    "power": 0.8,
+    "effect_point": 0.9340853690367119,
+    "effect_conservative": 0.6724383770651013,
+    "dates_needed_point": 5,
+    "dates_needed_conservative": 5,
+    "method": "(a) analytic: G = ((r z_{1-a} + z_{0.8}) sd / delta)^2, r = SE of the two-stage bootstrap / (sd / sqrt(G_est)); (b) simulation: estimation-half dates resampled to G with the registered two-stage bootstrap, rule and Holm alpha/4",
+    "note": "TEST dates for 80 % power of the registered test (two-stage date bootstrap, rule, Holm alpha/4; two-sided, alpha/8 per side, pre-registered sign); DEV has 4 windows per date, TEST 8 (E1-E4) or the same 4 (E5)",
+    "preregistered_sign": 1,
+    "simulation": {
+     "status": "ok",
+     "n_sim": 400,
+     "boot_reps": 2000,
+     "alpha": 0.0125,
+     "seed": 20261020,
+     "by_dates": {
+      "16": {
+       "point": {
+        "effect": 0.9340853690367119,
+        "ci_holm": 1.0,
+        "rule": 1.0
+       },
+       "conservative": {
+        "effect": 0.6724383770651013,
+        "ci_holm": 1.0,
+        "rule": 1.0
+       }
+      },
+      "24": {
+       "point": {
+        "effect": 0.9340853690367119,
+        "ci_holm": 1.0,
+        "rule": 1.0
+       },
+       "conservative": {
+        "effect": 0.6724383770651013,
+        "ci_holm": 1.0,
+        "rule": 1.0
+       }
+      }
+     },
+     "note": "rejection share of the rule and Holm's first step (alpha/4) among simulated experiments"
+    },
+    "dates_decision": 16,
+    "underpowered_at_max_dates": false,
+    "decision_basis": "simulated power at G = 16 and the CI bound nearest the null (PREREG \u00a79.4); 24 when below 80%"
+   }
+  ]
+ },
+ "hypotheses": {
+  "family": [
+   "H1a",
+   "H2c",
+   "H4a",
+   "H5b"
+  ],
+  "missing": [],
+  "complete": true,
+  "verdicts": {
+   "H1a": false,
+   "H2c": true,
+   "H4a": true,
+   "H5b": true
+  }
+ },
+ "notes": [],
+ "experiment": "holm",
+ "split": "dev",
+ "smoke": false,
+ "settings": {
+  "n_boot": 10000,
+  "level": 0.95,
+  "seed": 20261019,
+  "main": {
+   "n": 3,
+   "d": 2.0,
+   "rho": 0.9,
+   "lead_s": 4.004
+  },
+  "load_bins": [
+   0.8,
+   1.0
+  ],
+  "holm_family": [
+   "H1a",
+   "H2c",
+   "H4a",
+   "H5b"
+  ],
+  "h5b": {
+   "arm": "protected",
+   "alpha": 0.5
+  },
+  "h2c_arm": "unprotected",
+  "split": "dev",
+  "smoke": false,
+  "crossed": true
+ },
+ "inputs": {
+  "digest": "788ff43d20a91f2c54067d9adba3fed51e941c6ae40dcef635637c46b4368df8"
+ },
+ "family_sources": {
+  "e1": "this run",
+  "e2": "this run",
+  "e4": "this run",
+  "e5": "this run"
+ },
+ "input_checks": {
+  "completeness": {
+   "e0": {
+    "default": {
+     "expected": 126,
+     "present": 126,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    }
+   },
+   "e1": {
+    "direct": {
+     "expected": 126,
+     "present": 126,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "direct_truerates": {
+     "expected": 126,
+     "present": 126,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "equal": {
+     "expected": 126,
+     "present": 126,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "kappa0": {
+     "expected": 126,
+     "present": 126,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "meas_only": {
+     "expected": 126,
+     "present": 126,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "oracle": {
+     "expected": 126,
+     "present": 126,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "protected": {
+     "expected": 126,
+     "present": 126,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "static": {
+     "expected": 126,
+     "present": 126,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "unprotected": {
+     "expected": 126,
+     "present": 126,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    }
+   },
+   "e1_sweeps": {
+    "d1": {
+     "direct": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "d5": {
+     "direct": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "d15": {
+     "direct": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "rho0.5": {
+     "direct": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "rho0.7": {
+     "direct": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "rho1.1": {
+     "direct": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "lead0": {
+     "direct": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "lead1.05": {
+     "direct": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "n6": {
+     "direct": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "n9": {
+     "direct": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    }
+   },
+   "e2": {
+    "replay": {
+     "prot_fixed": {
+      "expected": 42,
+      "present": 42,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_env": {
+      "expected": 42,
+      "present": 42,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_fixed": {
+      "expected": 42,
+      "present": 42,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_usage": {
+      "expected": 42,
+      "present": 42,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "stage": {
+     "prot_fixed": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_env": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_fixed": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_usage": {
+      "expected": 126,
+      "present": 126,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "bandit": {
+     "expected": 32,
+     "present": 32,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    }
+   },
+   "e4": {
+    "pay": {
+     "direct_full": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "equal_full": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "kappa0_full": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "kappa_x0": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "kappa_x0.5": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "kappa_x2": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "prot_full": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "static_full": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "unc_truth": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     }
+    },
+    "h4b": {
+     "prot_fixed": {
+      "expected": 42,
+      "present": 12,
+      "missing": [
+       "2024-03-13|o43260",
+       "2024-03-13|o60",
+       "2024-03-16|o14460",
+       "2024-03-16|o57660",
+       "2024-03-18|o28860",
+       "2024-03-18|o72060",
+       "2024-03-20|o43260",
+       "2024-03-20|o60",
+       "2024-03-23|o14460",
+       "2024-03-23|o57660",
+       "2024-03-24|o28860",
+       "2024-03-24|o72060"
+      ],
+      "n_missing": 30,
+      "complete": false
+     },
+     "unc_env": {
+      "expected": 42,
+      "present": 12,
+      "missing": [
+       "2024-03-13|o43260",
+       "2024-03-13|o60",
+       "2024-03-16|o14460",
+       "2024-03-16|o57660",
+       "2024-03-18|o28860",
+       "2024-03-18|o72060",
+       "2024-03-20|o43260",
+       "2024-03-20|o60",
+       "2024-03-23|o14460",
+       "2024-03-23|o57660",
+       "2024-03-24|o28860",
+       "2024-03-24|o72060"
+      ],
+      "n_missing": 30,
+      "complete": false
+     },
+     "unc_fixed": {
+      "expected": 42,
+      "present": 12,
+      "missing": [
+       "2024-03-13|o43260",
+       "2024-03-13|o60",
+       "2024-03-16|o14460",
+       "2024-03-16|o57660",
+       "2024-03-18|o28860",
+       "2024-03-18|o72060",
+       "2024-03-20|o43260",
+       "2024-03-20|o60",
+       "2024-03-23|o14460",
+       "2024-03-23|o57660",
+       "2024-03-24|o28860",
+       "2024-03-24|o72060"
+      ],
+      "n_missing": 30,
+      "complete": false
+     },
+     "unc_usage": {
+      "expected": 42,
+      "present": 12,
+      "missing": [
+       "2024-03-13|o43260",
+       "2024-03-13|o60",
+       "2024-03-16|o14460",
+       "2024-03-16|o57660",
+       "2024-03-18|o28860",
+       "2024-03-18|o72060",
+       "2024-03-20|o43260",
+       "2024-03-20|o60",
+       "2024-03-23|o14460",
+       "2024-03-23|o57660",
+       "2024-03-24|o28860",
+       "2024-03-24|o72060"
+      ],
+      "n_missing": 30,
+      "complete": false
+     }
+    },
+    "learn": {
+     "expected": 11,
+     "present": 11,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    }
+   },
+   "e3": {
+    "cert": {
+     "direct_full": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "directtrue_full": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "equal_full": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "kappa0_full": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "kappa_x0": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "kappa_x0.5": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "kappa_x2": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "prot_full": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     },
+     "static_full": {
+      "expected": 126,
+      "present": 36,
+      "missing": [
+       "2024-03-13|o14460",
+       "2024-03-13|o28860",
+       "2024-03-13|o43260",
+       "2024-03-13|o57660",
+       "2024-03-13|o60",
+       "2024-03-13|o72060",
+       "2024-03-16|o14460",
+       "2024-03-16|o28860",
+       "2024-03-16|o43260",
+       "2024-03-16|o57660",
+       "2024-03-16|o60",
+       "2024-03-16|o72060"
+      ],
+      "n_missing": 90,
+      "complete": false
+     }
+    }
+   },
+   "e5": {
+    "jobs": {
+     "expected": 126,
+     "present": 126,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "jobs_by_arm": {
+     "protected": {
+      "expected": 63,
+      "present": 63,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 63,
+      "present": 63,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    }
+   },
+   "e6": {
+    "windows": {
+     "expected": 252,
+     "present": 72,
+     "missing": [
+      "6|2024-03-13|o14460",
+      "6|2024-03-13|o28860",
+      "6|2024-03-13|o43260",
+      "6|2024-03-13|o57660",
+      "6|2024-03-13|o60",
+      "6|2024-03-13|o72060",
+      "6|2024-03-16|o14460",
+      "6|2024-03-16|o28860",
+      "6|2024-03-16|o43260",
+      "6|2024-03-16|o57660",
+      "6|2024-03-16|o60",
+      "6|2024-03-16|o72060"
+     ],
+     "n_missing": 180,
+     "complete": false
+    }
+   }
+  },
+  "provenance": {
+   "e2": {
+    "scope": "all",
+    "sidecars": 1082,
+    "outputs": 1082,
+    "outputs_without_sidecar": 0,
+    "code_versions": 1,
+    "asset_conflicts": {},
+    "ok": true
+   },
+   "e3": {
+    "scope": "all",
+    "sidecars": 396,
+    "outputs": 396,
+    "outputs_without_sidecar": 0,
+    "code_versions": 1,
+    "asset_conflicts": {},
+    "ok": true
+   },
+   "e4": {
+    "scope": "all",
+    "sidecars": 335,
+    "outputs": 335,
+    "outputs_without_sidecar": 0,
+    "code_versions": 1,
+    "asset_conflicts": {},
+    "ok": true
+   },
+   "e5": {
+    "scope": "all",
+    "jobs": 126,
+    "without_fingerprint": 0,
+    "ckpt_conflicts": {},
+    "code_versions": 1,
+    "ok": false
+   },
+   "e6": {
+    "scope": "all",
+    "jobs": 72,
+    "without_fingerprint": 0,
+    "ckpt_conflicts": {},
+    "code_versions": 1,
+    "ok": true
+   },
+   "e1": {
+    "scope": "all:all",
+    "runs": 140,
+    "conflicts": 0,
+    "ok": true,
+    "code_versions": 1,
+    "rows_without_code_fp": 0
+   },
+   "primary": {
+    "e1": {
+     "e1": {
+      "scope": "default:protected,meas_only",
+      "runs": 10,
+      "conflicts": 0,
+      "ok": true,
+      "code_versions": 1,
+      "rows_without_code_fp": 0
+     }
+    },
+    "e4": {
+     "e1": {
+      "scope": "default:protected,unprotected",
+      "runs": 10,
+      "conflicts": 0,
+      "ok": true,
+      "code_versions": 1,
+      "rows_without_code_fp": 0
+     }
+    },
+    "e2": {
+     "e2": {
+      "parts": {
+       "replay/unc_fixed": {
+        "scope": "replay/unc_fixed",
+        "sidecars": 42,
+        "outputs": 42,
+        "outputs_without_sidecar": 0,
+        "code_versions": 1,
+        "asset_conflicts": {},
+        "ok": true
+       }
+      },
+      "ok": true
+     }
+    },
+    "e5": {
+     "e5": {
+      "scope": "protected",
+      "jobs": 63,
+      "without_fingerprint": 0,
+      "ckpt_conflicts": {},
+      "code_versions": 1,
+      "ok": false
+     }
+    }
+   }
+  },
+  "primary_dates": {
+   "e1": {
+    "e1": {
+     "protected": 21,
+     "meas_only": 21
+    }
+   },
+   "e4": {
+    "e1": {
+     "protected": 21,
+     "unprotected": 21
+    }
+   },
+   "e2": {
+    "e2": {
+     "replay/unc_fixed": 21
+    }
+   },
+   "e5": {
+    "e5": {
+     "jobs_by_arm/protected": 21
+    }
+   }
+  }
+ }
+}

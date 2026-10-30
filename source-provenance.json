@@ -1,0 +1,303 @@
+{
+  "release": "v0.1.0",
+  "original_draft_sha256": "eeb1a0fce4573e81954c0e627f346f811b2306e58109c8978c54a5d23688a9e2",
+  "description": "Mechanism and experiment source copied byte-for-byte from the project matching the supplied draft. Packaging changes to test imports and NR patch headers are listed separately in packaging-transformations.json.",
+  "unchanged_source_files": [
+    {
+      "path": "implementation/code/slicemech/__init__.py",
+      "sha256": "73c626321ff1b142f3667b0312115ce2442f069a82fddbea2fbaa68947a9f69b"
+    },
+    {
+      "path": "implementation/code/slicemech/config.py",
+      "sha256": "c04d29a315fbdaf39d1ed866670895d2db408a32d956d36937710058bd56af85"
+    },
+    {
+      "path": "implementation/code/slicemech/control/__init__.py",
+      "sha256": "73c626321ff1b142f3667b0312115ce2442f069a82fddbea2fbaa68947a9f69b"
+    },
+    {
+      "path": "implementation/code/slicemech/control/features.py",
+      "sha256": "0ef0e036f5362e9844fdc86ef040d5f45dcbbbe19ea717206cbc48495fcbf7bb"
+    },
+    {
+      "path": "implementation/code/slicemech/control/nets.py",
+      "sha256": "39c07a9b028d5d69b6e713175def1f5ff184ee1dece3d3a1fc611d46d337d233"
+    },
+    {
+      "path": "implementation/code/slicemech/control/oracle.py",
+      "sha256": "04e0ac266736a468a48b510e07e77852a301ee2558b94f5f3088459a431663d8"
+    },
+    {
+      "path": "implementation/code/slicemech/control/ppo.py",
+      "sha256": "9e83d99630494c0b7b7cbee32203a77ae97855251ac9c8efc60faa131a193d7c"
+    },
+    {
+      "path": "implementation/code/slicemech/control/retrain.py",
+      "sha256": "c7dd9cd28d5ec0b6da5a2b708d481a21b0a3adcb7caa8b3ed0150814990911cb"
+    },
+    {
+      "path": "implementation/code/slicemech/control/static.py",
+      "sha256": "bb467d8cb8d0d044210e1ed74e011534a4172db7c713e514feccccad067ff52b"
+    },
+    {
+      "path": "implementation/code/slicemech/data/__init__.py",
+      "sha256": "73c626321ff1b142f3667b0312115ce2442f069a82fddbea2fbaa68947a9f69b"
+    },
+    {
+      "path": "implementation/code/slicemech/data/calibrate.py",
+      "sha256": "660406084bfd9795f46759f8dc97b9c836bf798eef4975dc2ec3d3126ca1cebc"
+    },
+    {
+      "path": "implementation/code/slicemech/data/compose.py",
+      "sha256": "ced921cf98859d2357f6f46a01106b18a681554fc8c0ee816d86442b843e0ded"
+    },
+    {
+      "path": "implementation/code/slicemech/data/puffer.py",
+      "sha256": "b405e97f4b4bdb2ccfbc1a956e01c5510348152b0e72abd76cdf0d18aa49a98d"
+    },
+    {
+      "path": "implementation/code/slicemech/data/puffer_fetch.py",
+      "sha256": "623d07e98ecaf8b8bf64b5f4e9179614d3c1ea40e9bd35745eef2fbaa7b62e33"
+    },
+    {
+      "path": "implementation/code/slicemech/data/raca.py",
+      "sha256": "637d25bc3055b36bcc049528e221ec999015804c1db97c435fee95160ea5e17d"
+    },
+    {
+      "path": "implementation/code/slicemech/data/tractor.py",
+      "sha256": "2fc8eb6964ab39f02dfe393750f3bb092312ad528b1e5a1d00db4317865b297c"
+    },
+    {
+      "path": "implementation/code/slicemech/eval/__init__.py",
+      "sha256": "73c626321ff1b142f3667b0312115ce2442f069a82fddbea2fbaa68947a9f69b"
+    },
+    {
+      "path": "implementation/code/slicemech/eval/headroom.py",
+      "sha256": "f8c76d58d698ebbe53fff7354bb61ba1570eb71c94fec71e2f71e964f646f197"
+    },
+    {
+      "path": "implementation/code/slicemech/eval/metrics.py",
+      "sha256": "0c84feb3b5806652781c8477bd2d86044d816ad12ba1a214f7dca462deb967fe"
+    },
+    {
+      "path": "implementation/code/slicemech/eval/stats.py",
+      "sha256": "436b07becf971056f0f32108f02c03d1c6d8ed64c37f413d8109441dee346c94"
+    },
+    {
+      "path": "implementation/code/slicemech/forecast.py",
+      "sha256": "225e5eaa78f3fd43fc39f37d4e7ce9d63215c7fdbff571625965e7ee539d7427"
+    },
+    {
+      "path": "implementation/code/slicemech/io.py",
+      "sha256": "12cdedfaf2f0f1b74cfd0d23910168007292a80c218b164bbdf099b2fb33b8b6"
+    },
+    {
+      "path": "implementation/code/slicemech/model/__init__.py",
+      "sha256": "73c626321ff1b142f3667b0312115ce2442f069a82fddbea2fbaa68947a9f69b"
+    },
+    {
+      "path": "implementation/code/slicemech/model/allocation.py",
+      "sha256": "be152f8cab632b2c0e8eb6d56b54fd71f6e2815489dbe96e0794a4bb4af47bff"
+    },
+    {
+      "path": "implementation/code/slicemech/model/direct.py",
+      "sha256": "1755b210a3a35fe4d65476eaf534048dc5c52bcf72a4c662a7b1e4d0abc8527b"
+    },
+    {
+      "path": "implementation/code/slicemech/model/scores.py",
+      "sha256": "a4b120d734dd62dfbe0c971660b45334485079fe4431da4e95cb918d038d449e"
+    },
+    {
+      "path": "implementation/code/slicemech/model/shapes.py",
+      "sha256": "f851c4e3e701a1875ff6f6f8fd9e3da6b05f4828da7a78870204af34d6e23a92"
+    },
+    {
+      "path": "implementation/code/slicemech/nr/__init__.py",
+      "sha256": "73c626321ff1b142f3667b0312115ce2442f069a82fddbea2fbaa68947a9f69b"
+    },
+    {
+      "path": "implementation/code/slicemech/nr/run.py",
+      "sha256": "c1abadf39c9cbed254fa09a33fa905cb5104e6bd5094d1c54931105c10e5d364"
+    },
+    {
+      "path": "implementation/code/slicemech/nr/schedule.py",
+      "sha256": "e88b0b6624d3b5ad4d192afd820159fd8cce267892b8125aaeea63a5a44c6086"
+    },
+    {
+      "path": "implementation/code/slicemech/phy.py",
+      "sha256": "4fce7460198f25476e7ae34edcca590dc9acff510f65d3563c3e8f464dfe0f81"
+    },
+    {
+      "path": "implementation/code/slicemech/pricing/__init__.py",
+      "sha256": "73c626321ff1b142f3667b0312115ce2442f069a82fddbea2fbaa68947a9f69b"
+    },
+    {
+      "path": "implementation/code/slicemech/pricing/envelope.py",
+      "sha256": "dc772f37ab4ce41667f293ef64826dcf3f983c8cb4316cd4339737de06838426"
+    },
+    {
+      "path": "implementation/code/slicemech/pricing/response.py",
+      "sha256": "cc226371ae183699ce14ff48e5d53a962a59f04fbf01cd669f1700a5bc51a585"
+    },
+    {
+      "path": "implementation/code/slicemech/pricing/thresholds.py",
+      "sha256": "b407e177c1ae0855aba4608b78315b15bf07b97ad3864f8ad49cd6715d92bfab"
+    },
+    {
+      "path": "implementation/code/slicemech/sim/__init__.py",
+      "sha256": "73c626321ff1b142f3667b0312115ce2442f069a82fddbea2fbaa68947a9f69b"
+    },
+    {
+      "path": "implementation/code/slicemech/sim/episode.py",
+      "sha256": "d472758148390c0e280e65698f042c2e0a47d806c5c2c6e3bf19ea32e955118e"
+    },
+    {
+      "path": "implementation/code/slicemech/sim/fluid.py",
+      "sha256": "19f42817189ab2e60dc1422c31cc0e89e9b5b637d013759e9a184e236a7ee010"
+    },
+    {
+      "path": "implementation/code/slicemech/tenants/__init__.py",
+      "sha256": "73c626321ff1b142f3667b0312115ce2442f069a82fddbea2fbaa68947a9f69b"
+    },
+    {
+      "path": "implementation/code/slicemech/tenants/bandits.py",
+      "sha256": "e0282fae2d487358616d4b9ad300909df279745a481587638c614fce136e8056"
+    },
+    {
+      "path": "implementation/code/slicemech/tenants/poison.py",
+      "sha256": "e4ba52fad007ce3054b14b32a8d65473bb487cac7596a4c360503392ef9d657c"
+    },
+    {
+      "path": "implementation/code/slicemech/tenants/strategies.py",
+      "sha256": "1d941ce1abc96e82335b3385c5c9a63359f9dfc5739abbdf7550e8aec5cef1b6"
+    },
+    {
+      "path": "implementation/code/experiments/analyze.py",
+      "sha256": "6510e5156e05ad5c58ee6a8e7bca54b0eead89623449d87f4e60ba0652d110b6"
+    },
+    {
+      "path": "implementation/code/experiments/diag_gbr_sweep.py",
+      "sha256": "62c51b4a71264fbb5a42d4c70ad24c583223b1e816f8b1e4791e983929f10dfe"
+    },
+    {
+      "path": "implementation/code/experiments/diag_headroom.py",
+      "sha256": "23346b316779da0c0cbcb23edfb8ffefccac143c1b305d31e6a1190082298b84"
+    },
+    {
+      "path": "implementation/code/experiments/diag_part_balance.py",
+      "sha256": "e95178976b61d17d6a5f8b3085205315efca00097b0d13d8fdda6c1061562513"
+    },
+    {
+      "path": "implementation/code/experiments/e0_setup.py",
+      "sha256": "27a917ddaa141424029a26bffc463bbb6c0748a32949d52362aacfecd3f2da01"
+    },
+    {
+      "path": "implementation/code/experiments/e1_value.py",
+      "sha256": "1617da0c2f88dfa248d86f2161824833b19792e0e20ef3a9c1a8bade1d78406e"
+    },
+    {
+      "path": "implementation/code/experiments/e2_manipulation.py",
+      "sha256": "b4b76cc1905b2d6b5b607071248b71ba253e97cba46dadcd7940fd06c4b22357"
+    },
+    {
+      "path": "implementation/code/experiments/e3_protection.py",
+      "sha256": "9b011dc1d6b975dcbc1fe18f860dd00fd89da8242757f2e5f841674038ccb57f"
+    },
+    {
+      "path": "implementation/code/experiments/e4_cost.py",
+      "sha256": "bd3410ac8d570aacc83d10299fd2319952ff121e3718561dcc30c30c62e3753d"
+    },
+    {
+      "path": "implementation/code/experiments/e5_training_channel.py",
+      "sha256": "29af71ffd324e1b686d763699e33082288bb8a51b029b8fd82a5113d10497dac"
+    },
+    {
+      "path": "implementation/code/experiments/e6_scaling.py",
+      "sha256": "b4d97e5b6c834b09b4184158892ffe60b80e7fdb72b5355e048a1c91f20c6b25"
+    },
+    {
+      "path": "implementation/code/experiments/e7_nr.py",
+      "sha256": "940a64136563fa2319651c4c538c3961de5853cef17fe57dc13d2dfe019b2541"
+    },
+    {
+      "path": "implementation/code/experiments/figures/_common.py",
+      "sha256": "e2815d669351a590bf543c4f242d415e2833e51c3a4a65ec2e7a0183ac2141dc"
+    },
+    {
+      "path": "implementation/code/experiments/figures/fig_e0_worked.py",
+      "sha256": "a07920807f28eea6ca3f8f2e684313da2a12d792d3b70e07e5bf1087169c1e70"
+    },
+    {
+      "path": "implementation/code/experiments/figures/fig_e1_value.py",
+      "sha256": "bf7a62cba192f0c92de8391568a3432feb625aa9812a0c226719c6d631067506"
+    },
+    {
+      "path": "implementation/code/experiments/figures/fig_e2_manip.py",
+      "sha256": "73976de0e38af636e9238469475ca307142f0062533ff9af9c2a69e96edaeea1"
+    },
+    {
+      "path": "implementation/code/experiments/figures/fig_e2e3_gain.py",
+      "sha256": "dc8c8dcc1d11b19d4c36ce24b7379d674a3d3888c8713279a9c7019d2bf35f34"
+    },
+    {
+      "path": "implementation/code/experiments/figures/fig_e3_bandits.py",
+      "sha256": "4bc0affb78585ceb166b5e241a224da944430d79750766ca4f1102c6d728e196"
+    },
+    {
+      "path": "implementation/code/experiments/figures/fig_e3_protect.py",
+      "sha256": "3a1793adaba1963df9b4ef123a9850a33cfbccdbb0e433ad80ce9630830441ee"
+    },
+    {
+      "path": "implementation/code/experiments/figures/fig_e4_cost.py",
+      "sha256": "004d6588ca087b78549836b9e40e731a41fa5559688e2295c9ff3e1fdddf8314"
+    },
+    {
+      "path": "implementation/code/experiments/figures/fig_e4_frontier.py",
+      "sha256": "65cf0c4bfeba69488db6b1b6f73118cf50cf93dd292059b34df6fadbf99e9f35"
+    },
+    {
+      "path": "implementation/code/experiments/figures/fig_e5.py",
+      "sha256": "d5a605f8b46250077f781dee936db12477484dd23656630220bc870a085b67b0"
+    },
+    {
+      "path": "implementation/code/experiments/figures/fig_e6.py",
+      "sha256": "9cd1661f496dae2a8feda092c61127e46fef7dba40eaf75cf71c078b68c23bee"
+    },
+    {
+      "path": "implementation/code/experiments/figures/fig_e7_nr.py",
+      "sha256": "07d7f6d926100897b11490e4b5289cb150a112bd39e22dc8e69024b9bba7d2d4"
+    },
+    {
+      "path": "implementation/code/experiments/figures/fig_worked_example.py",
+      "sha256": "77a5773142bddd7d2a149fa3de2e3cd14cd9a6a7be1bc3608f5a23269d73f778"
+    },
+    {
+      "path": "implementation/code/experiments/figures/make_all.py",
+      "sha256": "37ce4f060329c926b600313d8de14d94fdf740e2cbf7de7ed440cb86139223a0"
+    },
+    {
+      "path": "implementation/code/experiments/registry.py",
+      "sha256": "db07f9f2e653b5217d3495983cc6ea2e976265f467dc002fc04bb299715b147a"
+    },
+    {
+      "path": "implementation/code/experiments/run_dev_phase.sh",
+      "sha256": "7ed7a9b13559283383d1b7c55fc99e9106bd1ab3f9d23735d3ca0a2a5569640b"
+    },
+    {
+      "path": "implementation/code/experiments/run_dev_phase_post.sh",
+      "sha256": "ad5747281ab8d73f987693724fd66eb2b2d0369597116ada106034d1b36f87fb"
+    },
+    {
+      "path": "implementation/code/experiments/run_dev_phase_rest.sh",
+      "sha256": "4a85f7d81815eb41a55dd5cbc76e92b657aa8a60c236762aefb7abee5aaf3630"
+    },
+    {
+      "path": "implementation/code/experiments/smoke_episode.py",
+      "sha256": "0171ea3da58dc48ceffa64cae07e6205d547c31a3d5cb246af42faf04188d79f"
+    },
+    {
+      "path": "implementation/code/experiments/train.py",
+      "sha256": "66505148f2e380a62f9a5daa0fa7db49b268802bcad6d82bd01bc6868ad65a94"
+    }
+  ]
+}

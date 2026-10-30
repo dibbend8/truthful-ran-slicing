@@ -1,0 +1,1335 @@
+{
+ "macros": {
+  "EonePHolm": {
+   "value": 0.00039996000399960006,
+   "fmt": "{:.3g}",
+   "unit": "Holm-adjusted p",
+   "source": "holm: H1a in ('H1a', 'H2c', 'H4a', 'H5b')",
+   "text": "0.0004"
+  },
+  "EoneSupported": {
+   "value": "no",
+   "fmt": "{}",
+   "unit": "",
+   "source": "holm: H1a final verdict: pre-registered rule, Holm rejection at 0.05, complete single-provenance TEST inputs",
+   "text": "no"
+  },
+  "EtwoPHolm": {
+   "value": 0.00039996000399960006,
+   "fmt": "{:.3g}",
+   "unit": "Holm-adjusted p",
+   "source": "holm: H2c in ('H1a', 'H2c', 'H4a', 'H5b')",
+   "text": "0.0004"
+  },
+  "EtwoSupported": {
+   "value": "yes",
+   "fmt": "{}",
+   "unit": "",
+   "source": "holm: H2c final verdict: pre-registered rule, Holm rejection at 0.05, complete single-provenance TEST inputs",
+   "text": "yes"
+  },
+  "EfourPHolm": {
+   "value": 0.00039996000399960006,
+   "fmt": "{:.3g}",
+   "unit": "Holm-adjusted p",
+   "source": "holm: H4a in ('H1a', 'H2c', 'H4a', 'H5b')",
+   "text": "0.0004"
+  },
+  "EfourSupported": {
+   "value": "yes",
+   "fmt": "{}",
+   "unit": "",
+   "source": "holm: H4a final verdict: pre-registered rule, Holm rejection at 0.05, complete single-provenance TEST inputs",
+   "text": "yes"
+  },
+  "EfivePHolm": {
+   "value": 0.00039996000399960006,
+   "fmt": "{:.3g}",
+   "unit": "Holm-adjusted p",
+   "source": "holm: H5b in ('H1a', 'H2c', 'H4a', 'H5b')",
+   "text": "0.0004"
+  },
+  "EfiveSupported": {
+   "value": "yes",
+   "fmt": "{}",
+   "unit": "",
+   "source": "holm: H5b final verdict: pre-registered rule, Holm rejection at 0.05, complete single-provenance TEST inputs",
+   "text": "yes"
+  }
+ },
+ "tables": {
+  "holm": [
+   {
+    "name": "H1a",
+    "p": 9.999000099990002e-05,
+    "p_holm": 0.00039996000399960006,
+    "reject": true
+   },
+   {
+    "name": "H2c",
+    "p": 9.999000099990002e-05,
+    "p_holm": 0.00039996000399960006,
+    "reject": true
+   },
+   {
+    "name": "H4a",
+    "p": 9.999000099990002e-05,
+    "p_holm": 0.00039996000399960006,
+    "reject": true
+   },
+   {
+    "name": "H5b",
+    "p": 0.00019998000199980003,
+    "p_holm": 0.00039996000399960006,
+    "reject": true
+   }
+  ],
+  "verdicts": [
+   {
+    "name": "H1a",
+    "experiment": "e1",
+    "rule_met": false,
+    "p": 9.999000099990002e-05,
+    "p_holm": 0.00039996000399960006,
+    "holm_reject": true,
+    "inputs_ok": true,
+    "contrary": null,
+    "supported": false,
+    "reason": "pre-registered rule not met"
+   },
+   {
+    "name": "H2c",
+    "experiment": "e2",
+    "rule_met": true,
+    "p": 9.999000099990002e-05,
+    "p_holm": 0.00039996000399960006,
+    "holm_reject": true,
+    "inputs_ok": true,
+    "contrary": null,
+    "supported": true,
+    "reason": "rule and Holm and complete, single-provenance inputs"
+   },
+   {
+    "name": "H4a",
+    "experiment": "e4",
+    "rule_met": true,
+    "p": 9.999000099990002e-05,
+    "p_holm": 0.00039996000399960006,
+    "holm_reject": true,
+    "inputs_ok": true,
+    "contrary": null,
+    "supported": true,
+    "reason": "rule and Holm and complete, single-provenance inputs"
+   },
+   {
+    "name": "H5b",
+    "experiment": "e5",
+    "rule_met": true,
+    "p": 0.00019998000199980003,
+    "p_holm": 0.00039996000399960006,
+    "holm_reject": true,
+    "inputs_ok": true,
+    "contrary": false,
+    "supported": true,
+    "reason": "rule and Holm and complete, single-provenance inputs"
+   }
+  ]
+ },
+ "hypotheses": {
+  "family": [
+   "H1a",
+   "H2c",
+   "H4a",
+   "H5b"
+  ],
+  "missing": [],
+  "complete": true,
+  "verdicts": {
+   "H1a": false,
+   "H2c": true,
+   "H4a": true,
+   "H5b": true
+  }
+ },
+ "notes": [],
+ "experiment": "holm",
+ "split": "test",
+ "smoke": false,
+ "settings": {
+  "n_boot": 10000,
+  "level": 0.95,
+  "seed": 20261019,
+  "main": {
+   "n": 3,
+   "d": 2.0,
+   "rho": 0.9,
+   "lead_s": 4.004
+  },
+  "load_bins": [
+   0.8,
+   1.0
+  ],
+  "holm_family": [
+   "H1a",
+   "H2c",
+   "H4a",
+   "H5b"
+  ],
+  "h5b": {
+   "arm": "protected",
+   "alpha": 0.5
+  },
+  "h2c_arm": "unprotected",
+  "split": "test",
+  "smoke": false,
+  "crossed": true,
+  "frozen_test_dates": 16
+ },
+ "inputs": {
+  "digest": "82ef60e165cfd7ccc767b3b0b67227d3f08ad4f4d050c248235ff31b825a02b2"
+ },
+ "family_sources": {
+  "e1": "this run",
+  "e2": "this run",
+  "e4": "this run",
+  "e5": "this run"
+ },
+ "input_checks": {
+  "completeness": {
+   "e0": {
+    "default": {
+     "expected": 128,
+     "present": 128,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    }
+   },
+   "e1": {
+    "direct": {
+     "expected": 128,
+     "present": 128,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "direct_truerates": {
+     "expected": 128,
+     "present": 128,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "equal": {
+     "expected": 128,
+     "present": 128,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "kappa0": {
+     "expected": 128,
+     "present": 128,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "meas_only": {
+     "expected": 128,
+     "present": 128,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "oracle": {
+     "expected": 128,
+     "present": 128,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "protected": {
+     "expected": 128,
+     "present": 128,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "static": {
+     "expected": 128,
+     "present": 128,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "unprotected": {
+     "expected": 128,
+     "present": 128,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    }
+   },
+   "e1_sweeps": {
+    "d1": {
+     "direct": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "d5": {
+     "direct": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "d15": {
+     "direct": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "rho0.5": {
+     "direct": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "rho0.7": {
+     "direct": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "rho1.1": {
+     "direct": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "lead0": {
+     "direct": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "lead1.05": {
+     "direct": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "n6": {
+     "direct": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "n9": {
+     "direct": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "direct_truerates": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "meas_only": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "oracle": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "protected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    }
+   },
+   "e2": {
+    "replay": {
+     "prot_fixed": {
+      "expected": 32,
+      "present": 32,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_env": {
+      "expected": 32,
+      "present": 32,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_fixed": {
+      "expected": 32,
+      "present": 32,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_usage": {
+      "expected": 32,
+      "present": 32,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "stage": {
+     "prot_fixed": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_env": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_fixed": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_usage": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "bandit": {
+     "expected": 32,
+     "present": 32,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    }
+   },
+   "e4": {
+    "pay": {
+     "direct_full": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal_full": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0_full": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa_x0": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa_x0.5": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa_x2": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "prot_full": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static_full": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_truth": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "h4b": {
+     "prot_fixed": {
+      "expected": 32,
+      "present": 32,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_env": {
+      "expected": 32,
+      "present": 32,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_fixed": {
+      "expected": 32,
+      "present": 32,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unc_usage": {
+      "expected": 32,
+      "present": 32,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    },
+    "learn": {
+     "expected": 17,
+     "present": 17,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    }
+   },
+   "e3": {
+    "cert": {
+     "direct_full": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "directtrue_full": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "equal_full": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa0_full": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa_x0": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa_x0.5": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "kappa_x2": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "prot_full": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "static_full": {
+      "expected": 128,
+      "present": 128,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    }
+   },
+   "e5": {
+    "jobs": {
+     "expected": 96,
+     "present": 96,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    },
+    "jobs_by_arm": {
+     "protected": {
+      "expected": 48,
+      "present": 48,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     },
+     "unprotected": {
+      "expected": 48,
+      "present": 48,
+      "missing": [],
+      "n_missing": 0,
+      "complete": true
+     }
+    }
+   },
+   "e6": {
+    "windows": {
+     "expected": 256,
+     "present": 256,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    }
+   },
+   "e7": {
+    "cases": {
+     "expected": 12,
+     "present": 12,
+     "missing": [],
+     "n_missing": 0,
+     "complete": true
+    }
+   }
+  },
+  "provenance": {
+   "e2": {
+    "scope": "all",
+    "sidecars": 1056,
+    "outputs": 1056,
+    "outputs_without_sidecar": 0,
+    "code_versions": 1,
+    "asset_conflicts": {},
+    "ok": true
+   },
+   "e3": {
+    "scope": "all",
+    "sidecars": 1408,
+    "outputs": 1408,
+    "outputs_without_sidecar": 0,
+    "code_versions": 1,
+    "asset_conflicts": {},
+    "ok": true
+   },
+   "e4": {
+    "scope": "all",
+    "sidecars": 1169,
+    "outputs": 1169,
+    "outputs_without_sidecar": 0,
+    "code_versions": 1,
+    "asset_conflicts": {},
+    "ok": true
+   },
+   "e5": {
+    "scope": "all",
+    "jobs": 96,
+    "without_fingerprint": 0,
+    "ckpt_conflicts": {},
+    "code_versions": 1,
+    "ok": true
+   },
+   "e6": {
+    "scope": "all",
+    "jobs": 256,
+    "without_fingerprint": 0,
+    "ckpt_conflicts": {},
+    "code_versions": 1,
+    "ok": true
+   },
+   "e1": {
+    "scope": "all:all",
+    "runs": 140,
+    "conflicts": 0,
+    "ok": true,
+    "code_versions": 1,
+    "rows_without_code_fp": 0
+   },
+   "primary": {
+    "e1": {
+     "e1": {
+      "scope": "default:protected,meas_only",
+      "runs": 10,
+      "conflicts": 0,
+      "ok": true,
+      "code_versions": 1,
+      "rows_without_code_fp": 0
+     }
+    },
+    "e4": {
+     "e1": {
+      "scope": "default:protected,unprotected",
+      "runs": 10,
+      "conflicts": 0,
+      "ok": true,
+      "code_versions": 1,
+      "rows_without_code_fp": 0
+     }
+    },
+    "e2": {
+     "e2": {
+      "parts": {
+       "replay/unc_fixed": {
+        "scope": "replay/unc_fixed",
+        "sidecars": 32,
+        "outputs": 32,
+        "outputs_without_sidecar": 0,
+        "code_versions": 1,
+        "asset_conflicts": {},
+        "ok": true
+       }
+      },
+      "ok": true
+     }
+    },
+    "e5": {
+     "e5": {
+      "scope": "protected",
+      "jobs": 48,
+      "without_fingerprint": 0,
+      "ckpt_conflicts": {},
+      "code_versions": 1,
+      "ok": true
+     }
+    }
+   }
+  },
+  "primary_dates": {
+   "e1": {
+    "e1": {
+     "protected": 16,
+     "meas_only": 16
+    }
+   },
+   "e4": {
+    "e1": {
+     "protected": 16,
+     "unprotected": 16
+    }
+   },
+   "e2": {
+    "e2": {
+     "replay/unc_fixed": 16
+    }
+   },
+   "e5": {
+    "e5": {
+     "jobs_by_arm/protected": 16
+    }
+   }
+  }
+ }
+}

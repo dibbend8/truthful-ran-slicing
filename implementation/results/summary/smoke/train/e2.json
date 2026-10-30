@@ -1,0 +1,1616 @@
+{
+ "macros": {
+  "EtwoGain": {
+   "value": 0.48376099741749734,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e2: mean best-response gain, Unconstrained net, classes pooled"
+  },
+  "EtwoGainMax": {
+   "value": 3.647789073509678,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e2: largest gain, Unconstrained net"
+  },
+  "EtwoGainFixed": {
+   "value": 0.5643349106280193,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e2: mean best-response gain, Protected net, fixed price, classes pooled"
+  },
+  "EtwoGainFixedMax": {
+   "value": 5.561712751287658,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e2: largest gain, Protected net, fixed price"
+  },
+  "EtwoGainUsage": {
+   "value": 0.5200707500307611,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e2: mean best-response gain, Unconstrained net, usage tariff, classes pooled"
+  },
+  "EtwoGainUsageMax": {
+   "value": 3.415666340117628,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e2: largest gain, Unconstrained net, usage tariff"
+  },
+  "EtwoGainEnvelope": {
+   "value": 0.0,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e2: mean best-response gain, Unconstrained net, envelope formula, classes pooled"
+  },
+  "EtwoGainEnvelopeMax": {
+   "value": 0.0,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e2: largest gain, Unconstrained net, envelope formula"
+  },
+  "EtwoGainMmtc": {
+   "value": 0.0,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e2: mean best-response gain of the mmtc tenant, Unconstrained net"
+  },
+  "EtwoGainUrllc": {
+   "value": 0.6079648455849463,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e2: mean best-response gain of the urllc tenant, Unconstrained net"
+  },
+  "EtwoGainVideo": {
+   "value": 0.8433181466675457,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e2: mean best-response gain of the video tenant, Unconstrained net"
+  },
+  "EtwoNonmono": {
+   "value": 0.0,
+   "fmt": "{:.2f}",
+   "unit": "percent of own-report grid steps",
+   "source": "e2: own quota decreases, Unconstrained net, classes pooled"
+  },
+  "EtwoNonmonoStates": {
+   "value": 0.0,
+   "fmt": "{:.1f}",
+   "unit": "percent of tenant-intervals",
+   "source": "e2: tenant-intervals with a non-monotone own-quota path"
+  },
+  "EtwoDrop": {
+   "value": 0.0,
+   "fmt": "{:.0f}",
+   "unit": "PRB",
+   "source": "e2: largest own-quota drop"
+  },
+  "EtwoNonmonoMmtc": {
+   "value": 0.0,
+   "fmt": "{:.2f}",
+   "unit": "percent of own-report grid steps",
+   "source": "e2: mmtc"
+  },
+  "EtwoNonmonoUrllc": {
+   "value": 0.0,
+   "fmt": "{:.2f}",
+   "unit": "percent of own-report grid steps",
+   "source": "e2: urllc"
+  },
+  "EtwoNonmonoVideo": {
+   "value": 0.0,
+   "fmt": "{:.2f}",
+   "unit": "percent of own-report grid steps",
+   "source": "e2: video"
+  },
+  "EtwoVictim": {
+   "value": -0.02121483983818943,
+   "fmt": "{:.2f}",
+   "unit": "Mbit per interval",
+   "source": "e2: H2c: change in honest tenants' on-time Mbit"
+  },
+  "EtwoVictimMiss": {
+   "value": 0.0,
+   "fmt": "{:.2f}",
+   "unit": "percentage points",
+   "source": "e2: H2c companion: d_miss_pct_victims"
+  },
+  "EtwoVictimValue": {
+   "value": -0.06364451951456829,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e2: H2c companion: d_value_victims"
+  },
+  "EtwoTotalWelfare": {
+   "value": 0.039642527491302815,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e2: H2c companion: dW_realized"
+  },
+  "EtwoMult": {
+   "value": "Video 0.8, URLLC-like 1, mMTC-like 1",
+   "fmt": "{:.2f}",
+   "unit": "multiplier",
+   "source": "e2: final modal multiplier, Unconstrained net"
+  },
+  "EtwoMultFixed": {
+   "value": "Video 0.8, URLLC-like 1, mMTC-like 1",
+   "fmt": "{:.2f}",
+   "unit": "multiplier",
+   "source": "e2: final modal multiplier, Protected net, fixed price"
+  }
+ },
+ "tables": {
+  "br_by_class": [
+   {
+    "arm": "fixed_price",
+    "label": "Protected net, fixed price",
+    "n": 3,
+    "cls": "mmtc",
+    "mean_gain": 0.0,
+    "lo": null,
+    "hi": null,
+    "p": null,
+    "max_gain": 0.0,
+    "n_tenant_intervals": 6,
+    "n_windows": 2,
+    "n_dates": 2,
+    "exact_share": 1.0,
+    "share_misreport": 0.0,
+    "mean_multiple_when_misreport": null
+   },
+   {
+    "arm": "fixed_price",
+    "label": "Protected net, fixed price",
+    "n": 3,
+    "cls": "urllc",
+    "mean_gain": 0.9269521252146097,
+    "lo": null,
+    "hi": null,
+    "p": null,
+    "max_gain": 5.561712751287658,
+    "n_tenant_intervals": 6,
+    "n_windows": 2,
+    "n_dates": 2,
+    "exact_share": 1.0,
+    "share_misreport": 0.16666666666666666,
+    "mean_multiple_when_misreport": 4.926963258224327
+   },
+   {
+    "arm": "fixed_price",
+    "label": "Protected net, fixed price",
+    "n": 3,
+    "cls": "video",
+    "mean_gain": 0.7660526066694485,
+    "lo": null,
+    "hi": null,
+    "p": null,
+    "max_gain": 3.4979302000060173,
+    "n_tenant_intervals": 6,
+    "n_windows": 2,
+    "n_dates": 2,
+    "exact_share": 1.0,
+    "share_misreport": 0.3333333333333333,
+    "mean_multiple_when_misreport": 3.1536004140674962
+   },
+   {
+    "arm": "unprotected",
+    "label": "Unconstrained net",
+    "n": 3,
+    "cls": "mmtc",
+    "mean_gain": 0.0,
+    "lo": null,
+    "hi": null,
+    "p": null,
+    "max_gain": 0.0,
+    "n_tenant_intervals": 6,
+    "n_windows": 2,
+    "n_dates": 2,
+    "exact_share": 0.0,
+    "share_misreport": 0.0,
+    "mean_multiple_when_misreport": null
+   },
+   {
+    "arm": "unprotected",
+    "label": "Unconstrained net",
+    "n": 3,
+    "cls": "urllc",
+    "mean_gain": 0.6079648455849463,
+    "lo": null,
+    "hi": null,
+    "p": null,
+    "max_gain": 3.647789073509678,
+    "n_tenant_intervals": 6,
+    "n_windows": 2,
+    "n_dates": 2,
+    "exact_share": 0.0,
+    "share_misreport": 0.16666666666666666,
+    "mean_multiple_when_misreport": 4.218182606114115
+   },
+   {
+    "arm": "unprotected",
+    "label": "Unconstrained net",
+    "n": 3,
+    "cls": "video",
+    "mean_gain": 0.8433181466675457,
+    "lo": null,
+    "hi": null,
+    "p": null,
+    "max_gain": 3.497930199994528,
+    "n_tenant_intervals": 6,
+    "n_windows": 2,
+    "n_dates": 2,
+    "exact_share": 0.0,
+    "share_misreport": 0.3333333333333333,
+    "mean_multiple_when_misreport": 3.723966290645887
+   },
+   {
+    "arm": "unprotected_envelope",
+    "label": "Unconstrained net, envelope formula",
+    "n": 3,
+    "cls": "mmtc",
+    "mean_gain": 0.0,
+    "lo": null,
+    "hi": null,
+    "p": null,
+    "max_gain": 0.0,
+    "n_tenant_intervals": 6,
+    "n_windows": 2,
+    "n_dates": 2,
+    "exact_share": 0.0,
+    "share_misreport": 0.0,
+    "mean_multiple_when_misreport": null
+   },
+   {
+    "arm": "unprotected_envelope",
+    "label": "Unconstrained net, envelope formula",
+    "n": 3,
+    "cls": "urllc",
+    "mean_gain": 0.0,
+    "lo": null,
+    "hi": null,
+    "p": null,
+    "max_gain": 0.0,
+    "n_tenant_intervals": 6,
+    "n_windows": 2,
+    "n_dates": 2,
+    "exact_share": 0.0,
+    "share_misreport": 0.0,
+    "mean_multiple_when_misreport": null
+   },
+   {
+    "arm": "unprotected_envelope",
+    "label": "Unconstrained net, envelope formula",
+    "n": 3,
+    "cls": "video",
+    "mean_gain": 0.0,
+    "lo": null,
+    "hi": null,
+    "p": null,
+    "max_gain": 0.0,
+    "n_tenant_intervals": 6,
+    "n_windows": 2,
+    "n_dates": 2,
+    "exact_share": 0.0,
+    "share_misreport": 0.0,
+    "mean_multiple_when_misreport": null
+   },
+   {
+    "arm": "unprotected_usage",
+    "label": "Unconstrained net, usage tariff",
+    "n": 3,
+    "cls": "mmtc",
+    "mean_gain": 0.009285085566718254,
+    "lo": null,
+    "hi": null,
+    "p": null,
+    "max_gain": 0.021859795855958764,
+    "n_tenant_intervals": 6,
+    "n_windows": 2,
+    "n_dates": 2,
+    "exact_share": 0.0,
+    "share_misreport": 0.6666666666666666,
+    "mean_multiple_when_misreport": 1.1054822916884879
+   },
+   {
+    "arm": "unprotected_usage",
+    "label": "Unconstrained net, usage tariff",
+    "n": 3,
+    "cls": "urllc",
+    "mean_gain": 0.667878474693903,
+    "lo": null,
+    "hi": null,
+    "p": null,
+    "max_gain": 3.415666340117628,
+    "n_tenant_intervals": 6,
+    "n_windows": 2,
+    "n_dates": 2,
+    "exact_share": 0.0,
+    "share_misreport": 1.0,
+    "mean_multiple_when_misreport": 1.1759399145731446
+   },
+   {
+    "arm": "unprotected_usage",
+    "label": "Unconstrained net, usage tariff",
+    "n": 3,
+    "cls": "video",
+    "mean_gain": 0.883048689831662,
+    "lo": null,
+    "hi": null,
+    "p": null,
+    "max_gain": 3.4075089638313862,
+    "n_tenant_intervals": 6,
+    "n_windows": 2,
+    "n_dates": 2,
+    "exact_share": 0.0,
+    "share_misreport": 1.0,
+    "mean_multiple_when_misreport": 1.2701106793380026
+   }
+  ],
+  "nonmonotone_by_class": [
+   {
+    "arm": "protected",
+    "label": "Protected (ours)",
+    "cls": "mmtc",
+    "states": 40,
+    "share_states_nonmonotone": 0.0,
+    "pct_gridsteps_decrease": 0.0,
+    "max_drop_prb": 0.0
+   },
+   {
+    "arm": "protected",
+    "label": "Protected (ours)",
+    "cls": "urllc",
+    "states": 40,
+    "share_states_nonmonotone": 0.0,
+    "pct_gridsteps_decrease": 0.0,
+    "max_drop_prb": 0.0
+   },
+   {
+    "arm": "protected",
+    "label": "Protected (ours)",
+    "cls": "video",
+    "states": 40,
+    "share_states_nonmonotone": 0.0,
+    "pct_gridsteps_decrease": 0.0,
+    "max_drop_prb": 0.0
+   },
+   {
+    "arm": "unprotected",
+    "label": "Unconstrained net",
+    "cls": "mmtc",
+    "states": 40,
+    "share_states_nonmonotone": 0.0,
+    "pct_gridsteps_decrease": 0.0,
+    "max_drop_prb": 0.0
+   },
+   {
+    "arm": "unprotected",
+    "label": "Unconstrained net",
+    "cls": "urllc",
+    "states": 40,
+    "share_states_nonmonotone": 0.0,
+    "pct_gridsteps_decrease": 0.0,
+    "max_drop_prb": 0.0
+   },
+   {
+    "arm": "unprotected",
+    "label": "Unconstrained net",
+    "cls": "video",
+    "states": 40,
+    "share_states_nonmonotone": 0.0,
+    "pct_gridsteps_decrease": 0.0,
+    "max_drop_prb": 0.0
+   }
+  ],
+  "victims_by_role": [
+   {
+    "arm": "fixed_price",
+    "deviator_cls": "mmtc",
+    "deviator": 2.0,
+    "d_on_time_victims": -0.06364451951456829,
+    "d_dropped_victims": 0.0,
+    "d_miss_pct_victims": 0.0,
+    "d_value_victims": -0.19093355854370486,
+    "d_value_deviator": 0.0,
+    "d_utility_declared_deviator": 0.0065604516455897155,
+    "dW_realized": -0.19093355854370486
+   },
+   {
+    "arm": "fixed_price",
+    "deviator_cls": "urllc",
+    "deviator": 1.0,
+    "d_on_time_victims": 0.0,
+    "d_dropped_victims": 0.0,
+    "d_miss_pct_victims": 0.0,
+    "d_value_victims": 0.0,
+    "d_value_deviator": 0.0,
+    "d_utility_declared_deviator": 0.27808563756438076,
+    "dW_realized": 0.0
+   },
+   {
+    "arm": "fixed_price",
+    "deviator_cls": "video",
+    "deviator": 0.0,
+    "d_on_time_victims": -0.008081101499739063,
+    "d_dropped_victims": 0.0,
+    "d_miss_pct_victims": 0.0014370435221562339,
+    "d_value_victims": -0.024243304499215412,
+    "d_value_deviator": 0.3321874661829156,
+    "d_utility_declared_deviator": 0.34771218600283227,
+    "dW_realized": 0.3079441616837002
+   },
+   {
+    "arm": "unprotected",
+    "deviator_cls": "mmtc",
+    "deviator": 2.0,
+    "d_on_time_victims": -0.06364451951456829,
+    "d_dropped_victims": 0.0,
+    "d_miss_pct_victims": 0.0,
+    "d_value_victims": -0.19093355854370486,
+    "d_value_deviator": 0.0,
+    "d_utility_declared_deviator": 0.010022794362970266,
+    "dW_realized": -0.19093355854370486
+   },
+   {
+    "arm": "unprotected",
+    "deviator_cls": "urllc",
+    "deviator": 1.0,
+    "d_on_time_victims": 0.0,
+    "d_dropped_victims": 0.0,
+    "d_miss_pct_victims": 0.0,
+    "d_value_victims": 0.0,
+    "d_value_deviator": 0.0,
+    "d_utility_declared_deviator": 0.18238945367548354,
+    "dW_realized": 0.0
+   },
+   {
+    "arm": "unprotected",
+    "deviator_cls": "video",
+    "deviator": 0.0,
+    "d_on_time_victims": 0.0,
+    "d_dropped_victims": 0.0,
+    "d_miss_pct_victims": 0.0,
+    "d_value_victims": 0.0,
+    "d_value_deviator": 0.3098611410176151,
+    "d_utility_declared_deviator": 0.32874870600368666,
+    "dW_realized": 0.3098611410176133
+   },
+   {
+    "arm": "unprotected_envelope",
+    "deviator_cls": "mmtc",
+    "deviator": 2.0,
+    "d_on_time_victims": 0.0,
+    "d_dropped_victims": 0.0,
+    "d_miss_pct_victims": 0.0,
+    "d_value_victims": 0.0,
+    "d_value_deviator": 0.0,
+    "d_utility_declared_deviator": 0.0,
+    "dW_realized": 0.0
+   },
+   {
+    "arm": "unprotected_envelope",
+    "deviator_cls": "urllc",
+    "deviator": 1.0,
+    "d_on_time_victims": 0.0,
+    "d_dropped_victims": 0.0,
+    "d_miss_pct_victims": 0.0,
+    "d_value_victims": 0.0,
+    "d_value_deviator": 0.0,
+    "d_utility_declared_deviator": 0.0,
+    "dW_realized": 0.0
+   },
+   {
+    "arm": "unprotected_envelope",
+    "deviator_cls": "video",
+    "deviator": 0.0,
+    "d_on_time_victims": 0.0,
+    "d_dropped_victims": 0.0,
+    "d_miss_pct_victims": 0.0,
+    "d_value_victims": 0.0,
+    "d_value_deviator": 0.0,
+    "d_utility_declared_deviator": 0.0,
+    "dW_realized": 0.0
+   },
+   {
+    "arm": "unprotected_usage",
+    "deviator_cls": "mmtc",
+    "deviator": 2.0,
+    "d_on_time_victims": 0.34771219547806353,
+    "d_dropped_victims": 0.0,
+    "d_miss_pct_victims": 0.0,
+    "d_value_victims": 0.34771219547806,
+    "d_value_deviator": -0.1587618200209684,
+    "d_utility_declared_deviator": 0.02890518755848981,
+    "dW_realized": 0.1889503754570896
+   },
+   {
+    "arm": "unprotected_usage",
+    "deviator_cls": "urllc",
+    "deviator": 1.0,
+    "d_on_time_victims": 0.0,
+    "d_dropped_victims": 0.0,
+    "d_miss_pct_victims": 0.0,
+    "d_value_victims": 0.0,
+    "d_value_deviator": 0.0,
+    "d_utility_declared_deviator": 0.28767562676361536,
+    "dW_realized": 0.0
+   },
+   {
+    "arm": "unprotected_usage",
+    "deviator_cls": "video",
+    "deviator": 0.0,
+    "d_on_time_victims": 0.2682785685053837,
+    "d_dropped_victims": -0.268278568505384,
+    "d_miss_pct_victims": -1.7189493361704544,
+    "d_value_victims": 0.13413928425269006,
+    "d_value_deviator": 0.051227235251195324,
+    "d_utility_declared_deviator": 0.39985267807804625,
+    "dW_realized": 0.18536651950388716
+   }
+  ],
+  "bandit_final": [
+   {
+    "arm": "fixed_price",
+    "label": "Protected net, fixed price",
+    "cls": "mmtc",
+    "final_modal_mult": 1.0,
+    "final_mean_greedy": 1.0,
+    "tail_mean_played": 0.9491666666666666,
+    "tail_share_truth": 0.25,
+    "tail_mean_gain": -0.03161379128229023,
+    "runs": 2,
+    "episodes": 6
+   },
+   {
+    "arm": "fixed_price",
+    "label": "Protected net, fixed price",
+    "cls": "urllc",
+    "final_modal_mult": 1.0,
+    "final_mean_greedy": 1.125,
+    "tail_mean_played": 1.1208333333333333,
+    "tail_share_truth": 0.25,
+    "tail_mean_gain": -0.006917348751518283,
+    "runs": 2,
+    "episodes": 6
+   },
+   {
+    "arm": "fixed_price",
+    "label": "Protected net, fixed price",
+    "cls": "video",
+    "final_modal_mult": 0.8,
+    "final_mean_greedy": 0.8,
+    "tail_mean_played": 1.1125,
+    "tail_share_truth": 0.08333333333333333,
+    "tail_mean_gain": 0.006344581042775704,
+    "runs": 2,
+    "episodes": 6
+   },
+   {
+    "arm": "protected",
+    "label": "Protected (ours)",
+    "cls": "mmtc",
+    "final_modal_mult": 1.0,
+    "final_mean_greedy": 1.0,
+    "tail_mean_played": 0.9491666666666666,
+    "tail_share_truth": 0.25,
+    "tail_mean_gain": -0.03176969558181399,
+    "runs": 2,
+    "episodes": 6
+   },
+   {
+    "arm": "protected",
+    "label": "Protected (ours)",
+    "cls": "urllc",
+    "final_modal_mult": 1.0,
+    "final_mean_greedy": 1.125,
+    "tail_mean_played": 1.1208333333333333,
+    "tail_share_truth": 0.25,
+    "tail_mean_gain": -0.017050764318013827,
+    "runs": 2,
+    "episodes": 6
+   },
+   {
+    "arm": "protected",
+    "label": "Protected (ours)",
+    "cls": "video",
+    "final_modal_mult": 0.8,
+    "final_mean_greedy": 0.8,
+    "tail_mean_played": 1.1125,
+    "tail_share_truth": 0.08333333333333333,
+    "tail_mean_gain": -0.005345541004547466,
+    "runs": 2,
+    "episodes": 6
+   },
+   {
+    "arm": "unprotected",
+    "label": "Unconstrained net",
+    "cls": "mmtc",
+    "final_modal_mult": 1.0,
+    "final_mean_greedy": 1.0,
+    "tail_mean_played": 0.9491666666666666,
+    "tail_share_truth": 0.25,
+    "tail_mean_gain": -0.031009801455155434,
+    "runs": 2,
+    "episodes": 6
+   },
+   {
+    "arm": "unprotected",
+    "label": "Unconstrained net",
+    "cls": "urllc",
+    "final_modal_mult": 1.0,
+    "final_mean_greedy": 1.125,
+    "tail_mean_played": 1.1208333333333333,
+    "tail_share_truth": 0.25,
+    "tail_mean_gain": -0.0066381581551074815,
+    "runs": 2,
+    "episodes": 6
+   },
+   {
+    "arm": "unprotected",
+    "label": "Unconstrained net",
+    "cls": "video",
+    "final_modal_mult": 0.8,
+    "final_mean_greedy": 0.8,
+    "tail_mean_played": 1.1125,
+    "tail_share_truth": 0.08333333333333333,
+    "tail_mean_gain": 0.010164951775260422,
+    "runs": 2,
+    "episodes": 6
+   },
+   {
+    "arm": "unprotected_usage",
+    "label": "Unconstrained net, usage tariff",
+    "cls": "mmtc",
+    "final_modal_mult": 0.9,
+    "final_mean_greedy": 0.95,
+    "tail_mean_played": 0.9491666666666666,
+    "tail_share_truth": 0.25,
+    "tail_mean_gain": -0.02654968661841051,
+    "runs": 2,
+    "episodes": 6
+   },
+   {
+    "arm": "unprotected_usage",
+    "label": "Unconstrained net, usage tariff",
+    "cls": "urllc",
+    "final_modal_mult": 0.8,
+    "final_mean_greedy": 0.9,
+    "tail_mean_played": 1.1208333333333333,
+    "tail_share_truth": 0.25,
+    "tail_mean_gain": -0.006311465879189078,
+    "runs": 2,
+    "episodes": 6
+   },
+   {
+    "arm": "unprotected_usage",
+    "label": "Unconstrained net, usage tariff",
+    "cls": "video",
+    "final_modal_mult": 0.8,
+    "final_mean_greedy": 0.8,
+    "tail_mean_played": 1.1125,
+    "tail_share_truth": 0.08333333333333333,
+    "tail_mean_gain": 0.008700899371951674,
+    "runs": 2,
+    "episodes": 6
+   }
+  ]
+ },
+ "hypotheses": {
+  "H2a": {
+   "supported": null,
+   "positive": [],
+   "rule": "mean gain CI lower bound > 0 for at least one class under the fixed-priority price or the usage tariff",
+   "unprotected": {
+    "estimate": 0.48376099741749734,
+    "lo": null,
+    "hi": null,
+    "level": 0.95,
+    "n_dates": 2,
+    "n_windows": 2,
+    "n_boot": 0,
+    "inference": "none: 2 date(s) < MIN_DATES = 5",
+    "p": null,
+    "max_gain": 3.647789073509678,
+    "arm": "unprotected"
+   },
+   "fixed_price": {
+    "estimate": 0.5643349106280193,
+    "lo": null,
+    "hi": null,
+    "level": 0.95,
+    "n_dates": 2,
+    "n_windows": 2,
+    "n_boot": 0,
+    "inference": "none: 2 date(s) < MIN_DATES = 5",
+    "p": null,
+    "max_gain": 5.561712751287658,
+    "arm": "fixed_price"
+   },
+   "unprotected_usage": {
+    "estimate": 0.5200707500307611,
+    "lo": null,
+    "hi": null,
+    "level": 0.95,
+    "n_dates": 2,
+    "n_windows": 2,
+    "n_boot": 0,
+    "inference": "none: 2 date(s) < MIN_DATES = 5",
+    "p": null,
+    "max_gain": 3.415666340117628,
+    "arm": "unprotected_usage"
+   },
+   "unprotected_envelope": {
+    "estimate": 0.0,
+    "lo": null,
+    "hi": null,
+    "level": 0.95,
+    "n_dates": 2,
+    "n_windows": 2,
+    "n_boot": 0,
+    "inference": "none: 2 date(s) < MIN_DATES = 5",
+    "p": null,
+    "max_gain": 0.0,
+    "arm": "unprotected_envelope"
+   }
+  },
+  "H2b": {
+   "states": 120,
+   "nonmonotone_states": 0,
+   "share_states_nonmonotone": 0.0,
+   "max_drop_prb": 0.0,
+   "exploitable_share": null,
+   "protected_negative_control": 0,
+   "supported": false
+  },
+  "H2c_all": {
+   "fixed_price": {
+    "d_on_time_victims": {
+     "estimate": -0.02390854033810245,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "less",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": -0.02390854033810245,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 0,
+     "dates_negative": 1,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": -0.02390854033810245,
+       "n_windows": 1,
+       "sign": -1
+      }
+     ],
+     "arm": "fixed_price",
+     "metric": "d_on_time_victims",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "d_miss_pct_victims": {
+     "estimate": 0.0004790145073854113,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "greater",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.0004790145073854113,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 1,
+     "dates_negative": 0,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.0004790145073854113,
+       "n_windows": 1,
+       "sign": 1
+      }
+     ],
+     "arm": "fixed_price",
+     "metric": "d_miss_pct_victims",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "d_value_victims": {
+     "estimate": -0.07172562101430675,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "less",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": -0.07172562101430675,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 0,
+     "dates_negative": 1,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": -0.07172562101430675,
+       "n_windows": 1,
+       "sign": -1
+      }
+     ],
+     "arm": "fixed_price",
+     "metric": "d_value_victims",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "dW_realized": {
+     "estimate": 0.03900353437999845,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "two-sided",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.03900353437999845,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 1,
+     "dates_negative": 0,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.03900353437999845,
+       "n_windows": 1,
+       "sign": 1
+      }
+     ],
+     "arm": "fixed_price",
+     "metric": "dW_realized",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "d_utility_declared_deviator": {
+     "estimate": 0.2107860917376009,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "greater",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.2107860917376009,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 1,
+     "dates_negative": 0,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.2107860917376009,
+       "n_windows": 1,
+       "sign": 1
+      }
+     ],
+     "arm": "fixed_price",
+     "metric": "d_utility_declared_deviator",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    }
+   },
+   "unprotected": {
+    "d_on_time_victims": {
+     "estimate": -0.02121483983818943,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "less",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": -0.02121483983818943,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 0,
+     "dates_negative": 1,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": -0.02121483983818943,
+       "n_windows": 1,
+       "sign": -1
+      }
+     ],
+     "arm": "unprotected",
+     "metric": "d_on_time_victims",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "d_miss_pct_victims": {
+     "estimate": 0.0,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "greater",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.0,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 0,
+     "dates_negative": 0,
+     "dates_zero": 1,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.0,
+       "n_windows": 1,
+       "sign": 0
+      }
+     ],
+     "arm": "unprotected",
+     "metric": "d_miss_pct_victims",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "d_value_victims": {
+     "estimate": -0.06364451951456829,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "less",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": -0.06364451951456829,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 0,
+     "dates_negative": 1,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": -0.06364451951456829,
+       "n_windows": 1,
+       "sign": -1
+      }
+     ],
+     "arm": "unprotected",
+     "metric": "d_value_victims",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "dW_realized": {
+     "estimate": 0.039642527491302815,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "two-sided",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.039642527491302815,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 1,
+     "dates_negative": 0,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.039642527491302815,
+       "n_windows": 1,
+       "sign": 1
+      }
+     ],
+     "arm": "unprotected",
+     "metric": "dW_realized",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "d_utility_declared_deviator": {
+     "estimate": 0.17372031801404683,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "greater",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.17372031801404683,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 1,
+     "dates_negative": 0,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.17372031801404683,
+       "n_windows": 1,
+       "sign": 1
+      }
+     ],
+     "arm": "unprotected",
+     "metric": "d_utility_declared_deviator",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    }
+   },
+   "unprotected_envelope": {
+    "d_on_time_victims": {
+     "estimate": 0.0,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "less",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.0,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 0,
+     "dates_negative": 0,
+     "dates_zero": 1,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.0,
+       "n_windows": 1,
+       "sign": 0
+      }
+     ],
+     "arm": "unprotected_envelope",
+     "metric": "d_on_time_victims",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "d_miss_pct_victims": {
+     "estimate": 0.0,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "greater",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.0,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 0,
+     "dates_negative": 0,
+     "dates_zero": 1,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.0,
+       "n_windows": 1,
+       "sign": 0
+      }
+     ],
+     "arm": "unprotected_envelope",
+     "metric": "d_miss_pct_victims",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "d_value_victims": {
+     "estimate": 0.0,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "less",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.0,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 0,
+     "dates_negative": 0,
+     "dates_zero": 1,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.0,
+       "n_windows": 1,
+       "sign": 0
+      }
+     ],
+     "arm": "unprotected_envelope",
+     "metric": "d_value_victims",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "dW_realized": {
+     "estimate": 0.0,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "two-sided",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.0,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 0,
+     "dates_negative": 0,
+     "dates_zero": 1,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.0,
+       "n_windows": 1,
+       "sign": 0
+      }
+     ],
+     "arm": "unprotected_envelope",
+     "metric": "dW_realized",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "d_utility_declared_deviator": {
+     "estimate": 0.0,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "greater",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.0,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 0,
+     "dates_negative": 0,
+     "dates_zero": 1,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.0,
+       "n_windows": 1,
+       "sign": 0
+      }
+     ],
+     "arm": "unprotected_envelope",
+     "metric": "d_utility_declared_deviator",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    }
+   },
+   "unprotected_usage": {
+    "d_on_time_victims": {
+     "estimate": 0.20533025466114907,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "less",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.20533025466114907,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 1,
+     "dates_negative": 0,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.20533025466114907,
+       "n_windows": 1,
+       "sign": 1
+      }
+     ],
+     "arm": "unprotected_usage",
+     "metric": "d_on_time_victims",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "d_miss_pct_victims": {
+     "estimate": -0.5729831120568182,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "greater",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": -0.5729831120568182,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 0,
+     "dates_negative": 1,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": -0.5729831120568182,
+       "n_windows": 1,
+       "sign": -1
+      }
+     ],
+     "arm": "unprotected_usage",
+     "metric": "d_miss_pct_victims",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "d_value_victims": {
+     "estimate": 0.16061715991025002,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "less",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.16061715991025002,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 1,
+     "dates_negative": 0,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.16061715991025002,
+       "n_windows": 1,
+       "sign": 1
+      }
+     ],
+     "arm": "unprotected_usage",
+     "metric": "d_value_victims",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "dW_realized": {
+     "estimate": 0.12477229832032559,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "two-sided",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.12477229832032559,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 1,
+     "dates_negative": 0,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.12477229832032559,
+       "n_windows": 1,
+       "sign": 1
+      }
+     ],
+     "arm": "unprotected_usage",
+     "metric": "dW_realized",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    },
+    "d_utility_declared_deviator": {
+     "estimate": 0.2388111641333838,
+     "lo": null,
+     "hi": null,
+     "level": 0.95,
+     "n_dates": 1,
+     "n_windows": 1,
+     "n_boot": 0,
+     "inference": false,
+     "p": null,
+     "alternative": "greater",
+     "null": 0.0,
+     "lower_one_sided": null,
+     "upper_one_sided": null,
+     "mean_a": 0.2388111641333838,
+     "mean_b": 0.0,
+     "denominator": "",
+     "dates_positive": 1,
+     "dates_negative": 0,
+     "dates_zero": 0,
+     "per_date": [
+      {
+       "date": "2024-01-01",
+       "mean": 0.2388111641333838,
+       "n_windows": 1,
+       "sign": 1
+      }
+     ],
+     "arm": "unprotected_usage",
+     "metric": "d_utility_declared_deviator",
+     "roles": [
+      "mmtc",
+      "urllc",
+      "video"
+     ]
+    }
+   }
+  },
+  "H2c": {
+   "estimate": -0.02121483983818943,
+   "lo": null,
+   "hi": null,
+   "level": 0.95,
+   "n_dates": 1,
+   "n_windows": 1,
+   "n_boot": 0,
+   "inference": false,
+   "p": null,
+   "alternative": "less",
+   "null": 0.0,
+   "lower_one_sided": null,
+   "upper_one_sided": null,
+   "mean_a": -0.02121483983818943,
+   "mean_b": 0.0,
+   "denominator": "",
+   "dates_positive": 0,
+   "dates_negative": 1,
+   "dates_zero": 0,
+   "per_date": [
+    {
+     "date": "2024-01-01",
+     "mean": -0.02121483983818943,
+     "n_windows": 1,
+     "sign": -1
+    }
+   ],
+   "arm": "unprotected",
+   "metric": "d_on_time_victims",
+   "roles": [
+    "mmtc",
+    "urllc",
+    "video"
+   ],
+   "role": "primary (D4)",
+   "unit": "Mbit per interval (honest tenants, summed)",
+   "rule_met": null,
+   "rule": "CI upper bound of the honest tenants' on-time change < 0",
+   "verdict": "holm.json (rule and Holm rejection)",
+   "checkpoint_seeds": [
+    0
+   ],
+   "n_seeds": 1,
+   "seed_note": "one checkpoint seed: the CI excludes seed variability (pre-registration item, STATUS.md \u00a78.3 item 2)"
+  }
+ },
+ "notes": [],
+ "seconds": 0.12019746800069697,
+ "experiment": "e2",
+ "split": "train",
+ "smoke": true,
+ "settings": {
+  "n_boot": 500,
+  "level": 0.95,
+  "seed": 20261019,
+  "main": {
+   "n": 3,
+   "d": 2.0,
+   "rho": 0.9,
+   "lead_s": 4.004
+  },
+  "load_bins": [
+   0.8,
+   1.0
+  ],
+  "holm_family": [
+   "H1a",
+   "H2c",
+   "H4a",
+   "H5b"
+  ],
+  "h5b": {
+   "arm": "protected",
+   "alpha": 2.0
+  },
+  "h2c_arm": "unprotected",
+  "split": "train",
+  "smoke": true,
+  "crossed": true
+ },
+ "generated": "2026-10-19T21:11:28",
+ "code_sha256": "fdccbc177256abe289371507445962607e9a0998727a54aa35e506281347ae4e",
+ "inputs": {
+  "digest": "652817215128ffc971da2e1890f9f94fc940dfc1804dd9aa37363fe6adde6aaa",
+  "sources": {
+   "e0": "results/raw/smoke/e0",
+   "e1": "results/raw/smoke/e1",
+   "e2": "results/raw/train/e2_smoke",
+   "e3": "results/raw/train/e3_smoke",
+   "e4": "results/raw/train/e4_smoke",
+   "e5": "results/raw/train/e5/smoke",
+   "e6": "results/raw/train/e6/smoke",
+   "e7": "results/raw/e7/smoke_train"
+  },
+  "files": 274,
+  "rows": {
+   "e0_windows": 2,
+   "e0_vcal": 48,
+   "e0_worked_meta": 2,
+   "e0_worked": 516,
+   "e0_worked_stairs": 117,
+   "windows": 1158,
+   "e1_manifest": 11,
+   "br": 1332,
+   "monotone": 240,
+   "bandit": 144,
+   "premium": 720,
+   "ident": 108,
+   "h3d": 54,
+   "e4_h4b": 12,
+   "e4_learn": 18,
+   "timing": 123,
+   "e5_pairs": 24,
+   "e5_nets": 20,
+   "e5_windows": 4,
+   "e5_checks": 1,
+   "e6_runs": 8,
+   "nr": 3
+  }
+ }
+}

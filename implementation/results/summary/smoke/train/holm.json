@@ -1,0 +1,146 @@
+{
+ "macros": {},
+ "tables": {
+  "holm": [
+   {
+    "name": "H1a",
+    "p": 1.0,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   {
+    "name": "H2c",
+    "p": 1.0,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   {
+    "name": "H4a",
+    "p": 1.0,
+    "p_holm": 1.0,
+    "reject": false
+   },
+   {
+    "name": "H5b",
+    "p": 1.0,
+    "p_holm": 1.0,
+    "reject": false
+   }
+  ],
+  "verdicts": [
+   {
+    "name": "H1a",
+    "experiment": "e1",
+    "rule_met": null,
+    "p": 1.0,
+    "p_holm": 1.0,
+    "holm_reject": null,
+    "inputs_ok": true,
+    "contrary": null,
+    "supported": null,
+    "reason": "no p-value"
+   },
+   {
+    "name": "H2c",
+    "experiment": "e2",
+    "rule_met": null,
+    "p": 1.0,
+    "p_holm": 1.0,
+    "holm_reject": null,
+    "inputs_ok": true,
+    "contrary": null,
+    "supported": null,
+    "reason": "no p-value"
+   },
+   {
+    "name": "H4a",
+    "experiment": "e4",
+    "rule_met": null,
+    "p": 1.0,
+    "p_holm": 1.0,
+    "holm_reject": null,
+    "inputs_ok": true,
+    "contrary": null,
+    "supported": null,
+    "reason": "no p-value"
+   },
+   {
+    "name": "H5b",
+    "experiment": "e5",
+    "rule_met": null,
+    "p": 1.0,
+    "p_holm": 1.0,
+    "holm_reject": null,
+    "inputs_ok": true,
+    "contrary": null,
+    "supported": null,
+    "reason": "no p-value"
+   }
+  ]
+ },
+ "hypotheses": {
+  "family": [
+   "H1a",
+   "H2c",
+   "H4a",
+   "H5b"
+  ],
+  "missing": [
+   "H1a",
+   "H2c",
+   "H4a",
+   "H5b"
+  ],
+  "complete": false,
+  "verdicts": {
+   "H1a": null,
+   "H2c": null,
+   "H4a": null,
+   "H5b": null
+  }
+ },
+ "notes": [
+  "members without a p-value entered with p = 1: ['H1a', 'H2c', 'H4a', 'H5b']"
+ ],
+ "experiment": "holm",
+ "split": "train",
+ "smoke": true,
+ "settings": {
+  "n_boot": 500,
+  "level": 0.95,
+  "seed": 20261019,
+  "main": {
+   "n": 3,
+   "d": 2.0,
+   "rho": 0.9,
+   "lead_s": 4.004
+  },
+  "load_bins": [
+   0.8,
+   1.0
+  ],
+  "holm_family": [
+   "H1a",
+   "H2c",
+   "H4a",
+   "H5b"
+  ],
+  "h5b": {
+   "arm": "protected",
+   "alpha": 2.0
+  },
+  "h2c_arm": "unprotected",
+  "split": "train",
+  "smoke": true,
+  "crossed": true
+ },
+ "inputs": {
+  "digest": "12780ba52aa631e54b50aa25975165687eb859f3a133f8610cebd1fde0c25619"
+ },
+ "family_sources": {
+  "e1": "existing summary",
+  "e2": "existing summary",
+  "e4": "existing summary",
+  "e5": "existing summary"
+ }
+}

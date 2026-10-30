@@ -1,0 +1,153 @@
+question: 'How can a learning-based slice controller use tenants'' demand reports so that truthful reporting is each tenant''s best choice in
+  the current allocation interval and in later ones, and what does this protection cost?
+
+  '
+central_claim:
+  id: CC
+  text: 'A learned slice controller can use tenants'' demand reports safely if (i) its priority map satisfies the own-ratio condition of Theorem
+    1, (ii) it charges the full-decision price, and (iii) it is retrained only on released measurements. Without these, tenants profit from misreporting
+    and honest slices lose service; with them, misreporting never pays and the protection has a measured, modest cost.
+
+    '
+  evidence:
+  - T1
+  - P3
+  - T2
+  - E2
+  - E3
+  - E4
+  status: pending
+claims:
+- id: C1
+  text: 'Theorem 1: a priority map admits truthful payments for every contract iff no tenant''s report raises another active tenant''s weight
+    relative to its own; otherwise no payment rule of any kind works.'
+  evidence:
+    proof: theory/theory.tex#thm:characterization
+    witness: theory/test_witnesses.py::test_thm1_*
+  falsifier: a fuzzed contract/map pair satisfying the condition with a quota decrease, or a violating map with a truthful payment
+  status: pending
+- id: C2
+  text: 'Corollary 1: for softmax score networks y=a(c)+Lambda(c)psi(z) the condition is Lambda_ii >= Lambda_ji; own-report score networks qualify
+    for every parameter value and any n.'
+  evidence:
+    proof: theory/theory.tex#cor:design
+    experiment: E2 (non-monotonicity rate of the unconstrained network)
+  status: pending
+- id: C3
+  text: 'Proposition 3: full-decision price = fixed-priority price + priority premium T>=0 (nondecreasing); under the fixed-priority price under-reporting
+    never pays and over-reporting gains at most T(z)-T(theta), tightly.'
+  evidence:
+    proof: theory/theory.tex#prop:premium
+    example: closed-form E3 example
+    experiment: E3
+  status: pending
+- id: C4
+  text: 'Theorem 2: with exogenous traffic and counters, retraining only on released measurements, non-reactive opponents and additive utility,
+    truthful reporting maximizes total utility against any adaptive strategy; the three system conditions (exogenous traffic and counters,
+    measurement-only retraining, non-reactive opponents) are each needed (Proposition 5); additive utility defines the payoff compared.'
+  evidence:
+    proof: theory/theory.tex#thm:horizon
+    counterexamples: theory/theory.tex#prop:needed
+    experiment: E5
+  status: pending
+- id: C5
+  text: 'Reports carry advance information that delayed measurements cannot supply: the protected controller delivers more service value than
+    a measurement-only controller, increasingly so as measurement delay grows.'
+  evidence:
+    experiment: E1 (H1a
+    H1b): null
+  status: pending
+- id: C6
+  text: 'A learned controller that uses reports without the full-decision price is manipulated: a deviating tenant gains and honest tenants lose
+    on-time traffic.'
+  evidence:
+    experiment: E2 (H2a
+    H2c): null
+  status: pending
+- id: C7
+  text: Under the full-decision price no misreport pays in any tested interval (certified), and learning tenants converge to truthful reports.
+  evidence:
+    experiment: E3 (H3a
+    H3b): null
+  status: pending
+- id: C8
+  text: The protection costs at most a small welfare gap relative to an unconstrained learned controller under truthful reports, and honest payments
+    are a stated fraction of service value.
+  evidence:
+    experiment: E4 (H4a
+    H4b: null
+    H4c): null
+  status: pending
+- id: C9
+  text: Measurement-only retraining leaves the controller bit-identical after a period of false reports; retraining on stored reports does not.
+  evidence:
+    experiment: E5 (H5a
+    H5b): null
+  status: pending
+- id: C10
+  text: The mechanism and its pricing scale to n=6 and n=9 tenants within the 1-s interval.
+  evidence:
+    experiment: E6
+  status: pending
+- id: C11
+  text: In 5G-LENA, the PRB shift obtained by a manipulator under unprotected control reduces honest slices' delivered traffic, and the protected
+    design avoids it.
+  evidence:
+    experiment: E7
+  status: pending
+supporting_results:
+- LemmaA
+- LemmaB
+- LemmaC
+- Prop1
+- Prop2
+- Prop4
+- Prop6
+not_claimed:
+- that a learned controller allocates better than a model-based optimizer
+- incentive guarantees against opponents who react to the tenant's past reports, or for TCP / adaptive-bitrate traffic
+- that the declared service value equals tenants' true willingness to pay
+- that 3GPP or O-RAN standardizes a per-interval tenant demand report or its billing (the interface is proposed)
+- protection against collusion between tenants
+- multi-cell operation
+- that this is the first work on strategic influence on learning (Dai et al. and others precede it)
+- '''first'' anything (first truthful learned controller / first strategy-proof learned slicing): SP-RL (stein2020strategyproof) is an exactly
+  strategyproof RL allocator; Fu-Kozat and Chen et al. combine learning with VCG in wireless/slicing'
+- that a misreport's effect on later learning (the training channel) is a new phenomenon (Dai et al. 'indirect impact'; Amin et al.; Golrezaei
+  et al.)
+- that envelope / full-decision pricing is a new payment theorem (Myerson; Archer-Tardos; Milgrom-Segal) — the premium decomposition is envelope
+  accounting
+- that training on measurements instead of reports is new ('use the meter' is standard; the novelty is the scoped combination with priced reports)
+- that existing learned mechanisms are only approximately truthful (RochetNet, MyersonNet, AMA, GemNet, SP-RL are exact); contrast instead on
+  dependence on the agent's OWN report and on the report-dependent contract fill
+- 'that a coordinatewise-monotone neural network suffices (Prop. heads: neither sufficient nor necessary)'
+- that learned slicing work ignores tenant misreporting (ayepah2024blockchain acknowledges it); the gap is a dominant-strategy guarantee for reports
+  read by the operator's learner
+- 'that the water-filling monotonicity lemmas are new (uniform/allotment rules: sprumont1991division, barbera1997strategy)'
+- scalability beyond what E6 measures (n = 6, 9)
+novelty_positioning:
+  source: lit/novelty_statement.md (2026-10-19)
+  defensible:
+  - N1 Theorem 1 (a)<=>(b) uniformly over contracts + explicit witness contract K* + any-payment impossibility; (b)<=>(c) credited to Myerson/Archer-Tardos/Milgrom/Rochet
+  - N2 Corollary 1 + Proposition on output heads (relative cross-agent sign rule; monotone nets neither sufficient nor necessary)
+  - 'N3 priority premium: sign, monotonicity, fixed-priority price DSIC iff T==0, tight bound (envelope accounting, not a new payment theorem)'
+  - 'N4 horizon theorem scope: assumption table + a counterexample per assumption (positive part is folklore-level; no ''to our knowledge'' on
+    it)'
+  - N5 O-RAN-mappable mechanism evaluated on traces and 5G-LENA (pending E1-E7)
+  must_cite_and_separate:
+  - stein2020strategyproof (SP-RL)
+  - wang2024gemnet
+  - ayepah2024blockchain
+  - curry2023differentiable
+  - duan2023scalable
+  - luong2018optimal
+  - dai2025iapd/dai2026efficiency
+  - zheng2023constrained (GREET)
+  - fu2013stochastic
+  - sprumont1991division
+  - barbera1997strategy
+  to_our_knowledge_sentence: To our knowledge, no prior work characterizes which report-dependent learned priority maps, composed with a contract-constrained
+    water-filling allocator, admit truthful payments for every contract.
+  theorem1_vs_myerson_sentence: Statements (b)<=>(c) are the classical single-parameter characterization [Myerson; Archer-Tardos; Milgrom]; our
+    contribution is (a)<=>(b), which identifies, uniformly over contracts, which learned priority maps keep the contract allocation monotone,
+    and shows by construction that violations cannot be repaired by any payment rule.

@@ -1,0 +1,61 @@
+{
+  "release": "v0.1.0",
+  "changes": [
+    {
+      "file": "implementation/code/tests/reference/rational_general.py",
+      "source": "ICC/ICC_rebuild_2026-10-10/revision_20261017/general/rational_general.py",
+      "source_sha256": "91c32b63a5b86cb29e17a1a8e04d9e9e88605bdec242af2add0b08230bfbcdef",
+      "packaged_sha256": "91c32b63a5b86cb29e17a1a8e04d9e9e88605bdec242af2add0b08230bfbcdef",
+      "change": "none; vendored unchanged test oracle"
+    },
+    {
+      "file": "implementation/code/tests/_core_fixtures.py",
+      "source": "ICC/rewrite_2026-10-18/code/tests/_core_fixtures.py",
+      "source_sha256": "6abe9560f0d23a707199f222f88c8907b432d6572bf47df0eae547c156ccd1b1",
+      "packaged_sha256": "36617fd4243041b134fe4608ad9345122187c103d122c73d739a14d7de4dc985",
+      "change": "replace only the oracle-directory assignment with Path(__file__).resolve().parent / \"reference\""
+    },
+    {
+      "file": "implementation/nr/vslice-nr-5g.cc",
+      "source": "ICC/code/ns3/vslice-nr-5g.cc",
+      "source_sha256": "5476bde4a92ea89b2e467be0413b16dc2698e73c873a82a60a46001aff5efb3e",
+      "packaged_sha256": "5476bde4a92ea89b2e467be0413b16dc2698e73c873a82a60a46001aff5efb3e",
+      "change": "none; scenario source copied unchanged"
+    },
+    {
+      "file": "implementation/nr/patches/nr-amc-v5.0-tbsize-backport.patch",
+      "source": "ICC/rewrite_2026-10-18/nr/patches/nr-amc-v5.0-tbsize-backport.patch",
+      "source_sha256": "8b638ff90ca953361e3ca8649f4fcadc37acdcdc33bd21fa2e5288671301dcf8",
+      "packaged_sha256": "4beeb66a5e97ebbc58b75c0c6531b8c4488240dc8a38bc6795c797c169afce2c",
+      "change": "normalize the two diff filename headers only; all hunks and notices unchanged"
+    },
+    {
+      "file": "implementation/nr/patches/nr-gnb-phy-symbol-union.patch",
+      "source": "ICC/rewrite_2026-10-18/nr/patches/nr-gnb-phy-symbol-union.patch",
+      "source_sha256": "bb4a723237583ae3d578f2fa0a55c44153d77cd236132165c891de50fd8710e0",
+      "packaged_sha256": "f5779174dd48b74313eafddea2ed8f70ccf0986dea518a64af8e01db105bbbff",
+      "change": "normalize the two diff filename headers only; all hunks and notices unchanged"
+    },
+    {
+      "file": "implementation/nr/patches/nr-ofdma-ul-notch.patch",
+      "source": "ICC/rewrite_2026-10-18/nr/patches/nr-ofdma-ul-notch.patch",
+      "source_sha256": "ed06d9228be4b4bafc6aa27749e8c112fd84ef66560c2ec1e6e4edce7e4c3f5f",
+      "packaged_sha256": "b967d919ac90d5edd21f66909f94d2c9d6a6b9c096e0ea0d72aad1543d061bcc",
+      "change": "normalize the two diff filename headers only; all hunks and notices unchanged"
+    },
+    {
+      "file": "implementation/nr/patches/nr-rlc-um-resync.patch",
+      "source": "ICC/rewrite_2026-10-18/nr/patches/nr-rlc-um-resync.patch",
+      "source_sha256": "a455f7aaba161c3567e062d13293f364157241bad1fb399a49026881d0c744c5",
+      "packaged_sha256": "5031044f3e0495d9deca47411a887fe23af881e607c4bbf2cffd8a90a961c880",
+      "change": "normalize the two diff filename headers only; all hunks and notices unchanged"
+    },
+    {
+      "file": "implementation/nr/patches/nr-rlc-um-v5.0-backport.patch",
+      "source": "ICC/rewrite_2026-10-18/nr/patches/nr-rlc-um-v5.0-backport.patch",
+      "source_sha256": "e6db6532a85765f6e2f74bf2b385f5a01e15da24da29a0b870823f8749cb64b4",
+      "packaged_sha256": "fcade16b48c92ddb8507a3df41d7274e03d06ebd6d33be33855095be66542aea",
+      "change": "normalize the two diff filename headers only; all hunks and notices unchanged"
+    }
+  ]
+}

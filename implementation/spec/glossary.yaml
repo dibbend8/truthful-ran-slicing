@@ -1,0 +1,164 @@
+- concept: number submitted by a tenant
+  use: report
+  never:
+  - declaration
+  - bid
+  - request
+- concept: operator's prediction from measurements
+  use: forecast
+  never:
+  - anchor
+  - estimate
+  - prior
+- concept: gNB count divided by interval length
+  use: measured demand
+  never:
+  - counter
+  - marks
+  - ingress count
+- concept: true mean rate of a slice's traffic in an interval
+  use: demand
+  never:
+  - private parameter
+- concept: decision period
+  use: allocation interval
+  never:
+  - epoch
+  - round
+  - today
+  - tomorrow
+- concept: PRBs reserved for a slice in every slot of an interval
+  use: quota
+  never:
+  - grant
+  - budget
+  - share
+- concept: weights used to split spare PRBs
+  use: priority vector
+  never:
+  - pattern
+  - neural priority
+  - neutral priority
+  - menu row
+  note: '''action'' is allowed only as the reinforcement-learning term defined once in IV.B.6 and used in Algorithm 1 (the score vector the network
+    outputs); MenuNet is allowed as the name of a cited system'
+- concept: map from reports and context to weights
+  use: priority map
+  never:
+  - menu
+  - seven patterns
+  - selector menu
+- concept: neural network that outputs intercepts and report sensitivities
+  use: priority network
+  never:
+  - actor
+  - neural layer
+- concept: price that recomputes the priority vector for every counterfactual report
+  use: full-decision price
+  never:
+  - complete price
+  - whole-map price
+  - complete-map price
+- concept: price that keeps the final priority vector fixed
+  use: fixed-priority price
+  never:
+  - incomplete price
+  - frozen-action price
+  - held-action price
+- concept: their difference
+  use: priority premium
+  never:
+  - surcharge
+  - switch tax
+- concept: tenant that misreports
+  use: deviating tenant
+  never:
+  - attacker
+  - adversary
+- concept: utility at a report minus utility at the truthful report
+  use: deviation gain
+  never:
+  - slack
+  - exploitability
+  - residual
+  - regret
+- concept: compared designs
+  use: controller names in Table IV
+  never:
+  - arms
+  - methods
+  - procedures
+- concept: data split
+  use: training, development and test dates
+  never:
+  - TRAIN
+  - TEST
+  - cohort
+- concept: retraining rule that reads only measurements
+  use: measurement-only retraining
+  never:
+  - clean transition
+  - severed
+  - gated
+- concept: numerical error bound of the price computation
+  use: guaranteed error bound
+  never:
+  - certified error
+  - certificate
+  - certified bound
+- concept: contract used in the proof of thm:characterization to show a violation
+  use: counterexample contract
+  never:
+  - witness contract
+  - witness
+- concept: held constant
+  use: fixed
+  never:
+  - pinned
+  - frozen
+- concept: quota-dependent throughput measurement in the counterexample for adaptive traffic
+  use: quota-dependent throughput measurement
+  never:
+  - counter
+  - counters
+- concept: remaining-capacity bounds in the proof of lem:fixed
+  use: remaining-capacity bounds
+  never:
+  - residual bounds
+- concept: the amount a tenant pays for its quota in an interval (p_i); the function from reports to prices
+  use: price; pricing rule
+  never:
+  - payment
+  - payment rule
+  - bill
+  - billed price
+  - charge
+  - usage charge
+  - honest payment
+  - cost to the tenant
+  note: '''payment identity'' only when naming Myerson''s result; the baseline per-PRB price is the ''usage tariff''; say ''the price paid by
+    a truthful tenant'' for honest payments'
+- concept: the three ways a report affects the allocation
+  use: route (Route 1, Route 2, Route 3)
+  never: []
+  note: Use 'Route 1/2/3' for the three ways a report acts; 'channel' is allowed only for the radio channel (e.g. channel quality indicator, CQI)
+    -- checked by the critics, not by the linter, because the linter cannot tell the two uses apart.
+- concept: UE channel-quality information used for the rate estimate
+  use: CQI feedback
+  never:
+  - CQI report
+  note: '''report'' means only the tenant''s demand report'
+- concept: rounding the fractional quota down to whole PRBs
+  use: rounded down; whole-PRB quota
+  never:
+  - floor (as a verb)
+  - floored decision
+  - flooring
+  note: '''floor'' means only the fairness floor l_i'
+- concept: H_i
+  use: need cap
+  never:
+  - limit
+  - cap (alone)
+- concept: (M_i/r_i) 1{z_i>0}
+  use: maximum quota

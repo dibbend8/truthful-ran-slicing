@@ -1,0 +1,106 @@
+# Canonical notation (mirrors rules/AI_WRITING_RULES.md §1.3). 'introduced_in' is filled from spec/outline.yaml in Phase 7.
+- {symbol: 'n', latex: 'n', meaning: number of tenants (slices), unit: '-'}
+- {symbol: '[n]', latex: '[n]', meaning: 'index set {1,...,n}', unit: '-'}
+- {symbol: 'i, j', latex: 'i,j', meaning: tenant indices, unit: '-'}
+- {symbol: 'z_-i', latex: 'z_{-i}', meaning: 'vector of the other tenants'' reports; (u, z_-i) is the profile in which tenant i reports u', unit: Mbit/s}
+- {symbol: 'u, v', latex: 'u,v', meaning: generic rate or report, unit: Mbit/s}
+- {symbol: '1{.}', latex: '\mathbf 1\{\cdot\}', meaning: indicator, unit: '-'}
+- {symbol: 'k, K', latex: 'k,K', meaning: allocation interval index and number of intervals, unit: '-'}
+- {symbol: 'Delta', latex: '\Delta', meaning: allocation interval length, unit: s}
+- {symbol: 'B', latex: 'B', meaning: PRBs available per slot, unit: PRB}
+- {symbol: 'r_i', latex: 'r_i', meaning: rate one PRB carries for slice i (estimated from CQI before the interval), unit: Mbit/s per PRB}
+- {symbol: 'g_i', latex: 'g_i', meaning: guaranteed bit rate, unit: Mbit/s}
+- {symbol: 'M_i', latex: 'M_i', meaning: maximum bit rate, unit: Mbit/s}
+- {symbol: 'C_i', latex: 'C_i', meaning: report ceiling, unit: Mbit/s}
+- {symbol: 'pi_i', latex: '\pi_i', meaning: tariff, unit: credits per Mbit}
+- {symbol: 'beta_il, rho_il', latex: '\beta_{i\ell},\rho_{i\ell}', meaning: burst multiplier and its probability, unit: '-'}
+- {symbol: 'theta_ik', latex: '\theta_{ik}', meaning: demand (mean rate of slice traffic in interval k; private), unit: Mbit/s}
+- {symbol: 'z_ik', latex: 'z_{ik}', meaning: report, unit: Mbit/s}
+- {symbol: 'm_ik', latex: 'm_{ik}', meaning: measured demand (PDCP volume divided by interval length), unit: Mbit/s}
+- {symbol: 'f_ik', latex: 'f_{ik}', meaning: operator forecast from released measurements, unit: Mbit/s}
+- {symbol: 'd', latex: 'd', meaning: measurement delay, unit: s}
+- {symbol: 'delta_i', latex: '\delta_i', meaning: packet delay budget (experiments), unit: ms}
+- {symbol: 'x_i', latex: 'x_i', meaning: quota (PRBs reserved for slice i in every slot of the interval), unit: PRB}
+- {symbol: 'b_i, H_i', latex: 'b_i,H_i', meaning: reservation and need cap, unit: PRB}
+- {symbol: 'eta', latex: '\eta', meaning: burst headroom factor, unit: '-'}
+- {symbol: 'S', latex: 'S', meaning: spare PRBs after reservations B - sum_j b_j, unit: PRB}
+- {symbol: 'l_i', latex: 'l_i', meaning: fairness floor, unit: PRB}
+- {symbol: 'gamma', latex: '\gamma', meaning: fairness fraction, unit: '-'}
+- {symbol: 'xlo_i, xup_i, tau', latex: '\underline{x}_i,\overline{x}_i,\tau', meaning: 'active-stage lower and upper bounds of the quota (Definition def:allocator(iv), eq:fill; the vectors drop the index; LaTeX macros xlo and xup in theory/macros.tex) and water level; at the profile (t, z_-i) the bounds carry the own report t as argument', unit: PRB}
+- {symbol: 'clip', latex: '\operatorname{clip}(t,a,b)', meaning: 'point of [a,b] nearest to t', unit: same as t}
+- {symbol: 'F(z,w)', latex: 'F(z,w)', meaning: contract allocator for a given priority vector, unit: PRB}
+- {symbol: 'c_k', latex: 'c_k', meaning: context (report-free features at the start of interval k), unit: '-'}
+- {symbol: 'a_i(c), kappa_i(c)', latex: 'a_i(c),\kappa_i(c)', meaning: intercept and report sensitivity output by the priority network, unit: '-'}
+- {symbol: 'psi_i, mu_i', latex: '\psi_i(z)=\log(1+z/\mu_i),\ \mu_i', meaning: report transform and training-mean demand, unit: '-, Mbit/s'}
+- {symbol: 'w_i', latex: 'w_i', meaning: priority weight of tenant i (the weights form the priority vector w), unit: '-'}
+- {symbol: 'y_i', latex: 'y_i', meaning: score of tenant i (w = softmax(y)), unit: '-'}
+- {symbol: 'Lambda(c)', latex: '\Lambda(c)', meaning: report-coefficient matrix of a general score map, unit: '-'}
+- {symbol: 'X(z)', latex: 'X(z)', meaning: 'full decision F(z, w(z;c))', unit: PRB}
+- {symbol: 'V_i(x,theta)', latex: 'V_i(x,\theta)', meaning: service value, unit: credits per interval}
+- {symbol: 'D_i(x,u)', latex: 'D_i(x,u)', meaning: marginal value of demand at a fixed quota, unit: credits per interval per Mbit/s}
+- {symbol: 'p_i', latex: 'p_i', meaning: payment rule; in V and after IV.C the full-decision price, unit: credits per interval}
+- {symbol: 'p_i^fix, T_i', latex: 'p_i^{\mathrm{fix}},T_i', meaning: fixed-priority price and priority premium T_i = p_i - p_i^fix, unit: credits per interval}
+- {symbol: 'Ecal_i', latex: '\mathcal E_i', meaning: 'contested reports of tenant i (eq:prem-contested): own reports u at which F_i((u,z_-i), w) depends on the priority vector w; used by prop:premium(vii) and prop:congestion', unit: Mbit/s}
+- {symbol: 'q_i', latex: 'q_i', meaning: any other payment rule (prop:price), unit: credits per interval}
+- {symbol: 'U_i, Gamma_i', latex: 'U_i,\Gamma_i(z;\theta)', meaning: utility and deviation gain, unit: credits per interval}
+- {symbol: 'W', latex: 'W', meaning: declared welfare sum_i V_i, unit: credits per interval}
+- {symbol: 'vartheta_k, Ucal_k, xi_k', latex: '\vartheta_k,\mathcal U_k,\xi_k', meaning: 'learner state, update map (calligraphic, not the utility U_i), training randomness', unit: '-'}
+- {symbol: 'h_ik', latex: 'h_{ik}', meaning: tenant history, unit: '-'}
+- {symbol: 'Zc', latex: '\mathcal Z', meaning: 'report space prod_i [0,C_i]', unit: Mbit/s}
+- {symbol: 'Kc, Sc', latex: '\mathcal K,\mathcal S', meaning: 'contract class (terms B, r, g, M, eta, gamma) and burst-shape class', unit: '-'}
+- {symbol: 'Kc*(B,r)', latex: '\mathcal K^*(B,r)', meaning: 'allocator terms of the counterexample contract of thm:characterization (eq:char-kstar), defined for every cell size B and rate vector r; a counterexample contract adds the steady shape for slice i and any tariffs and other shapes', unit: '-'}
+- {symbol: 'sigma(u)', latex: '\sigma(u)', meaning: 'tenant i''s fraction w_i/(w_i+w_j) of a pair''s weight as a function of its own report: eq:char-fraction of thm:characterization (written sigma(t)) and the worked example of V.D.4 and prop_price ex:price-path and rem:price-kinks (sigma_F); not the fill total Sigma(tau) of rem:allocator(c)', unit: '-'}
+- {symbol: 'Sigma(tau)', latex: '\Sigma(\tau)', meaning: 'LOCAL to model.tex rem:allocator(c) and the measurability remark: total sum_i clip(tau w_i, xlo_i, xup_i) of the fill at water level tau (renamed from sigma at assembly, 2026-10-19)', unit: PRB}
+- {symbol: 'u_c', latex: 'u_c', meaning: 'crossing point of a decision path in a worked example: the largest report at which the quota still carries the rate of the burst level considered (prop_price: doubled burst; prop_premium and prop_needed (Fact 2, condition (F2)): steady shape); local to each example', unit: Mbit/s}
+- {symbol: 'e_k', latex: 'e_k', meaning: 'bound on tenant i''s billing error in interval k at the profiles (v, bar z_{-i,k}(omega)) that the other tenants'' actual reports give (thm:horizon(iv); exact billing gives zero; the numerical price error of the price computation is the case used)', unit: credits per interval}
+- {symbol: 'varsigma', latex: '\varsigma', meaning: 'step size of the retraining rule in instance (a) of Proposition prop:needed (local to that instance)', unit: '-'}
+- {symbol: 'epsilon', latex: '\varepsilon', meaning: 'weight floor of the floored softmax in Proposition prop:heads(c) (local to that result)', unit: '-'}
+- {symbol: 'Xi', latex: '\Xi', meaning: 'nondecreasing positive output map of the score in Proposition prop:heads(b3) (local to that result)', unit: '-'}
+# Horizon-only symbols (theory/parts/thm_horizon.tex, Definition def:horizon); added 2026-10-19 by the horizon fixer.
+- {symbol: 'Omega, omega, A, P', latex: '(\Omega,\mathcal A),\ \omega,\ P', meaning: 'realisations (traffic, channels, training and tenant randomness), a realisation, and a probability measure on (Omega, A); P is not part of def:horizon and is quantified in parts (ii) and (iv) of thm:horizon', unit: '-'}
+- {symbol: 'zeta_jk', latex: '\zeta_{jk}', meaning: 'private signal of tenant j in interval k (randomisation devices, private advance knowledge)', unit: '-'}
+- {symbol: 'o_k, o_<k', latex: 'o_k=(z_k,x_k,\hat p_k),\ o_{<k}', meaning: 'outcome of interval k and billing log before interval k', unit: '-'}
+- {symbol: 'hat p_jk', latex: '\hat p_{jk}=\hat p_{jk}(\omega,o_{<k},z_k)', meaning: 'billed price and billing rule (exact billing: equals the full-decision price p_jk)', unit: credits per interval}
+- {symbol: 'I_k', latex: '\mathcal I_k', meaning: 'released measurements at the start of interval k (measured demand released so far, CQI reports, clock time)', unit: '-'}
+- {symbol: 'Ccal_k, R_k', latex: '\mathcal C_k,\ R_k', meaning: 'context map c_k=Ccal_k(vartheta_k, I_k) (calligraphic C; renamed from chi_k because prop_price uses chi locally) and rate map r_k=R_k(I_k)', unit: '-'}
+- {symbol: 'F^r, X_k', latex: 'F^r,\ X_k', meaning: 'contract allocator computed with rate vector r; stage decision of interval k', unit: PRB}
+- {symbol: 's_j, s_jk', latex: 's_j=(s_{j1},\dots,s_{jK})', meaning: 'strategy of tenant j: measurable maps from histories h_jk to reports', unit: '-'}
+- {symbol: 'bar z_jk', latex: '\bar z_{jk}(\omega)', meaning: 'report path of another tenant fixed by Assumption ass:nonreactive', unit: Mbit/s}
+- {symbol: 'Pi_jk, bar Pi_ik', latex: '\Pi_{jk},\ \bar\Pi_{ik}(v)', meaning: 'stage utility V_jk(x_jk,theta_jk) - hat p_jk, and stage utility as a function of the own report v (generic report letter; y_i is reserved for scores)', unit: credits per interval}
+- {symbol: 'bar z_-i,k', latex: '\bar z_{-i,k}(\omega)', meaning: 'vector (bar z_{jk}(omega))_{j != i} of the other tenants'' reports fixed by Assumption ass:nonreactive (defined there; used in thm:horizon(iv))', unit: Mbit/s}
+- {symbol: 'Gcal', latex: '\mathcal G', meaning: 'LOCAL to thm_horizon Step 7: a nondecreasing function R -> R applied to the total utility (risk attitude); replaces f, which clashed with the forecasts f_ik', unit: '-'}
+- {symbol: 'tilde e', latex: '\tilde e', meaning: 'LOCAL to thm_horizon Remark rem:horizon-scope(f): billing error added to tenant 2''s interval-1 price in the counterexample (distinct from the bounds e_k)', unit: credits per interval}
+- {symbol: 'N_k(u), t*_k(u), u*_k', latex: '\mathcal N_k(u),\ t^\star_k(u),\ u^\star_k', meaning: 'LOCAL to thm_horizon Remark rem:horizon-scope(d) (Example ex:horizon, tenant 2 reporting u, the generic report letter; s_j stays reserved for strategies): kink set {t in [0,20] : X_1k(t,u) = t} (the set N_11 of prop:price(iv) in interval k), positive root of the interval-k quadratic, and the report u at which t*_k(u) = 10 - u', unit: 'Mbit/s'}
+# Local symbols of other parts that share a letter with a horizon symbol (recorded 2026-10-19 by the horizon fixer).
+# omega(t) of thm_characterization was renamed sigma(t) on 2026-10-19 (third characterization fixer pass); omega now belongs to thm_horizon only. prop_price.tex followed at assembly (sigma(u), sigma_F); model.tex's fill total is Sigma(tau).
+- {symbol: 'chi(u)', latex: '\chi(u)', meaning: 'LOCAL to prop_price(v): measurable selection between D^< and D that defines a truthful price; unrelated to the horizon context map Ccal_k', unit: credits per interval per Mbit/s}
+# Symbols of theory/parts/prop_price.tex (registered 2026-10-19 by the fifth prop_price fixer). The first three are defined in
+# def:price-objects / prop:price(iv) and are also used in prop_premium, thm_characterization and thm_horizon.
+- {symbol: 'D_i^<(x,u)', latex: 'D_i^{<}(x,u)', meaning: 'strict marginal value of demand at a fixed quota (eq:price-strict): counts a burst level only when u beta_il < r_i x; the right derivative of V_i(x, .) (property S4), while D_i is the left derivative', unit: credits per interval per Mbit/s}
+- {symbol: 'bar p_i', latex: '\bar p_i', meaning: 'largest truthful price vanishing at 0 along a nondecreasing decision path: V_i(X_i(v),v) - int_0^v D_i^<(X_i(u),u) du (prop:price(iv)); bar p_i - p_i is the kink-set gap eq:price-gap', unit: credits per interval}
+- {symbol: 'Ncal_il', latex: '\mathcal N_{i\ell}', meaning: 'kink set of burst level l of slice i along the decision path at z_-i: reports u in [0,C_i] with r_i X_i(u,z_-i) = beta_il u (eq:price-kinkset); thm_horizon writes N_k(u) for its interval-k instance', unit: Mbit/s}
+- {symbol: 'lambda, lambda_0, lambda_1 (prop_price)', latex: '\lambda,\ \lambda_0,\ \lambda_1', meaning: 'LOCAL to prop_price: slope of the interior price lambda v in ex:price-kink (0 < lambda < 1), and the coefficients of the affine function in fact (Aff) of the proof of rem:price-kinks; unrelated to the LOCAL lambda of prop:direct and to the matrix Lambda(c)', unit: 'credits per interval per Mbit/s; PRB, PRB per Mbit/s'}
+- {symbol: 'nu (prop_price)', latex: '\nu', meaning: 'LOCAL to prop_price: integer index of the difference quotients Q_nu in Step 4 of the proof of prop:price, and cell index of a grid in rem:price-bracket; unrelated to the rescaling factor nu of prop:direct', unit: '-'}
+- {symbol: 'Q, Q_nu, Q^*', latex: 'Q,\ Q_\nu,\ Q^*', meaning: 'LOCAL to Step 4 of the proof of prop:price: truthful utility under a truthful price q, its difference quotients and their upper limit', unit: 'credits per interval; credits per interval per Mbit/s'}
+- {symbol: 'Jcal, sigma_J, Phi, Phi_0^p, Phi_1^p, frak p, Ncal^p, varphi', latex: '\mathcal J,\ \sigma_{\mathcal J},\ \Phi,\ \Phi_0^{\mathfrak p},\ \Phi_1^{\mathfrak p},\ \mathfrak p,\ \mathcal N^{\mathfrak p},\ \varphi', meaning: 'LOCAL to Case 5 of the proof of rem:price-kinks: slices strictly inside their fill bounds, tenant i''s weight fraction among them, the PRBs they share Phi(u) = Phi_0^p + Phi_1^p u on reports of pattern p, the pattern, the kink points of that pattern, and the real-analytic difference sigma_J Phi - beta u/r_i (the paper writes Jcal since 2026-10-20; theory/ keeps Fcal); Phi_0^p, Phi_1^p are unrelated to the value changes Phi_1..Phi_4 of prop:direct', unit: '-, -, PRB, PRB, PRB per Mbit/s, -, Mbit/s, PRB'}
+- {symbol: 'varpi_J', latex: '\varpi_J', meaning: 'LOCAL to the proof of rem:price-bracket(b): integrand of the bracket width on a grid with J cells (upper minus lower marginal value of the cell containing u); unrelated to varpi_t of prop:direct', unit: credits per interval per Mbit/s}
+- {symbol: 'delta, delta_prime, Bcal, hat x (prop_price)', latex: '\delta,\ \delta'',\ \mathcal B,\ \hat x', meaning: 'LOCAL to prop_price: increment in Step 4, radius of property (S4), a Borel set in Step 4, and the integer value of a floored quota on one step (paragraph after the proof of prop:price); delta is unrelated to the packet delay budget delta_i', unit: 'Mbit/s, Mbit/s, -, PRB'}
+# Local symbols of theory/parts/thm_characterization.tex (registered 2026-10-19 by the third characterization fixer).
+- {symbol: 'm', latex: 'm', meaning: 'LOCAL slice index in sums and products, and for slices other than the fixed tenants i, j (as in cor_design and prop_price); unrelated to the measured demand m_ik', unit: '-'}
+- {symbol: 'G', latex: 'G', meaning: 'LOCAL cycle gap [V_i(q,v)-V_i(q'',v)]-[V_i(q,u)-V_i(q'',u)] of two quotas q > q'' and two demands u < v (Lemma lem:twocycle, eq:char-gap)', unit: credits per interval}
+- {symbol: 'hat beta, hat rho', latex: '\hat\beta,\ \hat\rho', meaning: 'LOCAL burst multiplier and its probability in the two-level shape of Lemma lem:twocycle(c)', unit: '-'}
+- {symbol: 'A', latex: 'A', meaning: 'LOCAL rate r_iB of the cell in the floored construction of Corollary cor:char-integer (common rate A/B per PRB); unrelated to the sigma-algebra calA of thm_horizon and to A(u) of prop_price', unit: Mbit/s}
+- {symbol: 'Kc''', latex: '\mathcal K''', meaning: 'LOCAL subset of the contract class with some terms fixed (Corollary cor:char-fixed-terms)', unit: '-'}
+# phi registered 2026-10-19 by the fourth characterization fixer; kappa is avoided because it is the report sensitivity.
+- {symbol: 'phi', latex: '\phi', meaning: 'LOCAL Cantor function on [0,1] in the priority map (1+phi(z_1/C_1), 1) of the relation paragraph after Theorem thm:characterization (a continuous singular quota path)', unit: '-'}
+# Local symbols of theory/parts/prop_congestion.tex (registered 2026-10-19 by the third congestion fixer).
+- {symbol: 'q, q''', latex: 'q,\ q''', meaning: 'LOCAL generic quota (PRB): integration variable of eq:quota-increment, integer quota vectors of def:direct-decision(ii) and prop:direct(d), the quotas of eq:char-gap in lem:twocycle; unrelated to the payment rule q_i of prop:price', unit: PRB}
+- {symbol: 'epsilon (prop_congestion)', latex: '\varepsilon', meaning: 'LOCAL to prop_congestion: weight ratio in the proof of prop:congestion(b), exchange amount in Step 3 and interpolation parameter in part (c) of the proof of prop:direct (the weight floor of prop:heads(c) is a separate local use)', unit: '-'}
+- {symbol: 'x_i^min, x_i^max', latex: 'x_i^{\min},\ x_i^{\max}', meaning: 'LOCAL to prop:congestion(b): infimum and supremum of F_i(z,w) over priority vectors (eq:range); need not be attained', unit: PRB}
+- {symbol: 'Qcal_=(z)', latex: '\mathcal Q_{=}(z)', meaning: 'LOCAL stage box of the direct optimizer (the set Q_= of lem:fill at the stage bounds of z), def:direct-decision', unit: PRB}
+- {symbol: 'X^dir, p^dir, X^int', latex: 'X^{\mathrm{dir}},\ p^{\mathrm{dir}},\ X^{\mathrm{int}}', meaning: 'LOCAL direct decision, its truthful price and the integer direct decision (def:direct-decision, prop:direct)', unit: 'PRB, credits per interval, PRB'}
+- {symbol: 'Mcal_j', latex: '\mathcal M_j', meaning: 'LOCAL maximizers kept after j lexicographic steps (well-definedness of def:direct-decision); unrelated to the sigma-algebra calA', unit: PRB}
+- {symbol: 'tilde x, x'', tilde x''', latex: '\tilde x,\ x'',\ \tilde x''', meaning: 'LOCAL to the proof of prop:direct(a): direct decision at the higher own report and the two exchanged vectors (y_i is reserved for scores)', unit: PRB}
+- {symbol: 'hat x', latex: '\hat x', meaning: 'LOCAL point of the stage box in prop:direct(c)', unit: PRB}
+- {symbol: 'varpi_t', latex: '\varpi_t', meaning: 'LOCAL price p_1(t,z_-1) of an arbitrary payment rule in the proof of prop:direct(d)(i)', unit: credits per interval}
+- {symbol: 'lambda, nu, Phi_1..Phi_4', latex: '\lambda,\ \nu,\ \Phi_1,\dots,\Phi_4', meaning: 'LOCAL to the proof of prop:direct: shift in (V1), rescaling factor in (d)(ii), value changes in Step 3', unit: '-, -, credits per interval'}

@@ -1,0 +1,490 @@
+{
+ "macros": {
+  "EsixTime": {
+   "value": 38.839585304260254,
+   "fmt": "{:.1f}",
+   "unit": "ms",
+   "source": "e6: p95 full-price time per interval at n = 9, Protected, one core",
+   "text": "38.8"
+  },
+  "EsixTimeMedian": {
+   "value": 18.46742534637451,
+   "fmt": "{:.1f}",
+   "unit": "ms",
+   "source": "e6: median pricing time at n = 9",
+   "text": "18.5"
+  },
+  "EsixTimeSix": {
+   "value": 34.42016048431397,
+   "fmt": "{:.1f}",
+   "unit": "ms",
+   "source": "e6: p95 full-price time per interval at n = 6, Protected, one core",
+   "text": "34.4"
+  },
+  "EsixTimeMedianSix": {
+   "value": 15.872751712799072,
+   "fmt": "{:.1f}",
+   "unit": "ms",
+   "source": "e6: median full-price time per interval at n = 6, Protected, one core",
+   "text": "15.9"
+  },
+  "EsixTimeNine": {
+   "value": 38.839585304260254,
+   "fmt": "{:.1f}",
+   "unit": "ms",
+   "source": "e6: p95 full-price time per interval at n = 9, Protected, one core",
+   "text": "38.8"
+  },
+  "EsixTimeMedianNine": {
+   "value": 18.46742534637451,
+   "fmt": "{:.1f}",
+   "unit": "ms",
+   "source": "e6: median full-price time per interval at n = 9, Protected, one core",
+   "text": "18.5"
+  },
+  "EsixMaxGain": {
+   "value": 0.0,
+   "fmt": "{:.2g}",
+   "unit": "credits per interval",
+   "source": "e6: largest full-price gain at n = 6 and 9",
+   "text": "0"
+  },
+  "EsixViol": {
+   "value": 0,
+   "fmt": "{:d}",
+   "unit": "tenant-intervals",
+   "source": "e6: H6a violations",
+   "text": "0"
+  },
+  "EsixGap": {
+   "value": 0.11357943568745298,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e6: W(Unconstrained net) - W(Protected) at n = 9",
+   "text": "0.11"
+  },
+  "EsixGapLo": {
+   "value": 0.09092245517758851,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e6: W(Unconstrained net) - W(Protected) at n = 9 (95% CI lower)",
+   "text": "0.09"
+  },
+  "EsixGapHi": {
+   "value": 0.1392290531555449,
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e6: W(Unconstrained net) - W(Protected) at n = 9 (95% CI upper)",
+   "text": "0.14"
+  },
+  "EsixGapCI": {
+   "value": "[0.09, 0.14]",
+   "fmt": "{:.2f}",
+   "unit": "credits per interval",
+   "source": "e6: W(Unconstrained net) - W(Protected) at n = 9 (95% CI)",
+   "text": "[0.09, 0.14]"
+  },
+  "EsixGapPct": {
+   "value": 0.1889818530498368,
+   "fmt": "{:.2f}",
+   "unit": "percent of Protected welfare on the same windows",
+   "source": "e6: W(Unconstrained net) - W(Protected) at n = 9",
+   "text": "0.19"
+  },
+  "EsixGapPctCI": {
+   "value": "[0.15, 0.23]",
+   "fmt": "{:.2f}",
+   "unit": "percent",
+   "source": "e6: W(Unconstrained net) - W(Protected) at n = 9 (95% CI of the percentage)",
+   "text": "[0.15, 0.23]"
+  }
+ },
+ "tables": {
+  "pricing_time": [
+   {
+    "n": 3,
+    "arm": "protected",
+    "label": "Protected (ours)",
+    "intervals": 320,
+    "median_ms": 8.275287997093983,
+    "p95_ms": 8.904758853896055,
+    "max_ms": 9.67800899525173,
+    "fixed_p95_ms": 7.864963710017037
+   },
+   {
+    "n": 6,
+    "arm": "direct",
+    "label": "Direct optimizer",
+    "intervals": 5760,
+    "median_ms": 24.202353477478027,
+    "p95_ms": 50.214788627624515,
+    "max_ms": 59.7906494140625,
+    "fixed_p95_ms": null
+   },
+   {
+    "n": 6,
+    "arm": "equal",
+    "label": "Equal weights",
+    "intervals": 5760,
+    "median_ms": 14.197208404541016,
+    "p95_ms": 30.855587959289554,
+    "max_ms": 33.927459716796875,
+    "fixed_p95_ms": 29.899567317962646
+   },
+   {
+    "n": 6,
+    "arm": "protected",
+    "label": "Protected (ours)",
+    "intervals": 17280,
+    "median_ms": 15.872751712799072,
+    "p95_ms": 34.42016048431397,
+    "max_ms": 38.2620849609375,
+    "fixed_p95_ms": 30.15803995132446
+   },
+   {
+    "n": 9,
+    "arm": "direct",
+    "label": "Direct optimizer",
+    "intervals": 5760,
+    "median_ms": 35.47843551635742,
+    "p95_ms": 70.934525680542,
+    "max_ms": 91.92776489257812,
+    "fixed_p95_ms": null
+   },
+   {
+    "n": 9,
+    "arm": "equal",
+    "label": "Equal weights",
+    "intervals": 5760,
+    "median_ms": 16.80540657043457,
+    "p95_ms": 35.54923553466797,
+    "max_ms": 39.75543212890625,
+    "fixed_p95_ms": 34.44886474609375
+   },
+   {
+    "n": 9,
+    "arm": "protected",
+    "label": "Protected (ours)",
+    "intervals": 17280,
+    "median_ms": 18.46742534637451,
+    "p95_ms": 38.839585304260254,
+    "max_ms": 46.8094596862793,
+    "fixed_p95_ms": 34.134139442443846
+   }
+  ],
+  "max_gain_by_n": [
+   {
+    "n": 6,
+    "max_gain": 0.0,
+    "max_cert": 1.343645261719928e-08,
+    "max_err": 6.71822630859964e-09,
+    "min_eps": 1.0429990337777841e-08,
+    "violations": 0,
+    "tenant_intervals": 172800
+   },
+   {
+    "n": 9,
+    "max_gain": 0.0,
+    "max_cert": 8.359706479138529e-09,
+    "max_err": 4.1798532395692645e-09,
+    "min_eps": 6.923039973333338e-09,
+    "violations": 0,
+    "tenant_intervals": 259200
+   }
+  ],
+  "cost_by_n": [
+   {
+    "n": 3,
+    "source": "e1",
+    "estimate": 0.05095158369315132,
+    "lo": 0.040487333969865924,
+    "hi": 0.06173371652260788,
+    "pct": 0.08319368697898039,
+    "pct_lo": 0.06608108778928774,
+    "pct_hi": 0.10074818193576007,
+    "n_dates": 21,
+    "n_windows": 126,
+    "mean_protected": 61.244531338086595
+   },
+   {
+    "n": 6,
+    "source": "e6",
+    "estimate": 0.09261710809828412,
+    "lo": 0.06809406419987715,
+    "hi": 0.11772657792031263,
+    "pct": 0.15229912508340682,
+    "pct_lo": 0.11120653520935712,
+    "pct_hi": 0.19466071789155187,
+    "n_dates": 6,
+    "n_windows": 36,
+    "mean_protected": 60.81263306506995
+   },
+   {
+    "n": 9,
+    "source": "e6",
+    "estimate": 0.11357943568745298,
+    "lo": 0.09092245517758851,
+    "hi": 0.1392290531555449,
+    "pct": 0.1889818530498368,
+    "pct_lo": 0.15054602484375174,
+    "pct_hi": 0.23218305098894346,
+    "n_dates": 6,
+    "n_windows": 36,
+    "mean_protected": 60.1007101234745
+   }
+  ],
+  "rounding_loss": [
+   {
+    "n": 6,
+    "arm": "direct",
+    "idle_prb": 3.0031250000000003
+   },
+   {
+    "n": 6,
+    "arm": "equal",
+    "idle_prb": 3.017708333333333
+   },
+   {
+    "n": 6,
+    "arm": "protected",
+    "idle_prb": 3.0200810185185194
+   },
+   {
+    "n": 6,
+    "arm": "unprotected",
+    "idle_prb": 3.0229166666666663
+   },
+   {
+    "n": 9,
+    "arm": "direct",
+    "idle_prb": 4.628472222222222
+   },
+   {
+    "n": 9,
+    "arm": "equal",
+    "idle_prb": 4.478125000000001
+   },
+   {
+    "n": 9,
+    "arm": "protected",
+    "idle_prb": 4.5606481481481485
+   },
+   {
+    "n": 9,
+    "arm": "unprotected",
+    "idle_prb": 4.570023148148148
+   }
+  ]
+ },
+ "hypotheses": {
+  "H6a_time": {
+   "p95_ms": 38.839585304260254,
+   "limit_ms": 100.0,
+   "holds": true
+  },
+  "H6a_gain": {
+   "tenant_intervals": 432000,
+   "max_gain": 0.0,
+   "max_cert": 1.343645261719928e-08,
+   "max_err": 6.71822630859964e-09,
+   "min_eps": 6.923039973333338e-09,
+   "violations": 0,
+   "violations_strict": 0,
+   "violations_max_rule": 0,
+   "max_certified_gain_over_eps": 0.07139528297856974,
+   "all_exact": true,
+   "holds": true,
+   "checkpoint_seeds": [
+    0,
+    1,
+    2
+   ],
+   "seed_note": "certified for the listed checkpoint seeds of the learned maps only (pre-registration item, STATUS.md \u00a78.3 item 2)",
+   "rule": "no scored tenant-interval whose certified gain (computed gain + certificate) exceeds 1e-8 pi_i mu_i Delta (PREREG \u00a76; exact cell enumeration): violations = violations_strict = #(gain + cert > eps_i); violations_max_rule = #(gain > max(cert, eps_i)) is a reported check"
+  },
+  "H6b": {
+   "estimate": 0.11357943568745298,
+   "lo": 0.09092245517758851,
+   "hi": 0.1392290531555449,
+   "level": 0.95,
+   "n_dates": 6,
+   "n_windows": 36,
+   "n_boot": 10000,
+   "p": 9.999000099990002e-05,
+   "alternative": "greater",
+   "null": 0.0,
+   "lower_one_sided": 0.09428529077516098,
+   "upper_one_sided": 0.13487739643193317,
+   "mean_a": 60.21428955916195,
+   "mean_b": 60.1007101234745,
+   "denominator": "Protected welfare on the same windows",
+   "inference": true,
+   "dates_positive": 6,
+   "dates_negative": 0,
+   "dates_zero": 0,
+   "per_date": [
+    {
+     "date": "2024-02-28",
+     "mean": 0.14644664442720767,
+     "n_windows": 6,
+     "sign": 1
+    },
+    {
+     "date": "2024-03-02",
+     "mean": 0.11664943477239238,
+     "n_windows": 6,
+     "sign": 1
+    },
+    {
+     "date": "2024-03-04",
+     "mean": 0.10599165646648719,
+     "n_windows": 6,
+     "sign": 1
+    },
+    {
+     "date": "2024-03-06",
+     "mean": 0.10512979234737803,
+     "n_windows": 6,
+     "sign": 1
+    },
+    {
+     "date": "2024-03-09",
+     "mean": 0.11171243047209008,
+     "n_windows": 6,
+     "sign": 1
+    },
+    {
+     "date": "2024-03-10",
+     "mean": 0.0955466556391625,
+     "n_windows": 6,
+     "sign": 1
+    }
+   ],
+   "pct": 0.1889818530498368,
+   "pct_lo": 0.15054602484375174,
+   "pct_hi": 0.23218305098894346,
+   "pct_lower_one_sided": 0.15650586941054434,
+   "pct_upper_one_sided": 0.2245182568212238,
+   "p_pct": 9.999000099990002e-05,
+   "arm_a": "unprotected",
+   "arm_b": "protected",
+   "unit": "credits per interval",
+   "unpaired": 0,
+   "seeds_a": 3,
+   "seeds_b": 3,
+   "margin_pct": 2.0,
+   "holds": true
+  }
+ },
+ "notes": [],
+ "seconds": 1.3667921519954689,
+ "experiment": "e6",
+ "split": "dev",
+ "smoke": false,
+ "settings": {
+  "n_boot": 10000,
+  "level": 0.95,
+  "seed": 20261019,
+  "main": {
+   "n": 3,
+   "d": 2.0,
+   "rho": 0.9,
+   "lead_s": 4.004
+  },
+  "load_bins": [
+   0.8,
+   1.0
+  ],
+  "holm_family": [
+   "H1a",
+   "H2c",
+   "H4a",
+   "H5b"
+  ],
+  "h5b": {
+   "arm": "protected",
+   "alpha": 0.5
+  },
+  "h2c_arm": "unprotected",
+  "split": "dev",
+  "smoke": false,
+  "crossed": true
+ },
+ "generated": "2026-10-20T22:42:52",
+ "code_sha256": "6510e5156e05ad5c58ee6a8e7bca54b0eead89623449d87f4e60ba0652d110b6",
+ "inputs": {
+  "digest": "788ff43d20a91f2c54067d9adba3fed51e941c6ae40dcef635637c46b4368df8",
+  "sources": {
+   "e0": "results/raw/dev/e0",
+   "e1": "results/raw/dev/e1",
+   "e2": "results/raw/dev/e2",
+   "e3": "results/raw/dev/e3",
+   "e4": "results/raw/dev/e4",
+   "e5": "results/raw/dev/e5",
+   "e6": "results/raw/dev/e6",
+   "e7": "results/raw/e7/cases_dev"
+  },
+  "files": 6689,
+  "rows": {
+   "e0_windows": 126,
+   "e0_vcal": 3024,
+   "e0_worked_meta": 2,
+   "e0_worked": 516,
+   "e0_worked_stairs": 149,
+   "windows": 126438,
+   "e1_manifest": 11,
+   "br": 648000,
+   "monotone": 120960,
+   "bandit": 38400,
+   "premium": 155520,
+   "ident": 38880,
+   "h3d": 972,
+   "e4_h4b": 144,
+   "e4_learn": 396,
+   "timing": 72320,
+   "e5_pairs": 12096,
+   "e5_nets": 2268,
+   "e5_windows": 1008,
+   "e5_checks": 1,
+   "e6_runs": 576
+  }
+ },
+ "inputs_check": {
+  "ok": true,
+  "primary": false,
+  "completeness": {
+   "e6": {
+    "windows": {
+     "expected": 252,
+     "present": 72,
+     "missing": [
+      "6|2024-03-13|o14460",
+      "6|2024-03-13|o28860",
+      "6|2024-03-13|o43260",
+      "6|2024-03-13|o57660",
+      "6|2024-03-13|o60",
+      "6|2024-03-13|o72060",
+      "6|2024-03-16|o14460",
+      "6|2024-03-16|o28860",
+      "6|2024-03-16|o43260",
+      "6|2024-03-16|o57660",
+      "6|2024-03-16|o60",
+      "6|2024-03-16|o72060"
+     ],
+     "n_missing": 180,
+     "complete": false
+    }
+   }
+  },
+  "provenance": {
+   "e6": {
+    "scope": "all",
+    "jobs": 72,
+    "without_fingerprint": 0,
+    "ckpt_conflicts": {},
+    "code_versions": 1,
+    "ok": true
+   }
+  }
+ }
+}

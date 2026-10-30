@@ -1,0 +1,210 @@
+--- a/contrib/nr/model/nr-rlc-um.cc
++++ b/contrib/nr/model/nr-rlc-um.cc
+@@ -1,3 +1,5 @@
++// Local ABI-compatible NR DSO overlay: upstream v5.0 6b9da7a06e43a875a449e12bba189160217839ae.
++// Preserve v4.1.1 attribute spelling; counters attest actual SAP/timer execution.
+ // Copyright (c) 2011 Centre Tecnologic de Telecomunicacions de Catalunya (CTTC)
+ //
+ // SPDX-License-Identifier: GPL-2.0-only
+@@ -12,12 +14,34 @@
+ 
+ #include "ns3/log.h"
+ #include "ns3/simulator.h"
++#include <sstream>
++#include <iostream>
+ 
+ namespace ns3
+ {
+ 
+ NS_LOG_COMPONENT_DEFINE("NrRlcUm");
+ 
++// Observe actual SAP/timer execution, not executable symbol resolution.
++static uint64_t iccRepairReassemblies = 0;
++static uint64_t iccRepairTimerExpiries = 0;
++static std::map<uint32_t, std::deque<std::string>> iccRepairHistory;
++static void RepairHistory(const char* kind,uint16_t rnti,uint8_t lcid,uint16_t sn,
++                          uint16_t expected,uint8_t fi,unsigned state,unsigned held,unsigned bytes){
++    std::ostringstream row;
++    row<<"{\"event\":\"rlc_repair_"<<kind<<"\",\"time_s\":"<<Simulator::Now().GetSeconds()
++       <<",\"rnti\":"<<rnti<<",\"lcid\":"<<unsigned(lcid)<<",\"sn\":"<<sn
++       <<",\"expected_sn\":"<<expected<<",\"fi\":"<<unsigned(fi)<<",\"state\":"<<state
++       <<",\"held_bytes\":"<<held<<",\"data_bytes\":"<<bytes<<"}";
++    auto& history=iccRepairHistory[(uint32_t(rnti)<<8)|lcid];
++    history.push_back(row.str());if(history.size()>128)history.pop_front();
++}
++extern "C" uint64_t IccNrRepairReassemblies() { return iccRepairReassemblies; }
++extern "C" uint64_t IccNrRepairTimerExpiries() { return iccRepairTimerExpiries; }
++extern "C" void IccNrRepairDumpHistory(){
++    for(const auto& [key,history]:iccRepairHistory)for(const auto& row:history)std::cerr<<row<<'\n';
++}
++
+ NS_OBJECT_ENSURE_REGISTERED(NrRlcUm);
+ 
+ NrRlcUm::NrRlcUm()
+@@ -102,7 +126,7 @@
+     {
+         if (m_enablePdcpDiscarding)
+         {
+-            // discart the packet
++            // discard the packet
+             uint32_t headOfLineDelayInMs = 0;
+             uint32_t discardTimerMs =
+                 (m_discardTimerMs > 0) ? m_discardTimerMs : m_packetDelayBudgetMs;
+@@ -120,6 +144,12 @@
+                 NS_LOG_DEBUG("m_packetDelayBudgetMs    = " << m_packetDelayBudgetMs);
+                 NS_LOG_DEBUG("packet size     = " << p->GetSize());
+                 m_txDropTrace(p);
++
++                // The packet has been discarded, so do not store it in the Tx buffer.
++                // A Buffer Status Report is still issued below to reflect the current state.
++                DoTransmitBufferStatusReport();
++                m_bsrTimer.Cancel();
++                return;
+             }
+         }
+ 
+@@ -506,6 +536,10 @@
+     }
+     else
+     {
++        NS_ASSERT_MSG(m_rxBuffer.count(seqNumber.GetValue()) == 0,
++                      "INTERNAL ERROR: PDU with SN=" << seqNumber.GetValue()
++                                                     << " already exists in the RX buffer.");
++
+         NS_LOG_LOGIC("Place PDU in the reception buffer");
+         m_rxBuffer[seqNumber.GetValue()] = rxPduParams.p;
+     }
+@@ -644,11 +678,14 @@
+ void
+ NrRlcUm::ReassembleAndDeliver(Ptr<Packet> packet)
+ {
++    ++iccRepairReassemblies;
+     NrRlcHeader rlcHeader;
+     packet->RemoveHeader(rlcHeader);
+     uint8_t framingInfo = rlcHeader.GetFramingInfo();
+     nr::SequenceNumber10 currSeqNumber = rlcHeader.GetSequenceNumber();
+     bool expectedSnLost;
++    RepairHistory("reassemble",m_rnti,m_lcid,currSeqNumber.GetValue(),m_expectedSeqNumber.GetValue(),
++                  framingInfo,m_reassemblingState,m_keepS0?m_keepS0->GetSize():0,packet->GetSize());
+ 
+     if (currSeqNumber != m_expectedSeqNumber)
+     {
+@@ -755,10 +792,13 @@
+                 break;
+ 
+             case (NrRlcHeader::NO_FIRST_BYTE | NrRlcHeader::LAST_BYTE):
++                // An in-sequence continuation may be received in WAITING_S0_FULL when the
++                // held first segment was discarded on t-Reordering expiry. Recover as in
++                // the loss path: drop the orphaned continuation and resynchronise.
+                 m_reassemblingState = WAITING_S0_FULL;
+ 
+                 /**
+-                 * Discard SI or SN
++                 * Discard SN
+                  */
+                 m_sdusBuffer.pop_front();
+ 
+@@ -817,6 +857,18 @@
+             break;
+ 
+         case WAITING_SI_SF:
++            if (!m_keepS0)
++            {
++                // Inconsistent state: mid-SDU (WAITING_SI_SF) yet the held first segment is
++                // gone. With stale partials now discarded on t-Reordering expiry this should
++                // not occur, but guard regardless so a continuation segment is never appended
++                // onto a missing/garbage head. Drop this PDU's segments and resynchronise to a
++                // fresh SDU boundary instead of dereferencing a null S0.
++                NS_LOG_WARN("Dropping orphaned RLC-UM continuation: no held S0 in WAITING_SI_SF");
++                m_sdusBuffer.clear();
++                m_reassemblingState = WAITING_S0_FULL;
++                break;
++            }
+             switch (framingInfo)
+             {
+             case (NrRlcHeader::NO_FIRST_BYTE | NrRlcHeader::LAST_BYTE):
+@@ -882,8 +934,12 @@
+                 /**
+                  * ERROR: Transition not possible
+                  */
+-                NS_LOG_LOGIC(
+-                    "INTERNAL ERROR: Transition not possible. FI = " << (uint32_t)framingInfo);
++                NS_ASSERT_MSG(false,
++                              "INTERNAL ERROR: We are in the WAITING_SI_SF state and no packet "
++                              "loss has occurred, "
++                              "so the received RLC PDU is expected to have FI = 10 (2) or FI = 11 "
++                              "(3), not FI = "
++                                  << (uint32_t)framingInfo);
+                 break;
+             }
+             break;
+@@ -1127,10 +1183,21 @@
+ {
+     NS_LOG_LOGIC("Reassemble Outside Window");
+ 
+-    auto it = m_rxBuffer.begin();
++    auto it = m_rxBuffer.lower_bound(m_vrUr.GetValue()); // First SN such that SN >= VR(UR)
+ 
+-    while ((it != m_rxBuffer.end()) && !IsInsideReorderingWindow(nr::SequenceNumber10(it->first)))
++    while (!m_rxBuffer.empty())
+     {
++        if (it == m_rxBuffer.end())
++        {
++            // wrap-around manual
++            it = m_rxBuffer.begin();
++        }
++
++        if (IsInsideReorderingWindow(nr::SequenceNumber10(it->first)))
++        {
++            break;
++        }
++
+         NS_LOG_LOGIC("SN = " << it->first);
+ 
+         // Reassemble RLC SDUs and deliver the PDCP PDU to upper layer
+@@ -1159,10 +1226,10 @@
+     {
+         NS_LOG_LOGIC("reassembleSn < highSeqNumber");
+         auto it = m_rxBuffer.find(reassembleSn.GetValue());
+-        NS_LOG_LOGIC("it->first  = " << it->first);
+-        NS_LOG_LOGIC("it->second = " << it->second);
+         if (it != m_rxBuffer.end())
+         {
++            NS_LOG_LOGIC("it->first  = " << it->first);
++            NS_LOG_LOGIC("it->second = " << it->second);
+             NS_LOG_LOGIC("SN = " << it->first);
+ 
+             // Reassemble RLC SDUs and deliver the PDCP PDU to upper layer
+@@ -1208,6 +1275,9 @@
+ void
+ NrRlcUm::ExpireReorderingTimer()
+ {
++    ++iccRepairTimerExpiries;
++    RepairHistory("timer",m_rnti,m_lcid,m_vrUr.GetValue(),m_expectedSeqNumber.GetValue(),255,
++                  m_reassemblingState,m_keepS0?m_keepS0->GetSize():0,0);
+     NS_LOG_FUNCTION(this << m_rnti << (uint32_t)m_lcid);
+     NS_LOG_LOGIC("Reordering timer has expired");
+ 
+@@ -1234,6 +1304,22 @@
+ 
+     ReassembleSnInterval(oldVrUr, m_vrUr);
+ 
++    // t-Reordering expiry means the missing segment(s) at the front of the reordering
++    // window are given up on. Per TS 38.322 (5.1.2.2.4 / 5.2.2.2), any RLC SDU that can
++    // no longer be fully reassembled must be discarded. If a partially-reassembled SDU is
++    // still held (WAITING_SI_SF, i.e. S0 is kept waiting for its continuation) after the
++    // above in-window reassembly, its continuation was among the lost SNs and will never
++    // arrive: drop it and resynchronise. Leaving it held lets it survive until the 10-bit
++    // SN wraps (~1024 PDUs), after which an unrelated later segment aliases as the awaited
++    // continuation and is concatenated onto the stale head, delivering a corrupt (non-IP)
++    // SDU to upper layers (observed as the "Unknown IP type" abort during fast handovers).
++    if (m_reassemblingState == WAITING_SI_SF)
++    {
++        NS_LOG_LOGIC("Discarding partially reassembled SDU stranded by t-Reordering expiry");
++        m_keepS0 = nullptr;
++        m_reassemblingState = WAITING_S0_FULL;
++    }
++
+     if (m_vrUh > m_vrUr)
+     {
+         NS_LOG_LOGIC("Start reordering timer");
