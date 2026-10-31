@@ -131,15 +131,28 @@ def synthetic_rows():
     return pd.DataFrame(welfare), pd.DataFrame(pricing)
 
 
-def series(ax, x, means, low, high, *, color, marker, label, cap_width, linestyle="-"):
+def series(ax, x, means, low, high, *, color, marker, label, cap_width, linestyle="-", truth_reference=False):
     # Draw CI endpoints directly. A percentile CI need not contain its point
-    # estimate; no max(0,error) clipping or artificially added zero points.
+    # estimate; measured intervals are never clipped or changed. Exact truth
+    # references, when requested, are drawn separately without bootstrap CIs.
     x, means, low, high = map(np.asarray, (x, means, low, high))
     ax.vlines(x, low, high, color=color, lw=.65, zorder=2)
     ax.hlines(low, x-cap_width, x+cap_width, color=color, lw=.65, zorder=2)
     ax.hlines(high, x-cap_width, x+cap_width, color=color, lw=.65, zorder=2)
-    ax.plot(x, means, color=color, marker=marker, markersize=3.5, markeredgewidth=.65,
-            markerfacecolor="white" if marker == "s" else color, lw=1.05, ls=linestyle, label=label, zorder=3)
+    if truth_reference:
+        # U(truth) - U(truth) is identically zero. This is a reference, not a
+        # ninth measured strategy; the original x/means/CI arrays stay intact.
+        line_x, line_means = np.r_[x, 1.], np.r_[means, 0.]
+        order = np.argsort(line_x, kind="stable")
+        ax.plot(line_x[order], line_means[order], color=color, marker=marker,
+                markevery=np.flatnonzero(line_x[order] != 1.).tolist(), markersize=3.5, markeredgewidth=.65,
+                markerfacecolor="white" if marker == "s" else color,
+                lw=1.05, ls=linestyle, label=label, zorder=3)
+        ax.plot([1.], [0.], marker="D", markersize=3.2, markeredgewidth=.65,
+                markeredgecolor="#555555", markerfacecolor="white", ls="none", zorder=4)
+    else:
+        ax.plot(x, means, color=color, marker=marker, markersize=3.5, markeredgewidth=.65,
+                markerfacecolor="white" if marker == "s" else color, lw=1.05, ls=linestyle, label=label, zorder=3)
 
 
 def limits(ax, values, *, symmetric=False):
@@ -179,9 +192,9 @@ def welfare_figure(rows, diagnostic=False):
 
 
 def pricing_figure(rows, diagnostic=False):
-    # Exact replacement dimensions of the existing full-width deviation figure.
-    fig, axes = plt.subplots(1, 3, figsize=(516/72, 144/72))
-    fig.subplots_adjust(left=.095, right=.99, bottom=.275, top=.78, wspace=.30)
+    # Manuscript-only compact layout: unchanged data, font sizes, markers and CI styling.
+    fig, axes = plt.subplots(1, 3, figsize=(516/72, 118.8/72))
+    fig.subplots_adjust(left=.095, right=.99, bottom=.26, top=.75, wspace=.30)
     for ax, traffic, title in zip(axes, TRAFFIC, ("(a) Video", "(b) Interactive", "(c) Background")):
         panel = rows[rows.traffic.eq(traffic)]
         for bill, marker, label in (("primary", "o", "Recomputed-priority pricing"),
@@ -189,14 +202,15 @@ def pricing_figure(rows, diagnostic=False):
             data = panel[panel.bill.eq(bill)].sort_values("multiplier")
             series(ax, data.multiplier, data.estimate, data.ci_low, data.ci_high,
                    color=COLORS[bill], marker=marker, label=label, cap_width=.018,
-                   linestyle="-" if bill == "primary" else "--")
+                   linestyle="-" if bill == "primary" else "--", truth_reference=True)
         limits(ax, panel[["estimate", "ci_low", "ci_high"]].to_numpy())
         ax.axvline(1, color="#aaaaaa", ls=":", lw=.6, zorder=0)
         ax.set_xlim(.44, 2.06)
         ax.set_xticks([.5, 1, 1.5, 2])
         ax.set_title(title, pad=4)
     axes[0].set_ylabel("Contract utility gain\n(credits/interval)", labelpad=3)
-    fig.text(.54, .08, "Report / truthful demand", ha="center", fontsize=8)
+    fig.text(.54, .065, "Reporting multiplier", ha="center", fontsize=8)
+    fig.text(.985, .065, "Diamond: exact zero gain at truth", ha="right", fontsize=7.2, color="#555555")
     fig.legend(*axes[0].get_legend_handles_labels(), loc="upper center", bbox_to_anchor=(.54, 1.015),
                ncol=2, frameon=False, columnspacing=2.0, handlelength=2., handletextpad=.5, fontsize=8)
     if diagnostic:
@@ -219,7 +233,11 @@ def save_figure(args, figure, kind, rows, provenance):
         "dimensions_pt": dimensions, "pdf": str(pdf), "pdf_sha256": sha(pdf), "png_sha256": sha(png),
         "source_tables": provenance, "plotted_rows": rows.to_dict("records"),
         "confidence_intervals": "95% percentile, date then window resampling after averaging paired fitted seeds" if not args.diagnostic_layout else "synthetic fixture endpoints; no empirical inference",
-        "notes": ["No inserted truthful (multiplier1) data point or zero CI.", "CI endpoints plotted directly without clipping to point estimates.",
+        "deterministic_reference_points": [dict(traffic=traffic, bill=bill, multiplier=1., value=0.,
+            exact_lower=0., exact_upper=0., origin="U(truth) minus U(truth)",
+            measured_trial=False, bootstrap_confidence_interval=False, ci_drawn=False)
+            for traffic in TRAFFIC for bill in ("primary", "fixed_ablation")] if kind == "pricing" else [],
+        "notes": ["Measured rows are unchanged; pricing curves also include six exact (1,0) truthful references, drawn as diamonds without CIs. These are identities, not new trials." if kind == "pricing" else "No additional reference points.", "CI endpoints plotted directly without clipping to point estimates.",
                   "Welfare gaps are100 times (Protected mean minus baseline mean)/baseline mean.",
                   "Unconstrained comparison uses the same frozen/retrained state as Protected."]}
     (folder / f"{stem}_provenance.json").write_text(json.dumps(record, indent=2, sort_keys=True, allow_nan=False)+"\n")
@@ -251,7 +269,9 @@ def main():
         sources["pricing"] = []
         rows["pricing"] = fixture[1] if fixture else pricing_rows(args, sources["pricing"])
     for key, data in rows.items():
+        data_before = data.copy(deep=True)
         figure = welfare_figure(data, args.diagnostic_layout) if key == "welfare" else pricing_figure(data, args.diagnostic_layout)
+        require(data.equals(data_before), "Plotting changed original measured rows")
         save_figure(args, figure, "welfare_gaps" if key == "welfare" else "pricing", data, sources[key])
 
 

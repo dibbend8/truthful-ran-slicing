@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-message: "Please cite this software version and the accompanying manuscript when using the implementation or matched-deadline study."
+message: "Please cite this software version and the accompanying manuscript when using the implementation, matched-deadline study, or five-seed reporting supplement."
 type: software
 title: "Truthful Reporting for Learning-Based RAN Slicing: Research Implementation"
-version: "v0.2.0"
+version: "v0.3.0"
 date-released: "2026-10-31"
 repository-code: "https://github.com/dibbend8/truthful-ran-slicing"
-url: "https://github.com/dibbend8/truthful-ran-slicing/releases/tag/v0.2.0"
+url: "https://github.com/dibbend8/truthful-ran-slicing/releases/tag/v0.3.0"
 authors:
   - family-names: Mishra
     given-names: Prashant
@@ -20,7 +20,8 @@ abstract: >-
   Research code for truthful demand reporting in learning-based RAN slicing,
   including PRB allocation, envelope payments, protected priority maps,
   controller training, trace-driven evaluation, recorded result summaries, and
-  matched-deadline training, reporting tests and reproducible statistical analysis.
+  matched-deadline training, a five-seed original-setting reporting supplement,
+  and reproducible statistical analysis.
 keywords:
   - RAN slicing
   - mechanism design

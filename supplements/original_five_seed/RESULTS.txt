@@ -1,0 +1,49 @@
+FIVE-SEED ORIGINAL-SETTING SUPPLEMENT — VERIFIED RESULTS
+
+Complete exploratory extension on previously used TEST data; outside the original Holm family.
+Scope: 16 recording dates, 32 prespecified rotated windows, 5 original training seeds, 160 cases, 800 trajectories, 480 seed/window/deviator pairs and 76,800 scored search decisions. No retraining or packet simulation.
+
+Headline effects: role and seed observations are averaged within each window; percentages are ratios of pooled means. The 95% percentile intervals use 10,000 date/window bootstrap draws, RNG seed 0, conditional on the five fitted networks.
+
+honest_on_time_loss
+  Absolute effect: 4.377063944 Mbit per scored interval (95% CI 3.744946316 to 4.978936239).
+  Relative effect: 19.127003832% (95% CI 16.861557305% to 21.123607974%).
+  Pooled denominator: 22.884211152; Unconstrained truthful honest on-time Mbit.
+  Range across fitted training seeds: 17.910088284% to 20.068309276%; sample SD 0.955883063 percentage points.
+
+protected_honest_welfare_gain
+  Absolute effect: 5.202307066 credits per scored interval (95% CI 4.380760029 to 5.982438084).
+  Relative effect: 16.133050694% (95% CI 13.646776322% to 18.483650905%).
+  Pooled denominator: 32.246269873; Unconstrained best-response honest delivery welfare.
+  Range across fitted training seeds: 14.399339162% to 18.106945765%; sample SD 1.595251540 percentage points.
+
+Per-seed relative effects (percent):
+seed | honest on-time loss | Protected honest-welfare gain
+0 | 19.442038329 | 16.059932511
+1 | 19.878194057 | 18.106945765
+2 | 17.910088284 | 14.399339162
+3 | 18.336828611 | 14.814658996
+4 | 20.068309276 | 17.372134962
+
+Seed 0 reproduction:
+  honest_on_time_loss: archived 19.442038328849%; rerun 19.442038328849%; difference 3.55e-15 percentage points.
+  protected_honest_welfare_gain: archived 16.0599325113293%; rerun 16.0599325113293%; difference -7.11e-15 percentage points.
+  The original analysis used bootstrap RNG 20261019; this supplement uses 0. Point estimates, not identical historical bootstrap draws, are the reproduction target.
+
+All 480 seed/window/deviator pairs have positive honest on-time loss and positive Protected honest-welfare improvement. Unconstrained deviators also have positive own delivered and declared utility gains in all 480 paired episodes. These counts retain every sign. The extension does not test Protected deviations.
+The local nonmonotone contract-utility search reports 58,585 positive gains among 76,800 scored decisions, no negative gains beyond tolerance, and zero finite certificates. Its largest local gain is 16.225763400 credits; this search is a lower bound, not a certified global maximum.
+Maximum local gain context: {"date": "2024-09-29", "deviator": 0, "k": 79, "offset": 43260, "seed": 1}.
+
+Limitations:
+  - Exploratory extension on reused TEST data; no Holm-adjusted or confirmatory claims.
+  - Date/window confidence intervals condition on the five fitted networks; seed spread is separate.
+  - Traffic/channel capture reuse can create dependence beyond Puffer dates.
+  - Unconstrained best response is a numerical search lower bound, not a certified global maximum.
+  - This experiment does not test Protected deviations or rerun packet simulation.
+  - The runner window_input_sha256 covers selected Window arrays only; analysis additionally matches all exported exogenous arrays, including arrivals, across trajectories/seeds.
+
+findings.json SHA256: 7fbb43cb2ec5428b82fbdd1b74eb01fdf8203078ad14ebcad7b32f2ab04264a9
+Frozen analyzer SHA256: 379b06bcf8c373b262e5dd580874445939936d2af262f9ddbd13e5c23a042ba4
+Original specification canonical SHA256: 1c1671857acb763c8829d7b919dd8d01a8a8673ad9a51385380d487aff5a718c
+ready_for_manuscript: true
+Evidence packaging and reanalysis from a fresh archive extraction are complete and use the reviewed findings hash above. This report accompanies version v0.3.0.

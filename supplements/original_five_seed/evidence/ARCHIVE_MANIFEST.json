@@ -1,0 +1,11 @@
+{
+  "all_members_readback_verified": true,
+  "bytes": 63471274,
+  "created_utc": "2026-10-31T18:03:57.952690+00:00",
+  "file": "original-five-seed-evidence.tar.gz",
+  "members": 1148,
+  "portable_reanalysis_verification_sha256": "442b591a76bb61b926c35bbb21fff6bdeaf60ac11e58fcabdd6438086a087bac",
+  "public_package_manifest_sha256": "0b841f521770bc904491f5cd9966910bd9e2ee098da09e678c52e2c48bc10175",
+  "published": false,
+  "sha256": "628778ba673d85f82d4749d5aa6301d4ff218781ba7f8fefb860a4d72ffbbf55"
+}

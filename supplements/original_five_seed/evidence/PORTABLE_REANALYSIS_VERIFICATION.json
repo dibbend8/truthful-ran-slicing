@@ -1,0 +1,88 @@
+{
+  "adapter_sha256": "ab7c11d0e2cb4ffb374f6319b2ec722f87e520445a7ccd130ff39f683bbfa098",
+  "analyzer_sha256": "379b06bcf8c373b262e5dd580874445939936d2af262f9ddbd13e5c23a042ba4",
+  "cases_cross_checked": 160,
+  "complete": true,
+  "exploratory": true,
+  "limitation": "Reanalysis verifies released derived outputs; it does not rerun raw-traffic simulation or training.",
+  "manifest_sha256": "0b841f521770bc904491f5cd9966910bd9e2ee098da09e678c52e2c48bc10175",
+  "maximum_absolute_numeric_difference": 0.0,
+  "original_private_locators_required": false,
+  "raw_external_traffic_read": false,
+  "regenerated_files_sha256": {
+    "case_role_pairs.parquet": "2e8c71af5fb7b5352a70cc61ce05d44430692f89a5341e9f075922ff665e9906",
+    "headline_summary.parquet": "ad50a3c0e38fa3d7ab87ebc3fe1c91a563bedcfc0ea76f37d11a0d2bac10c171",
+    "local_best_response_events.parquet": "47845f3de24d2717bd515e33ebfd193891ef60dae7f4940c577ae7fc11530988",
+    "per_seed_summary.parquet": "19e0f58560f25b98e6aca4f8c110a0c277768478d8601e0baac1fafc79b752a9",
+    "seed_averaged_windows.parquet": "e4ef9f325875e711287a72d2ed320e815c9bb2974492c2dc6b7da8ca0d96fc7c",
+    "window_seed_pairs.parquet": "85f9c0324b0c1f351d8d59b96a27c80832141b9c597e27e49ec843a2be9ab812"
+  },
+  "replay_episode_tables_reread": 800,
+  "scientific_result": true,
+  "simulation_run": false,
+  "table_comparisons": [
+    {
+      "file": "headline_summary.parquet",
+      "maximum_absolute_numeric_difference": 0.0,
+      "rows": 2
+    },
+    {
+      "file": "headline_summary.csv",
+      "maximum_absolute_numeric_difference": 0.0,
+      "rows": 2
+    },
+    {
+      "file": "per_seed_summary.parquet",
+      "maximum_absolute_numeric_difference": 0.0,
+      "rows": 10
+    },
+    {
+      "file": "per_seed_summary.csv",
+      "maximum_absolute_numeric_difference": 0.0,
+      "rows": 10
+    },
+    {
+      "file": "case_role_pairs.parquet",
+      "maximum_absolute_numeric_difference": 0.0,
+      "rows": 480
+    },
+    {
+      "file": "case_role_pairs.csv",
+      "maximum_absolute_numeric_difference": 0.0,
+      "rows": 480
+    },
+    {
+      "file": "window_seed_pairs.parquet",
+      "maximum_absolute_numeric_difference": 0.0,
+      "rows": 160
+    },
+    {
+      "file": "window_seed_pairs.csv",
+      "maximum_absolute_numeric_difference": 0.0,
+      "rows": 160
+    },
+    {
+      "file": "seed_averaged_windows.parquet",
+      "maximum_absolute_numeric_difference": 0.0,
+      "rows": 32
+    },
+    {
+      "file": "seed_averaged_windows.csv",
+      "maximum_absolute_numeric_difference": 0.0,
+      "rows": 32
+    },
+    {
+      "file": "local_best_response_events.parquet",
+      "maximum_absolute_numeric_difference": 0.0,
+      "rows": 76800
+    },
+    {
+      "file": "local_best_response_events.csv",
+      "maximum_absolute_numeric_difference": 0.0,
+      "rows": 76800
+    }
+  ],
+  "tables_recomputed": 6,
+  "training_run": false,
+  "trajectories_cross_referenced": 800
+}

@@ -3,10 +3,47 @@
 Research implementation accompanying the ICC 2027 manuscript by Prashant Mishra,
 Rahul Kushwah, and Dibbendu Roy.
 
+## v0.3.0 — five-seed original-setting supplement
+
+Version **v0.3.0**, dated **2026-10-31**: [versioned release](https://github.com/dibbend8/truthful-ran-slicing/releases/tag/v0.3.0). The new
+[supplement](supplements/original_five_seed/README.md) reruns the original reporting
+comparisons using five existing training seeds, 32 windows from 16 dates,
+160 seed/window cases and 800 trajectories. It does not retrain the controllers.
+
+Under Unconstrained control, strategic reporting reduces the other tenants'
+on-time traffic by **19.13%** (conditional 95% CI **16.86–21.12%**; per-seed range
+**17.91–20.07%**) relative to truthful reporting with that controller. Protected
+truthful control increases those honest tenants' weighted delivery welfare by
+**16.13%** (**13.65–18.48%**; per-seed range **14.40–18.11%**) relative to
+Unconstrained with a strategically reporting tenant. The second comparison uses
+separately trained controllers and does not isolate the causal effect of pricing.
+The seed-0 rerun reproduces the original 19.44% and 16.06% point estimates to
+floating-point precision. See the [complete results](supplements/original_five_seed/RESULTS.txt)
+and [per-seed table](supplements/original_five_seed/analysis/per_seed_summary.csv).
+
+This is an exploratory extension on reused TEST data, outside the original Holm
+family. The intervals condition on the five fitted networks; per-seed ranges
+report their variation separately. The numerical Unconstrained search provides
+lower bounds on best-response gains, not certified global maxima. This supplement
+does not test Protected deviations or extend the original one-seed packet check.
+The matched-deadline study below remains unchanged at three training seeds.
+
+The small Git supplement includes the exact protocol, runner, analyzer, headline
+and per-seed tables, findings and provenance. Its separate, validated evidence
+archive contains all 800 derived episode tables. Archive details and offline
+reanalysis instructions are in the [supplement README](supplements/original_five_seed/README.md).
+Large replay outputs and raw traffic are not committed to this repository.
+
+Version v0.3.0 also clarifies Figure 2's axis and truthful-report reference and
+uses a more compact layout. All plotted measurements and confidence intervals
+are unchanged.
+
+## Historical v0.2.0 — matched-deadline study
+
 Version **v0.2.0**, dated **2026-10-31**:
 [versioned release](https://github.com/dibbend8/truthful-ran-slicing/releases/tag/v0.2.0).
-The completed matched-deadline study contains 108 neural training runs, nine
-static refits, nine truthful-performance settings and three joint-deadline
+The completed matched-deadline study contains 108 neural training runs across
+three seeds, nine static refits, nine truthful-performance settings and three joint-deadline
 reporting settings: 384 mode/window cases and 36,864 replayed trajectories.
 See the [results](supplements/RESULTS.txt),
 [reproduction instructions](supplements/README.md), and

@@ -1,0 +1,47 @@
+{
+  "files": [
+    {
+      "bytes": 10922,
+      "path": "source/run_original_supplement.py",
+      "sha256": "f56c4ba8f6f52a7e712148da1616d098ab2f724d0ecb1bf2d6e1cf7bce664046",
+      "transformation": "none"
+    },
+    {
+      "bytes": 25414,
+      "path": "source/analyze_original_multiseed.py",
+      "sha256": "379b06bcf8c373b262e5dd580874445939936d2af262f9ddbd13e5c23a042ba4",
+      "transformation": "none"
+    },
+    {
+      "bytes": 18461,
+      "path": "source/reanalyze_original_release.py",
+      "sha256": "ab7c11d0e2cb4ffb374f6319b2ec722f87e520445a7ccd130ff39f683bbfa098",
+      "transformation": "none"
+    },
+    {
+      "bytes": 16764,
+      "path": "source/prepare_original_package.py",
+      "sha256": "fb39838d9d54373d80c22f998098481c1cb6b2eadb5a909cc1d7fe68e407cee5",
+      "transformation": "none"
+    },
+    {
+      "bytes": 3439,
+      "path": "source/PROTOCOL.txt",
+      "sha256": "c45206cfa1ebcb952043a78d06d39212fa13955a12a99d81e98586770474c334",
+      "transformation": "none"
+    },
+    {
+      "bytes": 4948,
+      "path": "source/ANALYSIS_README.txt",
+      "sha256": "a6e2ac5b33540cef8cd2b0a4cb4c19f7a8b14fcc3d638844b5d70eb63954d15d",
+      "transformation": "none"
+    },
+    {
+      "bytes": 6097,
+      "path": "source/PORTABLE_README.txt",
+      "sha256": "03a4f4c876144766a17028c993ad4f86484f3d84c0772fb349daaad76e112ad2",
+      "transformation": "none"
+    }
+  ],
+  "source_bytes_preserved": true
+}

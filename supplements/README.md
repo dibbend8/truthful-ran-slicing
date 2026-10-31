@@ -129,7 +129,8 @@ release evaluation specification's `dependencies` and each model record's
 environment. `requirements-verified.txt` remains the original v0.1.0 macOS
 validation environment and is not a lock for the newer server study.
 
-`CITATION.cff` identifies v0.2.0 with its fixed release URL and date. The
+The v0.2.0 release's `CITATION.cff` preserves that version's fixed URL and date.
+The current repository citation identifies the newer software version. The
 [v0.1.0 release](https://github.com/dibbend8/truthful-ran-slicing/releases/tag/v0.1.0)
 preserves the original source package and historical summaries separately.
 No DOI or new software/data license is assigned. Existing third-party notices
