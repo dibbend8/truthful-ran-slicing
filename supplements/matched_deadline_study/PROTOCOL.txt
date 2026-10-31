@@ -1,0 +1,251 @@
+Matched deadline training and delivery-utility evaluation — frozen training plan, 31 October 2026
+
+Status
+This is a prospective analysis plan for a new, explicitly exploratory extension.
+The original and frozen-controller TEST results have already been inspected.
+This document is not a retrospective preregistration and cannot turn reused
+TEST dates into an unseen holdout. The user has authorized matched training and
+evaluation on the research server. This plan is frozen before scientific runs;
+each runner records the protocol, exact inputs, code hashes and fixed job grid.
+
+Questions and estimands
+1. How much truthful delivery welfare is recovered by training each controller
+   for the tighter local deadlines, holding its data, architecture and training
+   budget fixed? Compare each retrained controller with its frozen counterpart.
+2. After matched training, how does Protected compare with Unconstrained,
+   context-only learned priorities, measurement-only learning, static allocation,
+   equal weights and Direct contract-value maximization?
+3. Does full pricing continue to remove contract-model gain, and can tested
+   reports nevertheless profit under actual replayed delivery value minus the
+   bill? Report both aggregate fixed-strategy effects and positive individual
+   seed/window cases. Do not infer practical strategyproofness from a negative
+   average or from a finite tested strategy grid.
+
+Fixed staged scope; reduce the number of cells before reducing scientific budget
+Stage A: target load 0.9, both tightened deadlines (video/interactive/background
+300/50/300 ms). Four learned arms times three seeds = 12 full training jobs.
+Stage B: the same deadline profile at target loads 0.7 and 1.1: 24 additional
+jobs, for 36 cumulative jobs.
+Stage C: isolated video300 (300/150/300 ms) and interactive50 (2002/50/300 ms)
+profiles at all three target loads: 72 additional jobs, 108 cumulative jobs.
+Order cells and seeds in a manifest before running them. Stage continuation and
+stopping must depend on resource availability or validation failures, not whether
+Protected improves, wins a benchmark, or passes an incentive threshold. A report
+ending after Stage A answers only the default-load joint-tightening question.
+Do not describe an incomplete stage as the planned complete grid.
+
+Runtime planning
+The archived default Protected seed-0 record reports 1,978.62 training seconds
+for 400 iterations on its original host. This implies roughly 6.6 serial job-
+hours for Stage A and 59.4 for all 108 jobs, before preparation, verification,
+evaluation and host differences. These are planning figures, not current-host
+ETAs. Measure one full Stage-A job and include it in the final grid; use TRAIN-
+only smoke tests to choose safe concurrency. Keep one numerical-library thread
+per process and record elapsed time, hardware, memory and worker count. Do not
+silently shorten all jobs to 50/100 iterations or reduce training windows to
+make a deadline. If resources are limited, finish Stage A at the full budget
+and clearly label the remaining stages as unexecuted.
+
+Data and pairing
+TRAIN: all 180 original windows from 15 dates; 200 intervals/window, the original
+40-interval warm-up, and the original composition, channel and reporting rules.
+DEV model selection: exactly the original 66 selection-half windows from 11
+dates, as returned by registry.window_keys('dev', role='select'). Do not
+substitute the full 126-window DEV set. The other 60 DEV estimation-half windows
+are not needed for model selection and remain outside the selection operation.
+TEST: all 32 fixed windows, two offsets (60 and 43260 s) on each of the 16
+original TEST dates. Use the same 32 windows for welfare and strategic utility,
+so their actual offered-load distributions agree. Three learned seeds: 0,1,2.
+Store exact keys, ordering, array/data hashes and per-window actual offered load.
+Target 0.7/0.9/1.1 denotes the original load calibration, not an exact realized
+load; report actual mean/range by target and phase. Do not tune composition or
+discard dates/windows after examining results.
+
+Shared physical inputs, public service shapes and forecasts
+Within each deadline/load cell, frozen and retrained policies see identical
+traffic, channels, report bounds, contract values, capacity, g/M/C/mu, measurement
+delay, feature definitions, and operator forecasts. The only training treatment
+is whether the policy weights were learned for the tighter deadline context.
+Apply the target deadline to replay and to every policy's contract/context
+features, including frozen policies. Do not compare old-deadline frozen features
+against new-deadline retrained features.
+Reuse the verified new public burst-shape fit on all 180 TRAIN windows for the
+cell, with its exact hash, for frozen and retrained policies, Direct and pricing.
+Shapes must not be fit separately by controller or on DEV/TEST outcomes. Neural
+PPO still learns from realized delivery welfare; changing public shapes does
+not itself mean that the neural policy was retrained. Keep the original fitted
+operator forecaster and all non-deadline contract/calibration fields fixed.
+Do not silently refit input normalization, means, reservation levels or forecasts
+alongside the policy: those would be separate treatments.
+Measurement-only substitutes operator forecasts for reports in quota bounds;
+all report-aware arms use reports. Thus they share the formula and contracts,
+but not numerically identical report/forecast inputs. Kappa0 still uses reports
+in the bounds and is a distinct control for report-dependent learned priorities.
+
+Primary training treatment: start from scratch with the original full budget
+Train Protected, Unconstrained, measurement-only and Kappa0 from their original
+seeded initialization, not from the original fitted checkpoints. This gives
+the same training exposure as the original full run and prevents an unlabelled
+extra pretraining budget. No trainable parameters are copied between arms.
+Retain architecture widths, feature dimensions, precision and algorithm.
+For all four arms, the archived inherited selected cell is:
+  iterations=400; windows_per_iter=32; M=8 action samples/state;
+  PPO passes=4; minibatch=2048; clip=0.2; grad_clip=1;
+  learning rate linearly 3e-4 to 3e-5; sigma0=0.6;
+  sigma_min=0.05, sigma_max=1.0; entropy_coef=1e-3;
+  realized-delivery lookahead horizon=3; evaluation every 50 iterations.
+Serialize and verify the complete PPOConfig, rather than relying on defaults.
+Use every available TRAIN window as the sampling pool. Persist the per-seed
+window-sampling schedule and nominal/actual rollout and update counts; match
+them across architectures and deadline cells. Use common seeds for paired
+randomness where the implementation permits it, without claiming identical
+initial parameter arrays for architectures with different dimensions.
+Payments are not a training reward; no learned arm is trained to look good on
+the later manipulation test. Model selection is truthful delivery welfare only.
+
+Checkpoint and hyperparameter selection
+Run all 400 iterations without performance-based early stopping. Evaluate the
+deterministic policy on all 66 DEV-selection windows at iterations
+50,100,150,200,250,300,350,400. Select the largest mean delivery welfare; strict
+greater-than replacement gives the earliest checkpoint on exact ties. The
+actual code provides eight checkpoints, despite stale comments referring to
+nine. Do not add iteration zero to only some arms or select the final checkpoint
+for one arm while DEV-selecting another. Save all selected and final artifacts,
+per-iteration history, all eight DEV scores, and chosen-checkpoint digests.
+Verify the saved model reproduces its recorded selection score before TEST.
+Use seeds 0,1,2 regardless of their DEV or TEST ranking; never select a best seed.
+
+Hyperparameters are inherited, not retuned per deadline. Describe this as
+matched-budget deadline training under inherited hyperparameters. It does not
+show the best attainable architecture after a fresh hyperparameter search.
+Repeating the historical eight-cell tuning grid would multiply the new learned
+job count by eight (864 jobs for the full extension); it is a separate study,
+not a hidden requirement or a selectively granted advantage to one arm.
+Fine-tuning from the original checkpoint is optional and separate: if pursued,
+give every arm the same additional budget and label its extra historical
+training exposure. Never choose between cold training and fine-tuning on TEST.
+
+Baselines and their own adaptation
+Carry each original learned checkpoint and original static vector into the cell
+as explicit frozen baselines. Train all four learned arms for the same cell.
+Refit static weights on the same 180 TRAIN windows with that cell's actual
+deadline replay, using the original n=3 search grid and weight floor. Preserve
+the historical rule: rank candidates by TRAIN welfare; select among the top
+72 distinct candidates by DEV-selection welfare, with better TRAIN rank breaking
+ties. Record every candidate and both its TRAIN and DEV score. This retains a
+strong historical static baseline, but its 72-candidate selection budget differs
+from the eight neural checkpoints; do not claim identical optimization/search
+budgets across static and neural algorithms. Neural arms are budget matched.
+Report frozen static and refitted static separately, not whichever wins TEST.
+Equal weights and Direct require no training. Direct uses the same stale rate
+estimate and the same new TRAIN-fit shape; it maximizes fractional contract
+value before flooring and is not an integer or delivery-welfare upper bound.
+Seed-free baselines appear once per window. Do not copy them into three fake
+independent seed observations.
+
+Truthful evaluation and main contrasts
+Evaluate every frozen/retrained neural arm and the four deterministic reference
+variants (frozen static, refitted static, equal, Direct) on all 32 TEST windows.
+For Stage A this gives 24 neural plus four deterministic trajectories/window,
+896 truthful trajectories. Each frozen/retrained seed pair uses identical data.
+Primary contrasts, fixed now:
+  retrained minus frozen welfare within each architecture;
+  retrained Protected minus each retrained learned baseline;
+  retrained Protected minus refitted static, equal, and Direct;
+  change in the Protected-minus-Direct gap after training.
+Report mean total/per-tenant delivery welfare, on-time Mbit, expired Mbit,
+pooled expired/(on-time+expired) fraction and queue boundaries. A smaller
+expiry fraction need not imply more welfare because tenant values differ.
+Do not infer traffic reliability or application playback performance from a
+resolved-byte fraction. Do not claim a retraining benefit solely from the
+best seed or from whichever deadline profile improved most.
+
+Actual-delivery profitability evaluation
+For frozen and retrained Protected and Unconstrained, test each tenant alone
+against truthful opponents at every prespecified multiplier:
+  0.5, 0.67, 0.8, 0.9, 1.1, 1.25, 1.5, 2.0.
+This is the original eight-point grid and includes the previously observed
+1.25 positive-gain case. It is fixed before new model selection and includes
+both underreporting and exaggeration; no grid refinement uses new TEST outcomes.
+Truthful report=m1 is the separate baseline. Clip reports to the same limits.
+All episodes use truthful reports for the full 40-interval warm-up; apply the
+constant multiplier from interval 40 onward, preserving identical initial
+scored queues. Replays include the entire path and the original finite-window
+terminal backlog. Explicitly retain this finite common-history estimand.
+
+Protected is billed with its full envelope price; also bill its exact same
+quota/queue trajectory with frozen-priority prices as a payment ablation.
+Unconstrained uses frozen-priority pricing. Compute both rules' own truthful
+baselines. Do not interpret the payment ablation as a different architecture.
+Price all tenants for the truthful baseline and at least the deviator in false-
+report runs. Honest harm is measured from on-time delivery/welfare, not absent
+utility fields. With eight multipliers, Stage A has 4 controller/state combinations
+x3 seeds x(1+3x8) strategies x32 windows = 9,600 strategic trajectories. The
+additional Protected frozen bill reuses allocation paths but adds pricing work.
+Exact reusable frozen runs may be cached only after verifying code, protocol,
+window, shape, policy and initial-state hashes; rerun missing offsets/multipliers.
+
+For each fixed multiplier, calculate deviator gain as its mean actual delivered
+value minus payment, less its own corresponding truthful utility. Calculate
+contract-utility gain separately using true admitted demand, not the submitted
+report. Report honest tenants' individual/total on-time and welfare losses.
+Save certified price brackets and propagate both truthful and deviating bounds
+to gain bounds. Validate quota equality between pricing and replay; full-price
+contract gain must be nonpositive within certified numerical uncertainty.
+Forced reports can harm honest tenants even when they are unprofitable; the
+contract guarantee is not a guarantee against a malicious loss-taking attacker.
+
+No positive observation may be discarded because the average is negative.
+Report, for each frozen/retrained arm and fixed strategy, aggregate absolute
+gain with uncertainty, positive-truth-normalized gain with its denominator,
+positive seed/window count, and the largest absolute and relative individual
+gains with full context. These instance counts/maxima are descriptive and
+correlated; do not build a best-per-window report policy from them or present
+them as the achieved reward of an adaptive strategy. No tested gain does not
+prove truthfulness; a positive delivered-utility gain establishes a counterexample
+for that measured setting, not a worst-case magnitude over all deviations.
+
+Aggregation and uncertainty
+Use equal date weights. Within each matched date/window, average paired seed
+differences before resampling. Bootstrap dates and then windows within sampled
+dates using 2,000 replicates and fixed RNG seed 20261031; report descriptive
+percentile 95% intervals conditional on the three fitted seeds. Also show each
+seed's aggregate result/range. Do not treat seeds, baseline duplicates or the
+correlated strategy instances as additional independent dates.
+Relative welfare = paired mean welfare difference / baseline mean welfare.
+Relative utility = sum of gains / sum of own truthful utility, including only
+seed/window pairs whose truthful utility is positive; retain all pairs for
+absolute effects and report eligibility counts, fractions and denominators.
+Expiry is a ratio of pooled byte volumes. Report bounds from numerical payment
+uncertainty separately from confidence intervals from resampled dates.
+Prespecified primary contrasts and the complete result grid prevent selective
+presentation; reused TEST dates and multiple comparisons remain exploratory.
+The old 0.806% result used a sum-of-absolute-truthful-utilities denominator and
+different windows/training selection. Matching its multiplier grid alone is not
+a direct numerical replication. Do not compare an individual maximum with its
+aggregate statistic as if the estimands were the same.
+
+Audit, completion and failure handling
+Write a manifest with every TRAIN/DEV/TEST key, cell, arm, seed, training/selection
+rule, multiplier, software version and source/data/shape/protocol hash. Separate
+frozen, retrained, static-retuned and smoke outputs. Never overwrite prior study
+files. Store selected and final checkpoints, history, complete DEV scores,
+runtime/worker logs, initial RNG states, and hashes of data and feature caches.
+TRAIN-only smoke/engine-equivalence checks are plumbing checks, not shorter
+scientific runs. Compare the training reward/evaluation replay against the
+verified standalone evaluator before using its selected checkpoint on TEST.
+Refuse incomplete grids, mixed source versions, duplicate windows/seeds,
+missing payments, nonmatching initial queues, or inconsistent units. Resuming
+a partially trained job requires optimizer and RNG state; otherwise restart
+that job from its original seed and record the restart, not a partial-history
+continuation disguised as a full 400-iteration run. Resource interruptions are
+reported, not converted into outcome-based early stopping.
+
+Sources inspected for this plan
+../deadline_load_study/upstream/code/experiments/registry.py
+../deadline_load_study/upstream/code/experiments/train.py
+../deadline_load_study/upstream/code/slicemech/control/ppo.py
+../deadline_load_study/upstream/code/experiments/e3_protection.py
+../deadline_load_study/upstream/results/models/default/*/seed0/config.json
+../deadline_load_study/PROTOCOL.txt and STRATEGIC_ADDENDUM.txt
+../deadline_load_study/analysis/all/findings.json and interpretation.txt

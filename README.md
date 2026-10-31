@@ -1,9 +1,32 @@
 # Truthful Reporting for Learning-Based RAN Slicing
 
 Research implementation accompanying the ICC 2027 manuscript by Prashant Mishra,
-Rahul Kushwah, and Dibbendu Roy. Release: **v0.1.0**, prepared **2026-10-30**.
+Rahul Kushwah, and Dibbendu Roy.
 
-Fixed version: [v0.1.0](https://github.com/dibbend8/truthful-ran-slicing/releases/tag/v0.1.0).
+Version **v0.2.0**, dated **2026-10-31**:
+[versioned release](https://github.com/dibbend8/truthful-ran-slicing/releases/tag/v0.2.0).
+The completed matched-deadline study contains 108 neural training runs, nine
+static refits, nine truthful-performance settings and three joint-deadline
+reporting settings: 384 mode/window cases and 36,864 replayed trajectories.
+See the [results](supplements/RESULTS.txt),
+[reproduction instructions](supplements/README.md), and
+[validation scope](supplements/VALIDATION.md).
+
+The separately validated release archive is
+`truthful-ran-slicing-v0.2.0-evidence.tar.gz` (104,041,036 bytes). Its SHA-256 is:
+
+```text
+6b4b5e649cd17c519cbb3c2d1f8bd1a9d8e3c7ca52fd8f433c3799a9ab97b5cf
+```
+
+Models and analysis tables belong in that archive, while raw traffic and large
+interval-level replay files remain external with exact hash records. Large
+artifacts are not committed to this source repository. The original
+[v0.1.0 release](https://github.com/dibbend8/truthful-ran-slicing/releases/tag/v0.1.0),
+dated 2026-10-30, remains a separate fixed version.
+
+The remaining sections describe the original v0.1.0 package. Its implementation
+and recorded numerical summaries are preserved unchanged.
 
 The package contains the allocator and payment mechanisms, controller training
 and evaluation code, tests, experiment specifications, and recorded numerical
@@ -16,7 +39,7 @@ eeb1a0fce4573e81954c0e627f346f811b2306e58109c8978c54a5d23688a9e2
 
 The PDF match identifies the source project; it does not by itself verify every
 experimental result. The full training, trace replay, and ns-3 campaign have
-**not been rerun while preparing this release**. Recorded summaries are historical
+**not been rerun while preparing v0.1.0**. Recorded summaries are historical
 research outputs. Regenerating a figure from them reproduces its presentation,
 not the underlying experiment.
 
@@ -50,7 +73,7 @@ part of this source package.
 
 The synthetic checks below passed in a fresh **Python 3.12.14 environment on
 macOS arm64**. Other Python versions and operating systems have not been validated
-for this release. The data preparation code uses POSIX file locking. The
+for v0.1.0. The data preparation code uses POSIX file locking. The
 requirements list reflects imports in the source and is not a reconstruction of
 the historical environment. Use `requirements-verified.txt` for the dependency
 versions recorded by the release validation run.

@@ -1,5 +1,31 @@
 # Changes made for the publication package
 
+## v0.2.0 supplement
+
+The `supplements/` directory adds exact copies of the matched-deadline study's
+runner, analyzer, plotting and packaging utilities, their supporting evaluator,
+and the frozen study protocols and instructions. `supplements/SOURCE_MANIFEST.json`
+records every copied file's SHA-256; no copied source byte was changed. The
+original implementation, historical summaries, pre-registration and deviation
+records remain unchanged. The public `supplements/RESULTS.txt` copy removes only
+the final publication/pagination status paragraph from the completed report;
+this document transformation is recorded separately in the source manifest.
+
+Large models, input traffic, raw replay arrays and analysis tables remain outside
+Git. The separately verified public archive carries models and analysis tables;
+input traffic and raw replay arrays remain external. The archive preserves
+original scientific bytes, includes the complete historical validation-gate
+dependencies, and lists external data and raw-evidence hashes.
+The offline reanalysis adapter recomputes statistics from released experiment
+outputs; it does not claim a new simulator replay.
+
+The published v0.1.0 package's original checksum file is retained verbatim as
+`manifests/v0.1.0.SHA256SUMS`. The root `SHA256SUMS` covers this v0.2.0 source
+tree. `requirements-verified.txt` remains the original v0.1.0 validation
+environment; it has not been relabeled as the newer study's environment.
+
+## Original v0.1.0 packaging
+
 The allocator, pricing, learning, simulation, and experiment-driver source under
 `implementation/code/slicemech/` and `implementation/code/experiments/` is copied
 unchanged from the matched research project. The original `PREREG.md` and

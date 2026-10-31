@@ -1,0 +1,82 @@
+Completed experimental results — 31 October 2026
+
+Training for changed deadlines removes most of Protected's observed welfare
+gap. Correcting the payment prevents profitable misreporting under the stated
+contract-value model, but does not establish truthfulness for actual delivery.
+Higher total welfare can also redistribute service between traffic classes.
+
+The original and new comparisons answer different questions. Originally,
+strategic reporting within Unconstrained reduced honest tenants' on-time traffic
+by 19.44%. Protected delivered 16.06% higher honest-tenant welfare than
+Unconstrained under strategic reporting, with 0.06% lower total welfare under
+truthful reporting. The 19.44% measures manipulation harm, not protection's
+improvement; the 16.06% and 0.06% compare separately trained controllers. These
+numbers remain scoped to the original configuration.
+
+The revised experiment is complete: 108 neural training runs and nine static
+weight refits; nine truthful-performance settings and three joint-deadline
+reporting settings, each using all 32 test windows. This totals 384 mode/window
+cases and 36,864 replayed trajectories (896 x 9 + 9,600 x 3). No setting remains
+pending within this revised scope. Reporting tests for isolated deadline changes
+were deferred by the time-budget addendum and are not claimed as completed.
+
+All four learned methods train from scratch on 180 training windows for 400 PPO
+iterations, retaining inherited hyperparameters. Sixty-six development windows
+select among eight checkpoints. Three seeds use the same 32 test windows across
+16 reused dates, with 40 seconds of truthful warm-up in each 200-second window.
+Traffic, channels, contracts, forecasts and deadline inputs match within each
+before/after comparison. The 2,000-replicate date/window confidence intervals
+condition on the fitted seeds; these are exploratory, unadjusted comparisons.
+
+Below, Video means only its deadline changes: 300/150/300 ms for
+Video/Interactive/Background. Interactive means 2002/50/300 ms, and Both means
+300/50/300 ms. Welfare is credits per scored interval. Values are rounded;
+positive differences from Direct favor Protected.
+
+Load  Changed deadline  Protected before -> matched  Direct   Training gain  Matched vs Direct
+0.7   Both              44.9459 -> 45.9976             45.9993   +2.3400%       -0.0037%
+0.7   Video             44.6371 -> 46.3106             46.2935   +3.7490%       +0.0369%
+0.7   Interactive       45.4294 -> 46.6735             46.4213   +2.7385%       +0.5433%
+0.9   Both              52.7350 -> 54.7927             54.8124   +3.9018%       -0.0360%
+0.9   Video             52.5085 -> 55.2938             55.2774   +5.3043%       +0.0295%
+0.9   Interactive       53.8885 -> 55.5326             55.1555   +3.0511%       +0.6839%
+1.1   Both              59.2571 -> 61.0445             61.1079   +3.0162%       -0.1038%
+1.1   Video             59.5183 -> 61.7081             61.7223   +3.6793%       -0.0230%
+1.1   Interactive       59.3315 -> 61.6201             61.3182   +3.8573%       +0.4923%
+
+All nine 95% confidence intervals for Protected's training gain lie above zero.
+For isolated deadline changes, training raises welfare by 2.74–5.30%; its
+difference from Direct ranges from -0.023% to +0.684%. With both deadlines
+tightened, its deficit to Direct falls from 2.29–3.79% to 0.004–0.104%. It is
+then 0.059–0.088% below matched Unconstrained and 1.62–3.23% above refitted static
+weights. These findings do not prove equivalence or optimality: Direct maximizes
+contract value, not delivered welfare, so exceeding it is not contradictory.
+
+At target load 0.9 with both deadlines tightened, video expiry falls from
+38.44% to 26.34%, while background expiry rises from 18.94% to 39.09%. These are
+expired shares of resolved bytes, not packet-reliability measures. Target load
+is a calibration setting: mean scored-window loads are 0.6854, 0.8823 and 1.0715.
+Contracts scale with each load's training demand but remain fixed within matched
+comparisons.
+
+Reporting tests cover eight fixed multipliers, each tenant separately, at all
+three loads with both deadlines tightened. Protected shows no positive contract
+gain beyond numerical uncertainty. On identical Protected quotas at target 0.9,
+freezing weights only in pricing permits a 0.94-credit mean contract gain for
+Interactive reporting twice its demand. Full pricing changes that report's mean
+delivery-utility gain from +1.21 to -5.84 credits/interval, isolating the payment
+effect.
+
+Delivery-based deviations still gain in 843 of 6,912 paired comparisons; six
+of 72 fixed-strategy means are positive. The largest mean is 0.00482 credits/
+interval (95% CI [-0.00228, 0.00976]). A smaller mean, 0.00290 at load 0.7 for
+Background reporting 0.9 times demand, has an unadjusted CI just above zero
+[0.0000122, 0.00590]. Correlated case maxima are not an implemented adaptive
+strategy. Contract truthfulness does not establish delivery truthfulness.
+
+These local queue deadlines do not reproduce complete 3GPP profiles or establish
+URLLC/mMTC performance. No new full ns-3/5G-LENA deadline experiment was run;
+the original four packet-simulation windows retain limited directional support
+and missed the original quantitative agreement targets. The repeated-interval
+guarantee retains its stated assumptions, including no effects of earlier
+allocations on later service values; queue carryover violates that assumption.

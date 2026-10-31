@@ -1,0 +1,94 @@
+Supplemental deadline/load and benchmark study — 31 October 2026
+
+Status and interpretation
+This is an exploratory extension designed after inspecting the original paper's
+results. It reuses the original TEST dates; it is not a new preregistered test or
+an independent unseen holdout. Original source, data, model and calibration
+provenance are recorded separately. Original numerical summaries are never
+overwritten. Computational smoke tests use TRAIN windows only.
+
+Primary question
+Do manipulation effects and the delivery cost of protection persist when local
+service deadlines are tightened and offered traffic changes? How does Protected
+compare with available allocation baselines under the same inputs and bounds?
+
+Paired configurations, fixed before inspecting supplemental TEST outcomes
+- Offered loads: 0.7, 0.9 and 1.1, using original load-specific calibrations.
+- Local deadlines in milliseconds, ordered video / interactive / background:
+  original:       2002 / 150 / 300
+  video300:        300 / 150 / 300
+  interactive50: 2002 /  50 / 300
+  both:           300 /  50 / 300
+  The new values are local latency stress cases, not complete 3GPP QoS profiles.
+  They do not replace the missing application playback model or establish URLLC.
+- All original 16 TEST dates; two 200-s windows per date, offsets 60 and 43260 s.
+  Exclude the original 40-s warm-up. All methods use identical traffic/channels.
+- Balanced learned-controller seeds: 0, 1, 2 for every load.
+- Other mechanism settings, tenant values, rates, counts and forecasts unchanged.
+- Refit public burst shapes for changed deadlines on the original TRAIN windows
+  only. Keep the original contract means, bounds and fitted forecasting rules.
+
+Stage 1: frozen-parameter sensitivity and benchmarks
+No network parameter is retrained. New deadlines enter the network's contract
+features and packet replay; prices use the newly fitted public service shapes.
+This is a test of existing controllers under changed conditions, not a claim
+about the best performance attainable with training for each new deadline.
+Truthful benchmarks: Protected, Unconstrained, measurement-only learning,
+context-only learned priorities (Kappa0), equal weights, tuned static weights,
+and reported-service-value maximization. Kappa0 still uses reports in quota bounds.
+The last three use existing implementations and the same report-dependent bounds;
+measurement-only instead substitutes operator forecasts into those bounds.
+The direct optimizer maximizes fractional contract value before integer flooring;
+it is not an integer or delivery-welfare upper bound.
+Equal/static allocations do not become independently deadline-tuned policies.
+
+Manipulation tests
+Protected uses the full payment; Unconstrained uses frozen-priority payment.
+Also price the same Protected quotas using frozen priorities, solely as a payment
+ablation; this is distinct from the alternative allocation benchmarks above.
+One tenant at a time reports 0.5, 1.5 or 2 times its truthful parameter, clipped
+to its unchanged report limit; opponents report truthfully. Each multiplier is
+held throughout a window, including warm-up, and queues follow the entire path.
+These are tested constant-multiplier strategies, not exhaustive or adaptive deviations.
+All tested outcomes are retained; do not select one profile because it looks good.
+Before any supplemental TEST outcomes, TRAIN timing showed exact pricing dominates
+runtime. Priced manipulation tests therefore use offset 60 only on all 16 dates,
+retaining all three seeds, profiles, loads and multipliers. Unpriced allocation
+benchmarks retain both offsets. Prices may be skipped in warm-up because constant
+multipliers do not react to bills; queues and allocations still include warm-up.
+
+Outcomes
+- Total delivery welfare and each tenant's on-time volume.
+- Expired volume / (on-time + expired volume), explicitly a resolved-byte share,
+  not a packet reliability probability or a scored-arrival-cohort statistic.
+- Arrival volume and initial/final backlog to check boundary conservation.
+- Protection cost against Unconstrained under truthful reporting.
+- Honest tenants' delivery loss due to another tenant's misreport.
+- Misreporting gain in actual delivery value minus payment, in credits/interval;
+  normalize only where truthful utility is positive and report the denominator.
+- Contract-utility deviations separately from delivery-utility deviations.
+- Quota feasibility, queue conservation and payment precision checks.
+
+Analysis
+Use paired differences on matched dates/windows/seeds. Give each date equal
+weight, average matched seed differences, and resample dates and their windows
+for descriptive 95% intervals (fixed analysis RNG seed), conditional on the three
+trained seeds. Also report variation across seeds; deterministic baselines are not
+counted as independent seed replicates. Do not reuse the original
+Holm-confirmatory labels for these exploratory comparisons. Report both aggregate
+and per-tenant effects, and do not interpret a failure to find a tested gain as
+proof of truthfulness for delivery utility.
+
+Baseline and implementation verification
+Compare the supplemental evaluator with the unchanged original run_window API
+on TRAIN windows before TEST evaluation, including full/fixed prices, quotas,
+on-time/dropped bytes and queue boundary values. Record execution times and hashes.
+Evaluate whether truthful runs meet the chosen deadlines before interpreting
+protection: a poor baseline remains poor even if misreporting adds little harm.
+
+Further stages
+If computationally feasible, matched retraining for changed deadline profiles
+must use TRAIN for fitting and the original DEV selection partition, with equal
+training budgets across methods; report it separately from frozen-policy tests.
+Packet-level and shared playback-deadline experiments remain separate studies;
+do not infer their results from fluid replay or silently implement a new player.

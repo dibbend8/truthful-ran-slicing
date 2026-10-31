@@ -1,0 +1,2228 @@
+{
+  "calibration_files": 8,
+  "files": [
+    {
+      "asset_relative_path": "data/calibration/n3_default.json",
+      "bytes": 71026,
+      "path": "deadline_load_study/upstream/data/calibration/n3_default.json",
+      "role": "original calibration",
+      "sha256": "75040e651c1e41b80e72e4e6c0633b4c4dc238d7c38da2e15dcc3ec833d11dbc"
+    },
+    {
+      "asset_relative_path": "data/calibration/n3_lead0.json",
+      "bytes": 72013,
+      "path": "deadline_load_study/upstream/data/calibration/n3_lead0.json",
+      "role": "original calibration",
+      "sha256": "ebda17218468ed4e5403fc9cd84ffaeb435fe9ac805075ba780533bb1d693ccf"
+    },
+    {
+      "asset_relative_path": "data/calibration/n3_lead1.05.json",
+      "bytes": 71021,
+      "path": "deadline_load_study/upstream/data/calibration/n3_lead1.05.json",
+      "role": "original calibration",
+      "sha256": "89a3a1d98311d0939a24f5b461bc1521dd12faaabf5bea55088fe8976db328b4"
+    },
+    {
+      "asset_relative_path": "data/calibration/n3_rho0.5.json",
+      "bytes": 70566,
+      "path": "deadline_load_study/upstream/data/calibration/n3_rho0.5.json",
+      "role": "original calibration",
+      "sha256": "2217059b99f22ae2f9adc0e50eeb7530413de9b726a03018a3549afcc37e9987"
+    },
+    {
+      "asset_relative_path": "data/calibration/n3_rho0.7.json",
+      "bytes": 70623,
+      "path": "deadline_load_study/upstream/data/calibration/n3_rho0.7.json",
+      "role": "original calibration",
+      "sha256": "979e20162fcdd2eb970aba2f9c34bdfd026645b9bba25c4c1ab53f12e63c3b88"
+    },
+    {
+      "asset_relative_path": "data/calibration/n3_rho1.1.json",
+      "bytes": 70944,
+      "path": "deadline_load_study/upstream/data/calibration/n3_rho1.1.json",
+      "role": "original calibration",
+      "sha256": "3e7da08427c00604a147e6608ee47cc99c9f89bcae182530aac29557d672a925"
+    },
+    {
+      "asset_relative_path": "data/calibration/n6_default.json",
+      "bytes": 101896,
+      "path": "deadline_load_study/upstream/data/calibration/n6_default.json",
+      "role": "original calibration",
+      "sha256": "350537dd68e8f0e717cc6e4090cad9eadebbfc95a42e891b538f70506132acbe"
+    },
+    {
+      "asset_relative_path": "data/calibration/n9_default.json",
+      "bytes": 135008,
+      "path": "deadline_load_study/upstream/data/calibration/n9_default.json",
+      "role": "original calibration",
+      "sha256": "5fd0725b2b76a99984d1524341231b25e2909bb52ccc79a69875b2f9d95b2f15"
+    },
+    {
+      "asset_relative_path": "results/models/d1/kappa0/seed0/config.json",
+      "bytes": 14400,
+      "path": "deadline_load_study/upstream/results/models/d1/kappa0/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "ae006ec11f0b249fe73ab6ddf41f13f0a478c699e4a13011f863e3e57c59330c"
+    },
+    {
+      "asset_relative_path": "results/models/d1/kappa0/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d1/kappa0/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "841b3ae78df49067ef3e5f974486f23bd9b42dfbfb7c3bc6001e9113a04fdcbb"
+    },
+    {
+      "asset_relative_path": "results/models/d1/kappa0/seed1/config.json",
+      "bytes": 14390,
+      "path": "deadline_load_study/upstream/results/models/d1/kappa0/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "eab34ddbb3c1b34a16cee88740d3108b0fb0201b194eceb53abc68b95c8708d5"
+    },
+    {
+      "asset_relative_path": "results/models/d1/kappa0/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d1/kappa0/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "f6c8b95f72eefe6fd2adb25abce9f066c13503488e0bba85694747b78d6d07c4"
+    },
+    {
+      "asset_relative_path": "results/models/d1/kappa0/seed2/config.json",
+      "bytes": 14401,
+      "path": "deadline_load_study/upstream/results/models/d1/kappa0/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "c4663146a3268eb85359d0c4c5f3824115961ca7563bd7e19b374d0c810a97c5"
+    },
+    {
+      "asset_relative_path": "results/models/d1/kappa0/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d1/kappa0/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "11645e14ad9cd22636967befa9f264b34a5d600858545bed95d5d74ab9d6d290"
+    },
+    {
+      "asset_relative_path": "results/models/d1/meas_only/seed0/config.json",
+      "bytes": 14411,
+      "path": "deadline_load_study/upstream/results/models/d1/meas_only/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "a2b67b1d9d0fd94b62debc0c63ac941970f7f8c498289c2f5446b4e87ecdef5b"
+    },
+    {
+      "asset_relative_path": "results/models/d1/meas_only/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d1/meas_only/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "6d0e0f071997e2a47f7f117fd343e782be984b3d14e533e7aaf0eb26450a0c85"
+    },
+    {
+      "asset_relative_path": "results/models/d1/meas_only/seed1/config.json",
+      "bytes": 14410,
+      "path": "deadline_load_study/upstream/results/models/d1/meas_only/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "2e95510c0014a8a97790023905d68d56ff4c2544f127512d8811147c9bd29651"
+    },
+    {
+      "asset_relative_path": "results/models/d1/meas_only/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d1/meas_only/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "8a0b1b6c06090623438079a863c64aabb27654b8e613eb8fe26563034f68743d"
+    },
+    {
+      "asset_relative_path": "results/models/d1/meas_only/seed2/config.json",
+      "bytes": 14415,
+      "path": "deadline_load_study/upstream/results/models/d1/meas_only/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "8df7e9536dbf7294bbe134442725cf6fef706f913c4fbeac96d472d8ee5061ce"
+    },
+    {
+      "asset_relative_path": "results/models/d1/meas_only/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d1/meas_only/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "abda1b663c3df2199ebe6e36fd2aa8b751ed2f4089eab0af9609552466847ea1"
+    },
+    {
+      "asset_relative_path": "results/models/d1/protected/seed0/config.json",
+      "bytes": 14410,
+      "path": "deadline_load_study/upstream/results/models/d1/protected/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "91906a0c3dbec7cb9810463c3ffaa7be0568fe6acaa04b3fbf9346066d2c75ed"
+    },
+    {
+      "asset_relative_path": "results/models/d1/protected/seed0/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/d1/protected/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "0b04f6aad871d0c7b8623e97b5f22e125f58c193087e1138714388da72a117a4"
+    },
+    {
+      "asset_relative_path": "results/models/d1/protected/seed1/config.json",
+      "bytes": 14399,
+      "path": "deadline_load_study/upstream/results/models/d1/protected/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "589c36c9cfba01737e1e58cf22abb1400ed2a5d87c53f3ea8f28a96b630c08a7"
+    },
+    {
+      "asset_relative_path": "results/models/d1/protected/seed1/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/d1/protected/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "6ca7ef2b191d588e5beee467ac588a58749708d16a51e008a6902b3df0f50758"
+    },
+    {
+      "asset_relative_path": "results/models/d1/protected/seed2/config.json",
+      "bytes": 14411,
+      "path": "deadline_load_study/upstream/results/models/d1/protected/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "20e8a01cd0282ee42342994f868d2ce777f6952f8ebf043986b0ef7793c233d8"
+    },
+    {
+      "asset_relative_path": "results/models/d1/protected/seed2/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/d1/protected/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "fcf01806583a3bc7ba4a6cf38377dc866eab4fc3c262331db27e200febc27693"
+    },
+    {
+      "asset_relative_path": "results/models/d1/unconstrained/seed0/config.json",
+      "bytes": 14461,
+      "path": "deadline_load_study/upstream/results/models/d1/unconstrained/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "fbc5098319e6df4e78392a8c33720ff2b68236437e37eb56a04207cbaf6cec3b"
+    },
+    {
+      "asset_relative_path": "results/models/d1/unconstrained/seed0/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/d1/unconstrained/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "6bca7181fde16c7dece62650021d55484a92b530e12a241640f3d87c54b585c3"
+    },
+    {
+      "asset_relative_path": "results/models/d1/unconstrained/seed1/config.json",
+      "bytes": 14442,
+      "path": "deadline_load_study/upstream/results/models/d1/unconstrained/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "2bf5f7eff0d50102c6770e42712a62762919a4dca8a37294cd0f64c84fce74be"
+    },
+    {
+      "asset_relative_path": "results/models/d1/unconstrained/seed1/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/d1/unconstrained/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "02f828fabf35205928dd9c064cd949a46cb79c1b516d6257edc98312de1d1ba5"
+    },
+    {
+      "asset_relative_path": "results/models/d1/unconstrained/seed2/config.json",
+      "bytes": 14447,
+      "path": "deadline_load_study/upstream/results/models/d1/unconstrained/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "dd6b43948bd8b36a3a79f08309643db2a37c1b61fb345a174c18ba8dfa7bb92b"
+    },
+    {
+      "asset_relative_path": "results/models/d1/unconstrained/seed2/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/d1/unconstrained/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "52b4d71b264aa5390a8e3090f861382339dfe41a2aab08e47251461e113c58f2"
+    },
+    {
+      "asset_relative_path": "results/models/d15/kappa0/seed0/config.json",
+      "bytes": 14397,
+      "path": "deadline_load_study/upstream/results/models/d15/kappa0/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "37936a70ad603df4bbc43750ea3d6cbe59532e793e81cfd7cf7e2ee8f392c88f"
+    },
+    {
+      "asset_relative_path": "results/models/d15/kappa0/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d15/kappa0/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "cf5588e001b82f1e4fdb93bfec55a6ae05e76cf04d028a8e364821aac47912c6"
+    },
+    {
+      "asset_relative_path": "results/models/d15/kappa0/seed1/config.json",
+      "bytes": 14402,
+      "path": "deadline_load_study/upstream/results/models/d15/kappa0/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "205e0cba4b3a9c2364ff432af40203ccfcbebb7a1ef9ae950af06137c1e3a421"
+    },
+    {
+      "asset_relative_path": "results/models/d15/kappa0/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d15/kappa0/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "6b0fd15fc09bd1c97628c1e26857fe30a55f60e0b888bf68d95e6b73484ccbff"
+    },
+    {
+      "asset_relative_path": "results/models/d15/kappa0/seed2/config.json",
+      "bytes": 14406,
+      "path": "deadline_load_study/upstream/results/models/d15/kappa0/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "0baef571c11d8167ea3fee6580d6b836ba35aed0d9615e11553a80474865fea1"
+    },
+    {
+      "asset_relative_path": "results/models/d15/kappa0/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d15/kappa0/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "5662bd4214478b564ba01c45eba2f224939a3f0824cf2e2c13c551703872093b"
+    },
+    {
+      "asset_relative_path": "results/models/d15/meas_only/seed0/config.json",
+      "bytes": 14417,
+      "path": "deadline_load_study/upstream/results/models/d15/meas_only/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "8bd0393dbc024b51a97bb402da58e76a67701001127c986445c9e4922892aa80"
+    },
+    {
+      "asset_relative_path": "results/models/d15/meas_only/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d15/meas_only/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "8b8d5c6343f4187e1bf5d2147842980330897cd9d52d0332cbd0b47e58b634f5"
+    },
+    {
+      "asset_relative_path": "results/models/d15/meas_only/seed1/config.json",
+      "bytes": 14410,
+      "path": "deadline_load_study/upstream/results/models/d15/meas_only/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "0398905433c6f15b839919977cff55500dd14f94e9ebb12ba4c42de9e84ba568"
+    },
+    {
+      "asset_relative_path": "results/models/d15/meas_only/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d15/meas_only/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "7b153c2c4d20979879f5392c60e3aa8116c2d9910da46a67d4e07cbcbc1d52cc"
+    },
+    {
+      "asset_relative_path": "results/models/d15/meas_only/seed2/config.json",
+      "bytes": 14411,
+      "path": "deadline_load_study/upstream/results/models/d15/meas_only/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "ef9c7ead7b6ee98650040d73324400416b8fbc062f40f09133af8895f9b994ae"
+    },
+    {
+      "asset_relative_path": "results/models/d15/meas_only/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d15/meas_only/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "f1464aca15ada282ac3c134ace70590c0b8058412f5da90651a6d09c484f7db7"
+    },
+    {
+      "asset_relative_path": "results/models/d15/protected/seed0/config.json",
+      "bytes": 14411,
+      "path": "deadline_load_study/upstream/results/models/d15/protected/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "2fecae71c5373aa1554bd1a35ca8c8a944fcc1ae3fa9f861529ee098be152734"
+    },
+    {
+      "asset_relative_path": "results/models/d15/protected/seed0/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/d15/protected/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "02258a244ae67872e6d2fb90e234f859e5e7de2cf63505081e99486eb92e27ee"
+    },
+    {
+      "asset_relative_path": "results/models/d15/protected/seed1/config.json",
+      "bytes": 14407,
+      "path": "deadline_load_study/upstream/results/models/d15/protected/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "9b523e4e64d23780821a57ace466b30b1abd326fc4edfed51fa4a1eee4b0d966"
+    },
+    {
+      "asset_relative_path": "results/models/d15/protected/seed1/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/d15/protected/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "e636a81662053b9f7a7a7aee57887d159bcab9529d174d276e27a1c9d410940f"
+    },
+    {
+      "asset_relative_path": "results/models/d15/protected/seed2/config.json",
+      "bytes": 14411,
+      "path": "deadline_load_study/upstream/results/models/d15/protected/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "1e6c90b3871ea789fdedbf851bc24f84c88113c91d5ac059d3d037b9b3d6438e"
+    },
+    {
+      "asset_relative_path": "results/models/d15/protected/seed2/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/d15/protected/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "4241d4f5e37985373e87e5869f0ab84b09617cdacde5a4eab76f52bd14c63d2f"
+    },
+    {
+      "asset_relative_path": "results/models/d15/unconstrained/seed0/config.json",
+      "bytes": 14451,
+      "path": "deadline_load_study/upstream/results/models/d15/unconstrained/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "c78e4beae2c140f0cfe87c5584873e3049812226ff0698c53363f4131f09c00d"
+    },
+    {
+      "asset_relative_path": "results/models/d15/unconstrained/seed0/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/d15/unconstrained/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "3aa860ed3b235586b30bf8d443d856899ff8ce283f486de9f6947127bae55ee8"
+    },
+    {
+      "asset_relative_path": "results/models/d15/unconstrained/seed1/config.json",
+      "bytes": 14448,
+      "path": "deadline_load_study/upstream/results/models/d15/unconstrained/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "ed9fcebb0e29276722d15e890cc52b27bd4704919afd56b2ef705e089504a973"
+    },
+    {
+      "asset_relative_path": "results/models/d15/unconstrained/seed1/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/d15/unconstrained/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "f9d047a3f03a872d99615b1351cd40f0c094cd8072bbeacf94ccc1685b9a7c5b"
+    },
+    {
+      "asset_relative_path": "results/models/d15/unconstrained/seed2/config.json",
+      "bytes": 14450,
+      "path": "deadline_load_study/upstream/results/models/d15/unconstrained/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "2b2e3fd24959f8680be0026b836ef43af73285f5d882e13f794cdd98aaa29b13"
+    },
+    {
+      "asset_relative_path": "results/models/d15/unconstrained/seed2/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/d15/unconstrained/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "000b137987db515d4dd70c9a0a324be164db79d05872912230c5de76f9d11010"
+    },
+    {
+      "asset_relative_path": "results/models/d5/kappa0/seed0/config.json",
+      "bytes": 14401,
+      "path": "deadline_load_study/upstream/results/models/d5/kappa0/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "8026ebd929b46d048e702b350259737f6675a6c32acf8f07f6427346c35bbf45"
+    },
+    {
+      "asset_relative_path": "results/models/d5/kappa0/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d5/kappa0/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "d8055d2564cb66a094e34a7ed39a32f5013f0bed0eb5c08d5e90a3617f7325d8"
+    },
+    {
+      "asset_relative_path": "results/models/d5/kappa0/seed1/config.json",
+      "bytes": 14401,
+      "path": "deadline_load_study/upstream/results/models/d5/kappa0/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "2447a00e29077fc4f6279c904b42c3f253d8df7604cad72dc40474150faa5bae"
+    },
+    {
+      "asset_relative_path": "results/models/d5/kappa0/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d5/kappa0/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "06d98f2dcabcb18967fe7253b23b5230caf36abd7a5bf6bafdd46a9b8eaf4775"
+    },
+    {
+      "asset_relative_path": "results/models/d5/kappa0/seed2/config.json",
+      "bytes": 14393,
+      "path": "deadline_load_study/upstream/results/models/d5/kappa0/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "9309869de61cd5e77b363b236d58950ce6f0f9972a3969c3bedee2d172cdd1f3"
+    },
+    {
+      "asset_relative_path": "results/models/d5/kappa0/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d5/kappa0/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "208b764d183e53193740e4ce322db5e53a53c96f5da9eb9320b16468a4d4087f"
+    },
+    {
+      "asset_relative_path": "results/models/d5/meas_only/seed0/config.json",
+      "bytes": 14417,
+      "path": "deadline_load_study/upstream/results/models/d5/meas_only/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "479dacb5dfcb6c78998d6cb15b35e915c00feee81e4a28977814441b19c21b75"
+    },
+    {
+      "asset_relative_path": "results/models/d5/meas_only/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d5/meas_only/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "96e82b3a0f49e2f63d8980fe69ca46a7086ddee3c23cf22871111587a957fa5c"
+    },
+    {
+      "asset_relative_path": "results/models/d5/meas_only/seed1/config.json",
+      "bytes": 14411,
+      "path": "deadline_load_study/upstream/results/models/d5/meas_only/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "9bab89c70e4994fc57e50cf47c07de4b04e4e7c96c0664eba240694b6f0cbda7"
+    },
+    {
+      "asset_relative_path": "results/models/d5/meas_only/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d5/meas_only/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "00c06f702df330d690a9d171fc85ed0eb579adbc7ddb845c59456ec1c5738b1d"
+    },
+    {
+      "asset_relative_path": "results/models/d5/meas_only/seed2/config.json",
+      "bytes": 14418,
+      "path": "deadline_load_study/upstream/results/models/d5/meas_only/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "0f7c172fccb7b5d915c32f1b3e66bbed4dfc944f332c6a9cf064401d5e055e5a"
+    },
+    {
+      "asset_relative_path": "results/models/d5/meas_only/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/d5/meas_only/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "0845071a97ae47346d9c1fecdb0a8094669435d123766a769bf03a69ab6b4744"
+    },
+    {
+      "asset_relative_path": "results/models/d5/protected/seed0/config.json",
+      "bytes": 14409,
+      "path": "deadline_load_study/upstream/results/models/d5/protected/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "24ebf6994ff844c816423c973e9eed06c6590b359289c6c85156819b839cea93"
+    },
+    {
+      "asset_relative_path": "results/models/d5/protected/seed0/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/d5/protected/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "a6d65d5d3e3af58a941e2a83c69b6b80a8455d0cd52440166470eef3e7c4d2a1"
+    },
+    {
+      "asset_relative_path": "results/models/d5/protected/seed1/config.json",
+      "bytes": 14401,
+      "path": "deadline_load_study/upstream/results/models/d5/protected/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "74f8daca1ca5def6597fd36180054e16708f07792658dd05c01e33b93195fe19"
+    },
+    {
+      "asset_relative_path": "results/models/d5/protected/seed1/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/d5/protected/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "7389b7fd7fdf94be0801436260266531947465b2caf6c0df1b4250c42e3c24a9"
+    },
+    {
+      "asset_relative_path": "results/models/d5/protected/seed2/config.json",
+      "bytes": 14412,
+      "path": "deadline_load_study/upstream/results/models/d5/protected/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "6afe2875d2203f11e874dd50c2d4b662e24df2e8b15e253dbbd56a223e7b508a"
+    },
+    {
+      "asset_relative_path": "results/models/d5/protected/seed2/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/d5/protected/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "70ff1705e937b0781a933ecc30e461e90ee07fa7be7abc749f10b905ebdaca4a"
+    },
+    {
+      "asset_relative_path": "results/models/d5/unconstrained/seed0/config.json",
+      "bytes": 14450,
+      "path": "deadline_load_study/upstream/results/models/d5/unconstrained/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "d08a475cfbd168f3249b81cfa31c6080ffb77407cbb4ec07ac54876fe3034c98"
+    },
+    {
+      "asset_relative_path": "results/models/d5/unconstrained/seed0/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/d5/unconstrained/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "e71f8a58dcf49f6c5048b00fb5131261f1f3da1b713dddcfc23aca1f4f0f92ef"
+    },
+    {
+      "asset_relative_path": "results/models/d5/unconstrained/seed1/config.json",
+      "bytes": 14443,
+      "path": "deadline_load_study/upstream/results/models/d5/unconstrained/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "00a873100ee22fa914974b4f9cd4d4b8d7c1059b8d6057a6a907e0e33e4d8f0f"
+    },
+    {
+      "asset_relative_path": "results/models/d5/unconstrained/seed1/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/d5/unconstrained/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "fcb5dad4006d277aa246cc01f798a2ef55c90c1e9151fb8d1d9f116151769493"
+    },
+    {
+      "asset_relative_path": "results/models/d5/unconstrained/seed2/config.json",
+      "bytes": 14449,
+      "path": "deadline_load_study/upstream/results/models/d5/unconstrained/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "a35dee07ee71d9ceab1eef1b19da670fc57485cb8b185cd599b87b04e873f9c7"
+    },
+    {
+      "asset_relative_path": "results/models/d5/unconstrained/seed2/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/d5/unconstrained/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "57ae63c14cd1ec02359c3b02717d1fa4c9dacfdfd5fd2cbf564d943bc1130802"
+    },
+    {
+      "asset_relative_path": "results/models/default/kappa0/seed0/config.json",
+      "bytes": 15981,
+      "path": "deadline_load_study/upstream/results/models/default/kappa0/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "420639606b322d818292b3f3ad30145cc5967c0f96cec4936d51eab595cc09c2"
+    },
+    {
+      "asset_relative_path": "results/models/default/kappa0/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/default/kappa0/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "2c9092086328bf3241857c8363fb190e8e9dc0864f4f683b4600ecc62ca9338f"
+    },
+    {
+      "asset_relative_path": "results/models/default/kappa0/seed1/config.json",
+      "bytes": 15991,
+      "path": "deadline_load_study/upstream/results/models/default/kappa0/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "129e39e871928fb161c869d05068ad4925c2f661f5e0488bc3f62fc4fa758ad6"
+    },
+    {
+      "asset_relative_path": "results/models/default/kappa0/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/default/kappa0/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "916213f861d80865918862ff00d527f84ed4ed608511ef27cb0d46382dc6d255"
+    },
+    {
+      "asset_relative_path": "results/models/default/kappa0/seed2/config.json",
+      "bytes": 16002,
+      "path": "deadline_load_study/upstream/results/models/default/kappa0/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "e44ba3e372549910c52bd71aa46b25bfa0a6ef4084fe7fd090cc7ce2f25f455c"
+    },
+    {
+      "asset_relative_path": "results/models/default/kappa0/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/default/kappa0/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "622967f41f3c43f2a79db7983abb78d75f808dd2c858ff9c19dce0c51e7112c8"
+    },
+    {
+      "asset_relative_path": "results/models/default/kappa0/seed3/config.json",
+      "bytes": 15984,
+      "path": "deadline_load_study/upstream/results/models/default/kappa0/seed3/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "dc64f7bad34e3061e7e97efe000151be5f3a01ecde1c5c9bc09cc92274203c21"
+    },
+    {
+      "asset_relative_path": "results/models/default/kappa0/seed3/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/default/kappa0/seed3/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "31948c7117f7c5f2c8c094d1c19b282b77e89a0b7deae6a4d8b8f994191fa3ad"
+    },
+    {
+      "asset_relative_path": "results/models/default/kappa0/seed4/config.json",
+      "bytes": 15988,
+      "path": "deadline_load_study/upstream/results/models/default/kappa0/seed4/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "ef166cd89d7c30010ec88d3b0e75a566d8a3f058306b433158721a6e35349883"
+    },
+    {
+      "asset_relative_path": "results/models/default/kappa0/seed4/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/default/kappa0/seed4/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "a44b0a6d2ed2ec9aaa7227344f4fa4b9aa3f605b0a54f831318f71eb38435898"
+    },
+    {
+      "asset_relative_path": "results/models/default/meas_only/seed0/config.json",
+      "bytes": 16006,
+      "path": "deadline_load_study/upstream/results/models/default/meas_only/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "5baba0dafebd096fd19700a2a1bf188d2379aca1be46c17f5f5b7b27913ddef2"
+    },
+    {
+      "asset_relative_path": "results/models/default/meas_only/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/default/meas_only/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "a779b6dcff51648e082ccd8a9bab59056ceadb17bc61126026017ccb522f08ef"
+    },
+    {
+      "asset_relative_path": "results/models/default/meas_only/seed1/config.json",
+      "bytes": 16013,
+      "path": "deadline_load_study/upstream/results/models/default/meas_only/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "9cebae56ee7a670289e9577780a241b34926dafc9366d2f30d1d26651098d3bc"
+    },
+    {
+      "asset_relative_path": "results/models/default/meas_only/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/default/meas_only/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "8fdb4dfbf6052de636083841debfe10fa9eda38a1b13da0b67ae9ef7d21b9260"
+    },
+    {
+      "asset_relative_path": "results/models/default/meas_only/seed2/config.json",
+      "bytes": 16012,
+      "path": "deadline_load_study/upstream/results/models/default/meas_only/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "c23c10e06127c94565392fb353b434bfed20f6d2736fbdb4ca4e7ccb16089b16"
+    },
+    {
+      "asset_relative_path": "results/models/default/meas_only/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/default/meas_only/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "e26546f916d8f62d60dc1712fcbfd09527a4b491088be030c702afdd41641d81"
+    },
+    {
+      "asset_relative_path": "results/models/default/meas_only/seed3/config.json",
+      "bytes": 16010,
+      "path": "deadline_load_study/upstream/results/models/default/meas_only/seed3/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "f393fad3d511249ffcb5f3afaa88711d842ce0dada6e34297f8ff11bcc10de75"
+    },
+    {
+      "asset_relative_path": "results/models/default/meas_only/seed3/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/default/meas_only/seed3/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "982231c2193aea6189af6c613546f59d46d1dcdc6a2f23df49e7b12682494ded"
+    },
+    {
+      "asset_relative_path": "results/models/default/meas_only/seed4/config.json",
+      "bytes": 16009,
+      "path": "deadline_load_study/upstream/results/models/default/meas_only/seed4/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "1d805fa0b18cc30a04517c7023cc3e48d0591aafde8f574da0cbc85d4232c7ca"
+    },
+    {
+      "asset_relative_path": "results/models/default/meas_only/seed4/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/default/meas_only/seed4/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "89f3c65326ff00fd864929c886f4fec4de3af2700687fde17f75677fefe4bd29"
+    },
+    {
+      "asset_relative_path": "results/models/default/protected/seed0/config.json",
+      "bytes": 16017,
+      "path": "deadline_load_study/upstream/results/models/default/protected/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "8ef3620badd3532aaf3370c838089edc7f7d31f2a4c6eca58a8a78f30a1af27d"
+    },
+    {
+      "asset_relative_path": "results/models/default/protected/seed0/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/default/protected/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "05c93925109456739a61f04d3faddf0f1f5947118a303df9e3bbdb7229a6938e"
+    },
+    {
+      "asset_relative_path": "results/models/default/protected/seed1/config.json",
+      "bytes": 16003,
+      "path": "deadline_load_study/upstream/results/models/default/protected/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "e317fbe4994a7bd02f969a7ee12e7d2d9ee87cb1efe0c69130cc2fad9f2eb5cf"
+    },
+    {
+      "asset_relative_path": "results/models/default/protected/seed1/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/default/protected/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "f7a8f64247fd1b7bebbc290c2336e16cb5fd8e40a10ef1a567e3c0076097c98d"
+    },
+    {
+      "asset_relative_path": "results/models/default/protected/seed2/config.json",
+      "bytes": 16005,
+      "path": "deadline_load_study/upstream/results/models/default/protected/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "1508c31c4db91f5a6960a626c2a0280835ff2ba414925800ec49f7355e942e5e"
+    },
+    {
+      "asset_relative_path": "results/models/default/protected/seed2/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/default/protected/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "350ff40b9d3a55f75da7a8dcd505e2057d08ce34ea3a3d4e74455a2b42d8a535"
+    },
+    {
+      "asset_relative_path": "results/models/default/protected/seed3/config.json",
+      "bytes": 16011,
+      "path": "deadline_load_study/upstream/results/models/default/protected/seed3/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "0daf7375b927a3f389660d6be85b3f685c4c95bc044f6d143b74fe01dca9b935"
+    },
+    {
+      "asset_relative_path": "results/models/default/protected/seed3/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/default/protected/seed3/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "d091eaf62da7101f5f3210cbda98ae0132c1eba07a5b8a5b2b03ac1c6cce2d85"
+    },
+    {
+      "asset_relative_path": "results/models/default/protected/seed4/config.json",
+      "bytes": 16003,
+      "path": "deadline_load_study/upstream/results/models/default/protected/seed4/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "7f1f4463cdc6b092159457dab8787d3b33393e47278f205c9dfdd07aceaa0855"
+    },
+    {
+      "asset_relative_path": "results/models/default/protected/seed4/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/default/protected/seed4/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "b337b89deaac2c3a67bd42c679ed8b94f6bd951654ab7bd6b8c0d32377a7c07d"
+    },
+    {
+      "asset_relative_path": "results/models/default/static/candidates.npz",
+      "bytes": 2950,
+      "path": "deadline_load_study/upstream/results/models/default/static/candidates.npz",
+      "role": "historical frozen gate asset",
+      "sha256": "dc1a344983c2c248d3bd1065060b21db93eb03c5fcc153a3254506b7f5c6603d"
+    },
+    {
+      "asset_relative_path": "results/models/default/static/static.json",
+      "bytes": 23105,
+      "path": "deadline_load_study/upstream/results/models/default/static/static.json",
+      "role": "historical frozen gate asset",
+      "sha256": "f154806ed7bc869306b808e16d5c7836c782b9475946321b4cf596b1875f5a42"
+    },
+    {
+      "asset_relative_path": "results/models/default/unconstrained/seed0/config.json",
+      "bytes": 16051,
+      "path": "deadline_load_study/upstream/results/models/default/unconstrained/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "de70141214f3f30e266e8a30280d82bb67aac19ec746a7c91caadce94bbc946c"
+    },
+    {
+      "asset_relative_path": "results/models/default/unconstrained/seed0/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/default/unconstrained/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "244246f9ea8dbe0b27c98ce785f64b51535b69c37d5e7e3693d687b63b13b41d"
+    },
+    {
+      "asset_relative_path": "results/models/default/unconstrained/seed1/config.json",
+      "bytes": 16062,
+      "path": "deadline_load_study/upstream/results/models/default/unconstrained/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "412fa229331b00f1dd9c6a6a94d2d73786ba54251f4ee2d7de551f9ec82f3598"
+    },
+    {
+      "asset_relative_path": "results/models/default/unconstrained/seed1/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/default/unconstrained/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "513c9474065c52d1e45227eac592d50d206132f3ff467da6f7f415578abb1007"
+    },
+    {
+      "asset_relative_path": "results/models/default/unconstrained/seed2/config.json",
+      "bytes": 16060,
+      "path": "deadline_load_study/upstream/results/models/default/unconstrained/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "f3046c817650e80e5a8877c7e6bef7009068e8aaf5eff0fa46c59493175e3253"
+    },
+    {
+      "asset_relative_path": "results/models/default/unconstrained/seed2/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/default/unconstrained/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "0e405d5307522239e344892e70f87717a06e3d84c69a3b3b87f2bd92d1ce83f9"
+    },
+    {
+      "asset_relative_path": "results/models/default/unconstrained/seed3/config.json",
+      "bytes": 16063,
+      "path": "deadline_load_study/upstream/results/models/default/unconstrained/seed3/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "b1d0dddc6fd7ef1a8a092a39c871ccf4783ea3af2e7404dd0b9f5535585bb19e"
+    },
+    {
+      "asset_relative_path": "results/models/default/unconstrained/seed3/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/default/unconstrained/seed3/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "adb23c629861e4487c794300d65e3a5982be533408e797b5d74e3951a7f18d3c"
+    },
+    {
+      "asset_relative_path": "results/models/default/unconstrained/seed4/config.json",
+      "bytes": 16061,
+      "path": "deadline_load_study/upstream/results/models/default/unconstrained/seed4/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "32a73e941962fa5fadc9a17cf507e59580ba9a5921759f4e0c96260b55555e99"
+    },
+    {
+      "asset_relative_path": "results/models/default/unconstrained/seed4/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/default/unconstrained/seed4/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "467fa10e09cb99186200230ccaf52379e4d2d87d2338b8cf147521101eb6ba73"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/kappa0/seed0/config.json",
+      "bytes": 14399,
+      "path": "deadline_load_study/upstream/results/models/lead0/kappa0/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "ea1d17f6c8f2ac15b13184b36d91c5e6e9782b82824824ac2eb18d102d9b26ab"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/kappa0/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/lead0/kappa0/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "0de64d64f7968d4bbc2b47dfe2d77fba683a5f7d92ac84e6d098cb8d55f1c3ee"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/kappa0/seed1/config.json",
+      "bytes": 14388,
+      "path": "deadline_load_study/upstream/results/models/lead0/kappa0/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "c71b75ae14c50cc2889c9ab1b238c3252892d09e10a2fb90342485664557bd50"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/kappa0/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/lead0/kappa0/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "95c7b68b9d95f74908981d2461b54eeb0fc27a0e52ca49a75091a29c4945631b"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/kappa0/seed2/config.json",
+      "bytes": 14403,
+      "path": "deadline_load_study/upstream/results/models/lead0/kappa0/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "9de59cc223fd9ab80fd2a74af66e8f12bc458dfffc77139db304261d8b06294b"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/kappa0/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/lead0/kappa0/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "de096484ecc35e263976316307bb7b3d1378032e0bd03b56f0273d0cfc0275a7"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/meas_only/seed0/config.json",
+      "bytes": 14404,
+      "path": "deadline_load_study/upstream/results/models/lead0/meas_only/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "743a5e356424de37f0de5d22a79f9b24122e8014cdd3c4b715571de93463ff64"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/meas_only/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/lead0/meas_only/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "3aac9fbf3c1060bfffa3883755eb15c31f74ee939a7a49d86d602096600331ae"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/meas_only/seed1/config.json",
+      "bytes": 14413,
+      "path": "deadline_load_study/upstream/results/models/lead0/meas_only/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "a9bf4a86aab9c5930a2b231e000996adf64c34989973f15764764f1f24abda6c"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/meas_only/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/lead0/meas_only/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "cf75303c2e0117d6da3c337941693c398b499d795f3674495c4cede90c41d277"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/meas_only/seed2/config.json",
+      "bytes": 14409,
+      "path": "deadline_load_study/upstream/results/models/lead0/meas_only/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "7fdee55b7c9dae834efaa695e48e091e177f46d25915e3c5b2f58c9cdf59774a"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/meas_only/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/lead0/meas_only/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "fef609f701609b9cfc447593c7e92ab5ccbe34701ba3b4676d8d2b2ddb348110"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/protected/seed0/config.json",
+      "bytes": 14413,
+      "path": "deadline_load_study/upstream/results/models/lead0/protected/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "049b1a9eed0756c68253c12413de3e594d52b40fc60fb76c632bbc882a162037"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/protected/seed0/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/lead0/protected/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "c7ceba3a0bb68d0a62bd03b3fe88aa19fe160288ffdcf0626f86a255049e0397"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/protected/seed1/config.json",
+      "bytes": 14411,
+      "path": "deadline_load_study/upstream/results/models/lead0/protected/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "d624099e150c5a7ce67f2ea246686aecfb8fd4538acff29822df8fcab601a179"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/protected/seed1/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/lead0/protected/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "f4a8c2fba8244058a5fbf51d7ef6f8ad14a05400a13c69fd5ff754b503cb3d78"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/protected/seed2/config.json",
+      "bytes": 14413,
+      "path": "deadline_load_study/upstream/results/models/lead0/protected/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "244d554215c98f20b6d4685a63f2385c15f37ad8061b5dcdce60eadc699a9fcf"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/protected/seed2/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/lead0/protected/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "8bbca65601fd4050b9af12854f4a3fe7cb0607c433a99d6d72316ae47f26affb"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/static/candidates.npz",
+      "bytes": 2951,
+      "path": "deadline_load_study/upstream/results/models/lead0/static/candidates.npz",
+      "role": "historical frozen gate asset",
+      "sha256": "95bff5c2879e1c4af7cd574ac329e63a2f3e7d58a6f345d01f3718c61dfd45ab"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/static/static.json",
+      "bytes": 23059,
+      "path": "deadline_load_study/upstream/results/models/lead0/static/static.json",
+      "role": "historical frozen gate asset",
+      "sha256": "b828f23dce7a89bc502537cb8ad74375bcb5f46f3737c67bc8a1dc61e26ae905"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/unconstrained/seed0/config.json",
+      "bytes": 14447,
+      "path": "deadline_load_study/upstream/results/models/lead0/unconstrained/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "1f048bc31541a02b6c7a6226ead2d03d56f1dd9e040e464e80ecdb590b90ab50"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/unconstrained/seed0/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/lead0/unconstrained/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "1012ac8d37ea6912a29b837fe24f82cf776521a16b0daccf42bbea35241923f7"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/unconstrained/seed1/config.json",
+      "bytes": 14446,
+      "path": "deadline_load_study/upstream/results/models/lead0/unconstrained/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "6eb43ec66d7edbdcefd0752bd9ccf1074db45455a59c869ce91f90cfc52e2702"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/unconstrained/seed1/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/lead0/unconstrained/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "89e2b600e7defcea438d756d967ead3ee6a55c68d55de3dda339663d8f3a80c7"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/unconstrained/seed2/config.json",
+      "bytes": 14455,
+      "path": "deadline_load_study/upstream/results/models/lead0/unconstrained/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "96ca9089a951a5a955d5c4d94989428e768b11ad7b0910612f16b6f555cb0664"
+    },
+    {
+      "asset_relative_path": "results/models/lead0/unconstrained/seed2/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/lead0/unconstrained/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "b7b6f436950d75c0f26f72e49fec79abb6ec4185c0cb93cdd91d253ebcd92966"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/kappa0/seed0/config.json",
+      "bytes": 14411,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/kappa0/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "b29e34d83e1fd9b57d4983c4d04b7a5cd554a6435afb98f725c48085a2cd00b9"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/kappa0/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/kappa0/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "91dbb8704e0bd20db405e5e12b1a0795332bf2dfb2c626cc810600d611e41c26"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/kappa0/seed1/config.json",
+      "bytes": 14418,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/kappa0/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "535a93b89b12455007ea51334c9fd4ed9ead07c451d79aeb2fa4a79735ed7664"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/kappa0/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/kappa0/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "4e51061d52f46019c4c7c97a7b4b21a63605fc9ec7d6aa06b63dda869e631c43"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/kappa0/seed2/config.json",
+      "bytes": 14417,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/kappa0/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "5f8023237f66fafce24bdc18d5eab78764190e3a2b47cf6f9b296e574d06ef1c"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/kappa0/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/kappa0/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "e2952a055682cec787a58c96c8a3bf0cceac9fed9020636491340591833d6e54"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/meas_only/seed0/config.json",
+      "bytes": 14413,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/meas_only/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "93130ccc8de52b48970b28f391fd120de53485dfea3aec4a7e1c77e6b0691208"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/meas_only/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/meas_only/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "579b354e5f11d49a40b75473512718f1bcc413b87fff971401db75c879920894"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/meas_only/seed1/config.json",
+      "bytes": 14419,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/meas_only/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "0aaa1a805e3d1a043e0bf01c82d9f3b6e58e9bc441374c129463eafe0dbb2415"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/meas_only/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/meas_only/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "5b221dbf5891651b02b695fa19d3bf56a18f20e2d9bd90f3a3d8e9b9daf30df7"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/meas_only/seed2/config.json",
+      "bytes": 14424,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/meas_only/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "8a52fd908aafb4a9afb2b6d0eb69d66d86fefa7e1bcb4ccf2d1456df8b38f1b7"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/meas_only/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/meas_only/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "cf7b3d9080baca5e9ea730c588ffe731b217e9556d60864f0824a7ef4b0c1fcf"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/protected/seed0/config.json",
+      "bytes": 14430,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/protected/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "e28d56ca5cc165e237e1a45c618f95b8f4518a130d62a0d363d04e589e7de0d9"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/protected/seed0/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/protected/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "5fb97105f0e8a3a1297e0d07b0ea5c3d91e1cf9226c481a8f659a7ce5986e3fb"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/protected/seed1/config.json",
+      "bytes": 14419,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/protected/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "4eec1c9ff3a7fc90eebb4f1e2fd029478f6b22e77e7833b8a45cdbadcf1ce0e6"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/protected/seed1/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/protected/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "76234f2b1a13dfcaa0ab1b3b0fe1ed3660029c7d4e3b78ed959c82800973ef04"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/protected/seed2/config.json",
+      "bytes": 14415,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/protected/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "2c48c3daa005ab1c79da69ee03865c5161d915f515f2c5e411de6c4c6452c7e0"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/protected/seed2/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/protected/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "65b00e8e35cf33d702441b1ea258b01db742ad441a4213449ce8345f81b37ae0"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/static/candidates.npz",
+      "bytes": 2956,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/static/candidates.npz",
+      "role": "historical frozen gate asset",
+      "sha256": "37cf4e620590bab0d47b6d3cfc87126e479de42827aec23db08dde288d288011"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/static/static.json",
+      "bytes": 23066,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/static/static.json",
+      "role": "historical frozen gate asset",
+      "sha256": "a1ae911e10b129d55e1865d93778133747d88ce42a022169e2e938837b93f5a2"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/unconstrained/seed0/config.json",
+      "bytes": 14454,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/unconstrained/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "979ccb4dc0a1043f6f0b5551382dd4d78fefd7b543fac9769fcca93fafdabdb3"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/unconstrained/seed0/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/unconstrained/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "d81104160397a025b0238b7b8d0594968fa8db7a83425430806be0c380e58d3d"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/unconstrained/seed1/config.json",
+      "bytes": 14448,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/unconstrained/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "c3cd2427cf9299ac8cceb298cd93e425c3f3739f0b61f04ba839c1bdd0519541"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/unconstrained/seed1/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/unconstrained/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "d65b19c62f1789b55bc100bab47461f1e656aea17d24ec70045451c00d4edb1f"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/unconstrained/seed2/config.json",
+      "bytes": 14457,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/unconstrained/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "0daa71058924e60628a8aedf4751a1bc72a5d6f1d3764998079ca41950f67a0a"
+    },
+    {
+      "asset_relative_path": "results/models/lead1.05/unconstrained/seed2/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/lead1.05/unconstrained/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "9f981cccba01fff28e5cf076196d1804eed4b42bc24f6322a8512bce1ad3ede9"
+    },
+    {
+      "asset_relative_path": "results/models/n6/kappa0/seed0/config.json",
+      "bytes": 14406,
+      "path": "deadline_load_study/upstream/results/models/n6/kappa0/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "5d7b3cb7300dc96f3b4c943d89ec74ae6fca98b044d6e6fd5762e3986e3e9e1a"
+    },
+    {
+      "asset_relative_path": "results/models/n6/kappa0/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/n6/kappa0/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "517fc71aea4764cc3af89321d15a73635de1576b3d70b662b5ec3bdfdf2f1c67"
+    },
+    {
+      "asset_relative_path": "results/models/n6/kappa0/seed1/config.json",
+      "bytes": 14391,
+      "path": "deadline_load_study/upstream/results/models/n6/kappa0/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "cff1724b097196c3456cb99868bd7d016bd7cc13b6a1d7cdcc6ba44951302077"
+    },
+    {
+      "asset_relative_path": "results/models/n6/kappa0/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/n6/kappa0/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "c2b2430749205a69234bcbcdb09c92b701a4d08e2f9ca5f37f884032d8d10da4"
+    },
+    {
+      "asset_relative_path": "results/models/n6/kappa0/seed2/config.json",
+      "bytes": 14396,
+      "path": "deadline_load_study/upstream/results/models/n6/kappa0/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "4de739ab62d8ea055cadd2a89df42c56e5ad6fb0311f5623a05099eebbccf5f6"
+    },
+    {
+      "asset_relative_path": "results/models/n6/kappa0/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/n6/kappa0/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "6fbfe62a4e7136b664cf72ee0580bfe189a634dd08b8665be82af34406e16636"
+    },
+    {
+      "asset_relative_path": "results/models/n6/meas_only/seed0/config.json",
+      "bytes": 14410,
+      "path": "deadline_load_study/upstream/results/models/n6/meas_only/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "3f1cef5305953b7c52dbeaf97144642a8932f054719cda8ea8805c7accba63de"
+    },
+    {
+      "asset_relative_path": "results/models/n6/meas_only/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/n6/meas_only/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "121a7c6cfe45089ff736fcffccec24c30f4f5972a5db3781a08b12fefbac6601"
+    },
+    {
+      "asset_relative_path": "results/models/n6/meas_only/seed1/config.json",
+      "bytes": 14402,
+      "path": "deadline_load_study/upstream/results/models/n6/meas_only/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "5b095875f39928d963050f7608f1ed4814d169863e33c6f3d120dd8b12598b01"
+    },
+    {
+      "asset_relative_path": "results/models/n6/meas_only/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/n6/meas_only/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "e5fb2c48b1ebd5f5ff447dec13d96e727ec82ba0de0eece26b013a7f562e136d"
+    },
+    {
+      "asset_relative_path": "results/models/n6/meas_only/seed2/config.json",
+      "bytes": 14409,
+      "path": "deadline_load_study/upstream/results/models/n6/meas_only/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "7390bcc7852f7a9804ee00332e6e8a9be2b988f5da2657ebf0c918e815bd0edb"
+    },
+    {
+      "asset_relative_path": "results/models/n6/meas_only/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/n6/meas_only/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "be757e0dd6a991b549a71e1fa18bdc76c9cfa9363c95f37c131fdb403ed7ac94"
+    },
+    {
+      "asset_relative_path": "results/models/n6/protected/seed0/config.json",
+      "bytes": 14417,
+      "path": "deadline_load_study/upstream/results/models/n6/protected/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "0f2e0002609d6c08fba114bb66929975bf5ab21cac7f27cd21e1dd38369af7a1"
+    },
+    {
+      "asset_relative_path": "results/models/n6/protected/seed0/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/n6/protected/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "e6040ef49c1173ff9243721d2ac262a4dbefb13af36760063c075c3b549a9a66"
+    },
+    {
+      "asset_relative_path": "results/models/n6/protected/seed1/config.json",
+      "bytes": 14424,
+      "path": "deadline_load_study/upstream/results/models/n6/protected/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "c0d2600e4795661ad032800b168ceb5bf6029dfcff5f8432ede839c1485f0510"
+    },
+    {
+      "asset_relative_path": "results/models/n6/protected/seed1/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/n6/protected/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "ef811cf45b62620653c44d81e87d530c83b85df8756e269a7a8b4fd9354891d3"
+    },
+    {
+      "asset_relative_path": "results/models/n6/protected/seed2/config.json",
+      "bytes": 14417,
+      "path": "deadline_load_study/upstream/results/models/n6/protected/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "96198f0003cffb9f6f3a9f795df84ff6901b2418f097f0a3bb657a462a19b08a"
+    },
+    {
+      "asset_relative_path": "results/models/n6/protected/seed2/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/n6/protected/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "ee962af66becb6be9ecc8c1034b9d6ec97f08e72fb9d39bf28a5c83696573d04"
+    },
+    {
+      "asset_relative_path": "results/models/n6/static/candidates.npz",
+      "bytes": 65725,
+      "path": "deadline_load_study/upstream/results/models/n6/static/candidates.npz",
+      "role": "historical frozen gate asset",
+      "sha256": "6e4f04ccd52b2c13d212985015e4991bdfbc87a520011d369e016fc7fc3f3d50"
+    },
+    {
+      "asset_relative_path": "results/models/n6/static/static.json",
+      "bytes": 31289,
+      "path": "deadline_load_study/upstream/results/models/n6/static/static.json",
+      "role": "historical frozen gate asset",
+      "sha256": "5e9d5a9ff9f85f69809015cbb7fd80aec768661e0f7e1bc2a4f80127f735ff8c"
+    },
+    {
+      "asset_relative_path": "results/models/n6/unconstrained/seed0/config.json",
+      "bytes": 14452,
+      "path": "deadline_load_study/upstream/results/models/n6/unconstrained/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "d33afabfa86a067b687614801e8015751c21aee2814a0aaa2948317beffa49d4"
+    },
+    {
+      "asset_relative_path": "results/models/n6/unconstrained/seed0/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/n6/unconstrained/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "003891222e7fa76bc0da5654dcecf9911457c6d3dda49c2352da82916a063cd3"
+    },
+    {
+      "asset_relative_path": "results/models/n6/unconstrained/seed1/config.json",
+      "bytes": 14449,
+      "path": "deadline_load_study/upstream/results/models/n6/unconstrained/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "70ccccc231a6988023a7e82f371ff7bd24f6c0caf4d546e5cb50e54eb9115df5"
+    },
+    {
+      "asset_relative_path": "results/models/n6/unconstrained/seed1/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/n6/unconstrained/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "695547427312912b592f8988cb8616cacdb2484206aad86c470830caea855682"
+    },
+    {
+      "asset_relative_path": "results/models/n6/unconstrained/seed2/config.json",
+      "bytes": 14450,
+      "path": "deadline_load_study/upstream/results/models/n6/unconstrained/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "5486794b74e9e6438dfd6955dff8b07a50efcf97947c38309e35fb9be8012f2a"
+    },
+    {
+      "asset_relative_path": "results/models/n6/unconstrained/seed2/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/n6/unconstrained/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "5dc8799179541e4120db08af7a1e30be243d31c2bad8db98bb7e6e25f6666595"
+    },
+    {
+      "asset_relative_path": "results/models/n9/kappa0/seed0/config.json",
+      "bytes": 14403,
+      "path": "deadline_load_study/upstream/results/models/n9/kappa0/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "0373de87c3591eab3d6770f4bf61e7fe415a2ef9ea5fa78570cb28144bdea159"
+    },
+    {
+      "asset_relative_path": "results/models/n9/kappa0/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/n9/kappa0/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "8668b7db172c71e4b8775fa5655e44192b4cda5e706ba6edd36d08e1e17b3426"
+    },
+    {
+      "asset_relative_path": "results/models/n9/kappa0/seed1/config.json",
+      "bytes": 14397,
+      "path": "deadline_load_study/upstream/results/models/n9/kappa0/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "006d0cf0b9a86af29f83e7e08b4d3511fcf752c034e11df30ac5f8d13a690469"
+    },
+    {
+      "asset_relative_path": "results/models/n9/kappa0/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/n9/kappa0/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "e437323fa662a4fd112f8d3b0553532b4bc8be3cd6d53acfab2c20f02972e6a0"
+    },
+    {
+      "asset_relative_path": "results/models/n9/kappa0/seed2/config.json",
+      "bytes": 14403,
+      "path": "deadline_load_study/upstream/results/models/n9/kappa0/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "678420a1a13584563b731052613fdc96607781d5a36326ed517fdc20a0258bf3"
+    },
+    {
+      "asset_relative_path": "results/models/n9/kappa0/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/n9/kappa0/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "93f10d9dee04e3b2f56073e15c09b9af124b0dfee04fe9114fbc69bda3ea8401"
+    },
+    {
+      "asset_relative_path": "results/models/n9/meas_only/seed0/config.json",
+      "bytes": 14411,
+      "path": "deadline_load_study/upstream/results/models/n9/meas_only/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "b57d7945ac4f95f8bcd5f124ab34a347b52bf81ae8ae27c85d9055d7e5db24a3"
+    },
+    {
+      "asset_relative_path": "results/models/n9/meas_only/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/n9/meas_only/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "2c9c3b541117c87f04b2fce63c5d2f0f59c2f1c95a0997bab8ddf8b306c4b49e"
+    },
+    {
+      "asset_relative_path": "results/models/n9/meas_only/seed1/config.json",
+      "bytes": 14420,
+      "path": "deadline_load_study/upstream/results/models/n9/meas_only/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "6249136fd460ae71f3418691bf6b8c0333147694286a3b6f7baa424eb0de0aab"
+    },
+    {
+      "asset_relative_path": "results/models/n9/meas_only/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/n9/meas_only/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "0dd9d0e23c6fccecf5e108f62122543d4b563f331a966be2af39ac7c448cd7ad"
+    },
+    {
+      "asset_relative_path": "results/models/n9/meas_only/seed2/config.json",
+      "bytes": 14421,
+      "path": "deadline_load_study/upstream/results/models/n9/meas_only/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "44559eccfd0f33eeebef20b6ba77d3201021a6cb1446866c0062f9dc39e4cc19"
+    },
+    {
+      "asset_relative_path": "results/models/n9/meas_only/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/n9/meas_only/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "fa67d26d579a9b333e5afb9c6399e40339c3b22876db9d7f60c5018e259c8f9e"
+    },
+    {
+      "asset_relative_path": "results/models/n9/protected/seed0/config.json",
+      "bytes": 14414,
+      "path": "deadline_load_study/upstream/results/models/n9/protected/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "3ba106494516412999aa123b7ac705ce02d01c7f35b10aa9299db71ef3521f40"
+    },
+    {
+      "asset_relative_path": "results/models/n9/protected/seed0/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/n9/protected/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "4b3e681cd773002619cfa7c9bdc566d16ff294deca4c0a72dab3de983794909f"
+    },
+    {
+      "asset_relative_path": "results/models/n9/protected/seed1/config.json",
+      "bytes": 14411,
+      "path": "deadline_load_study/upstream/results/models/n9/protected/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "d1c5da863ae7de209878281de90c5a67068af806b55f7743b11fd40f0f946bd8"
+    },
+    {
+      "asset_relative_path": "results/models/n9/protected/seed1/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/n9/protected/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "cde7cdbac8d257fff6e992442a0824c938567861b4820d04ff90b7d607175d20"
+    },
+    {
+      "asset_relative_path": "results/models/n9/protected/seed2/config.json",
+      "bytes": 14414,
+      "path": "deadline_load_study/upstream/results/models/n9/protected/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "0f29b7a724f6194bab69f0e1695451240edca1ebc3532852b74b66b050135de9"
+    },
+    {
+      "asset_relative_path": "results/models/n9/protected/seed2/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/n9/protected/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "a21d92a9cdba87bdc4d64ce95318074263bae0d184fce16ebae92604dd3951f2"
+    },
+    {
+      "asset_relative_path": "results/models/n9/static/candidates.npz",
+      "bytes": 94355,
+      "path": "deadline_load_study/upstream/results/models/n9/static/candidates.npz",
+      "role": "historical frozen gate asset",
+      "sha256": "b416a7787bb71ee6322511c17d54d9b6a501d69468d1dde416721d7cea8d1f62"
+    },
+    {
+      "asset_relative_path": "results/models/n9/static/static.json",
+      "bytes": 36924,
+      "path": "deadline_load_study/upstream/results/models/n9/static/static.json",
+      "role": "historical frozen gate asset",
+      "sha256": "be7733a734723c6cb3f942f91f35fd0acbc8cf173af501b0f7b00aa870a27e52"
+    },
+    {
+      "asset_relative_path": "results/models/n9/unconstrained/seed0/config.json",
+      "bytes": 14454,
+      "path": "deadline_load_study/upstream/results/models/n9/unconstrained/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "01b56b2f937cd3d02f58d79ad35f9710978499ea6ee4d3556d5e463e14d8ce5a"
+    },
+    {
+      "asset_relative_path": "results/models/n9/unconstrained/seed0/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/n9/unconstrained/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "d3979d1360a6c6e29b46a65d31937f820cb9d5b3a6031cdb718e2ff084fa7fcc"
+    },
+    {
+      "asset_relative_path": "results/models/n9/unconstrained/seed1/config.json",
+      "bytes": 14455,
+      "path": "deadline_load_study/upstream/results/models/n9/unconstrained/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "d6b83a39771adedba1937daac23c77afd8da4d8c7d62538d10c50f22930bf24a"
+    },
+    {
+      "asset_relative_path": "results/models/n9/unconstrained/seed1/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/n9/unconstrained/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "efdafbbd1164f94f22406d7b303f0bf6df5f551d7d664c87327a024e234fb89b"
+    },
+    {
+      "asset_relative_path": "results/models/n9/unconstrained/seed2/config.json",
+      "bytes": 14450,
+      "path": "deadline_load_study/upstream/results/models/n9/unconstrained/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "d463007e41d411a4b416a2507730838e8fb3546c2be4c02ccde315bcaa3285f3"
+    },
+    {
+      "asset_relative_path": "results/models/n9/unconstrained/seed2/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/n9/unconstrained/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "34f052cb10c8d47ef71e6609e0a73a043fa0fc83fd0f5f5c8a13da327b008a18"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/kappa0/seed0/config.json",
+      "bytes": 14418,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/kappa0/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "9e82b47faa8f12058ea4d98c0c875679514042a4e9f070d95d385b846693dd15"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/kappa0/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/kappa0/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "219e4fa48c0ad88eceddc83d19f45eca1bafe6f191b07e064ee28fbc07938d8d"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/kappa0/seed1/config.json",
+      "bytes": 14418,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/kappa0/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "7e1e822189d5991f6d37c6c93ea0023ab49b6670c194e07c7282b48ec64558b3"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/kappa0/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/kappa0/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "3ebc009ab49feade15c26d2ec93b31a5670df8c2f210f474fd57fe24c06e9ba8"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/kappa0/seed2/config.json",
+      "bytes": 14408,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/kappa0/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "0b7b970a835eeab2f71bc52d981bb926b46b46ecfb45a4c4337cdd29ce9c7707"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/kappa0/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/kappa0/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "cadd64cf9d949dd706da896b953c74d28b2aab428fee8f1c6d217bcb755be10c"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/meas_only/seed0/config.json",
+      "bytes": 14417,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/meas_only/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "7fcd7f4b29e53793b4da8dd2d27989ca5dbe908a60afe6a9f2c3b8234ee09bd0"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/meas_only/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/meas_only/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "d2d917abd178393fa69d4482fda0097c89bd441e58574bc08553a75f88335eb1"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/meas_only/seed1/config.json",
+      "bytes": 14427,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/meas_only/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "7b0d16e19ee588328e8f32f394bae5b51541e4e52b5b4f0cf9a96c59bda12976"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/meas_only/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/meas_only/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "5a07b290d959b8e9caccd856109f05f758d5836bb0b35f705ec687cbda558e36"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/meas_only/seed2/config.json",
+      "bytes": 14423,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/meas_only/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "51ffff31b0ef48af5d1d8a8c24939695b0d9dc14b822890eb404ffd4cf522e2a"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/meas_only/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/meas_only/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "82d376eb479360c22566cb9a0794936ca57b3672a8cad66e9699b5d81d50d45e"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/protected/seed0/config.json",
+      "bytes": 14424,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/protected/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "9469726b05fdc27ee78736bff1501c4865fe010512b429dd5368e445986c6710"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/protected/seed0/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/protected/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "39bd77997fadc93ac9c867832eaa16aa4f656e24daf48ebfb69b5367d32ae31a"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/protected/seed1/config.json",
+      "bytes": 14419,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/protected/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "36441a565272c7c8525cbdc16f69e542c2444a685696b546292cfa21b512b98f"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/protected/seed1/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/protected/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "9d683423bbd84922107ea8bf8ce75260fe813bc301fb5ae490b01c08dd25e8a1"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/protected/seed2/config.json",
+      "bytes": 14420,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/protected/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "9b6834ec1d026e67d9f9a9c74f828a49843e1a7376ba429464ee05864d524072"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/protected/seed2/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/protected/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "e1715dbba14a62c15d75d4ad53b2e7b8226aae0b9a1d6182794dc2f2309b5ade"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/static/candidates.npz",
+      "bytes": 2884,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/static/candidates.npz",
+      "role": "historical frozen gate asset",
+      "sha256": "875c8893b0e3ec3a770aea7f116059031eda58b1ed803134e3fe830237bd720d"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/static/static.json",
+      "bytes": 23118,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/static/static.json",
+      "role": "historical frozen gate asset",
+      "sha256": "8e142437d63822cdb86913b5d8b592c5c0fe1c5934d04e469039f3fc91b6106f"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/unconstrained/seed0/config.json",
+      "bytes": 14466,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/unconstrained/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "096d6c4b9976236a083f1f6ecc4aa5c50470288bda76400455a68bd1f059a3bd"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/unconstrained/seed0/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/unconstrained/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "1ad8ade08d20d165c2f54487a6f9c0933639571772f5dc16f40d268a8bccb4a1"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/unconstrained/seed1/config.json",
+      "bytes": 14455,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/unconstrained/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "3969dd1ef78a779272f5a7f98cc20af0ba899cb68f098037a776760a65925f0b"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/unconstrained/seed1/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/unconstrained/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "04b8f53023b140ff8c011c571916039a08f7269c890ebeb55cbb738cab02eb0b"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/unconstrained/seed2/config.json",
+      "bytes": 14466,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/unconstrained/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "6dae40dab7e44e15b4666a7e4c93b86116086ca93729b9e97baef2a5b85ec9d2"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.5/unconstrained/seed2/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/rho0.5/unconstrained/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "c768a95e8ca1df20681ba446a15916c57d2926ce2d465c7f222c98884e3d4865"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/kappa0/seed0/config.json",
+      "bytes": 14402,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/kappa0/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "b2e854e3a6f0feaf794f2786907d25ff28ac9b513e33890a860427475bb9ea70"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/kappa0/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/kappa0/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "b44191097a4827f180b85c8c95ff8efbb6c88f69fcf8462585775ee0e48ede31"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/kappa0/seed1/config.json",
+      "bytes": 14407,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/kappa0/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "5fceb743712e0a52aaf8016e0ccf742c2cdf034ed343326743bf412bb3c0ac4c"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/kappa0/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/kappa0/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "50ce8ff3bfff3b240af6e51489f23129b72daea9d101bb5cf2a9519168328641"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/kappa0/seed2/config.json",
+      "bytes": 14404,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/kappa0/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "b7bec57aaa986b8883140bbb9132f4475ed839389a1f1b9b65ed0d1449025f8f"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/kappa0/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/kappa0/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "1331460c60dc607824dcd744eaee70251eb1f2e6d0f406ee0e77719d450a9f93"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/meas_only/seed0/config.json",
+      "bytes": 14420,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/meas_only/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "2c87c58dea6d820545cbdaf07c7de8b60491408ee1fcf4f8622a3877eb8e2eac"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/meas_only/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/meas_only/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "03c79bdafc151f7e9a72bc323a8093dc50d9dc0a609dae86bde4f9429dea79a1"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/meas_only/seed1/config.json",
+      "bytes": 14407,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/meas_only/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "5188178e665fa7c88ad04b9381ccc2c78ce9928ecebadba3dfb30d333c29d993"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/meas_only/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/meas_only/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "c68a1302516fc4585630c6a4706a2ca3ecd76113eaacdad5ef651b92ddbe8363"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/meas_only/seed2/config.json",
+      "bytes": 14422,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/meas_only/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "293db1dc764a1a06782f72e763ce0725616eb86b8349be9499dd70172918f454"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/meas_only/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/meas_only/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "e9cd7e95945c9731db837a83d1ac861e16dfc2162165bbb89d261abb46b64de3"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/protected/seed0/config.json",
+      "bytes": 14417,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/protected/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "7786abaccfd583b80b146387a6e683625875aa4f67beb9375ab13e7798fe7539"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/protected/seed0/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/protected/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "b9fdf3d2aecf5e682a7da28840cb62182a22bfee14a252132dce24c3c4896d0c"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/protected/seed1/config.json",
+      "bytes": 14417,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/protected/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "b29b56bbedd6672cb761593485dc6bae0569327cc421b1d37c3453ec43a1aff4"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/protected/seed1/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/protected/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "9973d5e5ef064cd2e386c36fd9192654804768eb2ad6a4248e9d7c1291e60baa"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/protected/seed2/config.json",
+      "bytes": 14410,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/protected/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "bd2d13f0fb64307190f0698073c5af6f5334669e56b938f4719d42629ee5f628"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/protected/seed2/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/protected/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "93116ae221d6a0a3534ecb9cdf2c491f8a26bdce05f75b2549d10d81e74b3449"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/static/candidates.npz",
+      "bytes": 2928,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/static/candidates.npz",
+      "role": "historical frozen gate asset",
+      "sha256": "8ffee1e189d0109242d52d62a7d7ba264f4118b55920195ab3016f0525a17a31"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/static/static.json",
+      "bytes": 23060,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/static/static.json",
+      "role": "historical frozen gate asset",
+      "sha256": "c3b3e532b90554937d482ce33527c30362cce569fdb5abbfa74f5d76cc76550c"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/unconstrained/seed0/config.json",
+      "bytes": 14455,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/unconstrained/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "4c041a7e9e7a6acc853fff9cb4615f057f7893fd223b3afaca92ff540ad99e3c"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/unconstrained/seed0/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/unconstrained/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "7521494adb6836476d52f24ad47f33c59f84eb5d0b2ea479a504c7164f73905a"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/unconstrained/seed1/config.json",
+      "bytes": 14452,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/unconstrained/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "c74cc1227294d403936afbb64ed3d43a49562dd2d76d009ace594148c10045ec"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/unconstrained/seed1/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/unconstrained/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "76c67d4c903400e7a27a53e78285556f0803435adf130cc1f308e4bf786c07ff"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/unconstrained/seed2/config.json",
+      "bytes": 14451,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/unconstrained/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "a0e51a910530779355dd3e571e558ce7563486585efc1f2cab944dd898d4a6e8"
+    },
+    {
+      "asset_relative_path": "results/models/rho0.7/unconstrained/seed2/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/rho0.7/unconstrained/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "2fdb1f9f78ed044d7acd1997e8a5815132f49c534b8c017b6d99b3e60103bde1"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/kappa0/seed0/config.json",
+      "bytes": 14381,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/kappa0/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "adfe39d937c135ff20fd0335f6943c11e42b96e771b329d00f2db896071bda4e"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/kappa0/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/kappa0/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "2fd8c3c949b953fa29f2f18fa5f0452725e47516960837b4abd6cf842d614285"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/kappa0/seed1/config.json",
+      "bytes": 14385,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/kappa0/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "76a4b0cfaabb8e8b60788284e585c5e9266b5c61830c232fcdf86e7e85888343"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/kappa0/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/kappa0/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "83e5b4a232a77350dcc163e34a6571c0c061e54b69e6b661732ee1ead3a4704e"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/kappa0/seed2/config.json",
+      "bytes": 14385,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/kappa0/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "a9e1f36e8ce51a3ebfc63f1f8af937c9e065467832670af78693eeec6ad4c656"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/kappa0/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/kappa0/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "c04b699935462102167db904225a89bfd54724e1602fd8cdd319e2ee1b181092"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/meas_only/seed0/config.json",
+      "bytes": 14398,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/meas_only/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "0555f9e31c0cb761a7baa49f9785fc7bbdd161804561cf448bcc558e7a8cd910"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/meas_only/seed0/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/meas_only/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "12c7ade512a0f27704c190f270ad71284325a2d7fcd76a34ff70743440c856db"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/meas_only/seed1/config.json",
+      "bytes": 14394,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/meas_only/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "fd998317c990a9fade1c469299ecd0b73a48c18f3937156b19d9ca8917d383f9"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/meas_only/seed1/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/meas_only/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "893a134189123d26ae30e13805a048b7d66c2291e483ba5026954a23b8f7b845"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/meas_only/seed2/config.json",
+      "bytes": 14397,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/meas_only/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "0be9767f2c425647a143f370d2ca32a621f8c5cac06afcff9a42aaef4fa2889f"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/meas_only/seed2/model.pt",
+      "bytes": 150235,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/meas_only/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "2792cbb385532ac9f1d419230458dd682bd9d6682797ab98d14eaae586071e9d"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/protected/seed0/config.json",
+      "bytes": 14391,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/protected/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "144b968d98b50126e7db13234c97555cfef18cb4e2e7095283e91a6cd39dac97"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/protected/seed0/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/protected/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "06c82d06ca1a3f96fee5c3451b80eaf4a300596751271e6c3634b197a074648e"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/protected/seed1/config.json",
+      "bytes": 14394,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/protected/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "50adac6dc93075c9cdc098266d00432ad378c5b7ee4a9af64fa8055b507ea6e0"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/protected/seed1/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/protected/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "1104a879dfcb7d414a5e252f7bf862068e571c413cf32e463bde82f09715e63b"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/protected/seed2/config.json",
+      "bytes": 14394,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/protected/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "850100f907b7ef83ce6aca999285d9ad08aae4b086d85572605f181a4a42063a"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/protected/seed2/model.pt",
+      "bytes": 150747,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/protected/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "e178de6812fdc4927629ce59d4e506c777d2d816592a32f5b386c6b3286a93af"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/static/candidates.npz",
+      "bytes": 2959,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/static/candidates.npz",
+      "role": "historical frozen gate asset",
+      "sha256": "15fbdb4451fe50e920bef4edc6d0ee583f65cda0dd248a07634f76caf01d0abc"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/static/static.json",
+      "bytes": 23089,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/static/static.json",
+      "role": "historical frozen gate asset",
+      "sha256": "5eeb1798e925e3c0659b1d31a60245f7f76d11c5c9a86cff4074d8b76f6e09db"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/unconstrained/seed0/config.json",
+      "bytes": 14434,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/unconstrained/seed0/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "6a920117c055ee12471a5316d9cf874127e9f3ce596b2243f63684c59751d752"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/unconstrained/seed0/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/unconstrained/seed0/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "d8d73dae0af236449a06e46498457b8747ef4d32193e9618b645affa5184663b"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/unconstrained/seed1/config.json",
+      "bytes": 14431,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/unconstrained/seed1/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "1b05dd957404ad0a978de6f22d503d74bc9aab7db74db7cf8ab3935af5a0d635"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/unconstrained/seed1/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/unconstrained/seed1/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "5031c459e456f8a89e037d05d421d6b2ca44a50bccaac880b002a36b52fd3f4c"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/unconstrained/seed2/config.json",
+      "bytes": 14433,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/unconstrained/seed2/config.json",
+      "role": "historical frozen gate asset",
+      "sha256": "dbdddc7be1bd78d9feeb9b270ffa39e91a637fb40e2faea34569957f2d4f64a6"
+    },
+    {
+      "asset_relative_path": "results/models/rho1.1/unconstrained/seed2/model.pt",
+      "bytes": 155096,
+      "path": "deadline_load_study/upstream/results/models/rho1.1/unconstrained/seed2/model.pt",
+      "role": "historical frozen gate asset",
+      "sha256": "715e0d3f7dcdad804916d9fbbd0a05d7a4cdee44f539e539203ff93e60a754fe"
+    },
+    {
+      "asset_relative_path": "results/models/selection.json",
+      "bytes": 24977,
+      "path": "deadline_load_study/upstream/results/models/selection.json",
+      "role": "historical frozen gate asset",
+      "sha256": "1433881942f4d5fbef59ce6567f3f26e80306bdadd20d0294936280a59e1a906"
+    },
+    {
+      "asset_relative_path": "results/raw/e7/nr_calibration.json",
+      "bytes": 17839,
+      "path": "deadline_load_study/upstream/results/raw/e7/nr_calibration.json",
+      "role": "historical frozen gate asset",
+      "sha256": "583ed29613d7d5afef40eb2bacacdf2c1be337786a55433bd3fbcb2400184734"
+    },
+    {
+      "asset_relative_path": "results/raw/train/e1/d1/usage_nu.json",
+      "bytes": 6875,
+      "path": "deadline_load_study/upstream/results/raw/train/e1/d1/usage_nu.json",
+      "role": "historical frozen gate asset",
+      "sha256": "1d3fd545c0c29574ed0a1ed7d346808a53bab7dbb1c0f1bc822a85487b4aedca"
+    },
+    {
+      "asset_relative_path": "results/raw/train/e1/d15/usage_nu.json",
+      "bytes": 6879,
+      "path": "deadline_load_study/upstream/results/raw/train/e1/d15/usage_nu.json",
+      "role": "historical frozen gate asset",
+      "sha256": "b19afaaee4e6a12b0b4ed72358cc200ba55f0721ba24e3feb043ee2215587479"
+    },
+    {
+      "asset_relative_path": "results/raw/train/e1/d5/usage_nu.json",
+      "bytes": 6875,
+      "path": "deadline_load_study/upstream/results/raw/train/e1/d5/usage_nu.json",
+      "role": "historical frozen gate asset",
+      "sha256": "2644b698547dd51694898a5b81151a55ff2078d7e9fb43e632868b780cddc7f0"
+    },
+    {
+      "asset_relative_path": "results/raw/train/e1/lead0/usage_nu.json",
+      "bytes": 6878,
+      "path": "deadline_load_study/upstream/results/raw/train/e1/lead0/usage_nu.json",
+      "role": "historical frozen gate asset",
+      "sha256": "d123936b044897173379716067aa8056c1677f38833b0a3c1cbb6ca65b87d8b8"
+    },
+    {
+      "asset_relative_path": "results/raw/train/e1/lead1.05/usage_nu.json",
+      "bytes": 6892,
+      "path": "deadline_load_study/upstream/results/raw/train/e1/lead1.05/usage_nu.json",
+      "role": "historical frozen gate asset",
+      "sha256": "ebd08debe6b9fd60735c13034749cedecc02a622f4b9e4584dd704e191fc45a3"
+    },
+    {
+      "asset_relative_path": "results/raw/train/e1/n6/usage_nu.json",
+      "bytes": 6947,
+      "path": "deadline_load_study/upstream/results/raw/train/e1/n6/usage_nu.json",
+      "role": "historical frozen gate asset",
+      "sha256": "7d270f911ca5b912a3bcf8e3c72315ddf69fd01fa0a5ed75f0fa99522a613b43"
+    },
+    {
+      "asset_relative_path": "results/raw/train/e1/n9/usage_nu.json",
+      "bytes": 7014,
+      "path": "deadline_load_study/upstream/results/raw/train/e1/n9/usage_nu.json",
+      "role": "historical frozen gate asset",
+      "sha256": "1ecf2240093fbd4b8b66697a8e78f56ad42668c657d87aae04bef0f1578c9306"
+    },
+    {
+      "asset_relative_path": "results/raw/train/e1/rho0.5/usage_nu.json",
+      "bytes": 6887,
+      "path": "deadline_load_study/upstream/results/raw/train/e1/rho0.5/usage_nu.json",
+      "role": "historical frozen gate asset",
+      "sha256": "919203980778d1c312a924c665f1c9c9e998456603619452c6e312536ecaf283"
+    },
+    {
+      "asset_relative_path": "results/raw/train/e1/rho0.7/usage_nu.json",
+      "bytes": 6886,
+      "path": "deadline_load_study/upstream/results/raw/train/e1/rho0.7/usage_nu.json",
+      "role": "historical frozen gate asset",
+      "sha256": "872b0a02f940c75d9fa45e0c46beafb8b2fbcf8920f039a23857a9f115f13260"
+    },
+    {
+      "asset_relative_path": "results/raw/train/e1/rho1.1/usage_nu.json",
+      "bytes": 6885,
+      "path": "deadline_load_study/upstream/results/raw/train/e1/rho1.1/usage_nu.json",
+      "role": "historical frozen gate asset",
+      "sha256": "f0c8e1af166acb351d8807999f09ebeeffbb0d764bd87dc79a901e5e8686f98b"
+    },
+    {
+      "asset_relative_path": "results/raw/train/e2/usage_tariff/nu_protected_seed0_05c939251094.json",
+      "bytes": 606,
+      "path": "deadline_load_study/upstream/results/raw/train/e2/usage_tariff/nu_protected_seed0_05c939251094.json",
+      "role": "historical frozen gate asset",
+      "sha256": "35ea3f5304a2870ce40626efb0d9d7b8763f01ac4d6fd0e4f0365141c891f110"
+    }
+  ],
+  "frozen_checkpoint_assets": 309,
+  "note": "These historical assets satisfy unchanged TEST-read checks; their inclusion is not a claim that their experiments were rerun.",
+  "prereg_sha256": "ca0e4c246b75e213f793403d288cabe263c44de3edd0369a249df45a85b2fd65",
+  "recovery_manifest_sha256": "67879d24c545ac35dbfbb542353b76f3f839fd604c1d1e0f82a61a8519cc6ccd"
+}

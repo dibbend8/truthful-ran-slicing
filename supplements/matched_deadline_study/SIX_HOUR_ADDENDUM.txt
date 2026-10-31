@@ -1,0 +1,45 @@
+Resource/time addendum, fixed before new TEST replay,31October2026
+
+The user requested a revised six-page paper within6hours at approximately
+2026-10-31 11:49UTC. Target delivery time:17:49UTC. No new ns-3/UE-UPF
+integration is included. Existing packet-level evidence remains explicitly
+limited. This amendment changes execution priority and scope, not hypotheses,
+model-selection rules, training budgets, test-window selection or analysis.
+
+Priority1: complete all12 matched networks plus static refitting at target0.9,
+jointly tightened deadlines300/50/300ms. Truthful comparisons use all32TEST
+windows,3neural seeds and all planned baselines. Strategic evaluation uses
+all8prespecified multipliers,3tenants,32windows and3policy seeds, for both
+frozen and retrained Protected/Unconstrained. Full/fixed billing onProtected
+uses identical allocations.
+
+Priority2: repeat this complete comparison at targetloads0.7 and1.1,
+in that fixed order, preserving the same jointly tightened deadline profile.
+These three settings form the revised primary strategic sensitivity grid.
+
+Priority3: the previously launched108-job training campaign may finish while
+the first two priorities are evaluated. Use completed StageC training to report
+truthful welfare for isolated video and interactive deadline changes, in the
+preexisting fixed cell order. StageC strategic testing is deferred for time,
+regardless of which methods perform well. Do not describe this as completing
+the full original9-cell strategic plan.
+
+All comparisons are exploratory reuse of the original TEST dates. Complete
+paired contrasts must be kept, including negative or countervailing findings.
+No model, seed, window or multiplier is selected by TEST performance. Any
+unfinished setting is identified as pending and excluded as a whole from a
+claimed complete grid. Avoid interpreting maxima over tested cases as an
+implemented best-response strategy or a universal incentive bound.
+
+Execution: eight single-thread training jobs and up to12single-thread replay
+workers, subject to observed resources and at least12GiB free localdisk.
+Do not start new optional evaluations after16:15UTC; reserve the remaining
+time for analysis, independent checks, manuscript/figure updates, compilation,
+six-page confirmation and archive. Extend or curtail execution only for time
+or validation/resource failures, never because of the direction of outcomes.
+
+Interpretation priorities: test whether matched training closes the frozen
+Protected-versus-Direct welfare gap; whether the allocation/payment ablation
+persists after retraining; and whether any tested delivered-utility deviations
+remain profitable despite contract-model truthfulness. These are questions,
+not promised counterintuitive or favorable results.

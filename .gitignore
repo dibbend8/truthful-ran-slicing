@@ -13,3 +13,15 @@ implementation/results/figures/
 implementation/paper/
 *.pt
 *.pth
+supplements/**/models/
+supplements/**/upstream/
+supplements/**/evaluation/
+supplements/**/analysis_matched/
+supplements/**/smoke/
+supplements/**/smoke_evaluation/
+supplements/**/benchmark/
+supplements/**/runtime/
+supplements/**/figures/
+supplements/**/server/
+supplements/**/release_reanalysis_validation/
+supplements/**/release_validation_download/

@@ -1,0 +1,24 @@
+Strategic-stage refinement, 31 October 2026
+
+Recorded after completing truthful allocation benchmarks, before examining the
+pilot's strategic utility or harm estimates. The original protocol and truthful
+results are retained unchanged. The runtime pilot (111 seconds per case) and a
+method audit motivate these changes:
+
+1. All strategies use truthful reports for the 40-interval warm-up. Deviations
+   begin at interval 40, so truthful and deviating runs start their scored periods
+   with identical queues. Warm-up bills remain excluded. This tests a finite
+   deviation from a common history; it is not the original sustained-strategy
+   design with distinct warm-up queues. The old pilot is archived and excluded.
+2. Retain all three loads (0.7, 0.9, 1.1), 16 dates, three seeds, and the original
+   and jointly tightened deadline profiles. Test multipliers 0.5 and 2 for each
+   tenant separately, truthful opponents. There are 96 cases and 42 episodes per
+   case, with offset 60. The full four-profile truthful benchmark remains intact.
+   The middle multiplier 1.5 and isolated deadline changes are omitted from this
+   priced stage to limit exact-pricing runtime; no outcome-based selection occurs.
+3. Store all certified price brackets, and verify shared initial queue states,
+   payment error bounds, implementation hashes and the complete planned grid.
+
+These are exploratory fixed-multiplier tests. They neither exhaust deviations
+nor establish practical truthfulness or a worst-case delivery-utility bound.
+Reported uncertainty remains conditional on three frozen trained networks.

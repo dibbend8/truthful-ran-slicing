@@ -1,5 +1,16 @@
 # Data and external assets
 
+For the v0.2.0 matched-deadline supplement, see
+[the supplementary reproduction instructions](supplements/README.md). Its
+release archive distinguishes offline recomputation from derived observations
+from full training or trace replay. The unchanged historical TEST-read gate
+requires all 309 freeze-listed assets and eight calibration files, even when the
+new comparisons use fewer controllers. These dependencies are identified by
+[exact hashes](supplements/matched_deadline_study/FROZEN_GATE_REQUIREMENTS.json).
+No large data, model or result assets have been added to this Git tree.
+
+## Original v0.1.0 assets
+
 This source package supports inspection of the mechanisms, synthetic checks, and
 figure regeneration from recorded summaries. A complete rerun requires assets
 that are not included here. The table identifies the corresponding code so that
@@ -65,6 +76,6 @@ The optional `exploratory.json` is excluded from this minimal package because it
 contains machine-specific provenance paths and is not read by the included
 figure scripts. No retained numerical summary was altered during staging.
 
-The complete campaign was not rerun for this release. Passing unit checks or
+The original campaign was not rerun while preparing v0.1.0. Passing unit checks or
 rendering the supplied summaries should not be described as independently
 reproducing all reported experimental results.

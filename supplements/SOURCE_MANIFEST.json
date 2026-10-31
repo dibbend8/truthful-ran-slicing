@@ -1,0 +1,199 @@
+{
+  "derived_documents": [
+    {
+      "bytes": 5456,
+      "path": "supplements/RESULTS.txt",
+      "sha256": "7ba9348f61ad713db760ba11a2d89ff161dcf28b9977c134b80e9aabf45b6d21",
+      "source_sha256": "d4c872fe3506623c0722060d18efbfe6e86dae614585d210c9a7ff6a3bb92f99",
+      "source_snapshot": "matched_deadline_study/FINAL_RESULTS.txt",
+      "transformation": "Removed only the final paragraph beginning \"The experiments above are complete. Final manuscript pagination and publication\" from the public copy; all preceding report text is unchanged."
+    }
+  ],
+  "exclusions": [
+    "model weights and training artifacts",
+    "traffic datasets and prepared caches",
+    "raw replay and analysis tables",
+    "server/SSH/Drive credentials and sharing metadata",
+    "manuscript and private audit material"
+  ],
+  "files": [
+    {
+      "bytes": 5961,
+      "path": "supplements/deadline_load_study/PROTOCOL.txt",
+      "sha256": "36bcb40388bed899ba2d90e4a87eaf73f43236dde5999465797221944879b7cc",
+      "source_snapshot": "deadline_load_study/PROTOCOL.txt",
+      "transformation": "none"
+    },
+    {
+      "bytes": 1596,
+      "path": "supplements/deadline_load_study/STRATEGIC_ADDENDUM.txt",
+      "sha256": "875523ce0c9306a02b698615cf94d51b34c52bd8713f9bf2b366e9c063689a72",
+      "source_snapshot": "deadline_load_study/STRATEGIC_ADDENDUM.txt",
+      "transformation": "none"
+    },
+    {
+      "bytes": 23823,
+      "path": "supplements/deadline_load_study/evaluate.py",
+      "sha256": "a6e28a9f37d620739acf568ae7c55eb587b7caf1b145eb417adafd54b40f604c",
+      "source_snapshot": "deadline_load_study/evaluate.py",
+      "transformation": "none"
+    },
+    {
+      "bytes": 12880,
+      "path": "supplements/deadline_load_study/study_support.py",
+      "sha256": "33a3cde46cbb4aab135b536906037ccb75deb976c63731ccfc749a1e004b20b7",
+      "source_snapshot": "deadline_load_study/study_support.py",
+      "transformation": "none"
+    },
+    {
+      "bytes": 6515,
+      "path": "supplements/matched_deadline_study/ANALYSIS_README.txt",
+      "sha256": "119250469757d7e636d57bc15eaf0553287539a969bcd546335b074acd2ce7e3",
+      "source_snapshot": "matched_deadline_study/ANALYSIS_README.txt",
+      "transformation": "none"
+    },
+    {
+      "bytes": 5272,
+      "path": "supplements/matched_deadline_study/BUNDLING_README.txt",
+      "sha256": "49b642c5009face48c8366e3dab93d7951495206a26dc6d2c2a9b2c0b82b7a7e",
+      "source_snapshot": "matched_deadline_study/BUNDLING_README.txt",
+      "transformation": "none"
+    },
+    {
+      "bytes": 8670,
+      "path": "supplements/matched_deadline_study/EVALUATION_README.txt",
+      "sha256": "63f0a185e0ab526fce7fbbd457838a101ce1dc801810275d4bee9bd69dc5e078",
+      "source_snapshot": "matched_deadline_study/EVALUATION_README.txt",
+      "transformation": "none"
+    },
+    {
+      "bytes": 1661,
+      "path": "supplements/matched_deadline_study/EXECUTION_PARALLELISM_NOTE.txt",
+      "sha256": "c947f8c6840fd08fbe7336fc926a7e28ccde398894b25d73f77af96924515727",
+      "source_snapshot": "matched_deadline_study/EXECUTION_PARALLELISM_NOTE.txt",
+      "transformation": "none"
+    },
+    {
+      "bytes": 106627,
+      "path": "supplements/matched_deadline_study/FROZEN_GATE_REQUIREMENTS.json",
+      "sha256": "1e7305331644c53a562c21a580f858d193879c5c9a63dcd56d32705f02872618",
+      "source_snapshot": "matched_deadline_study/FROZEN_GATE_REQUIREMENTS.json",
+      "transformation": "none"
+    },
+    {
+      "bytes": 16909,
+      "path": "supplements/matched_deadline_study/PROTOCOL.txt",
+      "sha256": "8648fb385f52cb5771478582c4ce200c4a83812b59e098b1a9dc55d47e4524a4",
+      "source_snapshot": "matched_deadline_study/PROTOCOL.txt",
+      "transformation": "none"
+    },
+    {
+      "bytes": 3609,
+      "path": "supplements/matched_deadline_study/PUBLIC_RELEASE_README.txt",
+      "sha256": "717cee1b8cbc99138fd6b8c468e8d7cf07c1d705c89912bba6a90f041672a5fe",
+      "source_snapshot": "matched_deadline_study/PUBLIC_RELEASE_README.txt",
+      "transformation": "none"
+    },
+    {
+      "bytes": 3267,
+      "path": "supplements/matched_deadline_study/RELEASED_ANALYSIS_README.txt",
+      "sha256": "df7f098c58bae8974f41d589189fe6131b198f58a3ae7d8d07b0203c5d86c2ed",
+      "source_snapshot": "matched_deadline_study/RELEASED_ANALYSIS_README.txt",
+      "transformation": "none"
+    },
+    {
+      "bytes": 2765,
+      "path": "supplements/matched_deadline_study/SIX_HOUR_ADDENDUM.txt",
+      "sha256": "253b4fd90330ab62e22fae0d4b045770f19aa39a7c70c94c8be7f9004e1c1104",
+      "source_snapshot": "matched_deadline_study/SIX_HOUR_ADDENDUM.txt",
+      "transformation": "none"
+    },
+    {
+      "bytes": 7507,
+      "path": "supplements/matched_deadline_study/TRAINING_README.txt",
+      "sha256": "1ee8cc028c3e40e1aa3313f9663e695375d7bba0e4045e726e06403cdb176ceb",
+      "source_snapshot": "matched_deadline_study/TRAINING_README.txt",
+      "transformation": "none"
+    },
+    {
+      "bytes": 54810,
+      "path": "supplements/matched_deadline_study/analyze_matched.py",
+      "sha256": "4e56be658557d54c9a20cc3468359db2ce86e0dae45890fc986dac9e93d5e91b",
+      "source_snapshot": "matched_deadline_study/analyze_matched.py",
+      "transformation": "none"
+    },
+    {
+      "bytes": 32676,
+      "path": "supplements/matched_deadline_study/bundle_matched.py",
+      "sha256": "17662eae7a05077d4778fae60c33c73b5d45197fae864cb394070ee7295f8580",
+      "source_snapshot": "matched_deadline_study/bundle_matched.py",
+      "transformation": "none"
+    },
+    {
+      "bytes": 31883,
+      "path": "supplements/matched_deadline_study/evaluate_matched.py",
+      "sha256": "6d6114db37573eb57835110b2364a7a9fdb7b7f6012d00674bd3ef2c7ee75325",
+      "source_snapshot": "matched_deadline_study/evaluate_matched.py",
+      "transformation": "none"
+    },
+    {
+      "bytes": 19190,
+      "path": "supplements/matched_deadline_study/fit_static_matched.py",
+      "sha256": "79b7d21785c7825be45c9c2b4ab2c12db78b46bc52a84ae69b977dc6aa76e1b1",
+      "source_snapshot": "matched_deadline_study/fit_static_matched.py",
+      "transformation": "none"
+    },
+    {
+      "bytes": 21980,
+      "path": "supplements/matched_deadline_study/package_public_release.py",
+      "sha256": "236fcffcfd0dada41ef32c30df3ceca4afedfa5856a106f2a99c69cd4ab6c771",
+      "source_snapshot": "matched_deadline_study/package_public_release.py",
+      "transformation": "none"
+    },
+    {
+      "bytes": 15869,
+      "path": "supplements/matched_deadline_study/plot_matched.py",
+      "sha256": "eccef36f26415503dbd574adea97df3ee2227c163a7d24324a2f4e10905f5405",
+      "source_snapshot": "matched_deadline_study/plot_matched.py",
+      "transformation": "none"
+    },
+    {
+      "bytes": 18265,
+      "path": "supplements/matched_deadline_study/reanalyze_released.py",
+      "sha256": "5e035cd1eb140913fbb6fe78bb1bd55af2b8b9543d150745eaee6932ca8b0b77",
+      "source_snapshot": "matched_deadline_study/reanalyze_released.py",
+      "transformation": "none"
+    },
+    {
+      "bytes": 26387,
+      "path": "supplements/matched_deadline_study/train_matched.py",
+      "sha256": "2a42e448e6a3de8fcda912f1ab3b4857daf3f3d7cbf0fc2362418e4c3592757d",
+      "source_snapshot": "matched_deadline_study/train_matched.py",
+      "transformation": "none"
+    },
+    {
+      "bytes": 25091,
+      "path": "supplements/matched_deadline_study/validate_public_release.py",
+      "sha256": "17119b84956dd663ff9762b14d154a3889879bd798c934aba2a9454b4b0acc0b",
+      "source_snapshot": "matched_deadline_study/validate_public_release.py",
+      "transformation": "none"
+    }
+  ],
+  "note": "All listed source, protocol and instruction files retain their original bytes. The completed study covers nine truthful and three joint-deadline strategic cells. The public results report omits only its final publication/pagination status paragraph; its transformation is recorded separately.",
+  "release_archive": {
+    "bytes": 104041036,
+    "file": "truthful-ran-slicing-v0.2.0-evidence.tar.gz",
+    "local_validation_sha256": "f0b422304b8f414ff0c42ce64ee5758fd823e4e1ea8584284c506e3493090b13",
+    "public_release_manifest_sha256": "815283610727d269f7cb101c192129d12b96fa8a7d6b0d9aeddaed1cf8b38a48",
+    "server_validation_sha256": "b6fe647609448030061429c05be500c75da5481ed0a3707815b9b9f8e2bf1521",
+    "sha256": "6b4b5e649cd17c519cbb3c2d1f8bd1a9d8e3c7ca52fd8f433c3799a9ab97b5cf"
+  },
+  "release_date": "2026-10-31",
+  "release_version": "v0.2.0",
+  "source_bytes_preserved": true,
+  "status": "source snapshot for v0.2.0",
+  "validation_status": {
+    "local_full_archive": "passed",
+    "server_full_archive": "passed"
+  }
+}
