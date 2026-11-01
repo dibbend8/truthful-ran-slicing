@@ -187,7 +187,7 @@ python -B experiments/train.py --plan
 ```
 
 The training driver documents `--plan` as listing jobs and estimated work without
-running them. A small TRAIN-only training run, once its data dependencies exist,
+running them. A small training run, once its data dependencies exist,
 is available as:
 
 ```bash
